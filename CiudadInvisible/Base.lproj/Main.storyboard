@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-general.png" translatesAutoresizingMaskIntoConstraints="NO" id="0gV-Ry-HrE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0c-Go-Oc4">
                                 <rect key="frame" x="127" y="492" width="70" height="70"/>
                                 <constraints>
@@ -45,6 +48,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg-general.png" width="320" height="568"/>
         <image name="camera.png" width="70" height="70"/>
     </resources>
 </document>

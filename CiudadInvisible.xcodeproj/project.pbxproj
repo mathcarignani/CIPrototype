@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A189F2046C6419EB0E03A8A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCE688C1A5348818DD0B369 /* libPods.a */; };
+		C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7072B2A1963052300F8A244 /* bg-general@2x.png */; };
 		C707AC80195E127F00E43F53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C707AC7F195E127F00E43F53 /* AppDelegate.swift */; };
 		C707AC85195E127F00E43F53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C707AC83195E127F00E43F53 /* Main.storyboard */; };
 		C707AC87195E127F00E43F53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C707AC86195E127F00E43F53 /* Images.xcassets */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		217DE757A0F64215828105CE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		6CCE688C1A5348818DD0B369 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7072B2A1963052300F8A244 /* bg-general@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-general@2x.png"; sourceTree = "<group>"; };
 		C707AC7A195E127F00E43F53 /* CiudadInvisible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CiudadInvisible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C707AC7E195E127F00E43F53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C707AC7F195E127F00E43F53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		C718C1F9195EF8EC00389FFD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C7072B2A1963052300F8A244 /* bg-general@2x.png */,
 				C718C1FA195EF91F00389FFD /* bg1@2x.jpg */,
 				C718C1FC195EFE7000389FFD /* camera@2x.png */,
 			);
@@ -249,6 +252,7 @@
 				C718C1FD195EFE7000389FFD /* camera@2x.png in Resources */,
 				C707AC85195E127F00E43F53 /* Main.storyboard in Resources */,
 				C718C1FB195EF91F00389FFD /* bg1@2x.jpg in Resources */,
+				C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */,
 				C707AC87195E127F00E43F53 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +427,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos7.1;
 			};
 			name = Debug;
 		};
@@ -436,6 +441,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos7.1;
 			};
 			name = Release;
 		};
