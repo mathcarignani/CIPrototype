@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CiudadInvisible/controllers/PostsViewController.swift"
-            timestampString = "425918490.150119"
+            timestampString = "425955988.162899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "loadPosts()"
             landmarkType = "5">
          </BreakpointContent>

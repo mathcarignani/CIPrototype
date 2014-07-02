@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5A189F2046C6419EB0E03A8A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCE688C1A5348818DD0B369 /* libPods.a */; };
 		C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7072B2A1963052300F8A244 /* bg-general@2x.png */; };
+		C7072B2D19631FAB00F8A244 /* DetailPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7072B2C19631FAB00F8A244 /* DetailPostView.swift */; };
+		C7072B2F1963638500F8A244 /* bg2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7072B2E1963638500F8A244 /* bg2@2x.jpg */; };
+		C7072B311963639B00F8A244 /* bg3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7072B301963639B00F8A244 /* bg3@2x.jpg */; };
 		C707AC80195E127F00E43F53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C707AC7F195E127F00E43F53 /* AppDelegate.swift */; };
 		C707AC85195E127F00E43F53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C707AC83195E127F00E43F53 /* Main.storyboard */; };
 		C707AC87195E127F00E43F53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C707AC86195E127F00E43F53 /* Images.xcassets */; };
@@ -33,6 +36,9 @@
 		217DE757A0F64215828105CE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		6CCE688C1A5348818DD0B369 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7072B2A1963052300F8A244 /* bg-general@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-general@2x.png"; sourceTree = "<group>"; };
+		C7072B2C19631FAB00F8A244 /* DetailPostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailPostView.swift; path = views/DetailPostView.swift; sourceTree = "<group>"; };
+		C7072B2E1963638500F8A244 /* bg2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg2@2x.jpg"; sourceTree = "<group>"; };
+		C7072B301963639B00F8A244 /* bg3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg3@2x.jpg"; sourceTree = "<group>"; };
 		C707AC7A195E127F00E43F53 /* CiudadInvisible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CiudadInvisible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C707AC7E195E127F00E43F53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C707AC7F195E127F00E43F53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +152,8 @@
 			children = (
 				C7072B2A1963052300F8A244 /* bg-general@2x.png */,
 				C718C1FA195EF91F00389FFD /* bg1@2x.jpg */,
+				C7072B2E1963638500F8A244 /* bg2@2x.jpg */,
+				C7072B301963639B00F8A244 /* bg3@2x.jpg */,
 				C718C1FC195EFE7000389FFD /* camera@2x.png */,
 			);
 			name = Images;
@@ -155,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				C718C201195F0C9300389FFD /* PostView.swift */,
+				C7072B2C19631FAB00F8A244 /* DetailPostView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -251,8 +260,10 @@
 			files = (
 				C718C1FD195EFE7000389FFD /* camera@2x.png in Resources */,
 				C707AC85195E127F00E43F53 /* Main.storyboard in Resources */,
+				C7072B2F1963638500F8A244 /* bg2@2x.jpg in Resources */,
 				C718C1FB195EF91F00389FFD /* bg1@2x.jpg in Resources */,
 				C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */,
+				C7072B311963639B00F8A244 /* bg3@2x.jpg in Resources */,
 				C707AC87195E127F00E43F53 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +318,7 @@
 				C718C1F5195EF79100389FFD /* PostsViewController.swift in Sources */,
 				C718C202195F0C9300389FFD /* PostView.swift in Sources */,
 				C707AC80195E127F00E43F53 /* AppDelegate.swift in Sources */,
+				C7072B2D19631FAB00F8A244 /* DetailPostView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
