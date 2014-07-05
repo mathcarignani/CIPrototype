@@ -21,6 +21,7 @@
 		C718C1FD195EFE7000389FFD /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C718C1FC195EFE7000389FFD /* camera@2x.png */; };
 		C718C202195F0C9300389FFD /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718C201195F0C9300389FFD /* PostView.swift */; };
 		C7ACF31E1968537200EB74D5 /* Posts2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF31D1968537200EB74D5 /* Posts2ViewController.swift */; };
+		C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3221968590600EB74D5 /* RestApiHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		C718C201195F0C9300389FFD /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostView.swift; path = views/PostView.swift; sourceTree = "<group>"; };
 		C7ACF31D1968537200EB74D5 /* Posts2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Posts2ViewController.swift; path = controllers/Posts2ViewController.swift; sourceTree = "<group>"; };
 		C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CiudadInvisible-Bridging-Header.h"; sourceTree = "<group>"; };
+		C7ACF3221968590600EB74D5 /* RestApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestApiHelper.swift; path = model/RestApiHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		C707AC7C195E127F00E43F53 /* CiudadInvisible */ = {
 			isa = PBXGroup;
 			children = (
+				C7ACF321196858C100EB74D5 /* Model */,
 				C718C1FE195F0B6900389FFD /* Views */,
 				C718C1F8195EF8DF00389FFD /* Resources */,
 				C718C1ED195E18DE00389FFD /* Controllers */,
@@ -171,6 +174,14 @@
 				C7072B2C19631FAB00F8A244 /* DetailPostView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		C7ACF321196858C100EB74D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C7ACF3221968590600EB74D5 /* RestApiHelper.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		CE1364FB7F454404B0F45ADE /* Frameworks */ = {
@@ -320,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */,
 				C7ACF31E1968537200EB74D5 /* Posts2ViewController.swift in Sources */,
 				C718C1F5195EF79100389FFD /* PostsViewController.swift in Sources */,
 				C718C202195F0C9300389FFD /* PostView.swift in Sources */,
