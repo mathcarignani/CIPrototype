@@ -22,6 +22,7 @@
 		C718C202195F0C9300389FFD /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718C201195F0C9300389FFD /* PostView.swift */; };
 		C7ACF31E1968537200EB74D5 /* Posts2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF31D1968537200EB74D5 /* Posts2ViewController.swift */; };
 		C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3221968590600EB74D5 /* RestApiHelper.swift */; };
+		C7ACF3251968673900EB74D5 /* PostsEntireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3241968673900EB74D5 /* PostsEntireViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		C7ACF31D1968537200EB74D5 /* Posts2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Posts2ViewController.swift; path = controllers/Posts2ViewController.swift; sourceTree = "<group>"; };
 		C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CiudadInvisible-Bridging-Header.h"; sourceTree = "<group>"; };
 		C7ACF3221968590600EB74D5 /* RestApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestApiHelper.swift; path = model/RestApiHelper.swift; sourceTree = "<group>"; };
+		C7ACF3241968673900EB74D5 /* PostsEntireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsEntireViewController.swift; path = controllers/PostsEntireViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			children = (
 				C718C1F4195EF79100389FFD /* PostsViewController.swift */,
 				C7ACF31D1968537200EB74D5 /* Posts2ViewController.swift */,
+				C7ACF3241968673900EB74D5 /* PostsEntireViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				C718C202195F0C9300389FFD /* PostView.swift in Sources */,
 				C707AC80195E127F00E43F53 /* AppDelegate.swift in Sources */,
 				C7072B2D19631FAB00F8A244 /* DetailPostView.swift in Sources */,
+				C7ACF3251968673900EB74D5 /* PostsEntireViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
