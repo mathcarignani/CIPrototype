@@ -1,0 +1,1 @@
+PODS_CHTWITTERCOVER_OTHER_LDFLAGS = -framework Accelerate -framework QuartzCore
