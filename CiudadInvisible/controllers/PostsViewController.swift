@@ -77,11 +77,13 @@ class PostsViewController: UIViewController {
     
     // MARK: Touch methods
     func tapHandled (gesture : UITapGestureRecognizer) {
-        println("tapHandled")
+        // Ver informacion detallada
+        
+        
     }
     
     func panHandled (gesture : UIPanGestureRecognizer) {
-        
+        // Cambiar de posteo
         var point = gesture.translationInView(view)
         
         switch (gesture.state) {

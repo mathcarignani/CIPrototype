@@ -16,6 +16,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        // Prueba para obtener los posts
+        let manager = AFHTTPRequestOperationManager()
+        manager.GET("http://ciudadinvisible.herokuapp.com/posts.json",
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                println("Json obtenido => " + responseObject.description)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error => " + error.localizedDescription())
+            })
+        /*manager.GET("http://examples.com/json",
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                println(“JSON: “ + responseObject.description)
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                println(“Error: “ + error.localizedDescription)
+            })
+        */
+        
         return true
     }
 

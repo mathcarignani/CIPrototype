@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-CHTwitterCover.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3C9D6838BB9B4FB98A4C7BA7</key>
+		<key>128D0E37704544A98AD2CAF1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>70B3442192B24065A5D27486</key>
+		<key>2135B7F0DFD446A3B4570E8A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F16109EF15DE4FE4BF7B2902</key>
 		<dict>
 			<key>primary</key>
 			<true/>
