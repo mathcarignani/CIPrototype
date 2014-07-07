@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-LBBlurredImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -16,6 +21,22 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>6185DB0C76A64DDC99C68AC7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B75ADD2C55F043A2B110356A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7C63CD249E84F72BC1E22C4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

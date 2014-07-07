@@ -34,7 +34,7 @@ class RestApiHelper: NSObject {
                 println("Json obtenido => " + responseObject.description)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
-                println("Error => " + error.localizedDescription())
+                println("Error")
             })
     }
     

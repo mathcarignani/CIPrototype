@@ -8,4 +8,5 @@
 
 // Importamos todas las librerias de Obj-c necesarias
 #import "AFNetworking.h"
-#import "UIScrollView+TwitterCover.h"
+#import "UIImageView+LBBlurredImage.h"
+#import "UIImage+ImageEffects.h"

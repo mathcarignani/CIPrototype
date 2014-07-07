@@ -23,6 +23,10 @@
 		C7ACF31E1968537200EB74D5 /* Posts2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF31D1968537200EB74D5 /* Posts2ViewController.swift */; };
 		C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3221968590600EB74D5 /* RestApiHelper.swift */; };
 		C7ACF3251968673900EB74D5 /* PostsEntireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3241968673900EB74D5 /* PostsEntireViewController.swift */; };
+		C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */; };
+		C7F851C01969F405002B38FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BF1969F405002B38FF /* MainViewController.swift */; };
+		C7F851C21969F58F002B38FF /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F851C11969F58F002B38FF /* CameraPreviewView.swift */; };
+		C7F851C41969F639002B38FF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F851C31969F639002B38FF /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,11 @@
 		C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CiudadInvisible-Bridging-Header.h"; sourceTree = "<group>"; };
 		C7ACF3221968590600EB74D5 /* RestApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestApiHelper.swift; path = model/RestApiHelper.swift; sourceTree = "<group>"; };
 		C7ACF3241968673900EB74D5 /* PostsEntireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsEntireViewController.swift; path = controllers/PostsEntireViewController.swift; sourceTree = "<group>"; };
+		C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		C7F851BF1969F405002B38FF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = controllers/MainViewController.swift; sourceTree = "<group>"; };
+		C7F851C11969F58F002B38FF /* CameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraPreviewView.swift; path = views/CameraPreviewView.swift; sourceTree = "<group>"; };
+		C7F851C31969F639002B38FF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F851C41969F639002B38FF /* AVFoundation.framework in Frameworks */,
 				5A189F2046C6419EB0E03A8A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +92,8 @@
 		C707AC71195E127E00E43F53 = {
 			isa = PBXGroup;
 			children = (
+				C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */,
+				C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */,
 				C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */,
 				C707AC7C195E127F00E43F53 /* CiudadInvisible */,
 				C707AC8F195E127F00E43F53 /* CiudadInvisibleTests */,
@@ -146,6 +158,7 @@
 				C718C1F4195EF79100389FFD /* PostsViewController.swift */,
 				C7ACF31D1968537200EB74D5 /* Posts2ViewController.swift */,
 				C7ACF3241968673900EB74D5 /* PostsEntireViewController.swift */,
+				C7F851BF1969F405002B38FF /* MainViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +188,7 @@
 			children = (
 				C718C201195F0C9300389FFD /* PostView.swift */,
 				C7072B2C19631FAB00F8A244 /* DetailPostView.swift */,
+				C7F851C11969F58F002B38FF /* CameraPreviewView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -190,6 +204,7 @@
 		CE1364FB7F454404B0F45ADE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7F851C31969F639002B38FF /* AVFoundation.framework */,
 				6CCE688C1A5348818DD0B369 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -334,11 +349,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */,
 				C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */,
+				C7F851C21969F58F002B38FF /* CameraPreviewView.swift in Sources */,
 				C7ACF31E1968537200EB74D5 /* Posts2ViewController.swift in Sources */,
 				C718C1F5195EF79100389FFD /* PostsViewController.swift in Sources */,
 				C718C202195F0C9300389FFD /* PostView.swift in Sources */,
 				C707AC80195E127F00E43F53 /* AppDelegate.swift in Sources */,
+				C7F851C01969F405002B38FF /* MainViewController.swift in Sources */,
 				C7072B2D19631FAB00F8A244 /* DetailPostView.swift in Sources */,
 				C7ACF3251968673900EB74D5 /* PostsEntireViewController.swift in Sources */,
 			);
@@ -408,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -444,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
