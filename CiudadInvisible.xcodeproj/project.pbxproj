@@ -20,7 +20,6 @@
 		C718C1FB195EF91F00389FFD /* bg1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C718C1FA195EF91F00389FFD /* bg1@2x.jpg */; };
 		C718C1FD195EFE7000389FFD /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C718C1FC195EFE7000389FFD /* camera@2x.png */; };
 		C718C202195F0C9300389FFD /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718C201195F0C9300389FFD /* PostView.swift */; };
-		C7ACF31E1968537200EB74D5 /* Posts2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF31D1968537200EB74D5 /* Posts2ViewController.swift */; };
 		C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3221968590600EB74D5 /* RestApiHelper.swift */; };
 		C7ACF3251968673900EB74D5 /* PostsEntireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3241968673900EB74D5 /* PostsEntireViewController.swift */; };
 		C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */; };
@@ -58,7 +57,6 @@
 		C718C1FA195EF91F00389FFD /* bg1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg1@2x.jpg"; sourceTree = "<group>"; };
 		C718C1FC195EFE7000389FFD /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
 		C718C201195F0C9300389FFD /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostView.swift; path = views/PostView.swift; sourceTree = "<group>"; };
-		C7ACF31D1968537200EB74D5 /* Posts2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Posts2ViewController.swift; path = controllers/Posts2ViewController.swift; sourceTree = "<group>"; };
 		C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CiudadInvisible-Bridging-Header.h"; sourceTree = "<group>"; };
 		C7ACF3221968590600EB74D5 /* RestApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestApiHelper.swift; path = model/RestApiHelper.swift; sourceTree = "<group>"; };
 		C7ACF3241968673900EB74D5 /* PostsEntireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsEntireViewController.swift; path = controllers/PostsEntireViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				C718C1F4195EF79100389FFD /* PostsViewController.swift */,
-				C7ACF31D1968537200EB74D5 /* Posts2ViewController.swift */,
 				C7ACF3241968673900EB74D5 /* PostsEntireViewController.swift */,
 				C7F851BF1969F405002B38FF /* MainViewController.swift */,
 			);
@@ -352,7 +349,6 @@
 				C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */,
 				C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */,
 				C7F851C21969F58F002B38FF /* CameraPreviewView.swift in Sources */,
-				C7ACF31E1968537200EB74D5 /* Posts2ViewController.swift in Sources */,
 				C718C1F5195EF79100389FFD /* PostsViewController.swift in Sources */,
 				C718C202195F0C9300389FFD /* PostView.swift in Sources */,
 				C707AC80195E127F00E43F53 /* AppDelegate.swift in Sources */,

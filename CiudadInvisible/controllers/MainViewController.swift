@@ -11,7 +11,7 @@ import AVFoundation
 
 class MainViewController: UIViewController {
 
-    @IBOutlet var cameraPreview : CameraPreviewView
+    @IBOutlet var cameraPreviewView : CameraPreviewView
 
     var session : AVCaptureSession = AVCaptureSession()
     /*var videoDeviceInput : AVCaptureDeviceInput = AVCaptureDeviceInput()
@@ -36,27 +36,43 @@ class MainViewController: UIViewController {
   
     func configurarCamara() {
         
-        session = AVCaptureSession()
+        session.sessionPreset = AVCaptureSessionPreset352x288
         
-        // Configuro la vista previa
-        cameraPreview.setSession(session)
+        session.beginConfiguration()
+        session.commitConfiguration()
         
-        // Obtengo el dispositivo
-        let devices : NSArray = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
-        let captureDevice : AVCaptureDevice = devices.firstObject() as AVCaptureDevice
-        
-        let videoDevice : AVCaptureDeviceInput = AVCaptureDeviceInput.deviceInputWithDevice(captureDevice, error: nil) as AVCaptureDeviceInput
-    
-        if (session.canAddInput(videoDevice)) {
-            
-            session.addInput(videoDevice)
-            //videoDeviceInput = videoDevice
-            
+        var input : AVCaptureDeviceInput! = nil
+        var err : NSError?
+        var devices : AVCaptureDevice[] = AVCaptureDevice.devices() as AVCaptureDevice[]
+        for device in devices {
+            if device.hasMediaType(AVMediaTypeVideo) && device.supportsAVCaptureSessionPreset(AVCaptureSessionPreset352x288) {
+                
+                input = AVCaptureDeviceInput.deviceInputWithDevice(device as AVCaptureDevice, error: &err) as AVCaptureDeviceInput
+                
+                if session.canAddInput(input) {
+                    session.addInput(input)
+                    break
+                }
+            }
         }
+        
+        var settings = [kCVPixelBufferPixelFormatTypeKey:kCVPixelFormatType_32BGRA]
+        
+        var output = AVCaptureVideoDataOutput()
+        output.videoSettings = settings
+        output.alwaysDiscardsLateVideoFrames = true
+        
+        if session.canAddOutput(output) {
+            session.addOutput(output)
+        }
+        
+        var captureLayer = AVCaptureVideoPreviewLayer(session: session)
+        
+        cameraPreviewView.setSession(session)
     }
     
     func arrancarCamara() {
-        session.startRunning()
+        self.session.startRunning()
     }
 
 }

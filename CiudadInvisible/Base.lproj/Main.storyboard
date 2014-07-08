@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iYj-3d-kjR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LbR-IL-P5j">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
@@ -7,7 +7,7 @@
         <!--Posts View Controller-->
         <scene sceneID="uz8-x7-cRD">
             <objects>
-                <viewController id="kNS-44-ipf" customClass="PostsViewController" customModule="CiudadInvisible" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kNS-44-ipf" customClass="PostsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LCb-Id-Eb9"/>
                         <viewControllerLayoutGuide type="bottom" id="pHq-zN-ZY9"/>
@@ -69,7 +69,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kNS-44-ipf" kind="presentation" id="UgM-oo-ID9"/>
+                                    <segue destination="kNS-44-ipf" kind="push" id="UgM-oo-ID9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGV-By-kFQ">
@@ -80,7 +80,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="1MV-6M-O2V" kind="presentation" id="DMm-mQ-40I"/>
+                                    <segue destination="1MV-6M-O2V" kind="push" id="DMm-mQ-40I"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -96,7 +96,7 @@
         <!--Posts Entire View Controller-->
         <scene sceneID="O7E-gu-eGO">
             <objects>
-                <viewController id="1MV-6M-O2V" customClass="PostsEntireViewController" customModule="CiudadInvisible" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1MV-6M-O2V" customClass="PostsEntireViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Wc-Yr-bmI"/>
                         <viewControllerLayoutGuide type="bottom" id="9JL-QU-0X7"/>
@@ -110,18 +110,21 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AporteCell" textLabel="F8g-wR-jwW" detailTextLabel="S1u-Py-3k5" rowHeight="141" style="IBUITableViewCellStyleSubtitle" id="beG-1D-aPS">
-                                        <rect key="frame" x="0.0" y="262" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="141"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="beG-1D-aPS" id="dfu-UD-wkY">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F8g-wR-jwW">
+                                                    <rect key="frame" x="15" y="53" width="31" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S1u-Py-3k5">
+                                                    <rect key="frame" x="15" y="73" width="40" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -150,89 +153,47 @@
             <point key="canvasLocation" x="334" y="1012"/>
         </scene>
         <!--Main View Controller-->
-        <scene sceneID="DzY-rt-XPw">
+        <scene sceneID="T8R-lk-9rc">
             <objects>
-                <viewController id="iYj-3d-kjR" customClass="MainViewController" customModule="CiudadInvisible" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LbR-IL-P5j" customClass="MainViewController" customModule="CiudadInvisible" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8A2-eL-tCe"/>
-                        <viewControllerLayoutGuide type="bottom" id="Eke-Rd-3mK"/>
+                        <viewControllerLayoutGuide type="top" id="HRc-o2-DAK"/>
+                        <viewControllerLayoutGuide type="bottom" id="864-GN-gxK"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nbQ-LP-2KA">
+                    <view key="view" contentMode="scaleToFill" id="mGn-l3-hky">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1YY-LH-z0G" customClass="CameraPreviewView" customModule="CiudadInvisible" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="253"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3L2-vv-puD">
-                                <rect key="frame" x="137" y="337" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8Q-Wz-XxF">
+                                <rect key="frame" x="119" y="378" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="euH-bm-iKG" customClass="CameraPreviewView" customModule="CiudadInvisible" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="253"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="cameraPreview" destination="1YY-LH-z0G" id="QDO-gg-dhJ"/>
+                        <outlet property="cameraPreviewView" destination="euH-bm-iKG" id="kc7-eZ-NLd"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UlM-fi-7hi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VtR-d3-FCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-227" y="1415"/>
-        </scene>
-        <!--Posts2 View Controller-->
-        <scene sceneID="pv2-IE-Xfu">
-            <objects>
-                <viewController id="7dn-El-TCA" customClass="Posts2ViewController" customModule="CiudadInvisible" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jd0-lk-gFl"/>
-                        <viewControllerLayoutGuide type="bottom" id="eNE-VW-gqZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Waq-er-kUW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-general.png" translatesAutoresizingMaskIntoConstraints="NO" id="osU-vP-YsG">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9q8-47-X46">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.44705882349999998" green="0.67843137249999996" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXo-7D-vRx">
-                                <rect key="frame" x="127" y="486" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="1Tb-Nn-Q0L"/>
-                                    <constraint firstAttribute="width" constant="70" id="WBj-hf-eYA"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="camera.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="nXo-7D-vRx" firstAttribute="leading" secondItem="Waq-er-kUW" secondAttribute="leading" constant="127" id="5eE-c3-v3t"/>
-                            <constraint firstItem="eNE-VW-gqZ" firstAttribute="top" secondItem="nXo-7D-vRx" secondAttribute="bottom" constant="6" id="enW-ct-nB1"/>
-                        </constraints>
-                    </view>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="scrollView" destination="9q8-47-X46" id="oXa-UV-6e4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8U8-iU-dKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="381" y="1621"/>
+            <point key="canvasLocation" x="-128" y="1695"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg-general.png" width="320" height="568"/>
         <image name="camera.png" width="70" height="70"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
 </document>
