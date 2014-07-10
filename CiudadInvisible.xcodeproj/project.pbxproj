@@ -22,9 +22,12 @@
 		C718C202195F0C9300389FFD /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718C201195F0C9300389FFD /* PostView.swift */; };
 		C79D38BF196ED0AE00C8A4C8 /* eliminarImagen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C79D38BD196ED0AE00C8A4C8 /* eliminarImagen@2x.png */; };
 		C79D38C0196ED0AE00C8A4C8 /* camaraImagen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C79D38BE196ED0AE00C8A4C8 /* camaraImagen@2x.png */; };
+		C79D38ED196F257F00C8A4C8 /* PostsSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */; };
+		C79D38EF196F270200C8A4C8 /* PostSlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D38EE196F270200C8A4C8 /* PostSlideCell.swift */; };
+		C79D38F1196F292800C8A4C8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D38F0196F292800C8A4C8 /* Post.swift */; };
 		C7A71A07196EC7C1008C82F4 /* PublicarMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A71A06196EC7C1008C82F4 /* PublicarMediaViewController.swift */; };
 		C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3221968590600EB74D5 /* RestApiHelper.swift */; };
-		C7ACF3251968673900EB74D5 /* PostsEntireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3241968673900EB74D5 /* PostsEntireViewController.swift */; };
+		C7ACF3251968673900EB74D5 /* PostsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */; };
 		C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */; };
 		C7F851C01969F405002B38FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BF1969F405002B38FF /* MainViewController.swift */; };
 		C7F851C21969F58F002B38FF /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F851C11969F58F002B38FF /* CameraPreviewView.swift */; };
@@ -62,10 +65,13 @@
 		C718C201195F0C9300389FFD /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostView.swift; path = views/PostView.swift; sourceTree = "<group>"; };
 		C79D38BD196ED0AE00C8A4C8 /* eliminarImagen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eliminarImagen@2x.png"; sourceTree = "<group>"; };
 		C79D38BE196ED0AE00C8A4C8 /* camaraImagen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camaraImagen@2x.png"; sourceTree = "<group>"; };
+		C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsSlideViewController.swift; path = controllers/PostsSlideViewController.swift; sourceTree = "<group>"; };
+		C79D38EE196F270200C8A4C8 /* PostSlideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostSlideCell.swift; path = views/PostSlideCell.swift; sourceTree = "<group>"; };
+		C79D38F0196F292800C8A4C8 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = model/Post.swift; sourceTree = "<group>"; };
 		C7A71A06196EC7C1008C82F4 /* PublicarMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicarMediaViewController.swift; path = controllers/PublicarMediaViewController.swift; sourceTree = "<group>"; };
 		C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CiudadInvisible-Bridging-Header.h"; sourceTree = "<group>"; };
 		C7ACF3221968590600EB74D5 /* RestApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestApiHelper.swift; path = model/RestApiHelper.swift; sourceTree = "<group>"; };
-		C7ACF3241968673900EB74D5 /* PostsEntireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsEntireViewController.swift; path = controllers/PostsEntireViewController.swift; sourceTree = "<group>"; };
+		C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsDetailViewController.swift; path = controllers/PostsDetailViewController.swift; sourceTree = "<group>"; };
 		C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		C7F851BF1969F405002B38FF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = controllers/MainViewController.swift; sourceTree = "<group>"; };
@@ -96,13 +102,13 @@
 		C707AC71195E127E00E43F53 = {
 			isa = PBXGroup;
 			children = (
-				C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */,
-				C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */,
-				C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */,
 				C707AC7C195E127F00E43F53 /* CiudadInvisible */,
 				C707AC8F195E127F00E43F53 /* CiudadInvisibleTests */,
 				C707AC7B195E127F00E43F53 /* Products */,
 				217DE757A0F64215828105CE /* Pods.xcconfig */,
+				C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */,
+				C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */,
+				C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */,
 				CE1364FB7F454404B0F45ADE /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -160,9 +166,10 @@
 			isa = PBXGroup;
 			children = (
 				C718C1F4195EF79100389FFD /* PostsViewController.swift */,
-				C7ACF3241968673900EB74D5 /* PostsEntireViewController.swift */,
 				C7F851BF1969F405002B38FF /* MainViewController.swift */,
 				C7A71A06196EC7C1008C82F4 /* PublicarMediaViewController.swift */,
+				C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */,
+				C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -195,6 +202,7 @@
 				C718C201195F0C9300389FFD /* PostView.swift */,
 				C7072B2C19631FAB00F8A244 /* DetailPostView.swift */,
 				C7F851C11969F58F002B38FF /* CameraPreviewView.swift */,
+				C79D38EE196F270200C8A4C8 /* PostSlideCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -203,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				C7ACF3221968590600EB74D5 /* RestApiHelper.swift */,
+				C79D38F0196F292800C8A4C8 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -358,15 +367,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */,
+				C79D38EF196F270200C8A4C8 /* PostSlideCell.swift in Sources */,
 				C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */,
 				C7F851C21969F58F002B38FF /* CameraPreviewView.swift in Sources */,
+				C79D38F1196F292800C8A4C8 /* Post.swift in Sources */,
 				C718C1F5195EF79100389FFD /* PostsViewController.swift in Sources */,
 				C718C202195F0C9300389FFD /* PostView.swift in Sources */,
 				C7A71A07196EC7C1008C82F4 /* PublicarMediaViewController.swift in Sources */,
 				C707AC80195E127F00E43F53 /* AppDelegate.swift in Sources */,
+				C79D38ED196F257F00C8A4C8 /* PostsSlideViewController.swift in Sources */,
 				C7F851C01969F405002B38FF /* MainViewController.swift in Sources */,
 				C7072B2D19631FAB00F8A244 /* DetailPostView.swift in Sources */,
-				C7ACF3251968673900EB74D5 /* PostsEntireViewController.swift in Sources */,
+				C7ACF3251968673900EB74D5 /* PostsDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

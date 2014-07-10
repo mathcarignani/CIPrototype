@@ -177,7 +177,7 @@ class PublicarMediaViewController: UIViewController, UINavigationControllerDeleg
         let punto = gesture.locationInView(self.previewsChica)
         if (CGRectContainsPoint(self.previewChica1.frame, punto)) {
             // Toque en imagen 1
-            if self.imagenes.count < 1 {
+            if self.imagenes.count() < 1 {
                 self.abrirCamara()
             } else {
                 // Setea la imagen como actual
@@ -187,7 +187,7 @@ class PublicarMediaViewController: UIViewController, UINavigationControllerDeleg
             
         } else if (CGRectContainsPoint(self.previewChica2.frame, punto)) {
             // Toque en imagen 2
-            if self.imagenes.count < 2 {
+            if self.imagenes.count() < 2 {
                 self.abrirCamara()
             } else {
                 // Setea la imagen como actual
@@ -197,7 +197,7 @@ class PublicarMediaViewController: UIViewController, UINavigationControllerDeleg
             
         } else if (CGRectContainsPoint(self.previewChica3.frame, punto)) {
             // Toque en imagen 3
-            if self.imagenes.count < 3 {
+            if self.imagenes.count() < 3 {
                 self.abrirCamara()
             } else {
                 // Setea la imagen como actual
@@ -207,7 +207,7 @@ class PublicarMediaViewController: UIViewController, UINavigationControllerDeleg
             
         } else if (CGRectContainsPoint(self.previewChica4.frame, punto)) {
             // Toque en imagen 4
-            if self.imagenes.count < 4 {
+            if self.imagenes.count() < 4 {
                 self.abrirCamara()
             } else {
                 // Setea la imagen como actual
@@ -217,7 +217,7 @@ class PublicarMediaViewController: UIViewController, UINavigationControllerDeleg
             
         } else if (CGRectContainsPoint(self.previewChica5.frame, punto)) {
             // Toque en imagen 5
-            if self.imagenes.count < 5 {
+            if self.imagenes.count() < 5 {
                 self.abrirCamara()
             } else {
                 // Setea la imagen como actual

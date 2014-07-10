@@ -8,12 +8,15 @@
 
 import UIKit
 
-class PostsEntireViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
+class PostsDetailViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
+    
+    var post : Post! = nil
     
     var portadaPostView : PostView = PostView()
     var backgroundImage = UIImageView()
     
     @IBOutlet var tableView : UITableView
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,24 +39,30 @@ class PostsEntireViewController: UIViewController , UITableViewDataSource, UITab
         
         // Agrego la imagen en el fondo del header
         backgroundImage.frame = self.view.frame
-        backgroundImage.image = UIImage(named: "bg1.jpg")
+        backgroundImage.image = post.imagen
         self.view.insertSubview(backgroundImage, belowSubview: tableView)
         
         // Configuro el header
         var headerView : UIView = UIView(frame: view.frame)
         headerView.backgroundColor = UIColor.clearColor()
         
-        var postName = UILabel(frame: CGRect(x: 20, y: view.frame.height-100, width: (view.frame.width/2)-30, height: 80))
-        postName.text = "El cierre"
+        var postName = UILabel(frame: CGRect(x: 20, y: view.frame.height-100, width: view.frame.width - 20, height: 80))
+        postName.text = post.titulo
         postName.font = UIFont(name: "Helvetica", size: 35)
         postName.textColor = UIColor.whiteColor()
-        
         headerView.addSubview(postName)
+        
+        var backButton = UIButton(frame: CGRect(x: 10, y: 10, width: 80, height: 80))
+        backButton.titleLabel.text = "< volver"
+        backButton.titleLabel.font = UIFont(name: "Helvetica", size: 35)
+        backButton.titleLabel.textColor = UIColor.whiteColor()
+        backButton.addTarget(self, action: Selector("volver:"), forControlEvents: UIControlEvents.TouchUpInside)
+        headerView.addSubview(backButton)
         
         self.tableView.tableHeaderView = headerView
         
     }
-    
+
     func tableView(tableView: UITableView!, numberOfRowsInSection section:    Int) -> Int {
         return 10
     }
@@ -95,4 +104,8 @@ class PostsEntireViewController: UIViewController , UITableViewDataSource, UITab
         
     }
     
+    // MARK: Actions
+    func volver(sender: AnyObject) {
+        self.dismissModalViewControllerAnimated(true)
+    }
 }

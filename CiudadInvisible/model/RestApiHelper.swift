@@ -28,6 +28,8 @@ class RestApiHelper: NSObject {
     
     // MARK: Private methods
     func getPosts() {
+        
+        /*
         manager.GET("http://ciudadinvisible.herokuapp.com/posts.json",
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
@@ -36,6 +38,14 @@ class RestApiHelper: NSObject {
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 println("Error")
             })
+        */
     }
     
+    func getPostsSlider() -> NSArray {
+        let post1 = Post(titulo: "El cierre", distancia: "400 m", imagen: UIImage(named: "bg1.jpg"))
+        let post2 = Post(titulo: "La marilyn", distancia: "500 m", imagen: UIImage(named: "bg2.jpg"))
+        let post3 = Post(titulo: "La plaza", distancia: "700 m", imagen: UIImage(named: "bg3.jpg"))
+        
+        return [post1, post2, post3]
+    }
 }
