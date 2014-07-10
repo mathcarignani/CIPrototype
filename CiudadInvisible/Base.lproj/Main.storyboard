@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LbR-IL-P5j">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Posts View Controller-->
         <scene sceneID="uz8-x7-cRD">
             <objects>
-                <viewController id="kNS-44-ipf" customClass="PostsViewController" sceneMemberID="viewController">
+                <viewController id="kNS-44-ipf" customClass="PostsViewController" customModule="CiudadInvisible" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LCb-Id-Eb9"/>
                         <viewControllerLayoutGuide type="bottom" id="pHq-zN-ZY9"/>
@@ -36,10 +37,11 @@
                             <constraint firstItem="e0c-Go-Oc4" firstAttribute="leading" secondItem="o45-gS-Ym9" secondAttribute="leading" constant="127" id="Z8T-eo-MVq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="bOS-eL-mJ1"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="cameraButton" destination="e0c-Go-Oc4" id="8XC-jk-blx"/>
+                        <outlet property="cameraButton" destination="e0c-Go-Oc4" id="Ubd-T8-dhU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29Q-fT-UTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,6 +88,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="gl4-zx-H3q"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
@@ -142,6 +145,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2rs-7D-6xN"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -165,14 +169,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8Q-Wz-XxF">
-                                <rect key="frame" x="119" y="378" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="119" y="378" width="58" height="30"/>
+                                <state key="normal" title="Explorar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Own-YB-xc8" kind="modal" id="Tpp-an-s27"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="euH-bm-iKG" customClass="CameraPreviewView" customModule="CiudadInvisible" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="253"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="429-t0-Zhh" appends="YES" id="IwF-6r-VKD"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -183,13 +194,131 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtR-d3-FCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="429-t0-Zhh">
+                    <connections>
+                        <segue destination="z1O-fm-PCb" kind="modal" animates="NO" id="C66-ef-9VU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-128" y="1695"/>
+            <point key="canvasLocation" x="-666" y="23"/>
+        </scene>
+        <!--Publicar Media View Controller-->
+        <scene sceneID="g4y-6U-SOM">
+            <objects>
+                <viewController id="z1O-fm-PCb" customClass="PublicarMediaViewController" customModule="CiudadInvisible" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sQl-0g-RLW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y9y-VG-VSi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="og1-61-Qae">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fpW-Tu-wHr">
+                                <rect key="frame" x="0.0" y="485" width="320" height="83"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camaraImagen.png" translatesAutoresizingMaskIntoConstraints="NO" id="RZ1-cG-RHK">
+                                        <rect key="frame" x="15" y="14" width="50" height="56"/>
+                                        <color key="backgroundColor" red="0.55676333109999998" green="0.55676333109999998" blue="0.55676333109999998" alpha="0.44" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camaraImagen.png" translatesAutoresizingMaskIntoConstraints="NO" id="M7L-GJ-g91">
+                                        <rect key="frame" x="75" y="14" width="50" height="56"/>
+                                        <color key="backgroundColor" red="0.55676333109999998" green="0.55676333109999998" blue="0.55676333109999998" alpha="0.44" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camaraImagen.png" translatesAutoresizingMaskIntoConstraints="NO" id="aSL-RS-NTR">
+                                        <rect key="frame" x="135" y="14" width="50" height="56"/>
+                                        <color key="backgroundColor" red="0.55676333109999998" green="0.55676333109999998" blue="0.55676333109999998" alpha="0.44" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camaraImagen.png" translatesAutoresizingMaskIntoConstraints="NO" id="wXQ-um-s7U">
+                                        <rect key="frame" x="193" y="14" width="50" height="56"/>
+                                        <color key="backgroundColor" red="0.55676333109999998" green="0.55676333109999998" blue="0.55676333109999998" alpha="0.44" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camaraImagen.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ti9-tC-7Q2">
+                                        <rect key="frame" x="251" y="14" width="50" height="56"/>
+                                        <color key="backgroundColor" red="0.55676333109999998" green="0.55676333109999998" blue="0.55676333109999998" alpha="0.44" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.55676333109537768" green="0.55676333109537768" blue="0.55676333109537768" alpha="0.44" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="3t8-iz-Uj3"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7MQ-OS-B0z">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wn-wI-gVq">
+                                        <rect key="frame" x="236" y="20" width="64" height="30"/>
+                                        <state key="normal" title="Siguiente">
+                                            <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="siguiente:" destination="z1O-fm-PCb" eventType="touchUpInside" id="c8J-1D-Dh3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bzv-GW-fnz">
+                                        <rect key="frame" x="20" y="20" width="61" height="30"/>
+                                        <state key="normal" title="Cancelar">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelar:" destination="z1O-fm-PCb" eventType="touchUpInside" id="6Et-gH-Lpo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.55676333109999998" green="0.55676333109999998" blue="0.55676333109999998" alpha="0.44" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="0bq-fh-D08"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XyO-cw-TMw">
+                                <rect key="frame" x="38" y="86" width="245" height="371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XyO-cw-TMw" secondAttribute="height" multiplier="35:53" id="a8P-pN-9LV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFO-sY-Eba">
+                                <rect key="frame" x="27" y="75" width="26" height="26"/>
+                                <state key="normal" image="eliminarImagen.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="eliminarActual:" destination="z1O-fm-PCb" eventType="touchUpInside" id="DlQ-kv-m1C"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7MQ-OS-B0z" firstAttribute="top" secondItem="sQl-0g-RLW" secondAttribute="bottom" constant="-20" id="7XR-VV-mJR"/>
+                            <constraint firstAttribute="centerX" secondItem="XyO-cw-TMw" secondAttribute="centerX" constant="-0.5" id="Zk9-Yu-CBf"/>
+                            <constraint firstItem="XyO-cw-TMw" firstAttribute="top" secondItem="7MQ-OS-B0z" secondAttribute="bottom" constant="25" id="i2q-wY-cfx"/>
+                            <constraint firstItem="XyO-cw-TMw" firstAttribute="leading" secondItem="UFO-sY-Eba" secondAttribute="trailing" constant="-15" id="ml4-3G-GIG"/>
+                            <constraint firstItem="Y9y-VG-VSi" firstAttribute="top" secondItem="fpW-Tu-wHr" secondAttribute="bottom" id="ola-gn-1Gc"/>
+                            <constraint firstItem="fpW-Tu-wHr" firstAttribute="top" secondItem="XyO-cw-TMw" secondAttribute="bottom" constant="28" id="pyT-UI-av1"/>
+                            <constraint firstItem="XyO-cw-TMw" firstAttribute="top" secondItem="UFO-sY-Eba" secondAttribute="bottom" constant="-15" id="r5U-JA-KJE"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="previewActual" destination="XyO-cw-TMw" id="3ak-bO-uMh"/>
+                        <outlet property="previewChica1" destination="RZ1-cG-RHK" id="yUm-jc-pCg"/>
+                        <outlet property="previewChica2" destination="M7L-GJ-g91" id="qmP-Xt-X7a"/>
+                        <outlet property="previewChica3" destination="aSL-RS-NTR" id="Dhw-5C-Zsg"/>
+                        <outlet property="previewChica4" destination="wXQ-um-s7U" id="pd1-fZ-hab"/>
+                        <outlet property="previewChica5" destination="Ti9-tC-7Q2" id="zRs-oh-BRj"/>
+                        <outlet property="previewsChica" destination="fpW-Tu-wHr" id="czF-7R-h14"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fBh-xD-T1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="-690"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg-general.png" width="320" height="568"/>
+        <image name="camaraImagen.png" width="56" height="56"/>
         <image name="camera.png" width="70" height="70"/>
+        <image name="eliminarImagen.png" width="26" height="26"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

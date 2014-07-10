@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.configurarCamara()
+        //self.configurarCamara()
         
     }
     
@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         
         //
-        self.arrancarCamara()
+        //self.arrancarCamara()
     }
   
     func configurarCamara() {
@@ -56,7 +56,7 @@ class MainViewController: UIViewController {
             }
         }
         
-        var settings = [kCVPixelBufferPixelFormatTypeKey:kCVPixelFormatType_32BGRA]
+        /*var settings = [kCVPixelBufferPixelFormatTypeKey:kCVPixelFormatType_32BGRA]
         
         var output = AVCaptureVideoDataOutput()
         output.videoSettings = settings
@@ -65,6 +65,7 @@ class MainViewController: UIViewController {
         if session.canAddOutput(output) {
             session.addOutput(output)
         }
+        */
         
         var captureLayer = AVCaptureVideoPreviewLayer(session: session)
         
