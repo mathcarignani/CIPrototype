@@ -28,6 +28,8 @@
 		C7A71A07196EC7C1008C82F4 /* PublicarMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A71A06196EC7C1008C82F4 /* PublicarMediaViewController.swift */; };
 		C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3221968590600EB74D5 /* RestApiHelper.swift */; };
 		C7ACF3251968673900EB74D5 /* PostsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */; };
+		C7B17423197174FD008F00E6 /* PublicarMapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B17422197174FD008F00E6 /* PublicarMapaViewController.swift */; };
+		C7B17425197175EC008F00E6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B17424197175EC008F00E6 /* MapKit.framework */; };
 		C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */; };
 		C7F851C01969F405002B38FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BF1969F405002B38FF /* MainViewController.swift */; };
 		C7F851C21969F58F002B38FF /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F851C11969F58F002B38FF /* CameraPreviewView.swift */; };
@@ -72,6 +74,8 @@
 		C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CiudadInvisible-Bridging-Header.h"; sourceTree = "<group>"; };
 		C7ACF3221968590600EB74D5 /* RestApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestApiHelper.swift; path = model/RestApiHelper.swift; sourceTree = "<group>"; };
 		C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsDetailViewController.swift; path = controllers/PostsDetailViewController.swift; sourceTree = "<group>"; };
+		C7B17422197174FD008F00E6 /* PublicarMapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicarMapaViewController.swift; path = controllers/PublicarMapaViewController.swift; sourceTree = "<group>"; };
+		C7B17424197175EC008F00E6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		C7F851BF1969F405002B38FF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = controllers/MainViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7B17425197175EC008F00E6 /* MapKit.framework in Frameworks */,
 				C7F851C41969F639002B38FF /* AVFoundation.framework in Frameworks */,
 				5A189F2046C6419EB0E03A8A /* libPods.a in Frameworks */,
 			);
@@ -170,6 +175,7 @@
 				C7A71A06196EC7C1008C82F4 /* PublicarMediaViewController.swift */,
 				C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */,
 				C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */,
+				C7B17422197174FD008F00E6 /* PublicarMapaViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -219,6 +225,7 @@
 		CE1364FB7F454404B0F45ADE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7B17424197175EC008F00E6 /* MapKit.framework */,
 				C7F851C31969F639002B38FF /* AVFoundation.framework */,
 				6CCE688C1A5348818DD0B369 /* libPods.a */,
 			);
@@ -376,6 +383,7 @@
 				C7A71A07196EC7C1008C82F4 /* PublicarMediaViewController.swift in Sources */,
 				C707AC80195E127F00E43F53 /* AppDelegate.swift in Sources */,
 				C79D38ED196F257F00C8A4C8 /* PostsSlideViewController.swift in Sources */,
+				C7B17423197174FD008F00E6 /* PublicarMapaViewController.swift in Sources */,
 				C7F851C01969F405002B38FF /* MainViewController.swift in Sources */,
 				C7072B2D19631FAB00F8A244 /* DetailPostView.swift in Sources */,
 				C7ACF3251968673900EB74D5 /* PostsDetailViewController.swift in Sources */,
