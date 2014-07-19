@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 CiudadInvisible. All rights reserved.
 //
 
+import MapKit
+
 class RestApiHelper: NSObject {
 
     let manager = AFHTTPRequestOperationManager()
@@ -42,10 +44,16 @@ class RestApiHelper: NSObject {
     }
     
     func getPostsSlider() -> NSArray {
-        let post1 = Post(titulo: "El cierre", distancia: "400 m", imagen: UIImage(named: "bg1.jpg"))
-        let post2 = Post(titulo: "La marilyn", distancia: "500 m", imagen: UIImage(named: "bg2.jpg"))
-        let post3 = Post(titulo: "La plaza", distancia: "700 m", imagen: UIImage(named: "bg3.jpg"))
         
-        return [post1, post2, post3]
+        // PRUEBA
+        let coordenada = CLLocationCoordinate2D(latitude: -34.9087458, longitude: -56.1614022137041)
+        
+        let post1 = Post(titulo: "El cierre", distancia: "400 m", imagen: UIImage(named: "bg1.jpg"), coordenada: coordenada)
+        let post2 = Post(titulo: "La marilyn", distancia: "500 m", imagen: UIImage(named: "bg2.jpg"), coordenada: coordenada)
+        let post3 = Post(titulo: "La plaza", distancia: "700 m", imagen: UIImage(named: "bg3.jpg"), coordenada: coordenada)
+        let post4 = Post(titulo: "Melburne", distancia: "10 km", imagen: UIImage(named: "bg4.jpg"), coordenada: coordenada)
+        
+        return [post1, post2, post3, post4]
+
     }
 }

@@ -37,6 +37,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
         cell.titulo.text = post.titulo
         cell.distancia.text = post.distancia
         cell.imagen.image = post.imagen
+        
         // Sombreado
         cell.fondo.layer.shadowColor = UIColor.blackColor().CGColor;
         cell.fondo.layer.shadowOffset = CGSizeMake(2.5, 2.5);

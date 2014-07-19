@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class PostsDetailViewController: UIViewController , UITableViewDataSource, UITableViewDelegate {
     
@@ -69,10 +70,24 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "AporteCell")
         
-        //cell.text = "Aporte #\(indexPath.row)"
-        cell.detailTextLabel.text = "Comentario #\(indexPath.row)"
+        var cell : UITableViewCell! = nil
+        
+        
+        if (indexPath.row == 2) {
+            cell = tableView.dequeueReusableCellWithIdentifier("PostMapCell", forIndexPath: indexPath) as PostDetailMapCell
+            // Configuracion del mapa
+            var mapa : MKMapView = (cell as PostDetailMapCell).mapa
+            self.centerMap(mapa, coordinate: post.coordenada, distance: 1000)
+            self.addAnotationToMap(mapa, coordinate: post.coordenada, title: post.titulo)
+            
+        } else {
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "AporteCell")
+            //cell.text = "Aporte #\(indexPath.row)"
+            cell.detailTextLabel.text = "Comentario #\(indexPath.row)"
+        }
+
+        
         
         return cell
     }
@@ -108,4 +123,20 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     func volver(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    // MARK: Aux
+    func centerMap(map: MKMapView, coordinate: CLLocationCoordinate2D, distance: CLLocationDistance) {
+        // Crea la region y centra el mapa
+        let region = MKCoordinateRegionMakeWithDistance(coordinate, distance, distance)
+        map.setRegion(region, animated: true)
+    }
+    
+    func addAnotationToMap(map: MKMapView, coordinate: CLLocationCoordinate2D, title: NSString) {
+        // Agrega el pin
+        var annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        annotation.title = title
+        map.addAnnotation(annotation)
+    }
+    
 }
