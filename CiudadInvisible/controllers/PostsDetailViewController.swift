@@ -60,6 +60,11 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         backButton.addTarget(self, action: Selector("volver:"), forControlEvents: UIControlEvents.TouchUpInside)
         headerView.addSubview(backButton)
         
+        // Flecha
+        var flechaView = UIImageView(image: HelperForms.imageOfFlecha)
+        flechaView.center = CGPointMake(headerView.center.x, headerView.frame.size.height - 20)
+        headerView.addSubview(flechaView)
+        
         self.tableView.tableHeaderView = headerView
         
     }
