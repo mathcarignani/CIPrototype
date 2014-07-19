@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // Prueba para obtener los posts
-        RestApiHelper.sharedInstance().getPosts()
+        //RestApiHelper.sharedInstance().getPosts()
+        //RestApiHelper.sharedInstance().createPost()
+        // PRUEBA
         
         return true
     }

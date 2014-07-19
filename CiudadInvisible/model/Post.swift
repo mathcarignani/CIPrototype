@@ -16,6 +16,17 @@ class Post: NSObject {
     var imagen : UIImage! = nil
     var coordenada : CLLocationCoordinate2D! = nil
     
+    var id : Int! = nil
+    var title : String! = nil
+    var author : String! = nil
+    var descriptionText : String! = nil
+    var image : String! = nil
+    var date : NSDate! = nil
+    var location : String! = nil
+    var category : String! = nil
+    var url : String! = nil
+    
+    
     init() {
         super.init()
     }

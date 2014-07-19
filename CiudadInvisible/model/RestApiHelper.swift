@@ -11,6 +11,7 @@ import MapKit
 class RestApiHelper: NSObject {
 
     let manager = AFHTTPRequestOperationManager()
+    let urlApi = "http://ciudadinvisible.herokuapp.com/"
     
     // MARK: Singleton
     class func sharedInstance() -> RestApiHelper! {
@@ -55,5 +56,20 @@ class RestApiHelper: NSObject {
         
         return [post1, post2, post3, post4]
 
+    }
+    
+    func createPost() {
+        
+        var parameters = ["post":["title":"Post desde ios", "author":"Mathias", "description":"Vaaaaa"]]
+        
+        println(parameters)
+        
+        manager.POST("\(urlApi)/posts.json", parameters: parameters, success:
+            { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                println("Exito => " + responseObject.description)
+                
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error => " + error.localizedDescription)
+            })
     }
 }
