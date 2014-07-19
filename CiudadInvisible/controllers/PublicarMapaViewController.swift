@@ -30,7 +30,7 @@ class PublicarMapaViewController: UIViewController, MKMapViewDelegate {
     }
     
     @IBAction func volver(sender : AnyObject) {
-        self.dismissModalViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: Auxiliares

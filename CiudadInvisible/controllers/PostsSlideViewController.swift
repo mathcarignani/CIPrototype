@@ -25,7 +25,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
     // MARK: UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int
     {
-        return self.posts.count()
+        return self.posts.count
     }
     
     func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell!

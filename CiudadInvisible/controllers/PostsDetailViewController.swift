@@ -71,7 +71,7 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "AporteCell")
         
-        cell.text = "Aporte #\(indexPath.row)"
+        //cell.text = "Aporte #\(indexPath.row)"
         cell.detailTextLabel.text = "Comentario #\(indexPath.row)"
         
         return cell
@@ -106,6 +106,6 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     
     // MARK: Actions
     func volver(sender: AnyObject) {
-        self.dismissModalViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

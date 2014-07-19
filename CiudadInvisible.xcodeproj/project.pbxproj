@@ -508,7 +508,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos7.1;
+				SDKROOT = iphoneos7.0;
 				SWIFT_OBJC_BRIDGING_HEADER = "CiudadInvisible-Bridging-Header.h";
 			};
 			name = Debug;
@@ -524,7 +524,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos7.1;
+				SDKROOT = iphoneos7.0;
 				SWIFT_OBJC_BRIDGING_HEADER = "CiudadInvisible-Bridging-Header.h";
 			};
 			name = Release;
