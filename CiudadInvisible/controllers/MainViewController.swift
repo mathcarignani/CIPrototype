@@ -43,7 +43,7 @@ class MainViewController: UIViewController {
         
         var input : AVCaptureDeviceInput! = nil
         var err : NSError?
-        var devices : AVCaptureDevice[] = AVCaptureDevice.devices() as AVCaptureDevice[]
+        var devices : [AVCaptureDevice] = AVCaptureDevice.devices() as [AVCaptureDevice]
         for device in devices {
             if device.hasMediaType(AVMediaTypeVideo) && device.supportsAVCaptureSessionPreset(AVCaptureSessionPreset352x288) {
                 

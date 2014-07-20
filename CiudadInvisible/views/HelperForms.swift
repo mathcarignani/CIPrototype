@@ -18,7 +18,7 @@ class HelperForms : NSObject {
 
     struct Cache {
         static var imageOfFlecha: UIImage?
-        static var flechaTargets: AnyObject[]?
+        static var flechaTargets: [AnyObject]?
     }
 
     //// Initialization
@@ -64,7 +64,7 @@ class HelperForms : NSObject {
 
     //// Customization Infrastructure
 
-    @IBOutlet var flechaTargets: AnyObject[] {
+    @IBOutlet var flechaTargets: [AnyObject] {
         get { return Cache.flechaTargets }
         set {
             Cache.flechaTargets = newValue
