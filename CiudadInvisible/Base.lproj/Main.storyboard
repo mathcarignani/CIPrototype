@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LbR-IL-P5j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="qjn-fo-jl8">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29Q-fT-UTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="334" y="211"/>
+            <point key="canvasLocation" x="126" y="2654"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cKl-Gb-hMW">
@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4I-NE-Nlu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144" y="706"/>
+            <point key="canvasLocation" x="-328" y="2654"/>
         </scene>
         <!--Posts Slide View Controller-->
         <scene sceneID="cpa-ul-25p">
@@ -233,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMf-5I-hub" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144" y="1382"/>
+            <point key="canvasLocation" x="-100" y="370"/>
         </scene>
         <!--Posts Detail View Controller-->
         <scene sceneID="O7E-gu-eGO">
@@ -311,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8m-mR-6hu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="351" y="1426"/>
+            <point key="canvasLocation" x="395" y="414"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="T8R-lk-9rc">
@@ -330,9 +330,6 @@
                                 <state key="normal" title="Explorar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="aod-Jc-Efq" kind="modal" id="aDJ-Tf-VtV"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="euH-bm-iKG" customClass="CameraPreviewView" customModule="CiudadInvisible" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="253"/>
@@ -354,13 +351,75 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtR-d3-FCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="429-t0-Zhh">
-                    <connections>
-                        <segue destination="z1O-fm-PCb" kind="modal" animates="NO" id="C66-ef-9VU"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="429-t0-Zhh"/>
             </objects>
-            <point key="canvasLocation" x="-666" y="23"/>
+            <point key="canvasLocation" x="-766" y="2654"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="GdI-PZ-nTB">
+            <objects>
+                <viewController id="qjn-fo-jl8" customClass="HomeViewController" customModule="CiudadInvisible" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3JV-ks-XBi"/>
+                        <viewControllerLayoutGuide type="bottom" id="82M-p2-eTU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j4d-Ec-j5y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ojo.png" translatesAutoresizingMaskIntoConstraints="NO" id="UM8-wr-OH9">
+                                <rect key="frame" x="77" y="405" width="167" height="112"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Explorá" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiU-PG-3S6">
+                                <rect key="frame" x="5" y="295" width="131" height="43"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="33"/>
+                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Capturá" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc4-Ki-ZNJ">
+                                <rect key="frame" x="181" y="229" width="139" height="43"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="33"/>
+                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MBz-HC-2Ab">
+                                <rect key="frame" x="0.0" y="280" width="320" height="7"/>
+                                <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="lapiz.png" translatesAutoresizingMaskIntoConstraints="NO" id="qwB-0f-IcE">
+                                <rect key="frame" x="98" y="40" width="125" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UM8-wr-OH9" firstAttribute="leading" secondItem="j4d-Ec-j5y" secondAttribute="leading" constant="77" id="4KK-RW-N6M"/>
+                            <constraint firstItem="MBz-HC-2Ab" firstAttribute="top" secondItem="Gc4-Ki-ZNJ" secondAttribute="bottom" constant="8" id="9nH-xc-dM8"/>
+                            <constraint firstAttribute="centerY" secondItem="MBz-HC-2Ab" secondAttribute="centerY" constant="0.5" id="BGo-EZ-OgU"/>
+                            <constraint firstItem="qwB-0f-IcE" firstAttribute="leading" secondItem="j4d-Ec-j5y" secondAttribute="leading" constant="98" id="Jd1-yg-Lpe"/>
+                            <constraint firstItem="CiU-PG-3S6" firstAttribute="top" secondItem="MBz-HC-2Ab" secondAttribute="bottom" constant="8" id="MBM-Xt-y70"/>
+                            <constraint firstItem="CiU-PG-3S6" firstAttribute="leading" secondItem="j4d-Ec-j5y" secondAttribute="leading" constant="5" id="ZuN-Ok-Wog"/>
+                            <constraint firstItem="82M-p2-eTU" firstAttribute="top" secondItem="UM8-wr-OH9" secondAttribute="bottom" constant="51" id="iDV-Fh-ocG"/>
+                            <constraint firstItem="Gc4-Ki-ZNJ" firstAttribute="leading" secondItem="j4d-Ec-j5y" secondAttribute="leading" constant="181" id="jIv-U0-5Oo"/>
+                            <constraint firstItem="qwB-0f-IcE" firstAttribute="top" secondItem="3JV-ks-XBi" secondAttribute="bottom" constant="40" id="poW-ue-wdE"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
+                        <size key="portraitSize" width="320" height="568"/>
+                        <size key="landscapeSize" width="568" height="320"/>
+                    </simulatedScreenMetrics>
+                    <connections>
+                        <outlet property="CapturarImage" destination="qwB-0f-IcE" id="8F8-jl-xCT"/>
+                        <outlet property="capturarLabel" destination="Gc4-Ki-ZNJ" id="cEr-HF-Oet"/>
+                        <outlet property="explorarImage" destination="UM8-wr-OH9" id="LKd-X3-Tb4"/>
+                        <outlet property="explorarLabel" destination="CiU-PG-3S6" id="66g-87-YPq"/>
+                        <segue destination="aod-Jc-Efq" kind="modal" identifier="HomeExplorar" id="hJc-TG-Twn"/>
+                        <segue destination="z1O-fm-PCb" kind="modal" identifier="HomeCapturar" id="cHM-pB-9vH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SxZ-hN-e3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-666" y="-25"/>
         </scene>
         <!--Publicar Media View Controller-->
         <scene sceneID="g4y-6U-SOM">
@@ -592,6 +651,8 @@
         <image name="camaraImagen.png" width="56" height="56"/>
         <image name="camera.png" width="70" height="70"/>
         <image name="eliminarImagen.png" width="26" height="26"/>
+        <image name="lapiz.png" width="124" height="129"/>
+        <image name="ojo.png" width="167" height="112"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
