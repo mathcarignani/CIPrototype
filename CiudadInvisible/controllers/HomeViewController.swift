@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class HomeViewController: UIViewController {
 
@@ -16,11 +17,24 @@ class HomeViewController: UIViewController {
     @IBOutlet var explorarImage: UIImageView
     @IBOutlet var explorarLabel: UILabel
     
+    var mask: CALayer?
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // MASK
+        
+        self.mask = CALayer()
+        self.mask!.contents = UIImage(named: "logoMask.png").CGImage
+        self.mask!.bounds = CGRect(x: 0, y: 0, width: 110, height: 192)
+        self.mask!.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.mask!.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2)
+        self.view.layer.mask = mask
+        
+        animateMask()
+        // MASK
     }
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
@@ -80,4 +94,24 @@ class HomeViewController: UIViewController {
         
     }
     
+    // PRUEBA
+    func animateMask() {
+        let keyFrameAnimation = CAKeyframeAnimation(keyPath: "bounds")
+        keyFrameAnimation.delegate = self
+        keyFrameAnimation.duration = 1
+        keyFrameAnimation.beginTime = CACurrentMediaTime() + 1 //add delay of 1 second
+        let initalBounds = NSValue(CGRect: mask!.bounds)
+        let secondBounds = NSValue(CGRect: CGRect(x: 0, y: 0, width: 99, height: 173))
+        let finalBounds = NSValue(CGRect: CGRect(x: 0, y: 0, width: 1500, height: 1500))
+        keyFrameAnimation.values = [initalBounds, secondBounds, finalBounds]
+        keyFrameAnimation.keyTimes = [0, 0.3, 1]
+        keyFrameAnimation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)]
+        self.mask!.addAnimation(keyFrameAnimation, forKey: "bounds")
+    }
+    
+    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+        self.view!.layer.mask = nil //remove mask when animation completes
+    }
+
+    // PRUEBA
 }

@@ -26,6 +26,7 @@
 		C795490A197C041D002C6F1D /* lapiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7954908197C041D002C6F1D /* lapiz@2x.png */; };
 		C795490B197C041D002C6F1D /* ojo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7954909197C041D002C6F1D /* ojo@2x.png */; };
 		C795490E197C083B002C6F1D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795490D197C083B002C6F1D /* HomeViewController.swift */; };
+		C7954910197C15FA002C6F1D /* logoMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C795490F197C15FA002C6F1D /* logoMask@2x.png */; };
 		C79D38BF196ED0AE00C8A4C8 /* eliminarImagen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C79D38BD196ED0AE00C8A4C8 /* eliminarImagen@2x.png */; };
 		C79D38C0196ED0AE00C8A4C8 /* camaraImagen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C79D38BE196ED0AE00C8A4C8 /* camaraImagen@2x.png */; };
 		C79D38ED196F257F00C8A4C8 /* PostsSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */; };
@@ -77,6 +78,7 @@
 		C7954908197C041D002C6F1D /* lapiz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lapiz@2x.png"; sourceTree = "<group>"; };
 		C7954909197C041D002C6F1D /* ojo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ojo@2x.png"; sourceTree = "<group>"; };
 		C795490D197C083B002C6F1D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = controllers/HomeViewController.swift; sourceTree = "<group>"; };
+		C795490F197C15FA002C6F1D /* logoMask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoMask@2x.png"; sourceTree = "<group>"; };
 		C79D38BD196ED0AE00C8A4C8 /* eliminarImagen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eliminarImagen@2x.png"; sourceTree = "<group>"; };
 		C79D38BE196ED0AE00C8A4C8 /* camaraImagen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camaraImagen@2x.png"; sourceTree = "<group>"; };
 		C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsSlideViewController.swift; path = controllers/PostsSlideViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		C718C1F9195EF8EC00389FFD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C795490F197C15FA002C6F1D /* logoMask@2x.png */,
 				C7954908197C041D002C6F1D /* lapiz@2x.png */,
 				C7954909197C041D002C6F1D /* ojo@2x.png */,
 				C7353A27197AADF4002F4E54 /* bg4@2x.jpg */,
@@ -357,6 +360,7 @@
 				C795490A197C041D002C6F1D /* lapiz@2x.png in Resources */,
 				C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */,
 				C79D38BF196ED0AE00C8A4C8 /* eliminarImagen@2x.png in Resources */,
+				C7954910197C15FA002C6F1D /* logoMask@2x.png in Resources */,
 				C7072B311963639B00F8A244 /* bg3@2x.jpg in Resources */,
 				C707AC87195E127F00E43F53 /* Images.xcassets in Resources */,
 				C79D38C0196ED0AE00C8A4C8 /* camaraImagen@2x.png in Resources */,
