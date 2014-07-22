@@ -8,8 +8,14 @@
 
 import UIKit
 
-class PublicarMediaViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+protocol MultiImagesViewControllerDelegate {
+    func multiImagesDoneWithImages(images: NSMutableArray)
+}
 
+class MultiImagesViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+
+    var delegate : MultiImagesViewControllerDelegate?
+    
     @IBOutlet var previewActual : UIImageView
     @IBOutlet var previewsChica : UIView
     @IBOutlet var previewChica1 : UIImageView
@@ -41,8 +47,11 @@ class PublicarMediaViewController: UIViewController, UINavigationControllerDeleg
         self.dismissViewControllerAnimated(false, completion: nil)
     }
     
-    @IBAction func siguiente(sender : AnyObject) {
-        
+    @IBAction func done(sender : AnyObject) {
+        if self.delegate {
+            self.delegate?.multiImagesDoneWithImages(self.imagenes)
+        }
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
     
     @IBAction func eliminarActual(sender : AnyObject) {
@@ -96,9 +105,12 @@ class PublicarMediaViewController: UIViewController, UINavigationControllerDeleg
     func abrirCamara() {
         var picker : UIImagePickerController = UIImagePickerController()
         picker.delegate = self
-        picker.mediaTypes = [kUTTypeImage]
-        //picker.allowsEditing = true
-        picker.sourceType = UIImagePickerControllerSourceType.Camera
+        // Si permite usar la camara la usa, sino la libreria
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+        } else {
+            picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        }
         self.presentViewController(picker, animated: true, completion: {})
     }
     
