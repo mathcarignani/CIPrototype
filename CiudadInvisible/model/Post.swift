@@ -20,10 +20,10 @@ class Post: NSObject {
     var title : String! = nil
     var author : String! = nil
     var descriptionText : String! = nil
-    var image : String! = nil
     var date : NSDate! = nil
     var location : String! = nil
     var category : String! = nil
+    var images : NSMutableArray! = nil
     var url : String! = nil
     
     

@@ -192,8 +192,6 @@
 				C795490D197C083B002C6F1D /* HomeViewController.swift */,
 				C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */,
 				C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */,
-				C718C1F4195EF79100389FFD /* PostsViewController.swift */,
-				C7B17422197174FD008F00E6 /* PublicarMapaViewController.swift */,
 				C7A71A06196EC7C1008C82F4 /* MultiImagesViewController.swift */,
 				C74B3186197C884800EE70EF /* NewPostViewController.swift */,
 			);
@@ -251,6 +249,8 @@
 		C795490C197C0812002C6F1D /* Respaldos */ = {
 			isa = PBXGroup;
 			children = (
+				C718C1F4195EF79100389FFD /* PostsViewController.swift */,
+				C7B17422197174FD008F00E6 /* PublicarMapaViewController.swift */,
 				C7F851BF1969F405002B38FF /* MainViewController.swift */,
 			);
 			name = Respaldos;

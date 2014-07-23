@@ -11,7 +11,8 @@ import MapKit
 class RestApiHelper: NSObject {
 
     let manager = AFHTTPRequestOperationManager()
-    let urlApi = "http://ciudadinvisible.herokuapp.com/"
+    //let urlApi = "http://ciudadinvisible.herokuapp.com/"
+    let urlApi = "http://localhost:3000/"
     
     // MARK: Singleton
     class func sharedInstance() -> RestApiHelper! {
@@ -58,12 +59,25 @@ class RestApiHelper: NSObject {
 
     }
     
-    func createPost() {
+    func createPost(post: Post) {
         
-        var parameters = ["post":["title":"Post desde ios", "author":"Mathias", "description":"Vaaaaa"]]
-        
-        println(parameters)
-        
+        let imageAux = post.images.objectAtIndex(0) as UIImage
+      
+        var parameters = [
+            "post":
+                [
+                    "title":post.title,
+                    "author":post.author,
+                    "description":post.descriptionText
+            ],
+            "assets_images":
+                [
+                    "data": encodeToBase64String(imageAux),
+                    "filename": "\(post.title)_01.png",
+                    "content_type": "image/png"
+            ]
+        ] as Dictionary
+       
         manager.POST("\(urlApi)/posts.json", parameters: parameters, success:
             { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 println("Exito => " + responseObject.description)
@@ -72,4 +86,10 @@ class RestApiHelper: NSObject {
                 println("Error => " + error.localizedDescription)
             })
     }
+    
+    // MARK: Auxiliar
+    func encodeToBase64String(image: UIImage) -> String {
+        return UIImagePNGRepresentation(image).base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+    }
+
 }

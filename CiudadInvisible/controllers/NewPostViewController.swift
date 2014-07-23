@@ -49,6 +49,18 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         self.presentViewController(picker, animated: true, completion: {})
     }
     
+    @IBAction func createPost(sender: AnyObject) {
+        
+        var post: Post = Post()
+        post.title = self.titleText.text
+        post.author = "Mathias Carignani"
+        post.descriptionText = "Hardcodeada"
+        post.images = self.images
+        
+        RestApiHelper.sharedInstance().createPost(post)
+        
+    }
+    
     // MARK: UIImagePickerControllerDelegate
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
         
