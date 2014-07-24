@@ -61,8 +61,19 @@ class RestApiHelper: NSObject {
     
     func createPost(post: Post) {
         
-        let imageAux = post.images.objectAtIndex(0) as UIImage
-      
+        //let imageAux = post.images.objectAtIndex(0) as UIImage
+        
+        var imagesData = [] as Array
+        // Recorre las imagenes y agrega
+        for image in post.images as Array {
+            var imageDictionary = [
+                "data": encodeToBase64String(image as UIImage),
+                "filename": "\(post.title).png",
+                "content_type": "image/png"
+            ]
+            imagesData += imageDictionary
+        }
+        
         var parameters = [
             "post":
                 [
@@ -70,12 +81,7 @@ class RestApiHelper: NSObject {
                     "author":post.author,
                     "description":post.descriptionText
             ],
-            "assets_images":
-                [
-                    "data": encodeToBase64String(imageAux),
-                    "filename": "\(post.title)_01.png",
-                    "content_type": "image/png"
-            ]
+            "assets_images": imagesData
         ] as Dictionary
        
         manager.POST("\(urlApi)/posts.json", parameters: parameters, success:
@@ -85,6 +91,7 @@ class RestApiHelper: NSObject {
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 println("Error => " + error.localizedDescription)
             })
+
     }
     
     // MARK: Auxiliar
