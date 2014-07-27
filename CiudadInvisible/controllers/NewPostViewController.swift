@@ -61,6 +61,10 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         
     }
     
+    @IBAction func cancel(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // MARK: UIImagePickerControllerDelegate
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
         

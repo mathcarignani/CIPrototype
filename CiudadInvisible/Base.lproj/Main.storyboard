@@ -107,7 +107,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-general.png" translatesAutoresizingMaskIntoConstraints="NO" id="QWw-js-lyY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sMD-Rn-r81">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sMD-Rn-r81">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7rp-Un-LeE">
@@ -177,8 +177,25 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vh3-B1-1R4">
+                                        <rect key="frame" x="20" y="20" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="f73-66-c8a"/>
+                                            <constraint firstAttribute="height" constant="30" id="gjz-wN-xKS"/>
+                                        </constraints>
+                                        <state key="normal" title="&lt;">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="back:" destination="aod-Jc-Efq" eventType="touchUpInside" id="hJJ-jp-88t"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.17254901959999999" blue="0.17254901959999999" alpha="0.31" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Vh3-B1-1R4" firstAttribute="leading" secondItem="sMD-Rn-r81" secondAttribute="leading" constant="20" id="0Ag-FI-lxh"/>
+                                    <constraint firstItem="Vh3-B1-1R4" firstAttribute="top" secondItem="sMD-Rn-r81" secondAttribute="top" constant="20" id="4QO-4u-wwI"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -538,6 +555,15 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="createPost:" destination="mzG-Q4-nIP" eventType="touchUpInside" id="iKQ-cb-J3H"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLB-bU-8sT">
+                                                    <rect key="frame" x="20" y="21" width="61" height="30"/>
+                                                    <state key="normal" title="Cancelar">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="cancel:" destination="mzG-Q4-nIP" eventType="touchUpInside" id="ud6-IX-4KI"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

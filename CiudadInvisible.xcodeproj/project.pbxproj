@@ -188,12 +188,10 @@
 		C718C1ED195E18DE00389FFD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C7CDECFF1985388900EEFF5A /* ExplorePost */,
+				C7CDECFE1985387600EEFF5A /* CreatePost */,
 				C795490C197C0812002C6F1D /* Respaldos */,
 				C795490D197C083B002C6F1D /* HomeViewController.swift */,
-				C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */,
-				C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */,
-				C7A71A06196EC7C1008C82F4 /* MultiImagesViewController.swift */,
-				C74B3186197C884800EE70EF /* NewPostViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -263,6 +261,24 @@
 				C79D38F0196F292800C8A4C8 /* Post.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		C7CDECFE1985387600EEFF5A /* CreatePost */ = {
+			isa = PBXGroup;
+			children = (
+				C7A71A06196EC7C1008C82F4 /* MultiImagesViewController.swift */,
+				C74B3186197C884800EE70EF /* NewPostViewController.swift */,
+			);
+			name = CreatePost;
+			sourceTree = "<group>";
+		};
+		C7CDECFF1985388900EEFF5A /* ExplorePost */ = {
+			isa = PBXGroup;
+			children = (
+				C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */,
+				C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */,
+			);
+			name = ExplorePost;
 			sourceTree = "<group>";
 		};
 		CE1364FB7F454404B0F45ADE /* Frameworks */ = {

@@ -21,6 +21,11 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
         // Obtengo los posts
         self.posts = RestApiHelper.sharedInstance().getPostsSlider()
     }
+
+    @IBAction func back(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     
     // MARK: UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int

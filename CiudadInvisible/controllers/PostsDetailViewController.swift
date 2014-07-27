@@ -53,10 +53,10 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         postName.textColor = UIColor.whiteColor()
         headerView.addSubview(postName)
         
-        var backButton = UIButton(frame: CGRect(x: 10, y: 10, width: 80, height: 80))
+        var backButton = UIButton(frame: CGRect(x: 10, y: 10, width: 300, height: 300))
         backButton.titleLabel.text = "< volver"
         backButton.titleLabel.font = UIFont(name: "Helvetica", size: 35)
-        backButton.titleLabel.textColor = UIColor.whiteColor()
+        backButton.titleLabel.textColor = UIColor.redColor()
         backButton.addTarget(self, action: Selector("volver:"), forControlEvents: UIControlEvents.TouchUpInside)
         headerView.addSubview(backButton)
         
