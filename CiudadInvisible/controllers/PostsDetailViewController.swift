@@ -74,7 +74,7 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     }
 
     func tableView(tableView: UITableView!, numberOfRowsInSection section:    Int) -> Int {
-        return 10
+        return 3
     }
     
     
@@ -83,19 +83,26 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         var cell : UITableViewCell! = nil
         
         
-        if (indexPath.row == 2) {
+        if (indexPath.row == 0) {
+            // Imagenes
+            cell = tableView.dequeueReusableCellWithIdentifier("PostImagesCell", forIndexPath: indexPath) as UITableViewCell
+            
+        } else if (indexPath.row == 1) {
+            // Descripcion
+            cell = tableView.dequeueReusableCellWithIdentifier("PostDescriptionCell", forIndexPath: indexPath) as UITableViewCell
+            
+        } else if (indexPath.row == 2) {
+            // Mapa
             cell = tableView.dequeueReusableCellWithIdentifier("PostMapCell", forIndexPath: indexPath) as PostDetailMapCell
             // Configuracion del mapa
             var mapa : MKMapView = (cell as PostDetailMapCell).mapa
-            //self.centerMap(mapa, coordinate: post.coordenada, distance: 1000)
-            //self.addAnotationToMap(mapa, coordinate: post.coordenada, title: post.title)
             
-        } else {
-            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "AporteCell")
-            cell.detailTextLabel.text = "Comentario #\(indexPath.row)"
+            // PRUEBA
+            let coordinate = CLLocationCoordinate2D(latitude: -34.9087458, longitude: -56.1614022137041)
+            // PRUEBA
+            self.centerMap(mapa, coordinate: coordinate, distance: 1000)
+            self.addAnotationToMap(mapa, coordinate: coordinate, title: post.title)
         }
-
-        
         
         return cell
     }
@@ -125,6 +132,22 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
             
         }
         
+    }
+    
+    // MARK: UICollectionViewDataSource - Images
+    func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int
+    {
+        return self.post.images.count - 1 // Le saca la principal
+    }
+    
+    func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell!
+    {
+        var cell : PostImagesCell = collectionView.dequeueReusableCellWithReuseIdentifier("PostImageCell", forIndexPath: indexPath) as PostImagesCell
+        
+        // Configuro la celda, al indexPath le suma uno porque la primera no se considera
+        cell.image.setImageWithURL(NSURL(string: post.images.objectAtIndex(indexPath.row + 1) as String), placeholderImage: self.imageEmpty)
+        
+        return cell
     }
     
     // MARK: Actions

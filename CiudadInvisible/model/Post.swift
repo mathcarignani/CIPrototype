@@ -10,11 +10,6 @@ import UIKit
 import MapKit
 
 class Post: NSObject {
-
-    var titulo : String! = nil
-    var distancia : String! = nil
-    var imagen : UIImage! = nil
-    var coordenada : CLLocationCoordinate2D! = nil
     
     var id : Int! = nil
     var title : String! = nil
@@ -29,16 +24,6 @@ class Post: NSObject {
     
     init() {
         super.init()
-    }
-    
-    init(titulo : String, distancia : String, imagen : UIImage, coordenada: CLLocationCoordinate2D) {
-        super.init()
-        
-        self.titulo = titulo
-        self.distancia = distancia
-        self.imagen = imagen
-        self.coordenada = coordenada
-        
     }
 
 }
