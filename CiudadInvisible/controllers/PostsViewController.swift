@@ -15,12 +15,12 @@ class PostsViewController: UIViewController {
     var leftPostView : PostView = PostView()
     var rightPostView : PostView = PostView()
     
-    var leftCenterX : Float = 0
-    var leftCenterY : Float = 0
-    var centerCenterX : Float = 0
-    var centerCenterY : Float = 0
-    var rightCenterX : Float = 0
-    var rightCenterY : Float = 0
+    var leftCenterX : CGFloat = 0
+    var leftCenterY : CGFloat = 0
+    var centerCenterX : CGFloat = 0
+    var centerCenterY : CGFloat = 0
+    var rightCenterX : CGFloat = 0
+    var rightCenterY : CGFloat = 0
     
     enum Transition {
         case None
@@ -35,11 +35,11 @@ class PostsViewController: UIViewController {
         super.viewDidLoad()
         
         // Cargo las variables
-        leftCenterX = view.center.x - 320
+        leftCenterX = view.center.x - 320.0
         leftCenterY = view.center.y
         centerCenterX = view.center.x
         centerCenterY = view.center.y
-        rightCenterX = view.center.x + 320
+        rightCenterX = view.center.x + 320.0
         rightCenterY = view.center.y
         
         loadPosts()

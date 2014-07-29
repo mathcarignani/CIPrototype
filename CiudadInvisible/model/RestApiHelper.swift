@@ -31,10 +31,53 @@ class RestApiHelper: NSObject {
     }
     
     // MARK: Private methods
-    func getPosts() {
-        
-        /*
-        manager.GET("http://ciudadinvisible.herokuapp.com/posts.json",
+    func getPosts(completion: (posts : NSArray) ->()) {
+        //
+        manager.GET("\(urlApi)/posts.json",
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                
+                var posts : Array = []
+                
+                // Obtiene los posts
+                var postsJson = JSONValue(responseObject)
+                let postsJsonCount = postsJson.array?.count as Int
+                // Recorre los posts json
+                for i in 0...(postsJsonCount - 1) {
+            
+                    // Crea el post y lo agrega a la lista
+                    var post : Post = Post()
+                    post.id = postsJson[i]["id"].integer
+                    post.title = postsJson[i]["title"].string
+                    post.author = postsJson[i]["author"].string
+                    post.descriptionText = postsJson[i]["description"].string
+                    post.location = postsJson[i]["location"].string
+                    post.category = postsJson[i]["category"].string
+                    post.url = postsJson[i]["url"].string
+                    // Agrega las imagenes
+                    var auxImages : Array = []
+                    let imagesJsonCount = postsJson[i]["assets"].array?.count
+                    for j in 0...(imagesJsonCount! - 1) {
+                        auxImages += postsJson[i]["assets"][j]["file_url"].string!
+                    }
+                    post.images = auxImages
+                    
+                    
+                    // Agrega el post
+                    posts += post
+                }
+                
+                // Ejecuta el bloque con el retorno de los posts
+                completion(posts: posts)
+    
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error")
+            })
+    }
+    
+    func getPost() {
+        manager.GET("\(urlApi)/posts/1.json",
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 println("Json obtenido => " + responseObject.description)
@@ -42,7 +85,7 @@ class RestApiHelper: NSObject {
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 println("Error")
             })
-        */
+
     }
     
     func getPostsSlider() -> NSArray {
@@ -60,8 +103,6 @@ class RestApiHelper: NSObject {
     }
     
     func createPost(post: Post) {
-        
-        //let imageAux = post.images.objectAtIndex(0) as UIImage
         
         var imagesData = [] as Array
         // Recorre las imagenes y agrega

@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		5A189F2046C6419EB0E03A8A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCE688C1A5348818DD0B369 /* libPods.a */; };
 		C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7072B2A1963052300F8A244 /* bg-general@2x.png */; };
-		C7072B2D19631FAB00F8A244 /* DetailPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7072B2C19631FAB00F8A244 /* DetailPostView.swift */; };
 		C7072B2F1963638500F8A244 /* bg2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7072B2E1963638500F8A244 /* bg2@2x.jpg */; };
 		C7072B311963639B00F8A244 /* bg3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7072B301963639B00F8A244 /* bg3@2x.jpg */; };
 		C707AC80195E127F00E43F53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C707AC7F195E127F00E43F53 /* AppDelegate.swift */; };
 		C707AC85195E127F00E43F53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C707AC83195E127F00E43F53 /* Main.storyboard */; };
 		C707AC87195E127F00E43F53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C707AC86195E127F00E43F53 /* Images.xcassets */; };
 		C707AC93195E127F00E43F53 /* CiudadInvisibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C707AC92195E127F00E43F53 /* CiudadInvisibleTests.swift */; };
+		C712D8A2198827CF00993782 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C712D8A1198827CF00993782 /* SwiftyJSON.swift */; };
+		C712D8A419883F6400993782 /* bgEmpty@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C712D8A319883F6400993782 /* bgEmpty@2x.jpg */; };
 		C718C1F5195EF79100389FFD /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718C1F4195EF79100389FFD /* PostsViewController.swift */; };
 		C718C1FB195EF91F00389FFD /* bg1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C718C1FA195EF91F00389FFD /* bg1@2x.jpg */; };
 		C718C1FD195EFE7000389FFD /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C718C1FC195EFE7000389FFD /* camera@2x.png */; };
@@ -59,7 +60,6 @@
 		217DE757A0F64215828105CE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		6CCE688C1A5348818DD0B369 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7072B2A1963052300F8A244 /* bg-general@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-general@2x.png"; sourceTree = "<group>"; };
-		C7072B2C19631FAB00F8A244 /* DetailPostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailPostView.swift; path = views/DetailPostView.swift; sourceTree = "<group>"; };
 		C7072B2E1963638500F8A244 /* bg2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg2@2x.jpg"; sourceTree = "<group>"; };
 		C7072B301963639B00F8A244 /* bg3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg3@2x.jpg"; sourceTree = "<group>"; };
 		C707AC7A195E127F00E43F53 /* CiudadInvisible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CiudadInvisible.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +70,8 @@
 		C707AC8C195E127F00E43F53 /* CiudadInvisibleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CiudadInvisibleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C707AC91195E127F00E43F53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C707AC92195E127F00E43F53 /* CiudadInvisibleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiudadInvisibleTests.swift; sourceTree = "<group>"; };
+		C712D8A1198827CF00993782 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		C712D8A319883F6400993782 /* bgEmpty@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgEmpty@2x.jpg"; sourceTree = "<group>"; };
 		C718C1F4195EF79100389FFD /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsViewController.swift; path = controllers/PostsViewController.swift; sourceTree = "<group>"; };
 		C718C1FA195EF91F00389FFD /* bg1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg1@2x.jpg"; sourceTree = "<group>"; };
 		C718C1FC195EFE7000389FFD /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				217DE757A0F64215828105CE /* Pods.xcconfig */,
 				C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */,
 				C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */,
+				C712D8A1198827CF00993782 /* SwiftyJSON.swift */,
 				C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */,
 				CE1364FB7F454404B0F45ADE /* Frameworks */,
 			);
@@ -207,6 +210,7 @@
 		C718C1F9195EF8EC00389FFD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C712D8A319883F6400993782 /* bgEmpty@2x.jpg */,
 				C795490F197C15FA002C6F1D /* logoMask@2x.png */,
 				C7954908197C041D002C6F1D /* lapiz@2x.png */,
 				C7954909197C041D002C6F1D /* ojo@2x.png */,
@@ -228,7 +232,6 @@
 				C7353A2C197ABC32002F4E54 /* HelperForms.swift */,
 				C7353A29197AB2F0002F4E54 /* Cells */,
 				C718C201195F0C9300389FFD /* PostView.swift */,
-				C7072B2C19631FAB00F8A244 /* DetailPostView.swift */,
 				C7F851C11969F58F002B38FF /* CameraPreviewView.swift */,
 			);
 			name = Views;
@@ -386,6 +389,7 @@
 				C7072B311963639B00F8A244 /* bg3@2x.jpg in Resources */,
 				C707AC87195E127F00E43F53 /* Images.xcassets in Resources */,
 				C79D38C0196ED0AE00C8A4C8 /* camaraImagen@2x.png in Resources */,
+				C712D8A419883F6400993782 /* bgEmpty@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +447,7 @@
 				C7353A2D197ABC32002F4E54 /* HelperForms.swift in Sources */,
 				C74B3187197C884800EE70EF /* NewPostViewController.swift in Sources */,
 				C7F851C21969F58F002B38FF /* CameraPreviewView.swift in Sources */,
+				C712D8A2198827CF00993782 /* SwiftyJSON.swift in Sources */,
 				C79D38F1196F292800C8A4C8 /* Post.swift in Sources */,
 				C718C1F5195EF79100389FFD /* PostsViewController.swift in Sources */,
 				C7353A2B197AB310002F4E54 /* PostDetailMapCell.swift in Sources */,
@@ -453,7 +458,6 @@
 				C79D38ED196F257F00C8A4C8 /* PostsSlideViewController.swift in Sources */,
 				C7B17423197174FD008F00E6 /* PublicarMapaViewController.swift in Sources */,
 				C7F851C01969F405002B38FF /* MainViewController.swift in Sources */,
-				C7072B2D19631FAB00F8A244 /* DetailPostView.swift in Sources */,
 				C7ACF3251968673900EB74D5 /* PostsDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,7 +575,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = CiudadInvisible/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -587,7 +591,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = CiudadInvisible/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

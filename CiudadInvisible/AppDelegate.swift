@@ -21,7 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor = UIColor(red: 197/255.0, green: 73/255.0, blue: 73/255.0, alpha: 1.0)
         
         // Prueba para obtener los posts
-        //RestApiHelper.sharedInstance().getPosts()
+        /*RestApiHelper.sharedInstance().getPosts(
+            { (posts: NSArray) -> () in
+                println("AppDelegate")
+                println(posts)
+            })
+        */
+        //RestApiHelper.sharedInstance().getPost()
         //RestApiHelper.sharedInstance().createPost()
         // PRUEBA
         

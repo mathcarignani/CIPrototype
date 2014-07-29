@@ -12,14 +12,23 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
 
     @IBOutlet var collectionView : UICollectionView
     
-    var posts : NSArray! = nil
+    var posts : NSArray! = NSArray()
+    var imageEmpty : UIImage = UIImage(named: "bgEmpty.jpg")
     
     // MARK: LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Obtengo los posts
-        self.posts = RestApiHelper.sharedInstance().getPostsSlider()
+        RestApiHelper.sharedInstance().getPosts(
+            { (postsReturn: NSArray) in
+                self.posts = postsReturn
+                
+                // Recarga el slides
+                self.collectionView.reloadData()
+            })
+        
+        
     }
 
     @IBAction func back(sender: AnyObject) {
@@ -39,9 +48,13 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
         
         // Configuro la celda
         let post = self.posts.objectAtIndex(indexPath.row) as Post
-        cell.titulo.text = post.titulo
-        cell.distancia.text = post.distancia
-        cell.imagen.image = post.imagen
+        cell.titulo.text = post.title
+        cell.distancia.text = ""
+        cell.imagen.image = self.imageEmpty
+        if post.images.count > 0 {
+            // Si tiene imagen la carga
+            cell.imagen.setImageWithURL(NSURL(string: post.images.objectAtIndex(0) as String), placeholderImage: self.imageEmpty)
+        }
         
         // Sombreado
         cell.fondo.layer.shadowColor = UIColor.blackColor().CGColor;

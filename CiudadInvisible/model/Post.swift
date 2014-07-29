@@ -23,7 +23,7 @@ class Post: NSObject {
     var date : NSDate! = nil
     var location : String! = nil
     var category : String! = nil
-    var images : NSMutableArray! = nil
+    var images : NSArray! = nil
     var url : String! = nil
     
     
@@ -40,4 +40,5 @@ class Post: NSObject {
         self.coordenada = coordenada
         
     }
+
 }

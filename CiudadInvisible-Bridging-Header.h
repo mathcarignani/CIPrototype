@@ -8,5 +8,6 @@
 
 // Importamos todas las librerias de Obj-c necesarias
 #import "AFNetworking.h"
+#import "UIImageView+AFNetworking.h"
 #import "UIImageView+LBBlurredImage.h"
 #import "UIImage+ImageEffects.h"

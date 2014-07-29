@@ -15,6 +15,7 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     
     var portadaPostView : PostView = PostView()
     var backgroundImage = UIImageView()
+    var imageEmpty : UIImage = UIImage(named: "bgEmpty.jpg")
     
     @IBOutlet var tableView : UITableView
     
@@ -40,7 +41,10 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         
         // Agrego la imagen en el fondo del header
         backgroundImage.frame = self.view.frame
-        backgroundImage.image = post.imagen
+        if post.images.count > 0 {
+            // Si tiene imagen la carga
+            backgroundImage.setImageWithURL(NSURL(string: post.images.objectAtIndex(0) as String), placeholderImage: self.imageEmpty)
+        }
         self.view.insertSubview(backgroundImage, belowSubview: tableView)
         
         // Configuro el header
@@ -48,7 +52,7 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         headerView.backgroundColor = UIColor.clearColor()
         
         var postName = UILabel(frame: CGRect(x: 20, y: view.frame.height-100, width: view.frame.width - 20, height: 80))
-        postName.text = post.titulo
+        postName.text = post.title
         postName.font = UIFont(name: "Helvetica", size: 35)
         postName.textColor = UIColor.whiteColor()
         headerView.addSubview(postName)
@@ -83,12 +87,11 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
             cell = tableView.dequeueReusableCellWithIdentifier("PostMapCell", forIndexPath: indexPath) as PostDetailMapCell
             // Configuracion del mapa
             var mapa : MKMapView = (cell as PostDetailMapCell).mapa
-            self.centerMap(mapa, coordinate: post.coordenada, distance: 1000)
-            self.addAnotationToMap(mapa, coordinate: post.coordenada, title: post.titulo)
+            //self.centerMap(mapa, coordinate: post.coordenada, distance: 1000)
+            //self.addAnotationToMap(mapa, coordinate: post.coordenada, title: post.title)
             
         } else {
             cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "AporteCell")
-            //cell.text = "Aporte #\(indexPath.row)"
             cell.detailTextLabel.text = "Comentario #\(indexPath.row)"
         }
 
