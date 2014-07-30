@@ -16,7 +16,7 @@ class Post: NSObject {
     var author : String! = nil
     var descriptionText : String! = nil
     var date : NSDate! = nil
-    var location : String! = nil
+    var location : NSString! = nil
     var category : String! = nil
     var images : NSArray! = nil
     var url : String! = nil
@@ -24,6 +24,21 @@ class Post: NSObject {
     
     init() {
         super.init()
+    }
+    
+    func coordinate() -> CLLocationCoordinate2D {
+        
+        // Elimina los exrremos que corresponden a {}
+        let auxParsing = self.location.substringWithRange(NSRange(location: 1,length: (self.location.length - 2)))
+
+        // Separa por el , el primer campo corresponde al latitude y el segundo a longitude
+        var split : NSArray = auxParsing.componentsSeparatedByString(",")
+
+        let latitude = split.objectAtIndex(0).doubleValue as CLLocationDegrees
+        let longitude = split.objectAtIndex(1).doubleValue as CLLocationDegrees
+ 
+        var coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        return coordinate
     }
 
 }

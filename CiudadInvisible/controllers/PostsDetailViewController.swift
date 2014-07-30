@@ -57,6 +57,14 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         postName.textColor = UIColor.whiteColor()
         headerView.addSubview(postName)
         
+        var postAuthor = UILabel(frame: CGRect(x: 20, y: view.frame.height-40, width: view.frame.width - 40, height: 20))
+        postAuthor.text = post.author
+        postAuthor.font = UIFont(name: "Helvetica", size: 14)
+        postAuthor.textColor = UIColor.whiteColor()
+        postAuthor.textAlignment = NSTextAlignment.Right
+        headerView.addSubview(postAuthor)
+
+        
         var backButton = UIButton(frame: CGRect(x: 10, y: 10, width: 300, height: 300))
         backButton.titleLabel.text = "< volver"
         backButton.titleLabel.font = UIFont(name: "Helvetica", size: 35)
@@ -89,22 +97,39 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
             
         } else if (indexPath.row == 1) {
             // Descripcion
-            cell = tableView.dequeueReusableCellWithIdentifier("PostDescriptionCell", forIndexPath: indexPath) as UITableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("PostDescriptionCell", forIndexPath: indexPath) as PostDetailDescriptionCell
+            // Configuro los valores
+            (cell as PostDetailDescriptionCell).descriptionText.text = post.descriptionText
+            (cell as PostDetailDescriptionCell).categoryText.text = post.category
             
         } else if (indexPath.row == 2) {
             // Mapa
             cell = tableView.dequeueReusableCellWithIdentifier("PostMapCell", forIndexPath: indexPath) as PostDetailMapCell
             // Configuracion del mapa
             var mapa : MKMapView = (cell as PostDetailMapCell).mapa
-            
-            // PRUEBA
-            let coordinate = CLLocationCoordinate2D(latitude: -34.9087458, longitude: -56.1614022137041)
-            // PRUEBA
-            self.centerMap(mapa, coordinate: coordinate, distance: 1000)
-            self.addAnotationToMap(mapa, coordinate: coordinate, title: post.title)
+            let coordinate = self.post.coordinate()
+            MapHelper.centerMap(mapa, coordinate: coordinate, distance: 1000)
+            MapHelper.addAnotationToMap(mapa, coordinate: coordinate, title: post.title)
         }
         
         return cell
+    }
+    
+    // MARK: UITableViewDelegate
+    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        
+        if (indexPath.row == 0) {
+            // Imagenes
+            return 141
+        } else if (indexPath.row == 1) {
+            // Descripcion
+            return 200
+        } else if (indexPath.row == 2) {
+            // Mapa
+            return 141
+        } else {
+            return 141
+        }
     }
     
     // MARK: ScrollViewDelegate
@@ -156,6 +181,7 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     }
     
     // MARK: Aux
+    /*
     func centerMap(map: MKMapView, coordinate: CLLocationCoordinate2D, distance: CLLocationDistance) {
         // Crea la region y centra el mapa
         let region = MKCoordinateRegionMakeWithDistance(coordinate, distance, distance)
@@ -169,5 +195,5 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         annotation.title = title
         map.addAnnotation(annotation)
     }
-    
+    */
 }

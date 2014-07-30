@@ -38,6 +38,7 @@
 		C7A0B4A919891E2B00C72662 /* UserSesionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A0B4A819891E2B00C72662 /* UserSesionHelper.swift */; };
 		C7A0B4AD198925A300C72662 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A0B4AC198925A300C72662 /* MapHelper.swift */; };
 		C7A0B4AF19892C9F00C72662 /* marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7A0B4AE19892C9F00C72662 /* marker@2x.png */; };
+		C7A0B4B11989753A00C72662 /* PostDetailDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A0B4B01989753A00C72662 /* PostDetailDescriptionCell.swift */; };
 		C7A71A07196EC7C1008C82F4 /* MultiImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A71A06196EC7C1008C82F4 /* MultiImagesViewController.swift */; };
 		C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3221968590600EB74D5 /* RestApiHelper.swift */; };
 		C7ACF3251968673900EB74D5 /* PostsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */; };
@@ -96,6 +97,7 @@
 		C7A0B4A819891E2B00C72662 /* UserSesionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSesionHelper.swift; path = model/UserSesionHelper.swift; sourceTree = "<group>"; };
 		C7A0B4AC198925A300C72662 /* MapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapHelper.swift; path = controllers/MapHelper.swift; sourceTree = "<group>"; };
 		C7A0B4AE19892C9F00C72662 /* marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker@2x.png"; sourceTree = "<group>"; };
+		C7A0B4B01989753A00C72662 /* PostDetailDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostDetailDescriptionCell.swift; path = views/PostDetailDescriptionCell.swift; sourceTree = "<group>"; };
 		C7A71A06196EC7C1008C82F4 /* MultiImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiImagesViewController.swift; path = controllers/MultiImagesViewController.swift; sourceTree = "<group>"; };
 		C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CiudadInvisible-Bridging-Header.h"; sourceTree = "<group>"; };
 		C7ACF3221968590600EB74D5 /* RestApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestApiHelper.swift; path = model/RestApiHelper.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				C79D38EE196F270200C8A4C8 /* PostSlideCell.swift */,
 				C7353A2A197AB310002F4E54 /* PostDetailMapCell.swift */,
 				C770BD07197EC64500C49D57 /* PostImagesCell.swift */,
+				C7A0B4B01989753A00C72662 /* PostDetailDescriptionCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				C7353A2B197AB310002F4E54 /* PostDetailMapCell.swift in Sources */,
 				C718C202195F0C9300389FFD /* PostView.swift in Sources */,
 				C7A71A07196EC7C1008C82F4 /* MultiImagesViewController.swift in Sources */,
+				C7A0B4B11989753A00C72662 /* PostDetailDescriptionCell.swift in Sources */,
 				C707AC80195E127F00E43F53 /* AppDelegate.swift in Sources */,
 				C770BD08197EC64500C49D57 /* PostImagesCell.swift in Sources */,
 				C79D38ED196F257F00C8A4C8 /* PostsSlideViewController.swift in Sources */,
