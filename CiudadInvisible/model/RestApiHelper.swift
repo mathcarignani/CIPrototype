@@ -106,7 +106,10 @@ class RestApiHelper: NSObject {
                 [
                     "title":post.title,
                     "author":post.author,
-                    "description":post.descriptionText
+                    "description":post.descriptionText,
+                    "date":post.date,
+                    "location":post.location,
+                    "category":post.category
             ],
             "assets_images": imagesData
         ] as Dictionary

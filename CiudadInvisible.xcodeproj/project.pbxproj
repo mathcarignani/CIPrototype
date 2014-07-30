@@ -35,6 +35,9 @@
 		C79D38ED196F257F00C8A4C8 /* PostsSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */; };
 		C79D38EF196F270200C8A4C8 /* PostSlideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D38EE196F270200C8A4C8 /* PostSlideCell.swift */; };
 		C79D38F1196F292800C8A4C8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D38F0196F292800C8A4C8 /* Post.swift */; };
+		C7A0B4A919891E2B00C72662 /* UserSesionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A0B4A819891E2B00C72662 /* UserSesionHelper.swift */; };
+		C7A0B4AD198925A300C72662 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A0B4AC198925A300C72662 /* MapHelper.swift */; };
+		C7A0B4AF19892C9F00C72662 /* marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7A0B4AE19892C9F00C72662 /* marker@2x.png */; };
 		C7A71A07196EC7C1008C82F4 /* MultiImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A71A06196EC7C1008C82F4 /* MultiImagesViewController.swift */; };
 		C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3221968590600EB74D5 /* RestApiHelper.swift */; };
 		C7ACF3251968673900EB74D5 /* PostsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */; };
@@ -90,6 +93,9 @@
 		C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsSlideViewController.swift; path = controllers/PostsSlideViewController.swift; sourceTree = "<group>"; };
 		C79D38EE196F270200C8A4C8 /* PostSlideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostSlideCell.swift; path = views/PostSlideCell.swift; sourceTree = "<group>"; };
 		C79D38F0196F292800C8A4C8 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = model/Post.swift; sourceTree = "<group>"; };
+		C7A0B4A819891E2B00C72662 /* UserSesionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSesionHelper.swift; path = model/UserSesionHelper.swift; sourceTree = "<group>"; };
+		C7A0B4AC198925A300C72662 /* MapHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapHelper.swift; path = controllers/MapHelper.swift; sourceTree = "<group>"; };
+		C7A0B4AE19892C9F00C72662 /* marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker@2x.png"; sourceTree = "<group>"; };
 		C7A71A06196EC7C1008C82F4 /* MultiImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultiImagesViewController.swift; path = controllers/MultiImagesViewController.swift; sourceTree = "<group>"; };
 		C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CiudadInvisible-Bridging-Header.h"; sourceTree = "<group>"; };
 		C7ACF3221968590600EB74D5 /* RestApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestApiHelper.swift; path = model/RestApiHelper.swift; sourceTree = "<group>"; };
@@ -210,6 +216,7 @@
 		C718C1F9195EF8EC00389FFD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C7A0B4AE19892C9F00C72662 /* marker@2x.png */,
 				C712D8A319883F6400993782 /* bgEmpty@2x.jpg */,
 				C795490F197C15FA002C6F1D /* logoMask@2x.png */,
 				C7954908197C041D002C6F1D /* lapiz@2x.png */,
@@ -257,11 +264,29 @@
 			name = Respaldos;
 			sourceTree = "<group>";
 		};
-		C7ACF321196858C100EB74D5 /* Model */ = {
+		C7A0B4AA19891E3400C72662 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				C7ACF3221968590600EB74D5 /* RestApiHelper.swift */,
+				C7A0B4A819891E2B00C72662 /* UserSesionHelper.swift */,
+				C7A0B4AC198925A300C72662 /* MapHelper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		C7A0B4AB19891E4500C72662 /* Entitys */ = {
+			isa = PBXGroup;
+			children = (
 				C79D38F0196F292800C8A4C8 /* Post.swift */,
+			);
+			name = Entitys;
+			sourceTree = "<group>";
+		};
+		C7ACF321196858C100EB74D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C7A0B4AB19891E4500C72662 /* Entitys */,
+				C7A0B4AA19891E3400C72662 /* Helpers */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -382,6 +407,7 @@
 				C795490B197C041D002C6F1D /* ojo@2x.png in Resources */,
 				C7353A28197AADF4002F4E54 /* bg4@2x.jpg in Resources */,
 				C718C1FB195EF91F00389FFD /* bg1@2x.jpg in Resources */,
+				C7A0B4AF19892C9F00C72662 /* marker@2x.png in Resources */,
 				C795490A197C041D002C6F1D /* lapiz@2x.png in Resources */,
 				C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */,
 				C79D38BF196ED0AE00C8A4C8 /* eliminarImagen@2x.png in Resources */,
@@ -457,8 +483,10 @@
 				C770BD08197EC64500C49D57 /* PostImagesCell.swift in Sources */,
 				C79D38ED196F257F00C8A4C8 /* PostsSlideViewController.swift in Sources */,
 				C7B17423197174FD008F00E6 /* PublicarMapaViewController.swift in Sources */,
+				C7A0B4A919891E2B00C72662 /* UserSesionHelper.swift in Sources */,
 				C7F851C01969F405002B38FF /* MainViewController.swift in Sources */,
 				C7ACF3251968673900EB74D5 /* PostsDetailViewController.swift in Sources */,
+				C7A0B4AD198925A300C72662 /* MapHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

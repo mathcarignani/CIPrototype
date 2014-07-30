@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import MapKit
 
 class NewPostViewController: UITableViewController, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDataSource, MultiImagesViewControllerDelegate {
 
     
     @IBOutlet var titleText: UITextField
+    @IBOutlet var descriptionText: UITextView
+    @IBOutlet var categorySelector: UISegmentedControl
     @IBOutlet var imagesCollectionView: UICollectionView
+    @IBOutlet var mapView: MKMapView
     
     var mainImageView: UIImageView! = nil
+    var imageMain : UIImage! = nil
     var images : NSMutableArray = []
-    
+    var category : NSString! = nil
     
     // MARK: LifeCycle Methods
     override func viewDidLoad() {
@@ -29,8 +34,14 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         self.mainImageView.frame = self.view.frame
         self.mainImageView.backgroundColor = UIColor(red: 170/255.0, green: 170/255.0, blue: 170/255.0, alpha: 0.5)
         self.tableView.backgroundView = self.mainImageView
-        //
-
+        
+        // Configuracion del mapa
+        let coordinate = CLLocationCoordinate2D(latitude: -34.9087458, longitude: -56.1614022137041)
+        MapHelper.centerMap(self.mapView, coordinate: coordinate, distance: 1000)
+        // Agrega el marcador en el centro del mapa
+       // var markerImageView = UIImageView(image: UIImage(named: "marker.png"))
+       // markerImageView.center = map
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,9 +64,16 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         
         var post: Post = Post()
         post.title = self.titleText.text
-        post.author = "Mathias Carignani"
-        post.descriptionText = "Hardcodeada"
-        post.images = self.images
+        post.author = UserSesionHelper.sharedInstance().getUserLogued()
+        post.descriptionText = self.descriptionText.text
+        post.date = NSDate()
+        post.category = self.categorySelector.titleForSegmentAtIndex(self.categorySelector.selectedSegmentIndex)
+        // Auxiliar para concatenar las imagenes
+        var arrayAuxiliar = NSMutableArray(object: self.imageMain)
+        arrayAuxiliar.addObjectsFromArray(self.images)
+        post.images = arrayAuxiliar
+        // Guarda la coordenada del centro del mapa
+        post.location = "{\(self.mapView.centerCoordinate.latitude),\(self.mapView.centerCoordinate.longitude)}"
         
         RestApiHelper.sharedInstance().createPost(post)
         
@@ -68,8 +86,9 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     // MARK: UIImagePickerControllerDelegate
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
         
-        // Agrega al array de imagenes
+        // Carga la imagen en el visualizador y la guarda en la variable
         self.mainImageView.image = image
+        self.imageMain = image
         
         picker.dismissViewControllerAnimated(true, completion: nil)
         
