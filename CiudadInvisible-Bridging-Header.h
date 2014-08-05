@@ -11,3 +11,4 @@
 #import "UIImageView+AFNetworking.h"
 #import "UIImageView+LBBlurredImage.h"
 #import "UIImage+ImageEffects.h"
+#import "FacebookSDK.h"

@@ -2,3 +2,4 @@ platform :ios, '7.0'
 
 pod "AFNetworking", "~> 2.0"
 pod 'LBBlurredImage', '~> 0.2.0'
+pod 'Facebook-iOS-SDK', :git => 'https://github.com/pgaspar/facebook-ios-sdk.git', :branch => 'beta3'

@@ -31,7 +31,48 @@ class RestApiHelper: NSObject {
     }
     
     // MARK: Private methods
-    func getPosts(completion: (posts : NSArray) ->()) {
+    
+    // MARK: Users
+    func loginManual(username: String, password: String, completion: (logued: Bool) -> ()) {
+        
+        // Arma los parametros a enviar
+        var parameters = [
+                "username":username,
+                "password":password
+            ] as Dictionary
+        
+        manager.POST("\(urlApi)/login_common",
+            parameters: parameters,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                // Success
+                completion(logued: true)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                completion(logued: false)
+            })
+    }
+    
+    func loginFacebook(username: String, password: String, completion: (logued: Bool) -> ()) {
+        
+        // Arma los parametros a enviar
+        var parameters = [
+            "username":username,
+            "password":password
+            ] as Dictionary
+        
+        manager.POST("\(urlApi)/login_faceboook",
+            parameters: parameters,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                // Success
+                completion(logued: true)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                completion(logued: false)
+            })
+    }
+    
+    // MARK: Posts
+    func getPosts(completion: (posts : NSArray) -> ()) {
         //
         manager.GET("\(urlApi)/posts.json",
             parameters: nil,
@@ -77,6 +118,7 @@ class RestApiHelper: NSObject {
     }
     
     func getPost() {
+    /*
         manager.GET("\(urlApi)/posts/1.json",
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
@@ -85,7 +127,7 @@ class RestApiHelper: NSObject {
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 println("Error")
             })
-
+    */
     }
     
     func createPost(post: Post) {
