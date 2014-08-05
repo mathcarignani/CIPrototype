@@ -52,15 +52,21 @@ class RestApiHelper: NSObject {
             })
     }
     
-    func loginFacebook(username: String, password: String, completion: (logued: Bool) -> ()) {
+    func loginFacebook(user: User, completion: (logued: Bool) -> ()) {
         
         // Arma los parametros a enviar
         var parameters = [
-            "username":username,
-            "password":password
+            "user":
+                [
+                    "username":user.email,
+                    "email":user.email,
+                    "first_name":user.first_name,
+                    "last_name":user.last_name,
+                    "facebook_id":user.facebook_id
+                ]
             ] as Dictionary
         
-        manager.POST("\(urlApi)/login_faceboook",
+        manager.POST("\(urlApi)/users.json",
             parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 // Success

@@ -12,6 +12,8 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
 
     @IBOutlet var loginFacebookView: FBLoginView
     
+    let segueIdentifier = "LoginSegue"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,8 +34,23 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
     // MARK: FBLoginViewDelegate
     // This method will be called when the user information has been fetched
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
-        println(user)
-        println(user.name)
+
+        // Crea el usuario para enviar a la API
+        var userLocal: User = User()
+        userLocal.facebook_id = user.objectID
+        userLocal.email = user.objectForKey("email") as String
+        userLocal.first_name = user.first_name
+        userLocal.last_name = user.last_name
+        RestApiHelper.sharedInstance().loginFacebook(userLocal,
+            completion: { (logued: Bool) in
+                
+                if logued {
+                    println("Logueado con facebook")
+                    self.performSegueWithIdentifier(self.segueIdentifier, sender: self)
+                } else {
+                    println("Error en logueo con facebook")
+                }
+            })
         
         /*
         {

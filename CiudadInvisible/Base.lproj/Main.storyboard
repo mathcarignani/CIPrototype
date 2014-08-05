@@ -428,6 +428,7 @@
                     </simulatedScreenMetrics>
                     <connections>
                         <outlet property="loginFacebookView" destination="jyz-Q7-IpT" id="rPR-QL-Pay"/>
+                        <segue destination="qjn-fo-jl8" kind="modal" identifier="LoginSegue" id="zJD-mD-UG5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjM-5y-Gmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -975,4 +976,7 @@
             <size key="landscapeSize" width="480" height="320"/>
         </simulatedScreenMetrics>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="zJD-mD-UG5"/>
+    </inferredMetricsTieBreakers>
 </document>

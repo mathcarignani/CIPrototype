@@ -35,6 +35,7 @@
 		C79926A319912B89006510A1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79926A219912B89006510A1 /* AVFoundation.framework */; };
 		C79926A519912B93006510A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79926A419912B93006510A1 /* MapKit.framework */; };
 		C79926A719912B99006510A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79926A619912B99006510A1 /* Foundation.framework */; };
+		C79926A919912D89006510A1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79926A819912D89006510A1 /* User.swift */; };
 		C79D38BF196ED0AE00C8A4C8 /* eliminarImagen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C79D38BD196ED0AE00C8A4C8 /* eliminarImagen@2x.png */; };
 		C79D38C0196ED0AE00C8A4C8 /* camaraImagen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C79D38BE196ED0AE00C8A4C8 /* camaraImagen@2x.png */; };
 		C79D38ED196F257F00C8A4C8 /* PostsSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */; };
@@ -98,6 +99,7 @@
 		C79926A219912B89006510A1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C79926A419912B93006510A1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C79926A619912B99006510A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C79926A819912D89006510A1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = model/User.swift; sourceTree = "<group>"; };
 		C79D38BD196ED0AE00C8A4C8 /* eliminarImagen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eliminarImagen@2x.png"; sourceTree = "<group>"; };
 		C79D38BE196ED0AE00C8A4C8 /* camaraImagen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camaraImagen@2x.png"; sourceTree = "<group>"; };
 		C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsSlideViewController.swift; path = controllers/PostsSlideViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				C79D38F0196F292800C8A4C8 /* Post.swift */,
+				C79926A819912D89006510A1 /* User.swift */,
 			);
 			name = Entitys;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */,
 				C79D38EF196F270200C8A4C8 /* PostSlideCell.swift in Sources */,
 				C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */,
+				C79926A919912D89006510A1 /* User.swift in Sources */,
 				C795490E197C083B002C6F1D /* HomeViewController.swift in Sources */,
 				C7353A2D197ABC32002F4E54 /* HelperForms.swift in Sources */,
 				C74B3187197C884800EE70EF /* NewPostViewController.swift in Sources */,
