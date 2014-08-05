@@ -66,7 +66,7 @@ class RestApiHelper: NSObject {
                 ]
             ] as Dictionary
         
-        manager.POST("\(urlApi)/users.json",
+        manager.POST("\(urlApi)/login_facebook",
             parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 // Success
