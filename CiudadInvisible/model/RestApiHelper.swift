@@ -14,6 +14,10 @@ class RestApiHelper: NSObject {
     //let urlApi = "http://ciudadinvisible.herokuapp.com/"
     let urlApi = "http://localhost:3000/"
     
+    var hasUserLogued = false
+    var userLogued: User! = nil
+    
+    
     // MARK: Singleton
     class func sharedInstance() -> RestApiHelper! {
         struct Static {
@@ -33,6 +37,14 @@ class RestApiHelper: NSObject {
     // MARK: Private methods
     
     // MARK: Users
+    func configUserLogued(id: Int) {
+        // Setea en verdadero la variable
+        self.hasUserLogued = true
+        
+        // Obtiene el usuario de la api y lo guarda local
+        
+    }
+    
     func loginManual(username: String, password: String, completion: (logued: Bool) -> ()) {
         
         // Arma los parametros a enviar
@@ -45,6 +57,7 @@ class RestApiHelper: NSObject {
             parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 // Success
+                self.saveInDeviceUserLogued(responseObject)
                 completion(logued: true)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
@@ -175,6 +188,22 @@ class RestApiHelper: NSObject {
     // MARK: Auxiliar
     func encodeToBase64String(image: UIImage) -> String {
         return UIImagePNGRepresentation(image).base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+    }
+    
+    func saveInDeviceUserLogued(responseObject: AnyObject!) {
+        
+        var userJson = JSONValue(responseObject)
+        var user = User()
+        user.id = userJson["id"].integer
+        
+        // Cambia el valor de la variable
+        self.hasUserLogued = true
+        
+        // Guarda en el dispositivo
+        var defaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(user.id, forKey: "user_logued")
+        defaults.synchronize()
+        
     }
 
 }

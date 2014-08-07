@@ -37,6 +37,16 @@ class HomeViewController: UIViewController {
         // MASK
     }
     
+    override func viewDidAppear(animated: Bool) {
+        
+        // Si no hay usuario logueado va al login
+        if !RestApiHelper.sharedInstance().hasUserLogued {
+            self.performSegueWithIdentifier("BackToLoginSegue", sender: self)
+        }
+        
+    }
+    
+    // MARK: Touches
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
         
         // Obtiene el punto tocado y si pertenece a la zona del generar
