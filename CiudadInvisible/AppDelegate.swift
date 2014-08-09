@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             println("Usuario loguedo: \(userId)")
             
             // Setea en verdadero que hay un usuario logueado
-            RestApiHelper.sharedInstance().configUserLogued(userId)
+            UserSesionHelper.sharedInstance().configUserLogued(userId)
             
         } else {
             println("No hay usuario logueado")

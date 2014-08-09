@@ -37,15 +37,6 @@ class HomeViewController: UIViewController {
         // MASK
     }
     
-    override func viewDidAppear(animated: Bool) {
-        
-        // Si no hay usuario logueado va al login
-        if !RestApiHelper.sharedInstance().hasUserLogued {
-            self.performSegueWithIdentifier("BackToLoginSegue", sender: self)
-        }
-        
-    }
-    
     // MARK: Touches
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
         
@@ -121,6 +112,11 @@ class HomeViewController: UIViewController {
     
     override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
         self.view!.layer.mask = nil //remove mask when animation completes
+        
+        // Si no hay usuario logueado va al login
+        if !UserSesionHelper.sharedInstance().hasUserLogued {
+            self.performSegueWithIdentifier("BackToLoginSegue", sender: self)
+        }
     }
 
     // PRUEBA

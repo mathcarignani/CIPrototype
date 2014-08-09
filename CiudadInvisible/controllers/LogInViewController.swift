@@ -11,6 +11,7 @@ import UIKit
 class LogInViewController: UIViewController, FBLoginViewDelegate {
 
     @IBOutlet var loginFacebookView: FBLoginView
+    @IBOutlet var siginButton: UIButton
     
     let segueIdentifier = "LoginSegue"
     
@@ -18,6 +19,8 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
         super.viewDidLoad()
 
         self.setupFacebookLogin()
+        
+        self.configOutlets()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +28,15 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: Outlets
+    func configOutlets() {
+        
+        // Boton de registro
+        self.siginButton.layer.borderColor = UIColor.whiteColor().CGColor
+        self.siginButton.layer.borderWidth = 1.0
+        
+    }
+    
     // MARK: Facebook
     func setupFacebookLogin() {
         self.loginFacebookView.delegate = self
@@ -51,23 +63,6 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
                     println("Error en logueo con facebook")
                 }
             })
-        
-        /*
-        {
-            email = "mathcarignani@gmail.com";
-            "first_name" = Mathias;
-            gender = male;
-            id = 10203569806981983;
-            "last_name" = Carignani;
-            link = "https://www.facebook.com/app_scoped_user_id/10203569806981983/";
-            locale = "es_LA";
-            name = "Mathias Carignani";
-            timezone = "-3";
-            "updated_time" = "2014-02-09T19:29:28+0000";
-            verified = 1;
-        }
-        */
-
     }
 
 }
