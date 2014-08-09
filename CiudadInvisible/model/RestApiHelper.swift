@@ -34,11 +34,11 @@ class RestApiHelper: NSObject {
     
     // MARK: Users
     
-    func loginManual(username: String, password: String, completion: (logued: Bool) -> ()) {
+    func loginManual(email: String, password: String, completion: (logued: Bool) -> ()) {
         
         // Arma los parametros a enviar
         var parameters = [
-                "username":username,
+                "email":email,
                 "password":password
             ] as Dictionary
         

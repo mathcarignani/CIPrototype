@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SiginViewController: UIViewController {
+class SigninViewController: UIViewController {
     
     // Outlets
     @IBOutlet var firstNameText: UITextField

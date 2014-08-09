@@ -10,7 +10,7 @@ import UIKit
 
 class LoginManualViewController: UIViewController {
 
-    @IBOutlet var userText: UITextField
+    @IBOutlet var emailText: UITextField
     @IBOutlet var passwordText: UITextField
     
     let segueIdentifier = "LoginSegue"
@@ -28,7 +28,7 @@ class LoginManualViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func login(sender: AnyObject) {
-        RestApiHelper.sharedInstance().loginManual(self.userText.text,
+        RestApiHelper.sharedInstance().loginManual(self.emailText.text,
             password: self.passwordText.text,
             completion: {(logued: Bool) in
                 if logued {

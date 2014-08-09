@@ -511,8 +511,8 @@
                         <size key="landscapeSize" width="568" height="320"/>
                     </simulatedScreenMetrics>
                     <connections>
+                        <outlet property="emailText" destination="kYX-Kr-CF8" id="tfW-ng-7EL"/>
                         <outlet property="passwordText" destination="vVH-IA-6AX" id="rIm-P1-rB5"/>
-                        <outlet property="userText" destination="kYX-Kr-CF8" id="hvJ-Qs-qv2"/>
                         <segue destination="qjn-fo-jl8" kind="modal" identifier="LoginSegue" id="2hg-gF-jfV"/>
                     </connections>
                 </viewController>
@@ -520,10 +520,10 @@
             </objects>
             <point key="canvasLocation" x="-1017" y="842"/>
         </scene>
-        <!--Sigin View Controller-->
+        <!--Signin View Controller-->
         <scene sceneID="50T-ht-yjd">
             <objects>
-                <viewController id="0nv-HU-ycs" customClass="SiginViewController" customModule="CiudadInvisible" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0nv-HU-ycs" customClass="SigninViewController" customModule="CiudadInvisible" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EB5-HP-4oh"/>
                         <viewControllerLayoutGuide type="bottom" id="9fj-iX-dsU"/>
