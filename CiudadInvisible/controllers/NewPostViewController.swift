@@ -64,7 +64,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         
         var post: Post = Post()
         post.title = self.titleText.text
-        post.author = UserSesionHelper.sharedInstance().getUserLogued()
+        post.author = UserSesionHelper.sharedInstance().getUserLogued().name()
         post.descriptionText = self.descriptionText.text
         post.date = NSDate()
         post.category = self.categorySelector.titleForSegmentAtIndex(self.categorySelector.selectedSegmentIndex)

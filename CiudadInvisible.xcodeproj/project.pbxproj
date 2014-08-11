@@ -51,6 +51,8 @@
 		C7B17423197174FD008F00E6 /* PublicarMapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B17422197174FD008F00E6 /* PublicarMapaViewController.swift */; };
 		C7B21DDD19959CBF00AE4978 /* bgBlur1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B21DDC19959CBF00AE4978 /* bgBlur1@2x.png */; };
 		C7B21DDF19959E6A00AE4978 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B21DDE19959E6A00AE4978 /* SigninViewController.swift */; };
+		C7B21DE11996DE4500AE4978 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B21DE01996DE4500AE4978 /* UserProfileViewController.swift */; };
+		C7B21DE31996E3DD00AE4978 /* avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B21DE21996E3DD00AE4978 /* avatar@2x.png */; };
 		C7F46521198BCE010006D5B1 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F46520198BCE010006D5B1 /* LogInViewController.swift */; };
 		C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */; };
 		C7F851C01969F405002B38FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BF1969F405002B38FF /* MainViewController.swift */; };
@@ -119,6 +121,8 @@
 		C7B17424197175EC008F00E6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		C7B21DDC19959CBF00AE4978 /* bgBlur1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgBlur1@2x.png"; sourceTree = "<group>"; };
 		C7B21DDE19959E6A00AE4978 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninViewController.swift; path = controllers/SigninViewController.swift; sourceTree = "<group>"; };
+		C7B21DE01996DE4500AE4978 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = controllers/UserProfileViewController.swift; sourceTree = "<group>"; };
+		C7B21DE21996E3DD00AE4978 /* avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar@2x.png"; sourceTree = "<group>"; };
 		C7F46520198BCE010006D5B1 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = controllers/LogInViewController.swift; sourceTree = "<group>"; };
 		C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 		C718C1F9195EF8EC00389FFD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C7B21DE21996E3DD00AE4978 /* avatar@2x.png */,
 				C7B21DDC19959CBF00AE4978 /* bgBlur1@2x.png */,
 				C7A0B4AE19892C9F00C72662 /* marker@2x.png */,
 				C712D8A319883F6400993782 /* bgEmpty@2x.jpg */,
@@ -339,6 +344,7 @@
 				C7F46520198BCE010006D5B1 /* LogInViewController.swift */,
 				C799269E19912262006510A1 /* LoginManualViewController.swift */,
 				C7B21DDE19959E6A00AE4978 /* SigninViewController.swift */,
+				C7B21DE01996DE4500AE4978 /* UserProfileViewController.swift */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -449,6 +455,7 @@
 				C795490A197C041D002C6F1D /* lapiz@2x.png in Resources */,
 				C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */,
 				C7B21DDD19959CBF00AE4978 /* bgBlur1@2x.png in Resources */,
+				C7B21DE31996E3DD00AE4978 /* avatar@2x.png in Resources */,
 				C79D38BF196ED0AE00C8A4C8 /* eliminarImagen@2x.png in Resources */,
 				C7954910197C15FA002C6F1D /* logoMask@2x.png in Resources */,
 				C7072B311963639B00F8A244 /* bg3@2x.jpg in Resources */,
@@ -521,6 +528,7 @@
 				C718C202195F0C9300389FFD /* PostView.swift in Sources */,
 				C7A71A07196EC7C1008C82F4 /* MultiImagesViewController.swift in Sources */,
 				C7A0B4B11989753A00C72662 /* PostDetailDescriptionCell.swift in Sources */,
+				C7B21DE11996DE4500AE4978 /* UserProfileViewController.swift in Sources */,
 				C707AC80195E127F00E43F53 /* AppDelegate.swift in Sources */,
 				C770BD08197EC64500C49D57 /* PostImagesCell.swift in Sources */,
 				C79D38ED196F257F00C8A4C8 /* PostsSlideViewController.swift in Sources */,

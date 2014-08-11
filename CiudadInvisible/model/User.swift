@@ -19,6 +19,14 @@ class User: NSObject {
     var twitter_id: String! = nil
     var password: String! = nil
     
+    func name() -> String {
+        return "\(self.first_name) \(self.last_name)"
+    }
+    
+    func avatar() -> UIImage {
+        return UIImage(named: "avatar.png")
+    }
+    
     /*
     t.string   "username"
     t.string   "email"

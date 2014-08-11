@@ -31,8 +31,15 @@ class UserSesionHelper: NSObject {
     }
     
     // MARK: Publics
-    func getUserLogued() -> String {
-        return "Mathias Carignani"
+    func getUserLogued() -> User {
+        
+        // PRUEBA
+        self.userLogued = User()
+        self.userLogued.first_name = "Mathias"
+        self.userLogued.last_name = "Carignani"
+        // PRUEBA
+        
+        return self.userLogued
     }
     
     func configUserLogued(id: Int) {
