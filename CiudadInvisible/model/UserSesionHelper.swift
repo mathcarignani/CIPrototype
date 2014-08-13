@@ -26,7 +26,7 @@ class UserSesionHelper: NSObject {
         return Static.instance!
     }
     
-    @required init() {
+    required override init() {
         
     }
     

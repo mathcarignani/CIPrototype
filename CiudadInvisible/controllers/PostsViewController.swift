@@ -28,7 +28,7 @@ class PostsViewController: UIViewController {
         case RightToCenter
     }
     
-    @IBOutlet var cameraButton : UIButton
+    @IBOutlet var cameraButton : UIButton!
     
     // MARK: LifeCycle Methods
     override func viewDidLoad() {

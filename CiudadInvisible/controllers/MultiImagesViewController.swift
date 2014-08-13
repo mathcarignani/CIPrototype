@@ -16,13 +16,13 @@ class MultiImagesViewController: UIViewController, UINavigationControllerDelegat
 
     var delegate : MultiImagesViewControllerDelegate?
     
-    @IBOutlet var previewActual : UIImageView
-    @IBOutlet var previewsChica : UIView
-    @IBOutlet var previewChica1 : UIImageView
-    @IBOutlet var previewChica2 : UIImageView
-    @IBOutlet var previewChica3 : UIImageView
-    @IBOutlet var previewChica4 : UIImageView
-    @IBOutlet var previewChica5 : UIImageView
+    @IBOutlet var previewActual : UIImageView!
+    @IBOutlet var previewsChica : UIView!
+    @IBOutlet var previewChica1 : UIImageView!
+    @IBOutlet var previewChica2 : UIImageView!
+    @IBOutlet var previewChica3 : UIImageView!
+    @IBOutlet var previewChica4 : UIImageView!
+    @IBOutlet var previewChica5 : UIImageView!
     
     var imagenes : NSMutableArray = []
     var posicionImagenActual = 0
@@ -48,7 +48,7 @@ class MultiImagesViewController: UIViewController, UINavigationControllerDelegat
     }
     
     @IBAction func done(sender : AnyObject) {
-        if self.delegate {
+        if self.delegate != nil {
             self.delegate?.multiImagesDoneWithImages(self.imagenes)
         }
         self.dismissViewControllerAnimated(false, completion: nil)

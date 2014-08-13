@@ -11,10 +11,10 @@ import UIKit
 class SigninViewController: UIViewController {
     
     // Outlets
-    @IBOutlet var firstNameText: UITextField
-    @IBOutlet var lastNameText: UITextField
-    @IBOutlet var emailText: UITextField
-    @IBOutlet var passwordText: UITextField
+    @IBOutlet var firstNameText: UITextField!
+    @IBOutlet var lastNameText: UITextField!
+    @IBOutlet var emailText: UITextField!
+    @IBOutlet var passwordText: UITextField!
     
     let segueIdentifier = "LoginSegue"
     

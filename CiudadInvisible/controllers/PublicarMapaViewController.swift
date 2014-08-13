@@ -11,7 +11,7 @@ import MapKit
 
 class PublicarMapaViewController: UIViewController, MKMapViewDelegate {
 
-    @IBOutlet var mapView : MKMapView
+    @IBOutlet var mapView : MKMapView!
     
     var coordinate : CLLocationCoordinate2D! = nil
     let distanceToCoordinate : CLLocationDistance = 1000

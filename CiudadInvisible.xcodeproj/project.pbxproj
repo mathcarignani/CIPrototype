@@ -26,6 +26,8 @@
 		C7353A2D197ABC32002F4E54 /* HelperForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7353A2C197ABC32002F4E54 /* HelperForms.swift */; };
 		C74B3187197C884800EE70EF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74B3186197C884800EE70EF /* NewPostViewController.swift */; };
 		C770BD08197EC64500C49D57 /* PostImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BD07197EC64500C49D57 /* PostImagesCell.swift */; };
+		C77322A7199BF30E001F2249 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77322A6199BF30D001F2249 /* Accounts.framework */; };
+		C77322A9199BF313001F2249 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77322A8199BF313001F2249 /* Twitter.framework */; };
 		C795490A197C041D002C6F1D /* lapiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7954908197C041D002C6F1D /* lapiz@2x.png */; };
 		C795490B197C041D002C6F1D /* ojo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7954909197C041D002C6F1D /* ojo@2x.png */; };
 		C795490E197C083B002C6F1D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795490D197C083B002C6F1D /* HomeViewController.swift */; };
@@ -94,6 +96,8 @@
 		C7353A2C197ABC32002F4E54 /* HelperForms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelperForms.swift; path = views/HelperForms.swift; sourceTree = "<group>"; };
 		C74B3186197C884800EE70EF /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewPostViewController.swift; path = controllers/NewPostViewController.swift; sourceTree = "<group>"; };
 		C770BD07197EC64500C49D57 /* PostImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostImagesCell.swift; path = views/PostImagesCell.swift; sourceTree = "<group>"; };
+		C77322A6199BF30D001F2249 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		C77322A8199BF313001F2249 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		C7954908197C041D002C6F1D /* lapiz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lapiz@2x.png"; sourceTree = "<group>"; };
 		C7954909197C041D002C6F1D /* ojo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ojo@2x.png"; sourceTree = "<group>"; };
 		C795490D197C083B002C6F1D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = controllers/HomeViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C79926A719912B99006510A1 /* Foundation.framework in Frameworks */,
+				C77322A7199BF30E001F2249 /* Accounts.framework in Frameworks */,
+				C77322A9199BF313001F2249 /* Twitter.framework in Frameworks */,
 				C79926A519912B93006510A1 /* MapKit.framework in Frameworks */,
 				C79926A319912B89006510A1 /* AVFoundation.framework in Frameworks */,
 				C79926A119912B77006510A1 /* UIKit.framework in Frameworks */,
@@ -352,6 +358,8 @@
 		CE1364FB7F454404B0F45ADE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C77322A8199BF313001F2249 /* Twitter.framework */,
+				C77322A6199BF30D001F2249 /* Accounts.framework */,
 				C79926A619912B99006510A1 /* Foundation.framework */,
 				C79926A419912B93006510A1 /* MapKit.framework */,
 				C79926A219912B89006510A1 /* AVFoundation.framework */,

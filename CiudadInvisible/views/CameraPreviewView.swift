@@ -10,10 +10,10 @@ import UIKit
 import AVFoundation
 
 class CameraPreviewView: UIView {
-
-    override class func layerClass() -> AnyClass! {
-        return AVCaptureVideoPreviewLayer.self
-    }
+    
+    //override class func layerClass() -> AnyClass! {
+    //    return AVCaptureVideoPreviewLayer.self
+    //}
     
     func session() -> AVCaptureSession {
         return (self.layer as AVCaptureVideoPreviewLayer).session

@@ -10,16 +10,16 @@ import UIKit
 
 class PostSlideCell: UICollectionViewCell {
 
-    @IBOutlet var fondo: UIView
-    @IBOutlet var titulo: UILabel
-    @IBOutlet var distancia: UILabel
-    @IBOutlet var imagen: UIImageView
+    @IBOutlet var fondo: UIView!
+    @IBOutlet var titulo: UILabel!
+    @IBOutlet var distancia: UILabel!
+    @IBOutlet var imagen: UIImageView!
     
-    init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
     }
     

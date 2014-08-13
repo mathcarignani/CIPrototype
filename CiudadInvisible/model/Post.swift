@@ -22,7 +22,7 @@ class Post: NSObject {
     var url : String! = nil
     
     
-    init() {
+    override init() {
         super.init()
     }
     

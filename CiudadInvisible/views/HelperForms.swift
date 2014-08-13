@@ -17,8 +17,8 @@ class HelperForms : NSObject {
     //// Cache
 
     struct Cache {
-        static var imageOfFlecha: UIImage?
-        static var flechaTargets: [AnyObject]?
+        static var imageOfFlecha: UIImage!
+        static var flechaTargets: [AnyObject]!
     }
 
     //// Initialization

@@ -12,11 +12,11 @@ import MapKit
 class NewPostViewController: UITableViewController, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDataSource, MultiImagesViewControllerDelegate {
 
     
-    @IBOutlet var titleText: UITextField
-    @IBOutlet var descriptionText: UITextView
-    @IBOutlet var categorySelector: UISegmentedControl
-    @IBOutlet var imagesCollectionView: UICollectionView
-    @IBOutlet var mapView: MKMapView
+    @IBOutlet var titleText: UITextField!
+    @IBOutlet var descriptionText: UITextView!
+    @IBOutlet var categorySelector: UISegmentedControl!
+    @IBOutlet var imagesCollectionView: UICollectionView!
+    @IBOutlet var mapView: MKMapView!
     
     var mainImageView: UIImageView! = nil
     var imageMain : UIImage! = nil

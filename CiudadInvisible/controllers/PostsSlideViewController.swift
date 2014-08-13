@@ -10,7 +10,7 @@ import UIKit
 
 class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
 
-    @IBOutlet var collectionView : UICollectionView
+    @IBOutlet var collectionView : UICollectionView!
     
     var posts : NSArray! = NSArray()
     var imageEmpty : UIImage = UIImage(named: "bgEmpty.jpg")

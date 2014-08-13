@@ -10,8 +10,8 @@ import UIKit
 
 class LoginManualViewController: UIViewController {
 
-    @IBOutlet var emailText: UITextField
-    @IBOutlet var passwordText: UITextField
+    @IBOutlet var emailText: UITextField!
+    @IBOutlet var passwordText: UITextField!
     
     let segueIdentifier = "LoginSegue"
     

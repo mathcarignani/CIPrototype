@@ -11,11 +11,11 @@ import QuartzCore
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet var capturarImage: UIImageView
-    @IBOutlet var capturarLabel: UILabel
+    @IBOutlet var capturarImage: UIImageView!
+    @IBOutlet var capturarLabel: UILabel!
     
-    @IBOutlet var explorarImage: UIImageView
-    @IBOutlet var explorarLabel: UILabel
+    @IBOutlet var explorarImage: UIImageView!
+    @IBOutlet var explorarLabel: UILabel!
     
     var mask: CALayer?
     

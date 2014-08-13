@@ -17,7 +17,7 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     var backgroundImage = UIImageView()
     var imageEmpty : UIImage = UIImage(named: "bgEmpty.jpg")
     
-    @IBOutlet var tableView : UITableView
+    @IBOutlet var tableView : UITableView!
     
     // MARK: Lifecycle
     override func viewDidLoad() {

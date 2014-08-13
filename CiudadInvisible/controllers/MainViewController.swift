@@ -11,7 +11,7 @@ import AVFoundation
 
 class MainViewController: UIViewController {
 
-    @IBOutlet var cameraPreviewView : CameraPreviewView
+    @IBOutlet var cameraPreviewView : CameraPreviewView!
 
     var session : AVCaptureSession = AVCaptureSession()
     /*var videoDeviceInput : AVCaptureDeviceInput = AVCaptureDeviceInput()

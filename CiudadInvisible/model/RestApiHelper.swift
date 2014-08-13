@@ -26,7 +26,7 @@ class RestApiHelper: NSObject {
         return Static.instance!
     }
     
-    @required init() {
+    required override init() {
         
     }
     
@@ -117,9 +117,9 @@ class RestApiHelper: NSObject {
                 
                 // Obtiene los posts
                 var postsJson = JSONValue(responseObject)
-                let postsJsonCount = postsJson.array?.count as Int
+                let postsJsonCount = postsJson.array?.count
                 // Recorre los posts json
-                for i in 0...(postsJsonCount - 1) {
+                for i in 0...(postsJsonCount! - 1) {
             
                     // Crea el post y lo agrega a la lista
                     var post : Post = Post()
@@ -134,13 +134,13 @@ class RestApiHelper: NSObject {
                     var auxImages : Array = []
                     let imagesJsonCount = postsJson[i]["assets"].array?.count
                     for j in 0...(imagesJsonCount! - 1) {
-                        auxImages += postsJson[i]["assets"][j]["file_url"].string!
+                        auxImages.append(postsJson[i]["assets"][j]["file_url"].string!)
                     }
                     post.images = auxImages
                     
                     
                     // Agrega el post
-                    posts += post
+                    posts.append(post)
                 }
                 
                 // Ejecuta el bloque con el retorno de los posts
@@ -175,7 +175,7 @@ class RestApiHelper: NSObject {
                 "filename": "\(post.title).png",
                 "content_type": "image/png"
             ]
-            imagesData += imageDictionary
+            imagesData.append(imageDictionary)
         }
         
         var parameters = [

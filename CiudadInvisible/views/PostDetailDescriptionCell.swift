@@ -10,10 +10,14 @@ import UIKit
 
 class PostDetailDescriptionCell: UITableViewCell {
     
-    @IBOutlet var descriptionText: UILabel
-    @IBOutlet var categoryText: UILabel
+    @IBOutlet var descriptionText: UILabel!
+    @IBOutlet var categoryText: UILabel!
+   
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
-    init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reuseIdentifier)
     }
 }

@@ -11,10 +11,13 @@ import MapKit
 
 class PostDetailMapCell: UITableViewCell {
 
-    @IBOutlet var mapa: MKMapView
+    @IBOutlet var mapa: MKMapView!
+
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
-    init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reuseIdentifier)
-        println("PostDetailMapCell init")
     }
 }

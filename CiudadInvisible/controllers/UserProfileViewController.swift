@@ -10,9 +10,9 @@ import UIKit
 
 class UserProfileViewController: UIViewController {
 
-    @IBOutlet var backgroundImage: UIImageView
-    @IBOutlet var avatarImage: UIImageView
-    @IBOutlet var nameText: UILabel
+    @IBOutlet var backgroundImage: UIImageView!
+    @IBOutlet var avatarImage: UIImageView!
+    @IBOutlet var nameText: UILabel!
     
     var user: User! = nil
     

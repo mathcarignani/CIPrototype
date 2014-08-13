@@ -17,8 +17,12 @@ class PostView: UIView {
     
     let defaultFrame = CGRectMake(0, 0, 140, 40)
     
-    init() {
+    override init() {
         super.init(frame: defaultFrame)
+    }
+    
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
     }
     
     init(frame: CGRect, image: UIImage, name: NSString, distance: NSString) {
