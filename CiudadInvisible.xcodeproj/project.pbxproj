@@ -15,7 +15,6 @@
 		C707AC85195E127F00E43F53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C707AC83195E127F00E43F53 /* Main.storyboard */; };
 		C707AC87195E127F00E43F53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C707AC86195E127F00E43F53 /* Images.xcassets */; };
 		C707AC93195E127F00E43F53 /* CiudadInvisibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C707AC92195E127F00E43F53 /* CiudadInvisibleTests.swift */; };
-		C712D8A2198827CF00993782 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C712D8A1198827CF00993782 /* SwiftyJSON.swift */; };
 		C712D8A419883F6400993782 /* bgEmpty@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C712D8A319883F6400993782 /* bgEmpty@2x.jpg */; };
 		C718C1F5195EF79100389FFD /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718C1F4195EF79100389FFD /* PostsViewController.swift */; };
 		C718C1FB195EF91F00389FFD /* bg1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C718C1FA195EF91F00389FFD /* bg1@2x.jpg */; };
@@ -55,6 +54,34 @@
 		C7B21DDF19959E6A00AE4978 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B21DDE19959E6A00AE4978 /* SigninViewController.swift */; };
 		C7B21DE11996DE4500AE4978 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B21DE01996DE4500AE4978 /* UserProfileViewController.swift */; };
 		C7B21DE31996E3DD00AE4978 /* avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B21DE21996E3DD00AE4978 /* avatar@2x.png */; };
+		C7EFBFB2199C0D0600EB0A91 /* Dictionary+Swifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBF94199C0D0600EB0A91 /* Dictionary+Swifter.swift */; };
+		C7EFBFB3199C0D0600EB0A91 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7EFBF95199C0D0600EB0A91 /* Info.plist */; };
+		C7EFBFB4199C0D0600EB0A91 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBF96199C0D0600EB0A91 /* JSON.swift */; };
+		C7EFBFB5199C0D0600EB0A91 /* NSURL+Swifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBF97199C0D0600EB0A91 /* NSURL+Swifter.swift */; };
+		C7EFBFB6199C0D0600EB0A91 /* String+Swifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBF98199C0D0600EB0A91 /* String+Swifter.swift */; };
+		C7EFBFB7199C0D0600EB0A91 /* Swifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBF9B199C0D0600EB0A91 /* Swifter.swift */; };
+		C7EFBFB8199C0D0600EB0A91 /* SwifterAccountsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBF9C199C0D0600EB0A91 /* SwifterAccountsClient.swift */; };
+		C7EFBFB9199C0D0600EB0A91 /* SwifterAppOnlyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBF9D199C0D0600EB0A91 /* SwifterAppOnlyClient.swift */; };
+		C7EFBFBA199C0D0600EB0A91 /* SwifterAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBF9E199C0D0600EB0A91 /* SwifterAuth.swift */; };
+		C7EFBFBB199C0D0600EB0A91 /* SwifterClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBF9F199C0D0600EB0A91 /* SwifterClientProtocol.swift */; };
+		C7EFBFBC199C0D0600EB0A91 /* SwifterCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFA0199C0D0600EB0A91 /* SwifterCredential.swift */; };
+		C7EFBFBD199C0D0600EB0A91 /* SwifterFavorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFA1199C0D0600EB0A91 /* SwifterFavorites.swift */; };
+		C7EFBFBE199C0D0600EB0A91 /* SwifterFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFA2199C0D0600EB0A91 /* SwifterFollowers.swift */; };
+		C7EFBFBF199C0D0600EB0A91 /* SwifterHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFA3199C0D0600EB0A91 /* SwifterHelp.swift */; };
+		C7EFBFC0199C0D0600EB0A91 /* SwifterHTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFA4199C0D0600EB0A91 /* SwifterHTTPRequest.swift */; };
+		C7EFBFC1199C0D0600EB0A91 /* SwifterLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFA5199C0D0600EB0A91 /* SwifterLists.swift */; };
+		C7EFBFC2199C0D0600EB0A91 /* SwifterMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFA6199C0D0600EB0A91 /* SwifterMessages.swift */; };
+		C7EFBFC3199C0D0600EB0A91 /* SwifterOAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFA7199C0D0600EB0A91 /* SwifterOAuthClient.swift */; };
+		C7EFBFC4199C0D0600EB0A91 /* SwifterPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFA8199C0D0600EB0A91 /* SwifterPlaces.swift */; };
+		C7EFBFC5199C0D0600EB0A91 /* SwifterSavedSearches.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFA9199C0D0600EB0A91 /* SwifterSavedSearches.swift */; };
+		C7EFBFC6199C0D0600EB0A91 /* SwifterSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFAA199C0D0600EB0A91 /* SwifterSearch.swift */; };
+		C7EFBFC7199C0D0600EB0A91 /* SwifterSpam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFAB199C0D0600EB0A91 /* SwifterSpam.swift */; };
+		C7EFBFC8199C0D0600EB0A91 /* SwifterStreaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFAC199C0D0600EB0A91 /* SwifterStreaming.swift */; };
+		C7EFBFC9199C0D0600EB0A91 /* SwifterSuggested.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFAD199C0D0600EB0A91 /* SwifterSuggested.swift */; };
+		C7EFBFCA199C0D0600EB0A91 /* SwifterTimelines.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFAE199C0D0600EB0A91 /* SwifterTimelines.swift */; };
+		C7EFBFCB199C0D0600EB0A91 /* SwifterTrends.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFAF199C0D0600EB0A91 /* SwifterTrends.swift */; };
+		C7EFBFCC199C0D0600EB0A91 /* SwifterTweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFB0199C0D0600EB0A91 /* SwifterTweets.swift */; };
+		C7EFBFCD199C0D0600EB0A91 /* SwifterUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFB1199C0D0600EB0A91 /* SwifterUsers.swift */; };
 		C7F46521198BCE010006D5B1 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F46520198BCE010006D5B1 /* LogInViewController.swift */; };
 		C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */; };
 		C7F851C01969F405002B38FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BF1969F405002B38FF /* MainViewController.swift */; };
@@ -85,7 +112,6 @@
 		C707AC8C195E127F00E43F53 /* CiudadInvisibleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CiudadInvisibleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C707AC91195E127F00E43F53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C707AC92195E127F00E43F53 /* CiudadInvisibleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiudadInvisibleTests.swift; sourceTree = "<group>"; };
-		C712D8A1198827CF00993782 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		C712D8A319883F6400993782 /* bgEmpty@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgEmpty@2x.jpg"; sourceTree = "<group>"; };
 		C718C1F4195EF79100389FFD /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsViewController.swift; path = controllers/PostsViewController.swift; sourceTree = "<group>"; };
 		C718C1FA195EF91F00389FFD /* bg1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg1@2x.jpg"; sourceTree = "<group>"; };
@@ -127,6 +153,36 @@
 		C7B21DDE19959E6A00AE4978 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninViewController.swift; path = controllers/SigninViewController.swift; sourceTree = "<group>"; };
 		C7B21DE01996DE4500AE4978 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = controllers/UserProfileViewController.swift; sourceTree = "<group>"; };
 		C7B21DE21996E3DD00AE4978 /* avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar@2x.png"; sourceTree = "<group>"; };
+		C7EFBF94199C0D0600EB0A91 /* Dictionary+Swifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Swifter.swift"; sourceTree = "<group>"; };
+		C7EFBF95199C0D0600EB0A91 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7EFBF96199C0D0600EB0A91 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		C7EFBF97199C0D0600EB0A91 /* NSURL+Swifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Swifter.swift"; sourceTree = "<group>"; };
+		C7EFBF98199C0D0600EB0A91 /* String+Swifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Swifter.swift"; sourceTree = "<group>"; };
+		C7EFBF99199C0D0600EB0A91 /* Swifter-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Swifter-Bridging-Header.h"; sourceTree = "<group>"; };
+		C7EFBF9A199C0D0600EB0A91 /* Swifter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swifter.h; sourceTree = "<group>"; };
+		C7EFBF9B199C0D0600EB0A91 /* Swifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swifter.swift; sourceTree = "<group>"; };
+		C7EFBF9C199C0D0600EB0A91 /* SwifterAccountsClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterAccountsClient.swift; sourceTree = "<group>"; };
+		C7EFBF9D199C0D0600EB0A91 /* SwifterAppOnlyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterAppOnlyClient.swift; sourceTree = "<group>"; };
+		C7EFBF9E199C0D0600EB0A91 /* SwifterAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterAuth.swift; sourceTree = "<group>"; };
+		C7EFBF9F199C0D0600EB0A91 /* SwifterClientProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterClientProtocol.swift; sourceTree = "<group>"; };
+		C7EFBFA0199C0D0600EB0A91 /* SwifterCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterCredential.swift; sourceTree = "<group>"; };
+		C7EFBFA1199C0D0600EB0A91 /* SwifterFavorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterFavorites.swift; sourceTree = "<group>"; };
+		C7EFBFA2199C0D0600EB0A91 /* SwifterFollowers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterFollowers.swift; sourceTree = "<group>"; };
+		C7EFBFA3199C0D0600EB0A91 /* SwifterHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterHelp.swift; sourceTree = "<group>"; };
+		C7EFBFA4199C0D0600EB0A91 /* SwifterHTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterHTTPRequest.swift; sourceTree = "<group>"; };
+		C7EFBFA5199C0D0600EB0A91 /* SwifterLists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterLists.swift; sourceTree = "<group>"; };
+		C7EFBFA6199C0D0600EB0A91 /* SwifterMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterMessages.swift; sourceTree = "<group>"; };
+		C7EFBFA7199C0D0600EB0A91 /* SwifterOAuthClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterOAuthClient.swift; sourceTree = "<group>"; };
+		C7EFBFA8199C0D0600EB0A91 /* SwifterPlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterPlaces.swift; sourceTree = "<group>"; };
+		C7EFBFA9199C0D0600EB0A91 /* SwifterSavedSearches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterSavedSearches.swift; sourceTree = "<group>"; };
+		C7EFBFAA199C0D0600EB0A91 /* SwifterSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterSearch.swift; sourceTree = "<group>"; };
+		C7EFBFAB199C0D0600EB0A91 /* SwifterSpam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterSpam.swift; sourceTree = "<group>"; };
+		C7EFBFAC199C0D0600EB0A91 /* SwifterStreaming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterStreaming.swift; sourceTree = "<group>"; };
+		C7EFBFAD199C0D0600EB0A91 /* SwifterSuggested.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterSuggested.swift; sourceTree = "<group>"; };
+		C7EFBFAE199C0D0600EB0A91 /* SwifterTimelines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterTimelines.swift; sourceTree = "<group>"; };
+		C7EFBFAF199C0D0600EB0A91 /* SwifterTrends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterTrends.swift; sourceTree = "<group>"; };
+		C7EFBFB0199C0D0600EB0A91 /* SwifterTweets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterTweets.swift; sourceTree = "<group>"; };
+		C7EFBFB1199C0D0600EB0A91 /* SwifterUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterUsers.swift; sourceTree = "<group>"; };
 		C7F46520198BCE010006D5B1 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = controllers/LogInViewController.swift; sourceTree = "<group>"; };
 		C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
@@ -169,7 +225,6 @@
 				217DE757A0F64215828105CE /* Pods.xcconfig */,
 				C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */,
 				C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */,
-				C712D8A1198827CF00993782 /* SwiftyJSON.swift */,
 				C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */,
 				CE1364FB7F454404B0F45ADE /* Frameworks */,
 			);
@@ -344,6 +399,43 @@
 			name = ExplorePost;
 			sourceTree = "<group>";
 		};
+		C7EFBF93199C0D0600EB0A91 /* Swifter */ = {
+			isa = PBXGroup;
+			children = (
+				C7EFBF94199C0D0600EB0A91 /* Dictionary+Swifter.swift */,
+				C7EFBF95199C0D0600EB0A91 /* Info.plist */,
+				C7EFBF96199C0D0600EB0A91 /* JSON.swift */,
+				C7EFBF97199C0D0600EB0A91 /* NSURL+Swifter.swift */,
+				C7EFBF98199C0D0600EB0A91 /* String+Swifter.swift */,
+				C7EFBF99199C0D0600EB0A91 /* Swifter-Bridging-Header.h */,
+				C7EFBF9A199C0D0600EB0A91 /* Swifter.h */,
+				C7EFBF9B199C0D0600EB0A91 /* Swifter.swift */,
+				C7EFBF9C199C0D0600EB0A91 /* SwifterAccountsClient.swift */,
+				C7EFBF9D199C0D0600EB0A91 /* SwifterAppOnlyClient.swift */,
+				C7EFBF9E199C0D0600EB0A91 /* SwifterAuth.swift */,
+				C7EFBF9F199C0D0600EB0A91 /* SwifterClientProtocol.swift */,
+				C7EFBFA0199C0D0600EB0A91 /* SwifterCredential.swift */,
+				C7EFBFA1199C0D0600EB0A91 /* SwifterFavorites.swift */,
+				C7EFBFA2199C0D0600EB0A91 /* SwifterFollowers.swift */,
+				C7EFBFA3199C0D0600EB0A91 /* SwifterHelp.swift */,
+				C7EFBFA4199C0D0600EB0A91 /* SwifterHTTPRequest.swift */,
+				C7EFBFA5199C0D0600EB0A91 /* SwifterLists.swift */,
+				C7EFBFA6199C0D0600EB0A91 /* SwifterMessages.swift */,
+				C7EFBFA7199C0D0600EB0A91 /* SwifterOAuthClient.swift */,
+				C7EFBFA8199C0D0600EB0A91 /* SwifterPlaces.swift */,
+				C7EFBFA9199C0D0600EB0A91 /* SwifterSavedSearches.swift */,
+				C7EFBFAA199C0D0600EB0A91 /* SwifterSearch.swift */,
+				C7EFBFAB199C0D0600EB0A91 /* SwifterSpam.swift */,
+				C7EFBFAC199C0D0600EB0A91 /* SwifterStreaming.swift */,
+				C7EFBFAD199C0D0600EB0A91 /* SwifterSuggested.swift */,
+				C7EFBFAE199C0D0600EB0A91 /* SwifterTimelines.swift */,
+				C7EFBFAF199C0D0600EB0A91 /* SwifterTrends.swift */,
+				C7EFBFB0199C0D0600EB0A91 /* SwifterTweets.swift */,
+				C7EFBFB1199C0D0600EB0A91 /* SwifterUsers.swift */,
+			);
+			path = Swifter;
+			sourceTree = "<group>";
+		};
 		C7F4651F198BCDEC0006D5B1 /* Users */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +450,7 @@
 		CE1364FB7F454404B0F45ADE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7EFBF93199C0D0600EB0A91 /* Swifter */,
 				C77322A8199BF313001F2249 /* Twitter.framework */,
 				C77322A6199BF30D001F2249 /* Accounts.framework */,
 				C79926A619912B99006510A1 /* Foundation.framework */,
@@ -455,6 +548,7 @@
 			files = (
 				C718C1FD195EFE7000389FFD /* camera@2x.png in Resources */,
 				C707AC85195E127F00E43F53 /* Main.storyboard in Resources */,
+				C7EFBFB3199C0D0600EB0A91 /* Info.plist in Resources */,
 				C7072B2F1963638500F8A244 /* bg2@2x.jpg in Resources */,
 				C795490B197C041D002C6F1D /* ojo@2x.png in Resources */,
 				C7353A28197AADF4002F4E54 /* bg4@2x.jpg in Resources */,
@@ -522,29 +616,55 @@
 			files = (
 				C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */,
 				C79D38EF196F270200C8A4C8 /* PostSlideCell.swift in Sources */,
+				C7EFBFB9199C0D0600EB0A91 /* SwifterAppOnlyClient.swift in Sources */,
 				C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */,
+				C7EFBFBB199C0D0600EB0A91 /* SwifterClientProtocol.swift in Sources */,
 				C79926A919912D89006510A1 /* User.swift in Sources */,
 				C795490E197C083B002C6F1D /* HomeViewController.swift in Sources */,
+				C7EFBFCB199C0D0600EB0A91 /* SwifterTrends.swift in Sources */,
 				C7353A2D197ABC32002F4E54 /* HelperForms.swift in Sources */,
+				C7EFBFC0199C0D0600EB0A91 /* SwifterHTTPRequest.swift in Sources */,
+				C7EFBFBE199C0D0600EB0A91 /* SwifterFollowers.swift in Sources */,
 				C74B3187197C884800EE70EF /* NewPostViewController.swift in Sources */,
+				C7EFBFC7199C0D0600EB0A91 /* SwifterSpam.swift in Sources */,
+				C7EFBFC1199C0D0600EB0A91 /* SwifterLists.swift in Sources */,
 				C7F851C21969F58F002B38FF /* CameraPreviewView.swift in Sources */,
-				C712D8A2198827CF00993782 /* SwiftyJSON.swift in Sources */,
 				C799269F19912262006510A1 /* LoginManualViewController.swift in Sources */,
 				C79D38F1196F292800C8A4C8 /* Post.swift in Sources */,
 				C718C1F5195EF79100389FFD /* PostsViewController.swift in Sources */,
 				C7353A2B197AB310002F4E54 /* PostDetailMapCell.swift in Sources */,
 				C718C202195F0C9300389FFD /* PostView.swift in Sources */,
+				C7EFBFC6199C0D0600EB0A91 /* SwifterSearch.swift in Sources */,
+				C7EFBFB5199C0D0600EB0A91 /* NSURL+Swifter.swift in Sources */,
 				C7A71A07196EC7C1008C82F4 /* MultiImagesViewController.swift in Sources */,
+				C7EFBFB2199C0D0600EB0A91 /* Dictionary+Swifter.swift in Sources */,
+				C7EFBFC3199C0D0600EB0A91 /* SwifterOAuthClient.swift in Sources */,
+				C7EFBFB4199C0D0600EB0A91 /* JSON.swift in Sources */,
+				C7EFBFC2199C0D0600EB0A91 /* SwifterMessages.swift in Sources */,
 				C7A0B4B11989753A00C72662 /* PostDetailDescriptionCell.swift in Sources */,
 				C7B21DE11996DE4500AE4978 /* UserProfileViewController.swift in Sources */,
+				C7EFBFBD199C0D0600EB0A91 /* SwifterFavorites.swift in Sources */,
+				C7EFBFBF199C0D0600EB0A91 /* SwifterHelp.swift in Sources */,
+				C7EFBFB7199C0D0600EB0A91 /* Swifter.swift in Sources */,
+				C7EFBFC9199C0D0600EB0A91 /* SwifterSuggested.swift in Sources */,
+				C7EFBFC8199C0D0600EB0A91 /* SwifterStreaming.swift in Sources */,
 				C707AC80195E127F00E43F53 /* AppDelegate.swift in Sources */,
+				C7EFBFC4199C0D0600EB0A91 /* SwifterPlaces.swift in Sources */,
 				C770BD08197EC64500C49D57 /* PostImagesCell.swift in Sources */,
 				C79D38ED196F257F00C8A4C8 /* PostsSlideViewController.swift in Sources */,
+				C7EFBFBC199C0D0600EB0A91 /* SwifterCredential.swift in Sources */,
 				C7B17423197174FD008F00E6 /* PublicarMapaViewController.swift in Sources */,
 				C7F46521198BCE010006D5B1 /* LogInViewController.swift in Sources */,
+				C7EFBFC5199C0D0600EB0A91 /* SwifterSavedSearches.swift in Sources */,
+				C7EFBFCD199C0D0600EB0A91 /* SwifterUsers.swift in Sources */,
+				C7EFBFCA199C0D0600EB0A91 /* SwifterTimelines.swift in Sources */,
+				C7EFBFB8199C0D0600EB0A91 /* SwifterAccountsClient.swift in Sources */,
 				C7B21DDF19959E6A00AE4978 /* SigninViewController.swift in Sources */,
+				C7EFBFBA199C0D0600EB0A91 /* SwifterAuth.swift in Sources */,
+				C7EFBFCC199C0D0600EB0A91 /* SwifterTweets.swift in Sources */,
 				C7A0B4A919891E2B00C72662 /* UserSesionHelper.swift in Sources */,
 				C7F851C01969F405002B38FF /* MainViewController.swift in Sources */,
+				C7EFBFB6199C0D0600EB0A91 /* String+Swifter.swift in Sources */,
 				C7ACF3251968673900EB74D5 /* PostsDetailViewController.swift in Sources */,
 				C7A0B4AD198925A300C72662 /* MapHelper.swift in Sources */,
 			);
@@ -672,6 +792,10 @@
 				INFOPLIST_FILE = CiudadInvisible/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos7.0;
 				SWIFT_OBJC_BRIDGING_HEADER = "CiudadInvisible-Bridging-Header.h";
@@ -693,6 +817,10 @@
 				INFOPLIST_FILE = CiudadInvisible/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/lib/system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos7.0;
 				SWIFT_OBJC_BRIDGING_HEADER = "CiudadInvisible-Bridging-Header.h";

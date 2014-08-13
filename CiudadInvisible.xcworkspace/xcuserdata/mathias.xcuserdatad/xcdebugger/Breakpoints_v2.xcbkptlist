@@ -153,7 +153,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
             endingLineNumber = "110"
-            landmarkName = "loginViewFetchedUserInfo(_:user:)"
+            landmarkName = "loginWithTwitter(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

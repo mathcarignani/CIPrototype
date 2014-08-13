@@ -12,3 +12,4 @@
 #import "UIImageView+LBBlurredImage.h"
 #import "UIImage+ImageEffects.h"
 #import "FacebookSDK.h"
+#import <CommonCrypto/CommonCrypto.h>
