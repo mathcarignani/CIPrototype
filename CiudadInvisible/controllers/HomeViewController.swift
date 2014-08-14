@@ -37,6 +37,14 @@ class HomeViewController: UIViewController {
         // MASK
     }
     
+    // MARK: Actions
+    @IBAction func logout(sender: AnyObject) {
+        UserSesionHelper.sharedInstance().logout()
+        // Vuelve al login
+        self.performSegueWithIdentifier("BackToLoginSegue", sender: self)
+    }
+    
+    
     // MARK: Touches
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
         

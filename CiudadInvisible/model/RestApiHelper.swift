@@ -34,6 +34,27 @@ class RestApiHelper: NSObject {
     
     // MARK: Users
     
+    func getUser(userId: Int, completion: (user: User) -> ()) {
+        
+        var user: User! = User()
+        
+        manager.GET("\(urlApi)/users/\(userId)",
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                println("Json obtenido => " + responseObject.description)
+                
+                // Parser
+                user = User()
+                completion(user: user)
+                
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error: \(error)")
+                completion(user: user)
+        })
+        
+    }
+    
     func loginManual(email: String, password: String, completion: (logued: Bool) -> ()) {
         
         // Arma los parametros a enviar
@@ -77,6 +98,31 @@ class RestApiHelper: NSObject {
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 completion(logued: false)
             })
+    }
+    
+    func loginTwitter(user: User, completion: (logued: Bool) -> ()) {
+        
+        // Arma los parametros a enviar
+        var parameters = [
+            "user":
+                [
+                    "username":user.email,
+                    "email":user.email,
+                    "first_name":user.first_name,
+                    "last_name":user.last_name,
+                    "twitter_id":user.twitter_id
+            ]
+            ] as Dictionary
+        
+        manager.POST("\(urlApi)/login_twitter",
+            parameters: parameters,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                // Success
+                completion(logued: true)
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                completion(logued: false)
+        })
     }
     
     func siginManual(user: User, completion: (register: Bool) -> ()) {

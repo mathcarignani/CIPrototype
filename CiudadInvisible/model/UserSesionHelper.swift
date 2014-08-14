@@ -33,6 +33,18 @@ class UserSesionHelper: NSObject {
     // MARK: Publics
     func getUserLogued() -> User {
         
+        // Si el usuario no existe lo obtiene
+        if self.userLogued == nil {
+            
+            var defaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            let userId = defaults.integerForKey("user_logued")
+            
+            RestApiHelper.sharedInstance().getUser(userId, completion: { (user: User) -> () in
+                self.userLogued = user
+            })
+            
+        }
+        
         // PRUEBA
         self.userLogued = User()
         self.userLogued.first_name = "Mathias"
@@ -40,6 +52,15 @@ class UserSesionHelper: NSObject {
         // PRUEBA
         
         return self.userLogued
+    }
+    
+    func logout() {
+        
+        self.hasUserLogued = false
+        self.userLogued = nil
+        
+        var defaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.removeObjectForKey("user_logued")
     }
     
     func configUserLogued(id: Int) {

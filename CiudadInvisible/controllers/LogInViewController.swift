@@ -17,11 +17,11 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
 
     var swifter: Swifter
     // Default to using the iOS account framework for handling twitter auth
-    let useACAccount = false
+    let useACAccount = true
     
     // MARK: Lifecycle
     required init(coder aDecoder: NSCoder!) {
-        self.swifter = Swifter(consumerKey: "RErEmzj7ijDkJr60ayE2gjSHT", consumerSecret: "SbS0CHk11oJdALARa7NDik0nty4pXvAxdt7aj0R5y1gNzWaNEx")
+        self.swifter = Swifter(consumerKey: "xuAsNxSBgJGO2iAmmBsdfeQ6X", consumerSecret: "LLJ9aRjjCNdLLfcgOZkE0SxSFMFfsjQiJBMJkqTEPRVRUnDuJP")
         super.init(coder: aDecoder)
     }
     
@@ -80,33 +80,6 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
             )
         }
 
-
-        /*
-        var accountStore = ACAccountStore()
-        var twitterType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
-        
-        accountStore.requestAccessToAccountsWithType(twitterType, options: nil) {
-            granted, error in
-            
-            if granted {
-                let twitterAccounts = accountStore.accountsWithAccountType(twitterType)
-                
-                if twitterAccounts {
-                    if twitterAccounts.count == 0 {
-                        println("There are no Twitter accounts configured. You can add or create a Twitter account in Settings.")
-                    }
-                    else {
-                        let twitterAccount = twitterAccounts[0] as ACAccount
-                        
-                        println(twitterAccount)
-                    }
-                }
-                else {
-                    println("There are no Twitter accounts configured. You can add or create a Twitter account in Settings.")
-                }
-            }
-        }
-        */
     }
     
     // MARK: Outlets
@@ -124,14 +97,47 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
             error in
             println(error.localizedDescription)
         }
+
+        var userTwitterId: String! = ""
+        
+        self.swifter.getAccountSettingsWithSuccess({ (settings) -> Void in
+
+            var userJson = JSONValue(settings)
+
+            
+            userTwitterId = userJson["screen_name"].string
+            println(userTwitterId)
+        }, failure: failureHandler)
+        
+        
+        // Guarda el usuario
+        var userLocal: User = User()
+        userLocal.twitter_id = "elMath"
+        userLocal.email = "mathcarignani@gmail.com"
+        userLocal.first_name = "Mathias"
+        userLocal.last_name = "Carignani"
+        RestApiHelper.sharedInstance().loginTwitter(userLocal,
+            completion: { (logued: Bool) in
+                
+                if logued {
+                    println("Logueado con twitter")
+                    self.performSegueWithIdentifier(self.segueIdentifier, sender: self)
+                } else {
+                    println("Error en logueo con twitter")
+                }
+        })
+
+        
+        
+        /*
         self.swifter.getStatusesHomeTimelineWithCount(20, sinceID: nil, maxID: nil, trimUser: true, contributorDetails: false, includeEntities: true, success: {
             (statuses: [JSONValue]?) in
             
-            // Successfully fetched timeline, so lets create and push the table view
-            println("Usuario correcto")
+            // Usuario ingresado correctamente
+            println(statuses)
             
             }, failure: failureHandler)
-        
+        */
     }
 
     
