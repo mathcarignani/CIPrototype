@@ -50,7 +50,7 @@ class HelperForms : NSObject {
     //// Generated Images
 
     class var imageOfFlecha: UIImage {
-        if (Cache.imageOfFlecha) {
+        if (Cache.imageOfFlecha != nil) {
             return Cache.imageOfFlecha!
         }
 

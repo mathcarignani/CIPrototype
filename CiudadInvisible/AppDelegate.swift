@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Controla si hay un usuario logueado para ver a que controller va
         var defaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
 
-        if defaults.objectForKey("user_logued") {
+        if (defaults.objectForKey("user_logued") != nil) {
             // Obtiene el usuario
             var userId = defaults.integerForKey("user_logued")
             println("Usuario loguedo: \(userId)")

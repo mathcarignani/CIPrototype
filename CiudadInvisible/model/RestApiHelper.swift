@@ -11,8 +11,8 @@ import MapKit
 class RestApiHelper: NSObject {
 
     let manager = AFHTTPRequestOperationManager()
-    //let urlApi = "http://ciudadinvisible.herokuapp.com/"
-    let urlApi = "http://localhost:3000/"
+    let urlApi = "http://ciudadinvisible.herokuapp.com"
+    //let urlApi = "http://localhost:3000"
     
     // MARK: Singleton
     class func sharedInstance() -> RestApiHelper! {
@@ -179,8 +179,10 @@ class RestApiHelper: NSObject {
                     // Agrega las imagenes
                     var auxImages : Array = []
                     let imagesJsonCount = postsJson[i]["assets"].array?.count
-                    for j in 0...(imagesJsonCount! - 1) {
-                        auxImages.append(postsJson[i]["assets"][j]["file_url"].string!)
+                    if imagesJsonCount != 0 {
+                        for j in 0...(imagesJsonCount! - 1) {
+                            auxImages.append(postsJson[i]["assets"][j]["file_url"].string!)
+                        }
                     }
                     post.images = auxImages
                     
@@ -194,7 +196,7 @@ class RestApiHelper: NSObject {
     
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
-                println("Error")
+                println("Error \(error)")
             })
     }
     

@@ -27,14 +27,22 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
                 // Recarga el slides
                 self.collectionView.reloadData()
             })
-        
-        
     }
 
+    // MARK: Actions
     @IBAction func back(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        
     }
+    
+    @IBAction func goToMap(sender: AnyObject) {
+        
+        // Obtiene el mapa, setea los posts para que no los obtenga denuevo y lo invoca
+        var mapVC : PostsMapViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostsMapViewController") as PostsMapViewController
+        mapVC.posts = self.posts
+        self.presentViewController(mapVC, animated: true) { () -> Void in
+        }
+    }
+    
     
     // MARK: UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int
@@ -69,12 +77,14 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
     
     // MARK: Auxiliares
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if (segue.identifier == "VerDetalle") {
+        if segue != nil {
+            if (segue.identifier == "VerDetalle") {
 
-            var postDetailVC = segue.destinationViewController as PostsDetailViewController
-            var index = self.collectionView.indexPathsForSelectedItems()[0] as NSIndexPath
-            postDetailVC.post = self.posts.objectAtIndex(index.row) as Post
-            
+                var postDetailVC = segue.destinationViewController as PostsDetailViewController
+                var index = self.collectionView.indexPathsForSelectedItems()[0] as NSIndexPath
+                postDetailVC.post = self.posts.objectAtIndex(index.row) as Post
+                
+            }
         }
     }
     

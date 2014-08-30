@@ -54,6 +54,8 @@
 		C7B21DDF19959E6A00AE4978 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B21DDE19959E6A00AE4978 /* SigninViewController.swift */; };
 		C7B21DE11996DE4500AE4978 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B21DE01996DE4500AE4978 /* UserProfileViewController.swift */; };
 		C7B21DE31996E3DD00AE4978 /* avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B21DE21996E3DD00AE4978 /* avatar@2x.png */; };
+		C7D67FED19B146C500C3061D /* PostsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D67FEC19B146C500C3061D /* PostsMapViewController.swift */; };
+		C7D67FF319B15F9400C3061D /* PostAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D67FF219B15F9400C3061D /* PostAnnotation.swift */; };
 		C7EFBFB2199C0D0600EB0A91 /* Dictionary+Swifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBF94199C0D0600EB0A91 /* Dictionary+Swifter.swift */; };
 		C7EFBFB3199C0D0600EB0A91 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7EFBF95199C0D0600EB0A91 /* Info.plist */; };
 		C7EFBFB4199C0D0600EB0A91 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBF96199C0D0600EB0A91 /* JSON.swift */; };
@@ -153,6 +155,8 @@
 		C7B21DDE19959E6A00AE4978 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninViewController.swift; path = controllers/SigninViewController.swift; sourceTree = "<group>"; };
 		C7B21DE01996DE4500AE4978 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = controllers/UserProfileViewController.swift; sourceTree = "<group>"; };
 		C7B21DE21996E3DD00AE4978 /* avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar@2x.png"; sourceTree = "<group>"; };
+		C7D67FEC19B146C500C3061D /* PostsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsMapViewController.swift; path = controllers/PostsMapViewController.swift; sourceTree = "<group>"; };
+		C7D67FF219B15F9400C3061D /* PostAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostAnnotation.swift; path = views/PostAnnotation.swift; sourceTree = "<group>"; };
 		C7EFBF94199C0D0600EB0A91 /* Dictionary+Swifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Swifter.swift"; sourceTree = "<group>"; };
 		C7EFBF95199C0D0600EB0A91 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7EFBF96199C0D0600EB0A91 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
@@ -328,6 +332,7 @@
 				C7353A29197AB2F0002F4E54 /* Cells */,
 				C718C201195F0C9300389FFD /* PostView.swift */,
 				C7F851C11969F58F002B38FF /* CameraPreviewView.swift */,
+				C7D67FF219B15F9400C3061D /* PostAnnotation.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 			children = (
 				C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */,
 				C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */,
+				C7D67FEC19B146C500C3061D /* PostsMapViewController.swift */,
 			);
 			name = ExplorePost;
 			sourceTree = "<group>";
@@ -638,6 +644,7 @@
 				C7EFBFB5199C0D0600EB0A91 /* NSURL+Swifter.swift in Sources */,
 				C7A71A07196EC7C1008C82F4 /* MultiImagesViewController.swift in Sources */,
 				C7EFBFB2199C0D0600EB0A91 /* Dictionary+Swifter.swift in Sources */,
+				C7D67FF319B15F9400C3061D /* PostAnnotation.swift in Sources */,
 				C7EFBFC3199C0D0600EB0A91 /* SwifterOAuthClient.swift in Sources */,
 				C7EFBFB4199C0D0600EB0A91 /* JSON.swift in Sources */,
 				C7EFBFC2199C0D0600EB0A91 /* SwifterMessages.swift in Sources */,
@@ -665,6 +672,7 @@
 				C7A0B4A919891E2B00C72662 /* UserSesionHelper.swift in Sources */,
 				C7F851C01969F405002B38FF /* MainViewController.swift in Sources */,
 				C7EFBFB6199C0D0600EB0A91 /* String+Swifter.swift in Sources */,
+				C7D67FED19B146C500C3061D /* PostsMapViewController.swift in Sources */,
 				C7ACF3251968673900EB74D5 /* PostsDetailViewController.swift in Sources */,
 				C7A0B4AD198925A300C72662 /* MapHelper.swift in Sources */,
 			);
