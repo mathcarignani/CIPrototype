@@ -39,17 +39,18 @@ class UserSesionHelper: NSObject {
             var defaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
             let userId = defaults.integerForKey("user_logued")
             
-            RestApiHelper.sharedInstance().getUser(userId, completion: { (user: User) -> () in
+            /*RestApiHelper.sharedInstance().getUser(userId, completion: { (user: User) -> () in
                 self.userLogued = user
-            })
+            })*/
+        
+            // PRUEBA
+            self.userLogued = User()
+            self.userLogued.id = userId
+            self.userLogued.first_name = "Mathias"
+            self.userLogued.last_name = "Carignani"
+            // PRUEBA
             
         }
-        
-        // PRUEBA
-        self.userLogued = User()
-        self.userLogued.first_name = "Mathias"
-        self.userLogued.last_name = "Carignani"
-        // PRUEBA
         
         return self.userLogued
     }

@@ -11,6 +11,7 @@ import UIKit
 class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
 
     @IBOutlet var collectionView : UICollectionView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     var posts : NSArray! = NSArray()
     var imageEmpty : UIImage = UIImage(named: "bgEmpty.jpg")
@@ -20,12 +21,18 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
         super.viewDidLoad()
         
         // Obtengo los posts
+        self.loadingIndicator.startAnimating()
+        self.loadingIndicator.hidden = false
+
         RestApiHelper.sharedInstance().getPosts(
             { (postsReturn: NSArray) in
                 self.posts = postsReturn
                 
                 // Recarga el slides
                 self.collectionView.reloadData()
+                // Oculta el indicador
+                self.loadingIndicator.stopAnimating()
+                self.loadingIndicator.hidden = true
             })
     }
 
@@ -43,6 +50,14 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
         }
     }
     
+    @IBAction func goToGalery(sender: AnyObject) {
+        
+        // Obtiene el mapa, setea los posts para que no los obtenga denuevo y lo invoca
+        var galeryVC : PostsGaleryViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostsGaleryViewController") as PostsGaleryViewController
+        galeryVC.posts = self.posts
+        self.presentViewController(galeryVC, animated: true) { () -> Void in
+        }
+    }
     
     // MARK: UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int
@@ -75,7 +90,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
         return cell
     }
     
-    // MARK: Auxiliares
+    // MARK: Segue
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if segue != nil {
             if (segue.identifier == "VerDetalle") {

@@ -28,6 +28,9 @@ class LoginManualViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func login(sender: AnyObject) {
+        
+        println("Login")
+        
         RestApiHelper.sharedInstance().loginManual(self.emailText.text,
             password: self.passwordText.text,
             completion: {(logued: Bool) in

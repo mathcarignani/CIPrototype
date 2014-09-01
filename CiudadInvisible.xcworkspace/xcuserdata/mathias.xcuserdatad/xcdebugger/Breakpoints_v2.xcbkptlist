@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CiudadInvisible/controllers/PostsDetailViewController.swift"
-            timestampString = "428439057.00021"
+            timestampString = "431297217.191289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
             <Locations>
@@ -102,11 +102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CiudadInvisible/model/RestApiHelper.swift"
-            timestampString = "430335499.276926"
+            timestampString = "431278901.529398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "270"
-            endingLineNumber = "270">
+            startingLineNumber = "277"
+            endingLineNumber = "277">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -116,7 +116,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CiudadInvisible/controllers/PostsDetailViewController.swift"
-            timestampString = "428438261.278233"
+            timestampString = "431297217.191289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CiudadInvisible/controllers/PostsSlideViewController.swift"
-            timestampString = "431052119.680444"
+            timestampString = "431276851.52995"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -195,42 +195,42 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CiudadInvisible/model/RestApiHelper.swift"
-            timestampString = "430335377.747385"
+            filePath = "CiudadInvisible/controllers/PostsDetailViewController.swift"
+            timestampString = "431297217.191289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "getPosts(_:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "loadTableViewHeader()"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CiudadInvisible.RestApiHelper.(getPosts (CiudadInvisible.RestApiHelper) -&gt; ((posts : ObjectiveC.NSArray) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "CiudadInvisible.PostsDetailViewController.loadTableViewHeader (CiudadInvisible.PostsDetailViewController)() -&gt; ()"
                   moduleName = "CiudadInvisible"
-                  urlString = "file:///Users/mathias/Proyectos/iOS/CiudadInvisible/CiudadInvisible/model/RestApiHelper.swift"
-                  timestampString = "430335499.614647"
+                  urlString = "file:///Users/mathias/Proyectos/iOS/CiudadInvisible/CiudadInvisible/controllers/PostsDetailViewController.swift"
+                  timestampString = "431296803.49008"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "178"
-                  endingLineNumber = "178"
-                  offsetFromSymbolStart = "8875">
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "2304">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "CiudadInvisible.RestApiHelper.(getPosts (CiudadInvisible.RestApiHelper) -&gt; ((posts : ObjectiveC.NSArray) -&gt; ()) -&gt; ()).(closure #1)"
+                  symbolName = "CiudadInvisible.PostsDetailViewController.loadTableViewHeader (CiudadInvisible.PostsDetailViewController)() -&gt; ()"
                   moduleName = "CiudadInvisible"
-                  urlString = "file:///Users/mathias/Proyectos/iOS/CiudadInvisible/CiudadInvisible/model/RestApiHelper.swift"
-                  timestampString = "430335499.61491"
+                  urlString = "file:///Users/mathias/Proyectos/iOS/CiudadInvisible/CiudadInvisible/controllers/PostsDetailViewController.swift"
+                  timestampString = "431296803.490385"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "178"
-                  endingLineNumber = "178"
-                  offsetFromSymbolStart = "9363">
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "2448">
                </Location>
             </Locations>
          </BreakpointContent>

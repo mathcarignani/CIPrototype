@@ -11,13 +11,16 @@ import MapKit
 
 class PostsMapViewController: UIViewController, MKMapViewDelegate {
 
-    var posts : NSArray! = NSArray()
-    
     @IBOutlet var mapView: MKMapView!
+    
+    var posts : NSArray! = NSArray()
+    var centerMap : Int! = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.centerMap = 1
+        
         // Si no hay posts los voy a buscar a la API
         if !self.posts {
             // Obtengo los posts
@@ -62,7 +65,11 @@ class PostsMapViewController: UIViewController, MKMapViewDelegate {
     // MARK: MapViewDelegate
     func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
         // Cuando se actualiza la posicion del usuario centra el mapa en ese punto
-        MapHelper.centerMap(self.mapView, coordinate: self.mapView.userLocation.coordinate, distance: 800)
+        if (self.centerMap == 1) {
+            MapHelper.centerMap(self.mapView, coordinate: self.mapView.userLocation.coordinate, distance: 800)
+            
+            self.centerMap = 0
+        }
     }
     
     /*

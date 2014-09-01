@@ -27,6 +27,7 @@
 		C770BD08197EC64500C49D57 /* PostImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BD07197EC64500C49D57 /* PostImagesCell.swift */; };
 		C77322A7199BF30E001F2249 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77322A6199BF30D001F2249 /* Accounts.framework */; };
 		C77322A9199BF313001F2249 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77322A8199BF313001F2249 /* Twitter.framework */; };
+		C780CF4C19B287A1009E319D /* PostsGaleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */; };
 		C795490A197C041D002C6F1D /* lapiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7954908197C041D002C6F1D /* lapiz@2x.png */; };
 		C795490B197C041D002C6F1D /* ojo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7954909197C041D002C6F1D /* ojo@2x.png */; };
 		C795490E197C083B002C6F1D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795490D197C083B002C6F1D /* HomeViewController.swift */; };
@@ -126,6 +127,7 @@
 		C770BD07197EC64500C49D57 /* PostImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostImagesCell.swift; path = views/PostImagesCell.swift; sourceTree = "<group>"; };
 		C77322A6199BF30D001F2249 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C77322A8199BF313001F2249 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsGaleryViewController.swift; path = controllers/PostsGaleryViewController.swift; sourceTree = "<group>"; };
 		C7954908197C041D002C6F1D /* lapiz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lapiz@2x.png"; sourceTree = "<group>"; };
 		C7954909197C041D002C6F1D /* ojo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ojo@2x.png"; sourceTree = "<group>"; };
 		C795490D197C083B002C6F1D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = controllers/HomeViewController.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */,
 				C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */,
 				C7D67FEC19B146C500C3061D /* PostsMapViewController.swift */,
+				C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */,
 			);
 			name = ExplorePost;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				C74B3187197C884800EE70EF /* NewPostViewController.swift in Sources */,
 				C7EFBFC7199C0D0600EB0A91 /* SwifterSpam.swift in Sources */,
 				C7EFBFC1199C0D0600EB0A91 /* SwifterLists.swift in Sources */,
+				C780CF4C19B287A1009E319D /* PostsGaleryViewController.swift in Sources */,
 				C7F851C21969F58F002B38FF /* CameraPreviewView.swift in Sources */,
 				C799269F19912262006510A1 /* LoginManualViewController.swift in Sources */,
 				C79D38F1196F292800C8A4C8 /* Post.swift in Sources */,

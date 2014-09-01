@@ -164,31 +164,34 @@ class RestApiHelper: NSObject {
                 // Obtiene los posts
                 var postsJson = JSONValue(responseObject)
                 let postsJsonCount = postsJson.array?.count
-                // Recorre los posts json
-                for i in 0...(postsJsonCount! - 1) {
-            
-                    // Crea el post y lo agrega a la lista
-                    var post : Post = Post()
-                    post.id = postsJson[i]["id"].integer
-                    post.title = postsJson[i]["title"].string
-                    post.author = postsJson[i]["author"].string
-                    post.descriptionText = postsJson[i]["description"].string
-                    post.location = postsJson[i]["location"].string
-                    post.category = postsJson[i]["category"].string
-                    post.url = postsJson[i]["url"].string
-                    // Agrega las imagenes
-                    var auxImages : Array = []
-                    let imagesJsonCount = postsJson[i]["assets"].array?.count
-                    if imagesJsonCount != 0 {
-                        for j in 0...(imagesJsonCount! - 1) {
-                            auxImages.append(postsJson[i]["assets"][j]["file_url"].string!)
+                
+                if postsJsonCount > 0 {
+                    // Recorre los posts json
+                    for i in 0...(postsJsonCount! - 1) {
+                
+                        // Crea el post y lo agrega a la lista
+                        var post : Post = Post()
+                        post.id = postsJson[i]["id"].integer
+                        post.title = postsJson[i]["title"].string
+                        post.author = postsJson[i]["author"].string
+                        post.descriptionText = postsJson[i]["description"].string
+                        post.location = postsJson[i]["location"].string
+                        post.category = postsJson[i]["category"].string
+                        post.url = postsJson[i]["url"].string
+                        // Agrega las imagenes
+                        var auxImages : Array = []
+                        let imagesJsonCount = postsJson[i]["assets"].array?.count
+                        if imagesJsonCount != 0 {
+                            for j in 0...(imagesJsonCount! - 1) {
+                                auxImages.append(postsJson[i]["assets"][j]["file_url"].string!)
+                            }
                         }
+                        post.images = auxImages
+                        
+                        
+                        // Agrega el post
+                        posts.append(post)
                     }
-                    post.images = auxImages
-                    
-                    
-                    // Agrega el post
-                    posts.append(post)
                 }
                 
                 // Ejecuta el bloque con el retorno de los posts
@@ -213,7 +216,9 @@ class RestApiHelper: NSObject {
     */
     }
     
-    func createPost(post: Post) {
+    func createPost(post: Post, completion: (success: Bool) -> ()) {
+        
+        var user = UserSesionHelper.sharedInstance().getUserLogued()
         
         var imagesData = [] as Array
         // Recorre las imagenes y agrega
@@ -230,11 +235,11 @@ class RestApiHelper: NSObject {
             "post":
                 [
                     "title":post.title,
-                    "author":post.author,
                     "description":post.descriptionText,
                     "date":post.date,
                     "location":post.location,
-                    "category":post.category
+                    "category":post.category,
+                    "user_id":user.id
             ],
             "assets_images": imagesData
         ] as Dictionary
@@ -242,9 +247,11 @@ class RestApiHelper: NSObject {
         manager.POST("\(urlApi)/posts.json", parameters: parameters, success:
             { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 println("Exito => " + responseObject.description)
+                completion(success: true)
                 
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 println("Error => " + error.localizedDescription)
+                completion(success: false)
             })
 
     }

@@ -24,10 +24,10 @@ static const CGFloat BFCloseButtonHeight = 12.0;
 
 @interface BFAppLinkReturnToRefererView ()
 
-@property (readwrite, strong, nonatomic) UILabel *labelView;
-@property (readwrite, strong, nonatomic) UIButton *closeButton;
-@property (readwrite, strong, nonatomic) UITapGestureRecognizer *insideTapGestureRecognizer;
-@property (readwrite, strong, nonatomic) UIView *viewToMoveWithNavController;
+@property (nonatomic, strong) UILabel *labelView;
+@property (nonatomic, strong) UIButton *closeButton;
+@property (nonatomic, strong) UITapGestureRecognizer *insideTapGestureRecognizer;
+@property (nonatomic, strong) UIView *viewToMoveWithNavController;
 
 @end
 
@@ -35,7 +35,7 @@ static const CGFloat BFCloseButtonHeight = 12.0;
 
 #pragma mark - Initialization
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self commonInit];
@@ -44,8 +44,7 @@ static const CGFloat BFCloseButtonHeight = 12.0;
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self commonInit];
@@ -80,7 +79,11 @@ static const CGFloat BFCloseButtonHeight = 12.0;
         _labelView.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
         _labelView.textColor = [UIColor whiteColor];
         _labelView.backgroundColor = [UIColor clearColor];
+#ifdef __IPHONE_6_0
+        _labelView.textAlignment = NSTextAlignmentCenter;
+#else
         _labelView.textAlignment = UITextAlignmentCenter;
+#endif
         _labelView.clipsToBounds = YES;
         _labelView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         [self updateLabelText];

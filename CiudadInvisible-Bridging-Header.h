@@ -12,4 +12,6 @@
 #import "UIImageView+LBBlurredImage.h"
 #import "UIImage+ImageEffects.h"
 #import "FacebookSDK.h"
+#import "TPKeyboardAvoidingTableView.h"
+#import "TPKeyboardAvoidingScrollView.h"
 #import <CommonCrypto/CommonCrypto.h>

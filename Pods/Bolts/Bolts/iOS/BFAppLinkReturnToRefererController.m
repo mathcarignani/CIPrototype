@@ -12,17 +12,20 @@
 
 #import "BFAppLink.h"
 #import "BFAppLinkReturnToRefererView_Internal.h"
-#import "BFURL.h"
+#import "BFURL_Internal.h"
 
 static const CFTimeInterval kBFViewAnimationDuration = 0.25f;
 
 @interface BFAppLinkReturnToRefererController ()
 
-@property (readwrite, strong, nonatomic) UINavigationController *attachedToNavController; // TODO rename
+@property (nonatomic, strong, readwrite) UINavigationController *attachedToNavController; // TODO rename
 
 @end
 
-@implementation BFAppLinkReturnToRefererController
+@implementation BFAppLinkReturnToRefererController {
+    BFURL *_lastShownBFUrl;
+    NSURL *_lastShownUrl;
+}
 
 @synthesize view = _view;
 
@@ -37,18 +40,20 @@ static const CFTimeInterval kBFViewAnimationDuration = 0.25f;
     if (self) {
         _attachedToNavController = navController;
 
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(statusBarFrameWillChange:)
-                                                     name:UIApplicationWillChangeStatusBarFrameNotification
-                                                   object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(statusBarFrameDidChange:)
-                                                     name:UIApplicationDidChangeStatusBarFrameNotification
-                                                   object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(orientationDidChange:)
-                                                     name:UIDeviceOrientationDidChangeNotification
-                                                   object:nil];
+        if (_attachedToNavController != nil) {
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(statusBarFrameWillChange:)
+                                                         name:UIApplicationWillChangeStatusBarFrameNotification
+                                                       object:nil];
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(statusBarFrameDidChange:)
+                                                         name:UIApplicationDidChangeStatusBarFrameNotification
+                                                       object:nil];
+            [[NSNotificationCenter defaultCenter] addObserver:self
+                                                     selector:@selector(orientationDidChange:)
+                                                         name:UIDeviceOrientationDidChangeNotification
+                                                       object:nil];
+        }
     }
     return self;
 }
@@ -57,15 +62,7 @@ static const CFTimeInterval kBFViewAnimationDuration = 0.25f;
     _view.delegate = nil;
 
     if (_attachedToNavController) {
-        [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                        name:UIApplicationWillChangeStatusBarFrameNotification
-                                                      object:nil];
-        [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                        name:UIApplicationDidChangeStatusBarFrameNotification
-                                                      object:nil];
-        [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                        name:UIDeviceOrientationDidChangeNotification
-                                                      object:nil];
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
     }
 }
 
@@ -112,8 +109,11 @@ static const CFTimeInterval kBFViewAnimationDuration = 0.25f;
 }
 
 - (void)showViewForRefererURL:(NSURL *)url {
-    BFURL *bfurl = [BFURL URLWithURL:url];
-    [self showViewForRefererAppLink:bfurl.appLinkReferer];
+    if (![_lastShownUrl isEqual:url]) {
+        _lastShownUrl = [url copy];
+        _lastShownBFUrl = [BFURL URLForRenderBackToReferrerBarURL:url];
+    }
+    [self showViewForRefererAppLink:_lastShownBFUrl.appLinkReferer];
 }
 
 - (void)removeFromNavController {
@@ -236,14 +236,14 @@ static const CFTimeInterval kBFViewAnimationDuration = 0.25f;
 
 - (void)openRefererAppLink:(BFAppLink *)refererAppLink {
     if (refererAppLink) {
-        if ([_delegate respondsToSelector:@selector(returnToRefererController:willOpenAppLink:)]) {
+        if ([_delegate respondsToSelector:@selector(returnToRefererController:willNavigateToAppLink:)]) {
             [_delegate returnToRefererController:self willNavigateToAppLink:refererAppLink];
         }
 
         NSError *error = nil;
         BFAppLinkNavigationType type = [BFAppLinkNavigation navigateToAppLink:refererAppLink error:&error];
 
-        if ([_delegate respondsToSelector:@selector(returnToRefererController:didOpenURL:success:)]) {
+        if ([_delegate respondsToSelector:@selector(returnToRefererController:didNavigateToAppLink:type:)]) {
             [_delegate returnToRefererController:self didNavigateToAppLink:refererAppLink type:type];
         }
     }

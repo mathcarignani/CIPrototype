@@ -17,6 +17,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     @IBOutlet var categorySelector: UISegmentedControl!
     @IBOutlet var imagesCollectionView: UICollectionView!
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     var mainImageView: UIImageView! = nil
     var imageMain : UIImage! = nil
@@ -42,6 +43,8 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
        // var markerImageView = UIImageView(image: UIImage(named: "marker.png"))
        // markerImageView.center = map
         
+        self.loadingIndicator.hidden = true
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -62,6 +65,9 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     
     @IBAction func createPost(sender: AnyObject) {
         
+        self.loadingIndicator.hidden = false
+        self.loadingIndicator.startAnimating()
+        
         var post: Post = Post()
         post.title = self.titleText.text
         post.author = UserSesionHelper.sharedInstance().getUserLogued().name()
@@ -75,7 +81,16 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         // Guarda la coordenada del centro del mapa
         post.location = "{\(self.mapView.centerCoordinate.latitude),\(self.mapView.centerCoordinate.longitude)}"
         
-        RestApiHelper.sharedInstance().createPost(post)
+        RestApiHelper.sharedInstance().createPost(post, completion: { (success) -> () in
+            
+            self.loadingIndicator.stopAnimating()
+            self.loadingIndicator.hidden = true
+            //if success {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            //} else {
+                // error
+            //}
+        })
         
     }
     
