@@ -20,7 +20,8 @@ class Post: NSObject {
     var category : String! = nil
     var images : NSArray! = nil
     var url : String! = nil
-    
+    var latitude: String! = nil
+    var longitude: String! = nil
     
     override init() {
         super.init()

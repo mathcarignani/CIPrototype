@@ -238,6 +238,8 @@ class RestApiHelper: NSObject {
                     "description":post.descriptionText,
                     "date":post.date,
                     "location":post.location,
+                    "latitude":post.latitude,
+                    "longitude":post.longitude,
                     "category":post.category,
                     "user_id":user.id
             ],
