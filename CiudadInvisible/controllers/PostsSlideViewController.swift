@@ -76,7 +76,8 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
         cell.imagen.image = self.imageEmpty
         if post.images.count > 0 {
             // Si tiene imagen la carga
-            cell.imagen.setImageWithURL(NSURL(string: post.images.objectAtIndex(0) as String), placeholderImage: self.imageEmpty)
+            let images = post.imagesMedium()
+            cell.imagen.setImageWithURL(NSURL(string: images.objectAtIndex(0) as String), placeholderImage: self.imageEmpty)
         }
         
         // Sombreado

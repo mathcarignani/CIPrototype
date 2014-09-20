@@ -43,7 +43,8 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         backgroundImage.frame = self.view.frame
         if post.images.count > 0 {
             // Si tiene imagen la carga
-            backgroundImage.setImageWithURL(NSURL(string: post.images.objectAtIndex(0) as String), placeholderImage: self.imageEmpty)
+            let images = post.imagesLarge()
+            backgroundImage.setImageWithURL(NSURL(string: images.objectAtIndex(0) as String), placeholderImage: self.imageEmpty)
         }
         self.view.insertSubview(backgroundImage, belowSubview: tableView)
         
@@ -172,7 +173,8 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         var cell : PostImagesCell = collectionView.dequeueReusableCellWithReuseIdentifier("PostImageCell", forIndexPath: indexPath) as PostImagesCell
         
         // Configuro la celda, al indexPath le suma uno porque la primera no se considera
-        cell.image.setImageWithURL(NSURL(string: post.images.objectAtIndex(indexPath.row + 1) as String), placeholderImage: self.imageEmpty)
+        let images = post.imagesSmall()
+        cell.image.setImageWithURL(NSURL(string: images.objectAtIndex(indexPath.row + 1) as String), placeholderImage: self.imageEmpty)
         
         return cell
     }
@@ -181,21 +183,5 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     func volver(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    // MARK: Aux
-    /*
-    func centerMap(map: MKMapView, coordinate: CLLocationCoordinate2D, distance: CLLocationDistance) {
-        // Crea la region y centra el mapa
-        let region = MKCoordinateRegionMakeWithDistance(coordinate, distance, distance)
-        map.setRegion(region, animated: true)
-    }
-    
-    func addAnotationToMap(map: MKMapView, coordinate: CLLocationCoordinate2D, title: NSString) {
-        // Agrega el pin
-        var annotation = MKPointAnnotation()
-        annotation.coordinate = coordinate
-        annotation.title = title
-        map.addAnnotation(annotation)
-    }
-    */
+
 }

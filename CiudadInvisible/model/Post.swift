@@ -46,4 +46,40 @@ class Post: NSObject {
         }
     }
 
+    // MARK: Images sizes
+    func imagesSmall() -> NSArray {
+        
+        var smallImages: Array = []
+        // Recorre las imagenes y sustituye el texto
+        for auxImage : AnyObject in self.images {
+            let smallImage: String = (auxImage as String).stringByReplacingOccurrencesOfString("original", withString: "small", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            smallImages.append(smallImage)
+        }
+        
+        return smallImages
+    }
+    
+    func imagesMedium() -> NSArray {
+        
+        var mediumImages: Array = []
+        // Recorre las imagenes y sustituye el texto
+        for auxImage : AnyObject in self.images {
+            let mediumImage: String = (auxImage as String).stringByReplacingOccurrencesOfString("original", withString: "medium", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            mediumImages.append(mediumImage)
+        }
+        
+        return mediumImages
+    }
+    
+    func imagesLarge() -> NSArray {
+        
+        var largeImages: Array = []
+        // Recorre las imagenes y sustituye el texto
+        for auxImage : AnyObject in self.images {
+            let largeImage: String = (auxImage as String).stringByReplacingOccurrencesOfString("original", withString: "large", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            largeImages.append(largeImage)
+        }
+        
+        return largeImages
+    }
 }
