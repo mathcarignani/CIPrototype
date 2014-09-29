@@ -20,7 +20,7 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
     let useACAccount = true
     
     // MARK: Lifecycle
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         
         // Configura el login con twitter
         self.swifter = Swifter(consumerKey: "xuAsNxSBgJGO2iAmmBsdfeQ6X", consumerSecret: "LLJ9aRjjCNdLLfcgOZkE0SxSFMFfsjQiJBMJkqTEPRVRUnDuJP")

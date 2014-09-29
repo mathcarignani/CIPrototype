@@ -19,7 +19,7 @@ class PostSlideCell: UICollectionViewCell {
         super.init(frame: frame)
     }
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

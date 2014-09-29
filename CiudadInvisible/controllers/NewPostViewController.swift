@@ -166,7 +166,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         var cell : PostImagesCell = collectionView.dequeueReusableCellWithReuseIdentifier("PostImageCell", forIndexPath: indexPath) as PostImagesCell
         
         // Configuro la celda
-        cell.image.image = self.images.objectAtIndex(indexPath.row) as UIImage
+        cell.image.image = self.images.objectAtIndex(indexPath.row) as? UIImage
         
         return cell
     }

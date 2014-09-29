@@ -129,24 +129,24 @@ class MultiImagesViewController: UIViewController, UINavigationControllerDelegat
         for image : AnyObject in self.imagenes {
             
             if i == 0 {
-                self.previewChica1.image = image as UIImage
-                self.previewActual.image = image as UIImage
+                self.previewChica1.image = image as? UIImage
+                self.previewActual.image = image as? UIImage
                 self.posicionImagenActual = 1
             } else if i == 1 {
-                self.previewChica2.image = image as UIImage
-                self.previewActual.image = image as UIImage
+                self.previewChica2.image = image as? UIImage
+                self.previewActual.image = image as? UIImage
                 self.posicionImagenActual = 2
             } else if i == 2 {
-                self.previewChica3.image = image as UIImage
-                self.previewActual.image = image as UIImage
+                self.previewChica3.image = image as? UIImage
+                self.previewActual.image = image as? UIImage
                 self.posicionImagenActual = 3
             } else if i == 3 {
-                self.previewChica4.image = image as UIImage
-                self.previewActual.image = image as UIImage
+                self.previewChica4.image = image as? UIImage
+                self.previewActual.image = image as? UIImage
                 self.posicionImagenActual = 4
             } else if i == 4 {
-                self.previewChica5.image = image as UIImage
-                self.previewActual.image = image as UIImage
+                self.previewChica5.image = image as? UIImage
+                self.previewActual.image = image as? UIImage
                 self.posicionImagenActual = 5
             }
             

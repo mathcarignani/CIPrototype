@@ -92,8 +92,8 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
     }
     
     // MARK: Segue
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if segue != nil {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        //if segue != nil {
             if (segue.identifier == "VerDetalle") {
 
                 var postDetailVC = segue.destinationViewController as PostsDetailViewController
@@ -101,7 +101,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
                 postDetailVC.post = self.posts.objectAtIndex(index.row) as Post
                 
             }
-        }
+        //}
     }
     
 }
