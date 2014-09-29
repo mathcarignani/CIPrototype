@@ -117,7 +117,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     }
     
     // MARK: UITableViewDelegate
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         if indexPath.row == 0 {
             return self.view.frame.height
@@ -136,7 +136,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     }
     
     // MARK: Segue
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if segue.identifier == "ChangeImages" {
             
@@ -156,18 +156,19 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     }
     
     // MARK: UICollectionViewDataSource
-    func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return self.images.count
     }
     
-    func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell!
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
         var cell : PostImagesCell = collectionView.dequeueReusableCellWithReuseIdentifier("PostImageCell", forIndexPath: indexPath) as PostImagesCell
         
         // Configuro la celda
         cell.image.image = self.images.objectAtIndex(indexPath.row) as UIImage
-
+        
         return cell
     }
+    
 }

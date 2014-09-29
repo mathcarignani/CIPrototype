@@ -21,7 +21,7 @@ class PostView: UIView {
         super.init(frame: defaultFrame)
     }
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     

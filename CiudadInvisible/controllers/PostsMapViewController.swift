@@ -22,7 +22,7 @@ class PostsMapViewController: UIViewController, MKMapViewDelegate {
         self.centerMap = 1
         
         // Si no hay posts los voy a buscar a la API
-        if !self.posts {
+        if (self.posts == nil) {
             // Obtengo los posts
             RestApiHelper.sharedInstance().getPosts(
                 { (postsReturn: NSArray) in

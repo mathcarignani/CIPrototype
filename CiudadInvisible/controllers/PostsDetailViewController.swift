@@ -84,12 +84,11 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         
     }
 
-    func tableView(tableView: UITableView!, numberOfRowsInSection section:    Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
-    
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell : UITableViewCell! = nil
         
@@ -145,7 +144,8 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
             let escala = 1 - scrollOffset / 700
             backgroundImage.transform = CGAffineTransformMakeScale(escala, escala)
             
-            tableView.tableHeaderView.backgroundColor = UIColor.clearColor()
+            //tableView.tableHeaderView.backgroundColor = UIColor.clearColor()
+            tableView.tableHeaderView?.backgroundColor = UIColor.clearColor()
             //backgroundImage.image.applyBlurWithRadius(0, tintColor: nil, saturationDeltaFactor: 1, maskImage: nil)
             
         } else {
@@ -154,7 +154,7 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
             
             let blur = scrollOffset / 700
             
-            tableView.tableHeaderView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: blur)
+            tableView.tableHeaderView?.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: blur)
             
             //backgroundImage.setImageToBlur(UIImage(named: "bg1.jpg"), blurRadius: blur, completionBlock: nil)
             

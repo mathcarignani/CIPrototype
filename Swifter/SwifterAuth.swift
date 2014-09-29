@@ -31,7 +31,7 @@ import Foundation
     import AppKit
 #endif
 
-extension Swifter {
+public extension Swifter {
 
     public typealias TokenSuccessHandler = (accessToken: SwifterCredential.OAuthAccessToken?, response: NSURLResponse) -> Void
 
@@ -46,9 +46,9 @@ extension Swifter {
 
                 NSNotificationCenter.defaultCenter().removeObserver(self)
 
-                let url = notification.userInfo[CallbackNotification.optionsURLKey] as NSURL
+                let url = notification.userInfo![CallbackNotification.optionsURLKey] as NSURL
 
-                let parameters = url.query.parametersFromQueryString()
+                let parameters = url.query!.parametersFromQueryString()
                 requestToken.verifier = parameters["oauth_verifier"]
 
                 self.postOAuthAccessTokenWithRequestToken(requestToken, success: {
@@ -61,7 +61,7 @@ extension Swifter {
                 })
 
             let authorizeURL = NSURL(string: "/oauth/authorize", relativeToURL: self.apiURL)
-            let queryURL = NSURL(string: authorizeURL.absoluteString + "?oauth_token=\(token!.key)")
+            let queryURL = NSURL(string: authorizeURL.absoluteString! + "?oauth_token=\(token!.key)")
 
             #if os(iOS)
                 UIApplication.sharedApplication().openURL(queryURL)

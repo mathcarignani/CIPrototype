@@ -128,7 +128,7 @@ internal class SwifterOAuthClient: SwifterClientProtocol  {
             }
         }
 
-        let combinedParameters = authorizationParameters + parameters
+        let combinedParameters = authorizationParameters +| parameters
 
         let finalParameters = isMediaUpload ? authorizationParameters : combinedParameters
 
@@ -164,7 +164,7 @@ internal class SwifterOAuthClient: SwifterClientProtocol  {
         let parameterString = join("&", parameterComponents)
         let encodedParameterString = parameterString.urlEncodedStringWithEncoding(self.dataEncoding)
 
-        let encodedURL = url.absoluteString.urlEncodedStringWithEncoding(self.dataEncoding)
+        let encodedURL = url.absoluteString!.urlEncodedStringWithEncoding(self.dataEncoding)
 
         let signatureBaseString = "\(method)&\(encodedURL)&\(encodedParameterString)"
 

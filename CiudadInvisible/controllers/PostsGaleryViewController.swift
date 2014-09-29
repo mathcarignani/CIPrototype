@@ -19,7 +19,7 @@ class PostsGaleryViewController: UIViewController, UICollectionViewDataSource {
         super.viewDidLoad()
 
         // Si no hay posts los voy a buscar a la API
-        if !self.posts {
+        if self.posts != nil {
             // Obtengo los posts
             RestApiHelper.sharedInstance().getPosts(
                 { (postsReturn: NSArray) in
@@ -44,12 +44,12 @@ class PostsGaleryViewController: UIViewController, UICollectionViewDataSource {
     
     
     // MARK: UICollectionViewDataSource
-    func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return self.posts.count
     }
     
-    func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell!
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("PostGaleryCell", forIndexPath: indexPath) as PostSlideCell
         
@@ -78,8 +78,8 @@ class PostsGaleryViewController: UIViewController, UICollectionViewDataSource {
     }
     
     // MARK: Segue
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if segue != nil {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//        if segue != nil {
             if (segue.identifier == "VerDetalle") {
                 
                 var postDetailVC = segue.destinationViewController as PostsDetailViewController
@@ -90,7 +90,7 @@ class PostsGaleryViewController: UIViewController, UICollectionViewDataSource {
                 postDetailVC.post = self.posts.objectAtIndex(0) as Post
                 
             }
-        }
+//        }
     }
 
 }

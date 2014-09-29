@@ -46,10 +46,10 @@ class HomeViewController: UIViewController {
     
     
     // MARK: Touches
-    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
         // Obtiene el punto tocado y si pertenece a la zona del generar
-        let point = touches.anyObject().locationInView(self.view)
+        let point = (touches.anyObject() as UITouch).locationInView(self.view)
         let generar = point.y < self.view.frame.size.height / 2
         
         // Anima las imagenes y textos dependiendo de donde haya seleccionado
@@ -74,10 +74,10 @@ class HomeViewController: UIViewController {
         }
     }
     
-    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
     
         // Obtiene el punto tocado y si pertenece a la zona del generar
-        let point = touches.anyObject().locationInView(self.view)
+        let point = (touches.anyObject() as UITouch).locationInView(self.view)
         let generar = point.y < self.view.frame.size.height / 2
         
         // Vuelve las transformaciones a la normalidad
@@ -119,7 +119,7 @@ class HomeViewController: UIViewController {
     }
     
     override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
-        self.view!.layer.mask = nil //remove mask when animation completes
+        self.view.layer.mask = nil //remove mask when animation completes
         
         // Si no hay usuario logueado va al login
         if !UserSesionHelper.sharedInstance().hasUserLogued {
