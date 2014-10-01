@@ -71,9 +71,15 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         //backButton.titleLabel.font = UIFont(name: "Helvetica", size: 35)
         backButton.setTitle("<", forState: .Normal)
         backButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        
         backButton.addTarget(self, action: Selector("volver:"), forControlEvents: UIControlEvents.TouchUpInside)
         headerView.addSubview(backButton)
+        
+        // Favorito
+        var favButton = UIButton(frame: CGRectMake(self.view.frame.size.width - 50, self.view.frame.size.height - 50, 30, 30))
+        favButton.setTitle("Fav", forState: .Normal)
+        favButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        favButton.addTarget(self, action: "favorite:", forControlEvents: .TouchUpInside)
+        headerView.addSubview(favButton)
         
         // Flecha
         var flechaView = UIImageView(image: HelperForms.imageOfFlecha)
@@ -182,6 +188,13 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     // MARK: Actions
     func volver(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func favorite(sender: AnyObject) {
+        RestApiHelper.sharedInstance().favoritePost(self.post.id, userId: UserSesionHelper.sharedInstance().getUserLogued().id)
+            { (success) -> () in
+            
+        }
     }
 
 }

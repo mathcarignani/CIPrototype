@@ -258,6 +258,25 @@ class RestApiHelper: NSObject {
 
     }
     
+    func favoritePost(postId: Int, userId: Int, completion: (success: Bool) -> ()) {
+        
+        var user = UserSesionHelper.sharedInstance().getUserLogued()
+    
+        var parameters = ["post_id":postId,
+                    "user_id":userId] as Dictionary
+        
+        manager.POST("\(urlApi)/favorite.json", parameters: parameters, success:
+            { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                println("Favorito Exito => " + responseObject.description)
+                completion(success: true)
+                
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Favorito Error => " + error.localizedDescription)
+                completion(success: false)
+        })
+        
+    }
+    
     // MARK: Auxiliar
     func encodeToBase64String(image: UIImage) -> String {
         return UIImagePNGRepresentation(image).base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)

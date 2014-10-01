@@ -59,6 +59,8 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
         }
     }
     
+    
+    
     // MARK: UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
