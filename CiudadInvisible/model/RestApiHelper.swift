@@ -14,7 +14,7 @@ class RestApiHelper: NSObject {
     let urlApi = "http://ciudadinvisible.herokuapp.com"
     //let urlApi = "http://localhost:3000"
     
-    // MARK: Singleton
+    // MARK: - Singleton
     class func sharedInstance() -> RestApiHelper! {
         struct Static {
             static var instance: RestApiHelper? = nil
@@ -30,9 +30,9 @@ class RestApiHelper: NSObject {
         
     }
     
-    // MARK: Private methods
+    // MARK: - Private methods
     
-    // MARK: Users
+    // MARK: - Users
     
     func getUser(userId: Int, completion: (user: User) -> ()) {
         
@@ -152,7 +152,25 @@ class RestApiHelper: NSObject {
         
     }
     
-    // MARK: Posts
+    func followUser(followerId: Int, followedId: Int, completion: (success: Bool) -> ()) {
+        
+        var parameters = [
+                "follower":followerId,
+                "followed":followedId
+            ] as Dictionary
+        
+        manager.POST("\(urlApi)/follow_user.json", parameters: parameters, success:
+            { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                println("Exito => " + responseObject.description)
+                completion(success: true)
+                
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error => " + error.localizedDescription)
+                completion(success: false)
+        })
+    }
+    
+    // MARK: - Posts
     func getPosts(completion: (posts : NSArray) -> ()) {
         //
         manager.GET("\(urlApi)/posts.json",
@@ -277,7 +295,7 @@ class RestApiHelper: NSObject {
         
     }
     
-    // MARK: Auxiliar
+    // MARK: - Auxiliar
     func encodeToBase64String(image: UIImage) -> String {
         return UIImagePNGRepresentation(image).base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
     }
