@@ -24,6 +24,7 @@ PODS:
   - Facebook-iOS-SDK (3.16.0):
     - Bolts
   - LBBlurredImage (0.2.0)
+  - PRAugmentedReality (3.1.0)
   - TPKeyboardAvoiding (1.2.4)
   - XDKAirMenu (1.1.0)
 
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - Facebook-iOS-SDK (from `https://github.com/pgaspar/facebook-ios-sdk.git`, branch `beta3`)
   - LBBlurredImage (~> 0.2.0)
+  - PRAugmentedReality
   - TPKeyboardAvoiding (~> 1.2.3)
   - XDKAirMenu
 
@@ -44,6 +46,7 @@ SPEC CHECKSUMS:
   Bolts: 2635e8698a630774689441047f3465d78c48d485
   Facebook-iOS-SDK: 56046bfc288be00c593e884bd2dc7639627f65f2
   LBBlurredImage: 30cc42be977bbcece286d26d2d9c08b8be7f05e8
+  PRAugmentedReality: edfda8e15307ef7c189e47c948e1b5c86236da0a
   TPKeyboardAvoiding: 925e1e1912597d1a4956697eec3bd9656552153c
   XDKAirMenu: 73e69ca47e6fc1390385723a413a024e63320596
 

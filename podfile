@@ -5,3 +5,4 @@ pod 'LBBlurredImage', '~> 0.2.0'
 pod 'Facebook-iOS-SDK', :git => 'https://github.com/pgaspar/facebook-ios-sdk.git', :branch => 'beta3'
 pod 'TPKeyboardAvoiding', '~> 1.2.3'
 pod "XDKAirMenu"
+pod 'PRAugmentedReality'

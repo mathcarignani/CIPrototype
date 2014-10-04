@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-PRAugmentedReality.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TPKeyboardAvoiding.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,37 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>00A7302E192049CCBFD5F65D</key>
+		<key>0276B3A7129A4876822FEAFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7BFFBE4B5EFB4ED3A759F320</key>
+		<key>1C3AF29BAE1C415D862F8C41</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7D1E9FED24F44F168A38DF84</key>
+		<key>502BB5EB56554919AFB38B24</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7EFF6CA0968D4676A602FC18</key>
+		<key>7FDBE8F3AAF64B8AAC2A2456</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A790EB3B9B474B81A0CFC6BC</key>
+		<key>A9123BF9E6DC4C0DB844647F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D3F2A56149DF426BB272C0ED</key>
+		<key>CCA859749E104FB7933111B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D90ECB6A9DB542E78E667BCF</key>
+		<key>CE2CA4B072144937899BD929</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D6D44BA7B05F45998531039D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

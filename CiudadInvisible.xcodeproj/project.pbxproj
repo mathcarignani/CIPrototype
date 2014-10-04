@@ -39,6 +39,7 @@
 		C79926A519912B93006510A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79926A419912B93006510A1 /* MapKit.framework */; };
 		C79926A719912B99006510A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79926A619912B99006510A1 /* Foundation.framework */; };
 		C79926A919912D89006510A1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79926A819912D89006510A1 /* User.swift */; };
+		C79CF8D719E07DFD008F221D /* PostARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79CF8D619E07DFD008F221D /* PostARViewController.swift */; };
 		C79D38BF196ED0AE00C8A4C8 /* eliminarImagen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C79D38BD196ED0AE00C8A4C8 /* eliminarImagen@2x.png */; };
 		C79D38C0196ED0AE00C8A4C8 /* camaraImagen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C79D38BE196ED0AE00C8A4C8 /* camaraImagen@2x.png */; };
 		C79D38ED196F257F00C8A4C8 /* PostsSlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */; };
@@ -140,6 +141,7 @@
 		C79926A419912B93006510A1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C79926A619912B99006510A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C79926A819912D89006510A1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = model/User.swift; sourceTree = "<group>"; };
+		C79CF8D619E07DFD008F221D /* PostARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostARViewController.swift; path = controllers/PostARViewController.swift; sourceTree = "<group>"; };
 		C79D38BD196ED0AE00C8A4C8 /* eliminarImagen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eliminarImagen@2x.png"; sourceTree = "<group>"; };
 		C79D38BE196ED0AE00C8A4C8 /* camaraImagen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camaraImagen@2x.png"; sourceTree = "<group>"; };
 		C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsSlideViewController.swift; path = controllers/PostsSlideViewController.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */,
 				C7D67FEC19B146C500C3061D /* PostsMapViewController.swift */,
 				C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */,
+				C79CF8D619E07DFD008F221D /* PostARViewController.swift */,
 			);
 			name = ExplorePost;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				C7EFBFB9199C0D0600EB0A91 /* SwifterAppOnlyClient.swift in Sources */,
 				C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */,
 				C7EFBFBB199C0D0600EB0A91 /* SwifterClientProtocol.swift in Sources */,
+				C79CF8D719E07DFD008F221D /* PostARViewController.swift in Sources */,
 				C79926A919912D89006510A1 /* User.swift in Sources */,
 				C795490E197C083B002C6F1D /* HomeViewController.swift in Sources */,
 				C7EFBFCB199C0D0600EB0A91 /* SwifterTrends.swift in Sources */,

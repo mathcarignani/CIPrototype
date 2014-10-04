@@ -16,3 +16,4 @@
 #import "TPKeyboardAvoidingScrollView.h"
 #import <CommonCrypto/CommonCrypto.h>
 #import "XDKAirMenuController.h"
+#import "PRARManager.h"

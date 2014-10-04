@@ -41,7 +41,8 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
     @IBAction func goToMap(sender: AnyObject) {
         
         // Obtiene el mapa, setea los posts para que no los obtenga denuevo y lo invoca
-        var mapVC : PostsMapViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostsMapViewController") as PostsMapViewController
+        //var mapVC : PostsMapViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostsMapViewController") as PostsMapViewController
+        var mapVC : PostARViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostARViewController") as PostARViewController
         mapVC.posts = self.posts
         self.presentViewController(mapVC, animated: true) { () -> Void in
         }

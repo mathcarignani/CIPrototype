@@ -66,6 +66,12 @@
 #define COCOAPODS_VERSION_MINOR_LBBlurredImage 2
 #define COCOAPODS_VERSION_PATCH_LBBlurredImage 0
 
+// PRAugmentedReality
+#define COCOAPODS_POD_AVAILABLE_PRAugmentedReality
+#define COCOAPODS_VERSION_MAJOR_PRAugmentedReality 3
+#define COCOAPODS_VERSION_MINOR_PRAugmentedReality 1
+#define COCOAPODS_VERSION_PATCH_PRAugmentedReality 0
+
 // TPKeyboardAvoiding
 #define COCOAPODS_POD_AVAILABLE_TPKeyboardAvoiding
 #define COCOAPODS_VERSION_MAJOR_TPKeyboardAvoiding 1

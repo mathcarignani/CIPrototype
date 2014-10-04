@@ -42,6 +42,12 @@ install_resource()
   esac
 }
 install_resource "Facebook-iOS-SDK/src/FBUserSettingsViewResources.bundle"
+install_resource "PRAugmentedReality/Classes/Graphics/ar_icon.png"
+install_resource "PRAugmentedReality/Classes/Graphics/ar_overlay.png"
+install_resource "PRAugmentedReality/Classes/Graphics/ar_overlay@2x.png"
+install_resource "PRAugmentedReality/Classes/Graphics/Radar.png"
+install_resource "PRAugmentedReality/Classes/Graphics/RadarMV.png"
+install_resource "PRAugmentedReality/Classes/AR/ARObject.xib"
 
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then
