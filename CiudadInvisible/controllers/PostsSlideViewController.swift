@@ -8,15 +8,16 @@
 
 import UIKit
 
-class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
-
+class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UIScrollViewDelegate {
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet var collectionView : UICollectionView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     var posts : NSArray! = NSArray()
     var imageEmpty : UIImage = UIImage(named: "bgEmpty.jpg")
     
-    // MARK: LifeCycle Methods
+    // MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,11 +37,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
             })
     }
 
-    // MARK: Actions
-    @IBAction func back(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+    // MARK: - Actions
     @IBAction func goToMap(sender: AnyObject) {
         
         // Obtiene el mapa, setea los posts para que no los obtenga denuevo y lo invoca
@@ -59,9 +56,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
         }
     }
     
-    
-    
-    // MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return self.posts.count
@@ -93,7 +88,14 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
         return cell
     }
     
-    // MARK: Segue
+    // MARK: - UIScrollViewDelegate
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        // Obtiene la celda visible
+        let visibleCell = (self.collectionView.visibleCells() as NSArray).firstObject as PostSlideCell
+        self.setImageToBackground(visibleCell.imagen.image!)
+    }
+    
+    // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         //if segue != nil {
             if (segue.identifier == "VerDetalle") {
@@ -106,4 +108,10 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource {
         //}
     }
     
+    // MARK: - Auxiliares
+    func setImageToBackground(image: UIImage) {
+        self.backgroundImage.setImageToBlur(image, blurRadius: 4.0) { () -> Void in
+            
+        }
+    }
 }
