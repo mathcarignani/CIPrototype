@@ -56,6 +56,15 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
+    @IBAction func menuClicked(sender: AnyObject) {
+        let menu: XDKAirMenuController = XDKAirMenuController.sharedMenu()
+        if menu.isMenuOpened {
+            menu.closeMenuAnimated()
+        } else {
+            menu.openMenuAnimated()
+        }
+    }
+    
     // MARK: - UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {

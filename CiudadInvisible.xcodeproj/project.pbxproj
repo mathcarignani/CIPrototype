@@ -20,6 +20,7 @@
 		C718C1FB195EF91F00389FFD /* bg1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C718C1FA195EF91F00389FFD /* bg1@2x.jpg */; };
 		C718C1FD195EFE7000389FFD /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C718C1FC195EFE7000389FFD /* camera@2x.png */; };
 		C718C202195F0C9300389FFD /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718C201195F0C9300389FFD /* PostView.swift */; };
+		C725E4C919E043BF00E6FD85 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C725E4C819E043BF00E6FD85 /* MenuViewController.swift */; };
 		C7353A28197AADF4002F4E54 /* bg4@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7353A27197AADF4002F4E54 /* bg4@2x.jpg */; };
 		C7353A2B197AB310002F4E54 /* PostDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7353A2A197AB310002F4E54 /* PostDetailMapCell.swift */; };
 		C7353A2D197ABC32002F4E54 /* HelperForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7353A2C197ABC32002F4E54 /* HelperForms.swift */; };
@@ -120,6 +121,7 @@
 		C718C1FA195EF91F00389FFD /* bg1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg1@2x.jpg"; sourceTree = "<group>"; };
 		C718C1FC195EFE7000389FFD /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
 		C718C201195F0C9300389FFD /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostView.swift; path = views/PostView.swift; sourceTree = "<group>"; };
+		C725E4C819E043BF00E6FD85 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		C7353A27197AADF4002F4E54 /* bg4@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg4@2x.jpg"; sourceTree = "<group>"; };
 		C7353A2A197AB310002F4E54 /* PostDetailMapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostDetailMapCell.swift; path = views/PostDetailMapCell.swift; sourceTree = "<group>"; };
 		C7353A2C197ABC32002F4E54 /* HelperForms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelperForms.swift; path = views/HelperForms.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		C718C1ED195E18DE00389FFD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C725E4C719E043A800E6FD85 /* Menu */,
 				C7F4651F198BCDEC0006D5B1 /* Users */,
 				C7CDECFF1985388900EEFF5A /* ExplorePost */,
 				C7CDECFE1985387600EEFF5A /* CreatePost */,
@@ -337,6 +340,14 @@
 				C7D67FF219B15F9400C3061D /* PostAnnotation.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		C725E4C719E043A800E6FD85 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C725E4C819E043BF00E6FD85 /* MenuViewController.swift */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		C7353A29197AB2F0002F4E54 /* Cells */ = {
@@ -675,6 +686,7 @@
 				C7EFBFCC199C0D0600EB0A91 /* SwifterTweets.swift in Sources */,
 				C7A0B4A919891E2B00C72662 /* UserSesionHelper.swift in Sources */,
 				C7F851C01969F405002B38FF /* MainViewController.swift in Sources */,
+				C725E4C919E043BF00E6FD85 /* MenuViewController.swift in Sources */,
 				C7EFBFB6199C0D0600EB0A91 /* String+Swifter.swift in Sources */,
 				C7D67FED19B146C500C3061D /* PostsMapViewController.swift in Sources */,
 				C7ACF3251968673900EB74D5 /* PostsDetailViewController.swift in Sources */,
