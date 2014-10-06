@@ -348,10 +348,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menuBackground.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4fP-af-iUt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgBlur1.png" translatesAutoresizingMaskIntoConstraints="NO" id="j23-xm-gPl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <view alpha="0.30000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uvd-JR-EPM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a4I-YP-BV9">
-                                <rect key="frame" x="0.0" y="86" width="231" height="396"/>
+                                <rect key="frame" x="0.0" y="0.0" width="231" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="fEk-hT-YH9" kind="embed" id="hLj-EA-JE9"/>
+                                    <segue destination="fEk-hT-YH9" kind="embed" identifier="ManuTableViewSegue" id="hLj-EA-JE9"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -363,32 +374,43 @@
             </objects>
             <point key="canvasLocation" x="-874" y="1244"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Menu Table View Controller-->
         <scene sceneID="6wL-tQ-nf0">
             <objects>
-                <tableViewController id="fEk-hT-YH9" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hUx-UO-3Hr">
-                        <rect key="frame" x="0.0" y="0.0" width="231" height="396"/>
+                <tableViewController id="fEk-hT-YH9" customClass="MenuTableViewController" customModule="CiudadInvisible" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hUx-UO-3Hr">
+                        <rect key="frame" x="0.0" y="0.0" width="231" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="Ar6-hR-hBW">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="6hZ-LJ-N39" style="IBUITableViewCellStyleDefault" id="5FO-YI-HMg">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="5FO-YI-HMg">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5FO-YI-HMg" id="ZhK-VM-fCA">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6hZ-LJ-N39">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQb-lX-bCV">
+                                                    <rect key="frame" x="8" y="18" width="60" height="60"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mathias Carignani" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJW-n3-VHF">
+                                                    <rect key="frame" x="76" y="34" width="147" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Montevideo, Uruguay" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwv-uS-2sS">
+                                                    <rect key="frame" x="8" y="86" width="139" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Sa4-dh-y8g" style="IBUITableViewCellStyleDefault" id="OGM-jj-vgB">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Sa4-dh-y8g" rowHeight="50" style="IBUITableViewCellStyleDefault" id="OGM-jj-vgB">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OGM-jj-vgB" id="X4k-vK-iiz">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -401,8 +423,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="r9x-Td-x7b" style="IBUITableViewCellStyleDefault" id="vaV-ZZ-N4y">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="r9x-Td-x7b" rowHeight="50" style="IBUITableViewCellStyleDefault" id="vaV-ZZ-N4y">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vaV-ZZ-N4y" id="9Cf-L6-V0D">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -415,6 +438,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -424,10 +448,13 @@
                             <outlet property="delegate" destination="fEk-hT-YH9" id="Wey-Gg-VEc"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="avatarImage" destination="KQb-lX-bCV" id="Nal-Zk-Oti"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PaZ-A1-Ndt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-498.5" y="1244"/>
+            <point key="canvasLocation" x="-498.5" y="1239"/>
         </scene>
         <!--Posts Galery View Controller-->
         <scene sceneID="G0R-J1-4sn">
@@ -568,7 +595,7 @@
         <!--User Profile View Controller-->
         <scene sceneID="3e4-EZ-Uat">
             <objects>
-                <viewController id="cf1-2y-hFd" customClass="UserProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserProfileViewController" id="cf1-2y-hFd" customClass="UserProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gh5-Su-DUC"/>
                         <viewControllerLayoutGuide type="bottom" id="rmd-i3-lUa"/>
@@ -606,7 +633,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnC-po-qVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008" y="1600"/>
+            <point key="canvasLocation" x="578" y="2052"/>
         </scene>
         <!--Posts Detail View Controller-->
         <scene sceneID="O7E-gu-eGO">
@@ -1541,6 +1568,7 @@
         <image name="eliminarImagen.png" width="26" height="26"/>
         <image name="lapiz.png" width="124" height="129"/>
         <image name="marker.png" width="27" height="47"/>
+        <image name="menuBackground.jpg" width="960" height="600"/>
         <image name="ojo.png" width="167" height="112"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

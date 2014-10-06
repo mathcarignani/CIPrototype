@@ -24,6 +24,8 @@
 		C7353A28197AADF4002F4E54 /* bg4@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7353A27197AADF4002F4E54 /* bg4@2x.jpg */; };
 		C7353A2B197AB310002F4E54 /* PostDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7353A2A197AB310002F4E54 /* PostDetailMapCell.swift */; };
 		C7353A2D197ABC32002F4E54 /* HelperForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7353A2C197ABC32002F4E54 /* HelperForms.swift */; };
+		C748171519E3106B006D595B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C748171419E3106B006D595B /* MenuTableViewController.swift */; };
+		C748171719E3148B006D595B /* menuBackground@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C748171619E3148B006D595B /* menuBackground@2x.jpg */; };
 		C74B3187197C884800EE70EF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74B3186197C884800EE70EF /* NewPostViewController.swift */; };
 		C770BD08197EC64500C49D57 /* PostImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BD07197EC64500C49D57 /* PostImagesCell.swift */; };
 		C77322A7199BF30E001F2249 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77322A6199BF30D001F2249 /* Accounts.framework */; };
@@ -126,6 +128,8 @@
 		C7353A27197AADF4002F4E54 /* bg4@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg4@2x.jpg"; sourceTree = "<group>"; };
 		C7353A2A197AB310002F4E54 /* PostDetailMapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostDetailMapCell.swift; path = views/PostDetailMapCell.swift; sourceTree = "<group>"; };
 		C7353A2C197ABC32002F4E54 /* HelperForms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelperForms.swift; path = views/HelperForms.swift; sourceTree = "<group>"; };
+		C748171419E3106B006D595B /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = controllers/MenuTableViewController.swift; sourceTree = "<group>"; };
+		C748171619E3148B006D595B /* menuBackground@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "menuBackground@2x.jpg"; sourceTree = "<group>"; };
 		C74B3186197C884800EE70EF /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewPostViewController.swift; path = controllers/NewPostViewController.swift; sourceTree = "<group>"; };
 		C770BD07197EC64500C49D57 /* PostImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostImagesCell.swift; path = views/PostImagesCell.swift; sourceTree = "<group>"; };
 		C77322A6199BF30D001F2249 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -313,6 +317,7 @@
 		C718C1F9195EF8EC00389FFD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C748171619E3148B006D595B /* menuBackground@2x.jpg */,
 				C7B21DE21996E3DD00AE4978 /* avatar@2x.png */,
 				C7072B2A1963052300F8A244 /* bg-general@2x.png */,
 				C718C1FA195EF91F00389FFD /* bg1@2x.jpg */,
@@ -348,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				C725E4C819E043BF00E6FD85 /* MenuViewController.swift */,
+				C748171419E3106B006D595B /* MenuTableViewController.swift */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -578,6 +584,7 @@
 				C718C1FB195EF91F00389FFD /* bg1@2x.jpg in Resources */,
 				C7A0B4AF19892C9F00C72662 /* marker@2x.png in Resources */,
 				C795490A197C041D002C6F1D /* lapiz@2x.png in Resources */,
+				C748171719E3148B006D595B /* menuBackground@2x.jpg in Resources */,
 				C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */,
 				C7B21DDD19959CBF00AE4978 /* bgBlur1@2x.png in Resources */,
 				C7B21DE31996E3DD00AE4978 /* avatar@2x.png in Resources */,
@@ -649,6 +656,7 @@
 				C7353A2D197ABC32002F4E54 /* HelperForms.swift in Sources */,
 				C7EFBFC0199C0D0600EB0A91 /* SwifterHTTPRequest.swift in Sources */,
 				C7EFBFBE199C0D0600EB0A91 /* SwifterFollowers.swift in Sources */,
+				C748171519E3106B006D595B /* MenuTableViewController.swift in Sources */,
 				C74B3187197C884800EE70EF /* NewPostViewController.swift in Sources */,
 				C7EFBFC7199C0D0600EB0A91 /* SwifterSpam.swift in Sources */,
 				C7EFBFC1199C0D0600EB0A91 /* SwifterLists.swift in Sources */,

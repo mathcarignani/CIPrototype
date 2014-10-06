@@ -32,7 +32,7 @@ class PostARViewController: UIViewController, PRARManagerDelegate {
     
     // MARK: - AR Data
     func loadPoints() {
-        var locationCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2DMake(0, 0)
+        var locationCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2DMake(-34.9060165250200, -56.1930646562800)
         var points: NSMutableArray = NSMutableArray.arrayWithCapacity(self.posts.count)
         var idAux: Int = 0
         
@@ -40,7 +40,6 @@ class PostARViewController: UIViewController, PRARManagerDelegate {
         for post : AnyObject in self.posts {
             
             if (post as Post).title != nil {
-            
                 var coordinate = (post as Post).coordinate()
                 var point: NSDictionary = ["id": idAux,
                                             "title": (post as Post).title,
@@ -58,19 +57,19 @@ class PostARViewController: UIViewController, PRARManagerDelegate {
         self.view.layer.addSublayer(cameraLayer)
         self.view.addSubview(arView)
         
-        //self.view.bringSubviewToFront(self.view.viewWithTag(042313)!)
+        self.view.bringSubviewToFront(self.view.viewWithTag(Int(AR_VIEW_TAG))!)
         self.view.addSubview(radar)
         
     }
     
     func prarUpdateFrame(arViewFrame: CGRect) {
-        //(self.view.viewWithTag(042313)! as UIView).frame = arViewFrame
+        (self.view.viewWithTag(Int(AR_VIEW_TAG))! as UIView).frame = arViewFrame
     }
     
     func prarDidSetupAR(arView: UIView!, withCameraLayer cameraLayer: AVCaptureVideoPreviewLayer!) {
         self.view.layer.addSublayer(cameraLayer)
         self.view.addSubview(arView)
         
-        self.view.bringSubviewToFront(self.view.viewWithTag(042313)!)
+        self.view.bringSubviewToFront(self.view.viewWithTag(Int(AR_VIEW_TAG))!)
     }
 }
