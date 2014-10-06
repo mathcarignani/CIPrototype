@@ -30,5 +30,13 @@ class MenuTableViewController: UITableViewController {
     func configUI() {
         // Avatar
         self.avatarImage.image = UIImage(named: "avatar.png")
+        self.avatarImage.layer.cornerRadius = self.avatarImage.frame.width / 2
+        self.avatarImage.layer.masksToBounds = true
+        
+    }
+    
+    // MARK: - UITableViewDelegate
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
     }
 }
