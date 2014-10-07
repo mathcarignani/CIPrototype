@@ -11,8 +11,8 @@ import MapKit
 class RestApiHelper: NSObject {
 
     let manager = AFHTTPRequestOperationManager()
-    //let urlApi = "http://ciudadinvisible.herokuapp.com"
-    let urlApi = "http://localhost:3000"
+    let urlApi = "http://ciudadinvisible.herokuapp.com"
+    //let urlApi = "http://localhost:3000"
     
     // MARK: - Singleton
     class func sharedInstance() -> RestApiHelper! {
@@ -253,7 +253,7 @@ class RestApiHelper: NSObject {
                 ]
             ] as Dictionary
         
-        manager.POST("\(urlApi)/post_without_assets.json", parameters: parameters, success:
+        manager.POST("\(urlApi)/posts", parameters: parameters, success:
             { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 println("Exito => " + responseObject.description)
                 
@@ -287,7 +287,7 @@ class RestApiHelper: NSObject {
                 "assets_images": imagesData
             ] as Dictionary
         
-        manager.POST("\(urlApi)/post_assign_assets/\(postId)", parameters: parameters, success:
+        manager.POST("\(urlApi)/post_assets/\(postId)", parameters: parameters, success:
             { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 println("Exito => " + responseObject.description)
                 
