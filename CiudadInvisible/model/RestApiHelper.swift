@@ -11,8 +11,8 @@ import MapKit
 class RestApiHelper: NSObject {
 
     let manager = AFHTTPRequestOperationManager()
-    let urlApi = "http://ciudadinvisible.herokuapp.com"
-    //let urlApi = "http://localhost:3000"
+    //let urlApi = "http://ciudadinvisible.herokuapp.com"
+    let urlApi = "http://localhost:3000"
     
     // MARK: - Singleton
     class func sharedInstance() -> RestApiHelper! {
@@ -236,7 +236,41 @@ class RestApiHelper: NSObject {
     
     func createPost(post: Post, completion: (success: Bool) -> ()) {
         
+        // Primero envía el contenido del post y luego las imagenes
         var user = UserSesionHelper.sharedInstance().getUserLogued()
+        
+        var parameters = [
+            "post":
+                [
+                    "title":post.title,
+                    "description":post.descriptionText,
+                    "date":post.date,
+                    "location":post.location,
+                    "latitude":post.latitude,
+                    "longitude":post.longitude,
+                    "category":post.category,
+                    "user_id":user.id
+                ]
+            ] as Dictionary
+        
+        manager.POST("\(urlApi)/post_without_assets.json", parameters: parameters, success:
+            { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                println("Exito => " + responseObject.description)
+                
+                // Asocia las imagenes
+                var postsJson = JSONValue(responseObject)
+                
+                self.addAssetsToPost(postsJson["id"].integer!, post: post)
+                
+                completion(success: true)
+                
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error => " + error.localizedDescription)
+                completion(success: false)
+        })
+    }
+    
+    func addAssetsToPost(postId: Int, post: Post) {
         
         var imagesData = [] as Array
         // Recorre las imagenes y agrega
@@ -250,29 +284,18 @@ class RestApiHelper: NSObject {
         }
         
         var parameters = [
-            "post":
-                [
-                    "title":post.title,
-                    "description":post.descriptionText,
-                    "date":post.date,
-                    "location":post.location,
-                    "latitude":post.latitude,
-                    "longitude":post.longitude,
-                    "category":post.category,
-                    "user_id":user.id
-            ],
-            "assets_images": imagesData
-        ] as Dictionary
-       
-        manager.POST("\(urlApi)/posts.json", parameters: parameters, success:
+                "assets_images": imagesData
+            ] as Dictionary
+        
+        manager.POST("\(urlApi)/post_assign_assets/\(postId)", parameters: parameters, success:
             { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 println("Exito => " + responseObject.description)
-                completion(success: true)
+                
                 
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 println("Error => " + error.localizedDescription)
-                completion(success: false)
-            })
+                
+        })
 
     }
     
