@@ -822,7 +822,6 @@
 				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/mathias/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CiudadInvisible/Info.plist;
@@ -847,7 +846,6 @@
 				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/mathias/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CiudadInvisible/Info.plist;
