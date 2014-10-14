@@ -17,3 +17,4 @@
 #import <CommonCrypto/CommonCrypto.h>
 #import "XDKAirMenuController.h"
 #import "PRARManager.h"
+#import <Parse/Parse.h>

@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
         // Override point for customization after application launch.
+
+        self.configParse(application)
         
         // Configuracion del color para la animacion inicial
         self.window!.backgroundColor = UIColor(red: 197/255.0, green: 73/255.0, blue: 73/255.0, alpha: 1.0)
@@ -31,6 +33,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var wasHandled = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
         
         return wasHandled
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        
+        // Guarda el deviceToken en la instalacion actual y lo guarda en Parse
+        var currentInstallation: PFInstallation = PFInstallation.currentInstallation()
+        currentInstallation.setDeviceTokenFromData(deviceToken)
+        currentInstallation.saveInBackground()
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println(error)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
     }
     
     // MARK: Aux
@@ -49,6 +67,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         } else {
             println("No hay usuario logueado")
+        }
+        
+    }
+    
+    // MARK: - Parse
+    func configParse(application: UIApplication) {
+        // Inicia la aplicacion
+        Parse.setApplicationId("s0cuxSztmN6KQ5IhHtfYe7fUi37Qi7IwEoBOkP4d", clientKey: "y8x1FPQqL8oLD1vjhcxWBUd2BJB1UwbbwnpfoKE2")
+        
+        // Configuracion de las push
+        if application.respondsToSelector("registerUserNotificationSettings:") {
+            // Running iOS 8
+            let userNotificationTypes: UIUserNotificationType = (UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound)
+            let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+        } else {
+            // Before iOS 8
+            application.registerForRemoteNotificationTypes(UIRemoteNotificationType.Badge | UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound)
         }
         
     }

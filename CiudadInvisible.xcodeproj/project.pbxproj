@@ -30,6 +30,7 @@
 		C770BD08197EC64500C49D57 /* PostImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BD07197EC64500C49D57 /* PostImagesCell.swift */; };
 		C77322A7199BF30E001F2249 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77322A6199BF30D001F2249 /* Accounts.framework */; };
 		C77322A9199BF313001F2249 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77322A8199BF313001F2249 /* Twitter.framework */; };
+		C77EBB7719EC961400BE4790 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77EBB7519EC961400BE4790 /* Parse.framework */; };
 		C780CF4C19B287A1009E319D /* PostsGaleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */; };
 		C795490A197C041D002C6F1D /* lapiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7954908197C041D002C6F1D /* lapiz@2x.png */; };
 		C795490B197C041D002C6F1D /* ojo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7954909197C041D002C6F1D /* ojo@2x.png */; };
@@ -134,6 +135,7 @@
 		C770BD07197EC64500C49D57 /* PostImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostImagesCell.swift; path = views/PostImagesCell.swift; sourceTree = "<group>"; };
 		C77322A6199BF30D001F2249 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C77322A8199BF313001F2249 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		C77EBB7519EC961400BE4790 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsGaleryViewController.swift; path = controllers/PostsGaleryViewController.swift; sourceTree = "<group>"; };
 		C7954908197C041D002C6F1D /* lapiz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lapiz@2x.png"; sourceTree = "<group>"; };
 		C7954909197C041D002C6F1D /* ojo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ojo@2x.png"; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C79926A719912B99006510A1 /* Foundation.framework in Frameworks */,
+				C77EBB7719EC961400BE4790 /* Parse.framework in Frameworks */,
 				C77322A7199BF30E001F2249 /* Accounts.framework in Frameworks */,
 				C77322A9199BF313001F2249 /* Twitter.framework in Frameworks */,
 				C79926A519912B93006510A1 /* MapKit.framework in Frameworks */,
@@ -479,6 +482,7 @@
 		CE1364FB7F454404B0F45ADE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C77EBB7519EC961400BE4790 /* Parse.framework */,
 				C7EFBF93199C0D0600EB0A91 /* Swifter */,
 				C77322A8199BF313001F2249 /* Twitter.framework */,
 				C77322A6199BF30D001F2249 /* Accounts.framework */,
@@ -544,6 +548,7 @@
 				TargetAttributes = {
 					C707AC79195E127E00E43F53 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = TJUKW2P32F;
 					};
 					C707AC8B195E127F00E43F53 = {
 						CreatedOnToolsVersion = 6.0;
@@ -819,6 +824,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -832,6 +839,7 @@
 					"$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos7.0;
 				SWIFT_OBJC_BRIDGING_HEADER = "CiudadInvisible-Bridging-Header.h";
 			};
@@ -843,6 +851,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -856,6 +866,7 @@
 					"$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos7.0;
 				SWIFT_OBJC_BRIDGING_HEADER = "CiudadInvisible-Bridging-Header.h";
 			};
