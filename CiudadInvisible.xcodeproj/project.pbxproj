@@ -25,6 +25,8 @@
 		C7353A28197AADF4002F4E54 /* bg4@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7353A27197AADF4002F4E54 /* bg4@2x.jpg */; };
 		C7353A2B197AB310002F4E54 /* PostDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7353A2A197AB310002F4E54 /* PostDetailMapCell.swift */; };
 		C7353A2D197ABC32002F4E54 /* HelperForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7353A2C197ABC32002F4E54 /* HelperForms.swift */; };
+		C73F563E19F186C900A795AC /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C73F563B19F186C900A795AC /* ProgressHUD.bundle */; };
+		C73F563F19F186C900A795AC /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F563D19F186C900A795AC /* ProgressHUD.m */; };
 		C748171519E3106B006D595B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C748171419E3106B006D595B /* MenuTableViewController.swift */; };
 		C748171719E3148B006D595B /* menuBackground@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C748171619E3148B006D595B /* menuBackground@2x.jpg */; };
 		C74B3187197C884800EE70EF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74B3186197C884800EE70EF /* NewPostViewController.swift */; };
@@ -132,6 +134,9 @@
 		C7353A27197AADF4002F4E54 /* bg4@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg4@2x.jpg"; sourceTree = "<group>"; };
 		C7353A2A197AB310002F4E54 /* PostDetailMapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostDetailMapCell.swift; path = views/PostDetailMapCell.swift; sourceTree = "<group>"; };
 		C7353A2C197ABC32002F4E54 /* HelperForms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelperForms.swift; path = views/HelperForms.swift; sourceTree = "<group>"; };
+		C73F563B19F186C900A795AC /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		C73F563C19F186C900A795AC /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		C73F563D19F186C900A795AC /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		C748171419E3106B006D595B /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = controllers/MenuTableViewController.swift; sourceTree = "<group>"; };
 		C748171619E3148B006D595B /* menuBackground@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "menuBackground@2x.jpg"; sourceTree = "<group>"; };
 		C74B3186197C884800EE70EF /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewPostViewController.swift; path = controllers/NewPostViewController.swift; sourceTree = "<group>"; };
@@ -377,6 +382,16 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		C73F563A19F186C900A795AC /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C73F563B19F186C900A795AC /* ProgressHUD.bundle */,
+				C73F563C19F186C900A795AC /* ProgressHUD.h */,
+				C73F563D19F186C900A795AC /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
 		C795490C197C0812002C6F1D /* Respaldos */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,6 +503,7 @@
 		CE1364FB7F454404B0F45ADE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C73F563A19F186C900A795AC /* ProgressHUD */,
 				C77EBB7519EC961400BE4790 /* Parse.framework */,
 				C7EFBF93199C0D0600EB0A91 /* Swifter */,
 				C77322A8199BF313001F2249 /* Twitter.framework */,
@@ -594,6 +610,7 @@
 				C7353A28197AADF4002F4E54 /* bg4@2x.jpg in Resources */,
 				C718C1FB195EF91F00389FFD /* bg1@2x.jpg in Resources */,
 				C7A0B4AF19892C9F00C72662 /* marker@2x.png in Resources */,
+				C73F563E19F186C900A795AC /* ProgressHUD.bundle in Resources */,
 				C795490A197C041D002C6F1D /* lapiz@2x.png in Resources */,
 				C748171719E3148B006D595B /* menuBackground@2x.jpg in Resources */,
 				C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */,
@@ -669,6 +686,7 @@
 				C7EFBFBE199C0D0600EB0A91 /* SwifterFollowers.swift in Sources */,
 				C748171519E3106B006D595B /* MenuTableViewController.swift in Sources */,
 				C74B3187197C884800EE70EF /* NewPostViewController.swift in Sources */,
+				C73F563F19F186C900A795AC /* ProgressHUD.m in Sources */,
 				C7EFBFC7199C0D0600EB0A91 /* SwifterSpam.swift in Sources */,
 				C7AD49C919F1536400D9F9F9 /* EmptySegue.swift in Sources */,
 				C7EFBFC1199C0D0600EB0A91 /* SwifterLists.swift in Sources */,
