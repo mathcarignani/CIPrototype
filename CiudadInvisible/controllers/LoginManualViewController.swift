@@ -32,17 +32,15 @@ class LoginManualViewController: UIViewController {
     }
     
     @IBAction func login(sender: AnyObject) {
-        
-        println("Login")
+        ProgressHUD.show("Please wait...")
         
         RestApiHelper.sharedInstance().loginManual(self.emailText.text,
             password: self.passwordText.text,
             completion: {(logued: Bool) in
+                ProgressHUD.dismiss()
                 if logued {
                     // Se logueo correctamente
-                    self.parentViewController?.dismissViewControllerAnimated(true, completion: { () -> Void in
-                        
-                    })
+                    self.parentViewController?.dismissViewControllerAnimated(true, completion: nil)
                 } else {
                     // Error al loguearse
                     self.showErrorMessage()

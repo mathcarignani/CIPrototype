@@ -51,7 +51,8 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
     }
     
     @IBAction func loginWithTwitter(sender: AnyObject) {
-
+        ProgressHUD.show("Please wait...")
+        
         if useACAccount {
             let accountStore = ACAccountStore()
             let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
@@ -59,6 +60,8 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
             // Prompt the user for permission to their twitter account stored in the phone's settings
             accountStore.requestAccessToAccountsWithType(accountType, options: nil) {
                 granted, error in
+                
+                ProgressHUD.dismiss()
                 
                 if granted {
                     let twitterAccounts = accountStore.accountsWithAccountType(accountType)
@@ -82,6 +85,7 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
             swifter.authorizeWithCallbackURL(NSURL(string: "swifter://success"), success: {
                 accessToken, response in
                 
+                ProgressHUD.dismiss()
                 self.fetchTwitterHomeStream()
                 
                 },failure: { error in
@@ -132,7 +136,7 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
                 
                 if logued {
                     println("Logueado con twitter")
-                    self.performSegueWithIdentifier(self.segueIdentifier, sender: self)
+                    self.parentViewController?.dismissViewControllerAnimated(true, completion: nil)
                 } else {
                     println("Error en logueo con twitter")
                 }
@@ -162,6 +166,8 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
     // This method will be called when the user information has been fetched
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
 
+        ProgressHUD.show("Please wait...")
+        
         // Crea el usuario para enviar a la API
         var userLocal: User = User()
         userLocal.facebook_id = user.objectID
@@ -171,9 +177,10 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
         RestApiHelper.sharedInstance().loginFacebook(userLocal,
             completion: { (logued: Bool) in
                 
+                ProgressHUD.dismiss()
                 if logued {
                     println("Logueado con facebook")
-                    self.performSegueWithIdentifier(self.segueIdentifier, sender: self)
+                    self.parentViewController?.dismissViewControllerAnimated(true, completion: nil)
                 } else {
                     println("Error en logueo con facebook")
                 }

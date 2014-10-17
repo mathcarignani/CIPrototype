@@ -34,23 +34,19 @@ class RestApiHelper: NSObject {
     
     // MARK: - Users
     
-    func getUser(userId: Int, completion: (user: User) -> ()) {
+    func loadUserInformation(userId: Int, completion: (success: Bool) -> ()) {
         
         var user: User! = User()
         
         manager.GET("\(urlApi)/users/\(userId)",
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
-                println("Json obtenido => " + responseObject.description)
-                
-                // Parser
-                user = User()
-                completion(user: user)
-                
+                UserSesionHelper.sharedInstance().saveInDeviceUserLogued(responseObject)
+                completion(success: true)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 println("Error: \(error)")
-                completion(user: user)
+                completion(success: false)
         })
         
     }
@@ -93,6 +89,7 @@ class RestApiHelper: NSObject {
             parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 // Success
+                UserSesionHelper.sharedInstance().saveInDeviceUserLogued(responseObject)
                 completion(logued: true)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
@@ -118,6 +115,7 @@ class RestApiHelper: NSObject {
             parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 // Success
+                UserSesionHelper.sharedInstance().saveInDeviceUserLogued(responseObject)
                 completion(logued: true)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
@@ -143,6 +141,7 @@ class RestApiHelper: NSObject {
             parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 // Success
+                UserSesionHelper.sharedInstance().saveInDeviceUserLogued(responseObject)
                 completion(register: true)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in

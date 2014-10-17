@@ -31,27 +31,20 @@ class UserSesionHelper: NSObject {
     }
     
     // MARK: Publics
-    func getUserLogued() -> User {
-        
-        // Si el usuario no existe lo obtiene
-        if self.userLogued == nil {
-            
-            var defaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
-            let userId = defaults.integerForKey("user_logued")
-            
-            /*RestApiHelper.sharedInstance().getUser(userId, completion: { (user: User) -> () in
-                self.userLogued = user
-            })*/
-        
-            // PRUEBA
-            self.userLogued = User()
-            self.userLogued.id = userId
-            self.userLogued.first_name = "Mathias"
-            self.userLogued.last_name = "Carignani"
-            // PRUEBA
-            
+    func loadInformation(completion: (success: Bool) -> ()) {
+        // Carga toda la información referente al usuario logueado
+        var defaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let userId = defaults.integerForKey("user_logued")
+        if userId != 0 {
+            RestApiHelper.sharedInstance().loadUserInformation(userId, completion: { (success) -> () in
+                completion(success: success)
+            })
         }
         
+        
+    }
+    
+    func getUserLogued() -> User {
         return self.userLogued
     }
     
@@ -75,8 +68,14 @@ class UserSesionHelper: NSObject {
     func saveInDeviceUserLogued(responseObject: AnyObject!) {
         
         var userJson = JSONValue(responseObject)
+        println(userJson)
         var user = User()
         user.id = userJson["id"].integer
+        user.first_name = userJson["first_name"].string
+        user.last_name = userJson["last_name"].string
+        user.username = userJson["username"].string
+        user.email = userJson["email"].string
+        user.facebook_id = userJson["facebook_id"].string
         
         // Cambia el valor de la variable
         self.hasUserLogued = true
