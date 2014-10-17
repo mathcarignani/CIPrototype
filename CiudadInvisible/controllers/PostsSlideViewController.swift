@@ -37,42 +37,6 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
             })
     }
 
-    override func viewDidAppear(animated: Bool) {
-        // Si no hay usuario logueado va al login
-        if !UserSesionHelper.sharedInstance().hasUserLogued {
-            self.performSegueWithIdentifier("BackToLoginSegue", sender: self)
-        }
-    }
-    
-    // MARK: - Actions
-    @IBAction func goToMap(sender: AnyObject) {
-        
-        // Obtiene el mapa, setea los posts para que no los obtenga denuevo y lo invoca
-        //var mapVC : PostsMapViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostsMapViewController") as PostsMapViewController
-        var mapVC : PostARViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostARViewController") as PostARViewController
-        mapVC.posts = self.posts
-        self.presentViewController(mapVC, animated: true) { () -> Void in
-        }
-    }
-    
-    @IBAction func goToGalery(sender: AnyObject) {
-        
-        // Obtiene el mapa, setea los posts para que no los obtenga denuevo y lo invoca
-        var galeryVC : PostsGaleryViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostsGaleryViewController") as PostsGaleryViewController
-        galeryVC.posts = self.posts
-        self.presentViewController(galeryVC, animated: true) { () -> Void in
-        }
-    }
-    
-    @IBAction func menuClicked(sender: AnyObject) {
-        let menu: XDKAirMenuController = XDKAirMenuController.sharedMenu()
-        if menu.isMenuOpened {
-            menu.closeMenuAnimated()
-        } else {
-            menu.openMenuAnimated()
-        }
-    }
-    
     // MARK: - UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {

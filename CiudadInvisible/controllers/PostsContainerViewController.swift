@@ -1,5 +1,5 @@
 //
-//  LoginContainerViewController.swift
+//  PostsContainerViewController.swift
 //  CiudadInvisible
 //
 //  Created by Mathias on 17/10/14.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-class LoginContainerViewController: UIViewController {
+class PostsContainerViewController: UIViewController {
 
-    private let SegueIdentifierFirst: String! = "embedLogin"
-    private let SegueIdentifierSecond: String! = "embedLoginManual"
-    private let SegueIdentifierThird: String! = "embedSignIn"
+    private let SegueIdentifierFirst: String! = "embedSlide"
+    private let SegueIdentifierSecond: String! = "embedMap"
+    private let SegueIdentifierThird: String! = "embedGallery"
     private var currentSegueIdentifier: String! = ""
     
-    // MARK: - LifeCycle
+    // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Controlador principal
         self.currentSegueIdentifier = SegueIdentifierFirst
         self.performSegueWithIdentifier(self.currentSegueIdentifier, sender: nil)
@@ -26,7 +26,7 @@ class LoginContainerViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
     
     // MARK: - Navigation
@@ -44,7 +44,7 @@ class LoginContainerViewController: UIViewController {
             self.swapFromViewController(((self.childViewControllers as NSArray).objectAtIndex(0) as UIViewController), toViewController: (segue.destinationViewController as UIViewController))
         }
     }
-
+    
     private func swapFromViewController(fromViewController: UIViewController, toViewController: UIViewController) {
         
         toViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
@@ -64,7 +64,7 @@ class LoginContainerViewController: UIViewController {
                 toViewController.didMoveToParentViewController(self)
         })
         
-      
+        
         
     }
     
@@ -79,5 +79,5 @@ class LoginContainerViewController: UIViewController {
         // Ejecuta el segue
         self.performSegueWithIdentifier(self.currentSegueIdentifier, sender: nil)
     }
-    
+
 }

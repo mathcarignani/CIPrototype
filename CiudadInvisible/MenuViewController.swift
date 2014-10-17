@@ -45,7 +45,7 @@ class MenuViewController: UIViewController, XDKAirMenuDelegate {
         
         var vc: UIViewController! = nil
         
-        vc = self.storyboard?.instantiateViewControllerWithIdentifier("PostsSlideViewController") as UIViewController
+        vc = self.storyboard?.instantiateViewControllerWithIdentifier("PostsHome") as UIViewController
         
         return vc
     }

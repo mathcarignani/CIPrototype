@@ -37,12 +37,6 @@ class PostsGaleryViewController: UIViewController, UICollectionViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Actions
-    @IBAction func back(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    
     // MARK: UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
