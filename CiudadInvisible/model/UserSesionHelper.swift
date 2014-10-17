@@ -39,6 +39,8 @@ class UserSesionHelper: NSObject {
             RestApiHelper.sharedInstance().loadUserInformation(userId, completion: { (success) -> () in
                 completion(success: success)
             })
+        } else {
+            completion(success: false)
         }
         
         
@@ -55,14 +57,6 @@ class UserSesionHelper: NSObject {
         
         var defaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
         defaults.removeObjectForKey("user_logued")
-    }
-    
-    func configUserLogued(id: Int) {
-        // Setea en verdadero la variable
-        self.hasUserLogued = true
-        
-        // Obtiene el usuario de la api y lo guarda local
-        
     }
     
     func saveInDeviceUserLogued(responseObject: AnyObject!) {

@@ -21,8 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Configuracion del color para la animacion inicial
         self.window!.backgroundColor = UIColor(red: 197/255.0, green: 73/255.0, blue: 73/255.0, alpha: 1.0)
-        
-        self.setMainController()
 
         return true
     }
@@ -49,26 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         PFPush.handlePush(userInfo)
-    }
-    
-    // MARK: Aux
-    func setMainController() {
-        
-        // Controla si hay un usuario logueado para ver a que controller va
-        var defaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
-
-        if (defaults.objectForKey("user_logued") != nil) {
-            // Obtiene el usuario
-            var userId = defaults.integerForKey("user_logued")
-            println("Usuario loguedo: \(userId)")
-            
-            // Setea en verdadero que hay un usuario logueado
-            UserSesionHelper.sharedInstance().configUserLogued(userId)
-            
-        } else {
-            println("No hay usuario logueado")
-        }
-        
     }
     
     // MARK: - Parse
