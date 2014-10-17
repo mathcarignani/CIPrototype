@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CiudadInvisible/controllers/LogInViewController.swift"
-            timestampString = "429662572.727531"
+            timestampString = "435247959.855055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "loginWithTwitter(_:)"
             landmarkType = "5">
          </BreakpointContent>

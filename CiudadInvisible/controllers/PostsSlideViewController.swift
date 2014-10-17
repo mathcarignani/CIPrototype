@@ -37,6 +37,13 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
             })
     }
 
+    override func viewDidAppear(animated: Bool) {
+        // Si no hay usuario logueado va al login
+        if !UserSesionHelper.sharedInstance().hasUserLogued {
+            self.performSegueWithIdentifier("BackToLoginSegue", sender: self)
+        }
+    }
+    
     // MARK: - Actions
     @IBAction func goToMap(sender: AnyObject) {
         

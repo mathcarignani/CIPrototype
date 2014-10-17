@@ -16,6 +16,7 @@
 		C707AC87195E127F00E43F53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C707AC86195E127F00E43F53 /* Images.xcassets */; };
 		C707AC93195E127F00E43F53 /* CiudadInvisibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C707AC92195E127F00E43F53 /* CiudadInvisibleTests.swift */; };
 		C712D8A419883F6400993782 /* bgEmpty@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C712D8A319883F6400993782 /* bgEmpty@2x.jpg */; };
+		C71315E719F14E6C0067B759 /* LoginContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71315E619F14E6C0067B759 /* LoginContainerViewController.swift */; };
 		C718C1F5195EF79100389FFD /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718C1F4195EF79100389FFD /* PostsViewController.swift */; };
 		C718C1FB195EF91F00389FFD /* bg1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C718C1FA195EF91F00389FFD /* bg1@2x.jpg */; };
 		C718C1FD195EFE7000389FFD /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C718C1FC195EFE7000389FFD /* camera@2x.png */; };
@@ -55,6 +56,7 @@
 		C7A71A07196EC7C1008C82F4 /* MultiImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A71A06196EC7C1008C82F4 /* MultiImagesViewController.swift */; };
 		C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3221968590600EB74D5 /* RestApiHelper.swift */; };
 		C7ACF3251968673900EB74D5 /* PostsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */; };
+		C7AD49C919F1536400D9F9F9 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AD49C819F1536400D9F9F9 /* EmptySegue.swift */; };
 		C7B17423197174FD008F00E6 /* PublicarMapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B17422197174FD008F00E6 /* PublicarMapaViewController.swift */; };
 		C7B21DDD19959CBF00AE4978 /* bgBlur1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B21DDC19959CBF00AE4978 /* bgBlur1@2x.png */; };
 		C7B21DDF19959E6A00AE4978 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B21DDE19959E6A00AE4978 /* SigninViewController.swift */; };
@@ -121,6 +123,7 @@
 		C707AC91195E127F00E43F53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C707AC92195E127F00E43F53 /* CiudadInvisibleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiudadInvisibleTests.swift; sourceTree = "<group>"; };
 		C712D8A319883F6400993782 /* bgEmpty@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgEmpty@2x.jpg"; sourceTree = "<group>"; };
+		C71315E619F14E6C0067B759 /* LoginContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginContainerViewController.swift; path = controllers/LoginContainerViewController.swift; sourceTree = "<group>"; };
 		C718C1F4195EF79100389FFD /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsViewController.swift; path = controllers/PostsViewController.swift; sourceTree = "<group>"; };
 		C718C1FA195EF91F00389FFD /* bg1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg1@2x.jpg"; sourceTree = "<group>"; };
 		C718C1FC195EFE7000389FFD /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
@@ -161,6 +164,7 @@
 		C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CiudadInvisible-Bridging-Header.h"; sourceTree = "<group>"; };
 		C7ACF3221968590600EB74D5 /* RestApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestApiHelper.swift; path = model/RestApiHelper.swift; sourceTree = "<group>"; };
 		C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsDetailViewController.swift; path = controllers/PostsDetailViewController.swift; sourceTree = "<group>"; };
+		C7AD49C819F1536400D9F9F9 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptySegue.swift; path = views/EmptySegue.swift; sourceTree = "<group>"; };
 		C7B17422197174FD008F00E6 /* PublicarMapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicarMapaViewController.swift; path = controllers/PublicarMapaViewController.swift; sourceTree = "<group>"; };
 		C7B17424197175EC008F00E6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		C7B21DDC19959CBF00AE4978 /* bgBlur1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgBlur1@2x.png"; sourceTree = "<group>"; };
@@ -348,6 +352,7 @@
 				C718C201195F0C9300389FFD /* PostView.swift */,
 				C7F851C11969F58F002B38FF /* CameraPreviewView.swift */,
 				C7D67FF219B15F9400C3061D /* PostAnnotation.swift */,
+				C7AD49C819F1536400D9F9F9 /* EmptySegue.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 				C799269E19912262006510A1 /* LoginManualViewController.swift */,
 				C7B21DDE19959E6A00AE4978 /* SigninViewController.swift */,
 				C7B21DE01996DE4500AE4978 /* UserProfileViewController.swift */,
+				C71315E619F14E6C0067B759 /* LoginContainerViewController.swift */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -664,6 +670,7 @@
 				C748171519E3106B006D595B /* MenuTableViewController.swift in Sources */,
 				C74B3187197C884800EE70EF /* NewPostViewController.swift in Sources */,
 				C7EFBFC7199C0D0600EB0A91 /* SwifterSpam.swift in Sources */,
+				C7AD49C919F1536400D9F9F9 /* EmptySegue.swift in Sources */,
 				C7EFBFC1199C0D0600EB0A91 /* SwifterLists.swift in Sources */,
 				C780CF4C19B287A1009E319D /* PostsGaleryViewController.swift in Sources */,
 				C7F851C21969F58F002B38FF /* CameraPreviewView.swift in Sources */,
@@ -681,6 +688,7 @@
 				C7EFBFB4199C0D0600EB0A91 /* JSON.swift in Sources */,
 				C7EFBFC2199C0D0600EB0A91 /* SwifterMessages.swift in Sources */,
 				C7A0B4B11989753A00C72662 /* PostDetailDescriptionCell.swift in Sources */,
+				C71315E719F14E6C0067B759 /* LoginContainerViewController.swift in Sources */,
 				C7B21DE11996DE4500AE4978 /* UserProfileViewController.swift in Sources */,
 				C7EFBFBD199C0D0600EB0A91 /* SwifterFavorites.swift in Sources */,
 				C7EFBFBF199C0D0600EB0A91 /* SwifterHelp.swift in Sources */,

@@ -42,6 +42,14 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
     }
 
     // MARK: Actions
+    @IBAction func goToLoginManual(sender: AnyObject) {
+        (self.parentViewController as LoginContainerViewController).changeToViewControllerIndex(1)
+    }
+    
+    @IBAction func goToRegister(sender: AnyObject) {
+        (self.parentViewController as LoginContainerViewController).changeToViewControllerIndex(2)
+    }
+    
     @IBAction func loginWithTwitter(sender: AnyObject) {
 
         if useACAccount {

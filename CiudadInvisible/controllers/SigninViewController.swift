@@ -16,8 +16,6 @@ class SigninViewController: UIViewController {
     @IBOutlet var emailText: UITextField!
     @IBOutlet var passwordText: UITextField!
     
-    let segueIdentifier = "LoginSegue"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +29,7 @@ class SigninViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func close(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        (self.parentViewController as LoginContainerViewController).changeToViewControllerIndex(0)
     }
     
     @IBAction func sigin(sender: AnyObject) {
@@ -48,7 +46,7 @@ class SigninViewController: UIViewController {
             completion: {(register: Bool) in
                 if register {
                     println("Registrado")
-                    self.performSegueWithIdentifier(self.segueIdentifier, sender: self)
+                    self.parentViewController?.dismissViewControllerAnimated(true, completion: nil)
                 } else {
                     println("Error")
                 }

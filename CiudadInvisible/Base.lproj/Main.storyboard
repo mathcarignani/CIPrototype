@@ -87,6 +87,20 @@
             </objects>
             <point key="canvasLocation" x="2476" y="4142"/>
         </scene>
+        <!--Login Container View Controller-->
+        <scene sceneID="hcN-pZ-dhD">
+            <objects>
+                <viewController id="FJ4-Vr-oUU" customClass="LoginContainerViewController" customModule="CiudadInvisible" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="Kf5-nN-O4e" kind="custom" identifier="embedLogin" customClass="EmptySegue" customModule="CiudadInvisible" customModuleProvider="target" id="Mev-qg-bhS"/>
+                        <segue destination="8cs-3l-hcW" kind="custom" identifier="embedLoginManual" customClass="EmptySegue" customModule="CiudadInvisible" customModuleProvider="target" id="hWg-MH-yJW"/>
+                        <segue destination="0nv-HU-ycs" kind="custom" identifier="embedSignIn" customClass="EmptySegue" customModule="CiudadInvisible" customModuleProvider="target" id="SvA-lf-CAn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mAq-Uo-Jka" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2070" y="1041"/>
+        </scene>
         <!--Posts Slide View Controller-->
         <scene sceneID="cpa-ul-25p">
             <objects>
@@ -248,6 +262,7 @@
                         <outlet property="backgroundImage" destination="QWw-js-lyY" id="hvm-NK-OCd"/>
                         <outlet property="collectionView" destination="7rp-Un-LeE" id="j0B-ZY-LRA"/>
                         <outlet property="loadingIndicator" destination="ihF-UH-NDr" id="Zjm-eD-B7G"/>
+                        <segue destination="FJ4-Vr-oUU" kind="modal" identifier="BackToLoginSegue" id="A6i-Ff-n7B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMf-5I-hub" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -835,7 +850,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0nv-HU-ycs" kind="modal" id="8Fy-Wz-2QD"/>
+                                    <action selector="goToRegister:" destination="Kf5-nN-O4e" eventType="touchUpInside" id="tge-Ds-12e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31r-BL-Joc">
@@ -855,7 +870,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8cs-3l-hcW" kind="modal" id="Uhh-36-Rbt"/>
+                                    <action selector="goToLoginManual:" destination="Kf5-nN-O4e" eventType="touchUpInside" id="5Th-mm-D1m"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ciudad Invisible" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXK-1o-Zh7">
@@ -878,12 +893,11 @@
                     <connections>
                         <outlet property="loginFacebookView" destination="jyz-Q7-IpT" id="nnc-iv-g6U"/>
                         <outlet property="siginButton" destination="NWF-0m-Sem" id="ySb-GQ-ln4"/>
-                        <segue destination="qjn-fo-jl8" kind="modal" identifier="LoginSegue" id="zJD-mD-UG5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjM-5y-Gmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1557" y="513"/>
+            <point key="canvasLocation" x="-2521" y="1845"/>
         </scene>
         <!--Login Manual View Controller-->
         <scene sceneID="Ugm-gQ-UUO">
@@ -945,6 +959,16 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZ7-NM-AoB">
+                                        <rect key="frame" x="270" y="18" width="30" height="30"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backToLoginMain:" destination="8cs-3l-hcW" eventType="touchUpInside" id="wqx-8S-DNU"/>
+                                            <action selector="close:" destination="0nv-HU-ycs" eventType="touchUpInside" id="tFu-Z9-6Cs"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -954,12 +978,11 @@
                     <connections>
                         <outlet property="emailText" destination="kYX-Kr-CF8" id="tfW-ng-7EL"/>
                         <outlet property="passwordText" destination="vVH-IA-6AX" id="rIm-P1-rB5"/>
-                        <segue destination="qjn-fo-jl8" kind="modal" identifier="LoginSegue" id="2hg-gF-jfV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkj-Kh-H2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1125" y="513"/>
+            <point key="canvasLocation" x="-2070" y="1845"/>
         </scene>
         <!--Signin View Controller-->
         <scene sceneID="50T-ht-yjd">
@@ -970,7 +993,7 @@
                         <viewControllerLayoutGuide type="bottom" id="9fj-iX-dsU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WJC-LB-ruZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgBlur1.png" translatesAutoresizingMaskIntoConstraints="NO" id="yxy-K1-loS">
@@ -1049,12 +1072,11 @@
                         <outlet property="firstNameText" destination="327-xh-x7j" id="EGk-Ax-Cv0"/>
                         <outlet property="lastNameText" destination="AFc-ui-JLb" id="ZjC-Iz-XcJ"/>
                         <outlet property="passwordText" destination="mLQ-k9-HUo" id="3VX-iQ-Bur"/>
-                        <segue destination="qjn-fo-jl8" kind="modal" identifier="LoginSegue" id="af1-1P-ux9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5BQ-23-dKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1557" y="1157"/>
+            <point key="canvasLocation" x="-1653" y="1801"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="GdI-PZ-nTB">
@@ -1141,12 +1163,11 @@
                         <outlet property="explorarLabel" destination="CiU-PG-3S6" id="66g-87-YPq"/>
                         <segue destination="aod-Jc-Efq" kind="modal" identifier="HomeExplorar" id="hJc-TG-Twn"/>
                         <segue destination="mzG-Q4-nIP" kind="modal" identifier="HomeCapturar" id="R36-dp-n91"/>
-                        <segue destination="Kf5-nN-O4e" kind="modal" identifier="BackToLoginSegue" id="rjC-yF-6EY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SxZ-hN-e3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-744" y="-745"/>
+            <point key="canvasLocation" x="-180" y="-1125"/>
         </scene>
         <!--New Post View Controller-->
         <scene sceneID="sWk-0o-yce">
@@ -1579,8 +1600,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="af1-1P-ux9"/>
-        <segue reference="skC-Tx-Ekq"/>
         <segue reference="AUH-Aw-PPX"/>
+        <segue reference="skC-Tx-Ekq"/>
     </inferredMetricsTieBreakers>
 </document>

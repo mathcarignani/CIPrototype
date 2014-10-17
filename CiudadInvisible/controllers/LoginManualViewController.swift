@@ -27,6 +27,10 @@ class LoginManualViewController: UIViewController {
     }
     
     // MARK: Actions
+    @IBAction func backToLoginMain(sender: AnyObject) {
+        (self.parentViewController as LoginContainerViewController).changeToViewControllerIndex(0)
+    }
+    
     @IBAction func login(sender: AnyObject) {
         
         println("Login")
@@ -36,7 +40,9 @@ class LoginManualViewController: UIViewController {
             completion: {(logued: Bool) in
                 if logued {
                     // Se logueo correctamente
-                    self.performSegueWithIdentifier(self.segueIdentifier, sender: self)
+                    self.parentViewController?.dismissViewControllerAnimated(true, completion: { () -> Void in
+                        
+                    })
                 } else {
                     // Error al loguearse
                     self.showErrorMessage()
