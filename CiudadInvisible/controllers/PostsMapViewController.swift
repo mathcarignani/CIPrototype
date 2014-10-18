@@ -13,7 +13,7 @@ class PostsMapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet var mapView: MKMapView!
     
-    var posts : NSArray! = NSArray()
+    var posts : NSArray! = nil
     var centerMap : Int! = 1
     
     override func viewDidLoad() {
@@ -47,13 +47,16 @@ class PostsMapViewController: UIViewController, MKMapViewDelegate {
         self.mapView.delegate = self
         
         // Carga los puntos en el mapa
-        for post : AnyObject in self.posts {
-            
-            var annotation: PostAnnotation = PostAnnotation()
-            annotation.coordinate = (post as Post).coordinate()
-            annotation.title = (post as Post).title
-            annotation.post = (post as Post)
-            self.mapView.addAnnotation(annotation)
+        // Si hay posts
+        if (self.posts != nil) {
+            for post : AnyObject in self.posts {
+                
+                var annotation: PostAnnotation = PostAnnotation()
+                annotation.coordinate = (post as Post).coordinate()
+                annotation.title = (post as Post).title
+                annotation.post = (post as Post)
+                self.mapView.addAnnotation(annotation)
+            }
         }
     }
     
