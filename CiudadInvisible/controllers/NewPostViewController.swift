@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class NewPostViewController: UITableViewController, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDataSource, MultiImagesViewControllerDelegate {
+class NewPostViewController: UITableViewController, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDataSource, MultiImagesViewControllerDelegate, UITextViewDelegate {
 
     
     @IBOutlet var titleText: UITextField!
@@ -28,13 +28,16 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        //self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         // Configuracion fondo de la tabla para imagen principal del post
         self.mainImageView = UIImageView()
         self.mainImageView.frame = self.view.frame
         self.mainImageView.backgroundColor = UIColor(red: 170/255.0, green: 170/255.0, blue: 170/255.0, alpha: 0.5)
         self.tableView.backgroundView = self.mainImageView
+        
+        // Description
+        self.descriptionText.delegate = self
         
         // Configuracion del mapa
         let coordinate = CLLocationCoordinate2D(latitude: -34.9087458, longitude: -56.1614022137041)
@@ -51,6 +54,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         
     }
     
+    // MARK: - Actions
     @IBAction func changeMainImage(sender: AnyObject) {
         var picker : UIImagePickerController = UIImagePickerController()
         picker.delegate = self
@@ -171,4 +175,23 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         return cell
     }
     
+    // MARK: - UITextViewDelegate
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.text == "Ingrese una breve descripción de su lugar invisible, por ejemplo la historia que usted considera que tiene o el significado que tiene para usted..." {
+            textView.text = ""
+            textView.textColor = UIColor.blackColor()
+            textView.font = UIFont.systemFontOfSize(14)
+        }
+        textView.becomeFirstResponder()
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if textView.text == "" {
+            textView.text = "Ingrese una breve descripción de su lugar invisible, por ejemplo la historia que usted considera que tiene o el significado que tiene para usted..."
+            textView.textColor = UIColor.lightGrayColor()
+            textView.font = UIFont.italicSystemFontOfSize(14)
+            
+        }
+        textView.resignFirstResponder()
+    }
 }
