@@ -56,8 +56,15 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
             // Si tiene imagen la carga
             let images = post.imagesMedium()
             cell.imagen.setImageWithURL(NSURL(string: images.objectAtIndex(0) as String), placeholderImage: self.imageEmpty)
+            cell.imagen.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: images.objectAtIndex(0) as String)), placeholderImage: self.imageEmpty, success: { (request, response, image) -> Void in
+                // Setea las imagenes
+                cell.imagen.image = image
+                if (indexPath.row == 0 || (self.collectionView.visibleCells() as NSArray).containsObject(indexPath.row)) {
+                    self.setImageToBackground(image)
+                }
+            }, failure:nil)
         }
-        
+
         // Sombreado
         cell.fondo.layer.shadowColor = UIColor.blackColor().CGColor;
         cell.fondo.layer.shadowOffset = CGSizeMake(2.5, 2.5);
