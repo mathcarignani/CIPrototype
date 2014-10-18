@@ -20,8 +20,8 @@ class Post: NSObject {
     var category : String! = nil
     var images : NSArray! = nil
     var url : String! = nil
-    var latitude: String! = nil
-    var longitude: String! = nil
+    var latitude: Double! = nil
+    var longitude: Double! = nil
     
     override init() {
         super.init()
@@ -29,6 +29,11 @@ class Post: NSObject {
     
     func coordinate() -> CLLocationCoordinate2D {
         
+        let latitude = self.latitude as CLLocationDegrees
+        let longitude = self.longitude as CLLocationDegrees
+        
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        /*
         if self.location != nil && self.location.length > 0 {
         
             // Elimina los exrremos que corresponden a {}
@@ -45,6 +50,7 @@ class Post: NSObject {
         } else {
             return CLLocationCoordinate2D(latitude: 0, longitude: 0)
         }
+        */
     }
 
     // MARK: Images sizes

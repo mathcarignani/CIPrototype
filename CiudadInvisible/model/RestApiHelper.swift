@@ -195,6 +195,8 @@ class RestApiHelper: NSObject {
                         post.location = postsJson[i]["location"].string
                         post.category = postsJson[i]["category"].string
                         post.url = postsJson[i]["url"].string
+                        post.latitude = postsJson[i]["latitude"].double
+                        post.longitude = postsJson[i]["longitude"].double
                         // Agrega las imagenes
                         var auxImages : Array = []
                         let imagesJsonCount = postsJson[i]["assets"].array?.count

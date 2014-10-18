@@ -93,8 +93,8 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         post.images = arrayAuxiliar
         // Guarda la coordenada del centro del mapa
         post.location = "{\(self.mapView.centerCoordinate.latitude),\(self.mapView.centerCoordinate.longitude)}"
-        post.latitude = "\(self.mapView.centerCoordinate.latitude)"
-        post.longitude = "\(self.mapView.centerCoordinate.longitude)"
+        post.latitude = self.mapView.centerCoordinate.latitude
+        post.longitude = self.mapView.centerCoordinate.longitude
         
         RestApiHelper.sharedInstance().createPost(post, completion: { (success) -> () in
             
