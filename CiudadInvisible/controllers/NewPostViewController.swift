@@ -9,9 +9,8 @@
 import UIKit
 import MapKit
 
-class NewPostViewController: UITableViewController, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDataSource, MultiImagesViewControllerDelegate, UITextViewDelegate {
+class NewPostViewController: UITableViewController, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, MultiImagesViewControllerDelegate, UITextViewDelegate {
 
-    
     @IBOutlet var titleText: UITextField!
     @IBOutlet var descriptionText: UITextView!
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
@@ -24,10 +23,14 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     var images : NSMutableArray = []
     var categories: NSArray! = nil
     var category : NSString! = nil
+    var categoriesSelected: NSMutableArray! = nil
     
     // MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.categoriesSelected = NSMutableArray()
+        
         self.configUI()
     }
     
@@ -196,11 +199,36 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
             
             // Configuro la celda
             cell.name.text = self.categories.objectAtIndex(indexPath.row) as? NSString
-            cell.backgroundView?.layer.borderColor = UIColor.darkGrayColor().CGColor
-            cell.backgroundView?.layer.borderWidth = 1.0
+            // Si está seleccionada la categoria la pinta
+            if (self.categoriesSelected.containsObject(cell.name.text!)) {
+                cell.backgroundView?.backgroundColor = UIColor.darkGrayColor()
+                cell.name.textColor = UIColor.whiteColor()
+            } else {
+                cell.backgroundView?.backgroundColor = UIColor.whiteColor()
+                cell.backgroundView?.layer.borderColor = UIColor.darkGrayColor().CGColor
+                cell.backgroundView?.layer.borderWidth = 1.0
+                cell.name.textColor = UIColor.darkGrayColor()
+            }
             
             return cell
         }
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if collectionView == self.imagesCollectionView {
+            // Images
+        } else {
+            // Categories
+            // Agrega el objeto seleccionado si no existe sino lo borrar
+            if self.categoriesSelected.containsObject(self.categories.objectAtIndex(indexPath.row)) {
+                self.categoriesSelected.removeObject(self.categories.objectAtIndex(indexPath.row))
+            } else {
+                self.categoriesSelected.addObject(self.categories.objectAtIndex(indexPath.row))
+            }
+            self.categoriesCollectionView.reloadData()
+        }
+        
     }
     
     // MARK: - UITextViewDelegate

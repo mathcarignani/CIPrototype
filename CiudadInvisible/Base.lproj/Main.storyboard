@@ -987,6 +987,7 @@
                                                         <constraint firstAttribute="width" constant="196" id="hlJ-D2-juu"/>
                                                     </constraints>
                                                     <state key="normal" title="Cambiar imagen principal">
+                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -1047,6 +1048,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amm-9v-mnm">
                                                     <rect key="frame" x="93" y="104" width="135" height="30"/>
                                                     <state key="normal" title="Modificar imagenes">
+                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -1063,8 +1065,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8P-JT-vHi">
-                                                    <rect key="frame" x="20" y="0.0" width="280" height="121"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8P-JT-vHi">
+                                                    <rect key="frame" x="20" y="9" width="280" height="138"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Ingrese una breve descripción de su lugar invisible, por ejemplo la historia que usted considera que tiene o el significado que tiene para usted...</string>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1072,6 +1074,12 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="C8P-JT-vHi" firstAttribute="leading" secondItem="Fa1-vT-M69" secondAttribute="leading" constant="20" id="QuW-SZ-zw2"/>
+                                                <constraint firstAttribute="bottom" secondItem="C8P-JT-vHi" secondAttribute="bottom" constant="8" id="TQh-5X-mAp"/>
+                                                <constraint firstItem="C8P-JT-vHi" firstAttribute="top" secondItem="Fa1-vT-M69" secondAttribute="top" constant="9" id="kaj-Ko-LyB"/>
+                                                <constraint firstAttribute="trailing" secondItem="C8P-JT-vHi" secondAttribute="trailing" constant="20" id="vVN-9E-Hud"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="110" id="eDR-yT-hVf" userLabel="Table View Cell - Category">
@@ -1158,8 +1166,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zel-Ah-mDj">
-                                                    <rect key="frame" x="244" y="0.0" width="56" height="30"/>
+                                                    <rect key="frame" x="245" y="8" width="56" height="30"/>
                                                     <state key="normal" title="Publicar">
+                                                        <color key="titleColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -1167,8 +1176,9 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLB-bU-8sT">
-                                                    <rect key="frame" x="20" y="0.0" width="61" height="30"/>
+                                                    <rect key="frame" x="20" y="8" width="61" height="30"/>
                                                     <state key="normal" title="Cancelar">
+                                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -1176,15 +1186,15 @@
                                                     </connections>
                                                 </button>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Cd6-Oq-rVo">
-                                                    <rect key="frame" x="150" y="5" width="20" height="20"/>
+                                                    <rect key="frame" x="150" y="13" width="20" height="20"/>
                                                     <color key="color" red="0.0" green="0.20000000000000001" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="HLB-bU-8sT" secondAttribute="bottom" constant="33" id="bnR-sQ-bph"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Zel-Ah-mDj" secondAttribute="trailing" constant="11" id="Pgi-HZ-W84"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="HLB-bU-8sT" secondAttribute="bottom" constant="25" id="bnR-sQ-bph"/>
                                                 <constraint firstItem="HLB-bU-8sT" firstAttribute="leading" secondItem="tEL-3D-3vi" secondAttribute="leadingMargin" constant="12" id="dok-cS-FGz"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Zel-Ah-mDj" secondAttribute="bottom" constant="33" id="epT-GO-rcb"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Zel-Ah-mDj" secondAttribute="trailing" constant="12" id="uTk-sD-cpu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Zel-Ah-mDj" secondAttribute="bottom" constant="25" id="epT-GO-rcb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1208,7 +1218,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rE1-xr-x6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="229" y="2238"/>
+            <point key="canvasLocation" x="229" y="2237"/>
         </scene>
         <!--Multi Images View Controller-->
         <scene sceneID="g4y-6U-SOM">
