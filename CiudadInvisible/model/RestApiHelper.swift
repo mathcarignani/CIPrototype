@@ -247,12 +247,11 @@ class RestApiHelper: NSObject {
                     "location":post.location,
                     "latitude":post.latitude,
                     "longitude":post.longitude,
-                    "category":post.category,
                     "user_id":user.id
                 ]
             ] as Dictionary
         
-        manager.POST("\(urlApi)/posts", parameters: parameters, success:
+        manager.POST("\(urlApi)/posts_mobile", parameters: parameters, success:
             { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 println("Exito => " + responseObject.description)
                 
@@ -286,7 +285,7 @@ class RestApiHelper: NSObject {
                 "assets_images": imagesData
             ] as Dictionary
         
-        manager.POST("\(urlApi)/post_assets/\(postId)", parameters: parameters, success:
+        manager.POST("\(urlApi)/assets_mobile/\(postId)", parameters: parameters, success:
             { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 println("Exito => " + responseObject.description)
                 
@@ -315,6 +314,39 @@ class RestApiHelper: NSObject {
                 completion(success: false)
         })
         
+    }
+    
+    // MARK: - Categories
+    func getCategories(completion: (categories: NSArray) -> ()) {
+        var categories : Array = []
+        manager.GET("\(urlApi)/categories.json",
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                // Obtiene los posts
+                var categoriesJson = JSONValue(responseObject)
+                let categoriesJsonCount = categoriesJson.array?.count
+                
+                if categoriesJsonCount > 0 {
+                    // Recorre las categorias
+                    for i in 0...(categoriesJsonCount! - 1) {
+                        
+                        // Crea la categoria y la agrega
+                        var categoryName = categoriesJson[i]["name"].string
+                        
+                        // Agrega el post
+                        categories.append(categoryName!)
+                    }
+                }
+                
+                // Ejecuta el bloque con el retorno de los posts
+                completion(categories: categories)
+                
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error \(error)")
+                completion(categories: categories)
+        })
+
     }
     
     // MARK: - Auxiliar

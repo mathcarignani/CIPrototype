@@ -73,6 +73,7 @@ class UserSesionHelper: NSObject {
         
         // Cambia el valor de la variable
         self.hasUserLogued = true
+        self.userLogued = user
         
         // Guarda en el dispositivo
         var defaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()

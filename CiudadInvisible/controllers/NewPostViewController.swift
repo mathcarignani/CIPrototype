@@ -14,7 +14,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     
     @IBOutlet var titleText: UITextField!
     @IBOutlet var descriptionText: UITextView!
-    @IBOutlet var categorySelector: UISegmentedControl!
+    @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet var imagesCollectionView: UICollectionView!
     @IBOutlet var mapView: MKMapView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -22,14 +22,21 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     var mainImageView: UIImageView! = nil
     var imageMain : UIImage! = nil
     var images : NSMutableArray = []
+    var categories: NSArray! = nil
     var category : NSString! = nil
     
-    // MARK: LifeCycle Methods
+    // MARK: - LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configUI()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         
-        //self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        
+    }
+    
+    // MARK: - UI
+    func configUI() {
         // Configuracion fondo de la tabla para imagen principal del post
         self.mainImageView = UIImageView()
         self.mainImageView.frame = self.view.frame
@@ -43,15 +50,17 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         let coordinate = CLLocationCoordinate2D(latitude: -34.9087458, longitude: -56.1614022137041)
         MapHelper.centerMap(self.mapView, coordinate: coordinate, distance: 1000)
         // Agrega el marcador en el centro del mapa
-       // var markerImageView = UIImageView(image: UIImage(named: "marker.png"))
-       // markerImageView.center = map
+        // var markerImageView = UIImageView(image: UIImage(named: "marker.png"))
+        // markerImageView.center = map
         
         self.loadingIndicator.hidden = true
         
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        
+        // Obtiene las categorias
+        RestApiHelper.sharedInstance().getCategories { (categories) -> () in
+            self.categories = categories
+            self.categoriesCollectionView.reloadData()
+        }
+
     }
     
     // MARK: - Actions
@@ -77,7 +86,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         post.author = UserSesionHelper.sharedInstance().getUserLogued().name()
         post.descriptionText = self.descriptionText.text
         post.date = NSDate()
-        post.category = self.categorySelector.titleForSegmentAtIndex(self.categorySelector.selectedSegmentIndex)
+        //post.category = self.categorySelector.titleForSegmentAtIndex(self.categorySelector.selectedSegmentIndex)
         // Auxiliar para concatenar las imagenes
         var arrayAuxiliar = NSMutableArray(object: self.imageMain)
         arrayAuxiliar.addObjectsFromArray(self.images)
@@ -91,11 +100,11 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
             
             self.loadingIndicator.stopAnimating()
             self.loadingIndicator.hidden = true
-            //if success {
+            if success {
                 self.dismissViewControllerAnimated(true, completion: nil)
-            //} else {
-                // error
-            //}
+            } else {
+                ProgressHUD.showError("Error al crear el post")
+            }
         })
         
     }
@@ -104,7 +113,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // MARK: UIImagePickerControllerDelegate
+    // MARK: - UIImagePickerControllerDelegate
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
         
         // Carga la imagen en el visualizador y la guarda en la variable
@@ -120,13 +129,13 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // MARK: UITableViewDelegate
+    // MARK: - UITableViewDelegate
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         if indexPath.row == 0 {
             return self.view.frame.height
         } else if indexPath.row == 3 {
-            return 80
+            return 110
         } else if indexPath.row == 5 {
             return 71
         } else {
@@ -134,12 +143,12 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         }
     }
     
-    // MARK: Hide Keyboard
+    // MARK: - Hide Keyboard
     @IBAction func textFieldReturn(sender: AnyObject!) {
         sender.resignFirstResponder()
     }
     
-    // MARK: Segue
+    // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         if segue.identifier == "ChangeImages" {
@@ -152,27 +161,46 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         
     }
     
-    // MARK: MultiImagesViewControllerDelegate
+    // MARK: - MultiImagesViewControllerDelegate
     func multiImagesDoneWithImages(images: NSMutableArray) {
         self.images = images
         // Refresca los datos de la collection
         self.imagesCollectionView.reloadData()
     }
     
-    // MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return self.images.count
+        if collectionView == self.imagesCollectionView {
+            // Images
+            return self.images.count
+        } else {
+            // Categories
+            return self.categories.count
+        }
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        var cell : PostImagesCell = collectionView.dequeueReusableCellWithReuseIdentifier("PostImageCell", forIndexPath: indexPath) as PostImagesCell
-        
-        // Configuro la celda
-        cell.image.image = self.images.objectAtIndex(indexPath.row) as? UIImage
-        
-        return cell
+        if collectionView == self.imagesCollectionView {
+            // Images
+            var cell : PostImagesCell = collectionView.dequeueReusableCellWithReuseIdentifier("PostImageCell", forIndexPath: indexPath) as PostImagesCell
+            
+            // Configuro la celda
+            cell.image.image = self.images.objectAtIndex(indexPath.row) as? UIImage
+            
+            return cell
+        } else {
+            // Categories
+            var cell : CategoryCell = collectionView.dequeueReusableCellWithReuseIdentifier("CategoryCell", forIndexPath: indexPath) as CategoryCell
+            
+            // Configuro la celda
+            cell.name.text = self.categories.objectAtIndex(indexPath.row) as? NSString
+            cell.backgroundView?.layer.borderColor = UIColor.darkGrayColor().CGColor
+            cell.backgroundView?.layer.borderWidth = 1.0
+            
+            return cell
+        }
     }
     
     // MARK: - UITextViewDelegate
