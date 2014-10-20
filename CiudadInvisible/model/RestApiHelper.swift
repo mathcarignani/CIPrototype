@@ -222,6 +222,63 @@ class RestApiHelper: NSObject {
             })
     }
     
+    func getPreferencePosts(completion: (posts : NSArray) -> ()) {
+        
+        var parameters = [
+            "user_id":UserSesionHelper.sharedInstance().getUserLogued().id
+            ] as Dictionary
+        
+        manager.POST("\(urlApi)/preferences_posts",
+            parameters: parameters,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+
+                var posts : Array = []
+                
+                // Obtiene los posts
+                var postsJson = JSONValue(responseObject)
+                let postsJsonCount = postsJson.array?.count
+                
+                if postsJsonCount > 0 {
+                    // Recorre los posts json
+                    for i in 0...(postsJsonCount! - 1) {
+                            // Crea el post y lo agrega a la lista
+                            var post : Post = Post()
+                            post.id = postsJson[i]["id"].integer
+                            post.title = postsJson[i]["title"].string
+                            post.author = postsJson[i]["author"].string
+                            post.descriptionText = postsJson[i]["description"].string
+                            post.location = postsJson[i]["location"].string
+                            post.category = postsJson[i]["category"].string
+                            post.url = postsJson[i]["url"].string
+                            post.latitude = postsJson[i]["latitude"].double
+                            post.longitude = postsJson[i]["longitude"].double
+                            // Agrega las imagenes
+                            var auxImages : Array = []
+                            let imagesJsonCount = postsJson[i]["assets"].array?.count
+                            if imagesJsonCount != 0 {
+                                for j in 0...(imagesJsonCount! - 1) {
+                                    auxImages.append(postsJson[i]["assets"][j]["file_url"].string!)
+                                }
+                            }
+                            post.images = auxImages
+                            
+                            
+                            // Agrega el post
+                            posts.append(post)
+
+                    }
+                }
+                
+                // Ejecuta el bloque con el retorno de los posts
+                completion(posts: posts)
+                
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error \(error)")
+        })
+    }
+
+    
     func getPost() {
     /*
         manager.GET("\(urlApi)/posts/1.json",

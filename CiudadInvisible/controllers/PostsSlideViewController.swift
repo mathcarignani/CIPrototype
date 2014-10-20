@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UIScrollViewDelegate {
+class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet var collectionView : UICollectionView!
@@ -18,6 +18,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
     var posts: NSArray! = NSArray()
     var filters: [String] = []
     var imageEmpty: UIImage = UIImage(named: "bgEmpty.jpg")
+    var filterSelected: String = "Todos"
     
     // MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -25,22 +26,47 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
         
         // Carga los filtros
         self.filters = ["Todos", "Recomendados", "Cercanos", "Favoritos", "Seguidores"]
+    
+        // Obtiene los posts
+        self.getData()
+    }
+    
+    // MARK: - Data
+    func getData() {
         
         // Obtengo los posts
         self.loadingIndicator.startAnimating()
         self.loadingIndicator.hidden = false
-        RestApiHelper.sharedInstance().getPosts(
-            { (postsReturn: NSArray) in
-                self.posts = postsReturn
-                
-                // Recarga el slides
-                self.collectionView.reloadData()
-                // Oculta el indicador
-                self.loadingIndicator.stopAnimating()
-                self.loadingIndicator.hidden = true
+        
+        if self.filterSelected == "Todos" {
+        
+            RestApiHelper.sharedInstance().getPosts(
+                { (postsReturn: NSArray) in
+                    self.posts = postsReturn
+                    
+                    // Recarga el slides
+                    self.collectionView.reloadData()
+                    // Oculta el indicador
+                    self.loadingIndicator.stopAnimating()
+                    self.loadingIndicator.hidden = true
             })
-    }
+        }
+        else if self.filterSelected == "Recomendados" {
+            RestApiHelper.sharedInstance().getPreferencePosts(
+                { (postsReturn: NSArray) in
+                    self.posts = postsReturn
+                    
+                    // Recarga el slides
+                    self.collectionView.reloadData()
+                    // Oculta el indicador
+                    self.loadingIndicator.stopAnimating()
+                    self.loadingIndicator.hidden = true
+            })
+        }
 
+        
+    }
+    
     // MARK: - UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
@@ -96,6 +122,15 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
 
             return cell
 
+        }
+    }
+    
+    // MARK: - UICollectionDelegate
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if collectionView == self.filtersCollectionView {
+            // Filters
+            self.filterSelected = self.filters[indexPath.row]
+            self.getData()
         }
     }
     
