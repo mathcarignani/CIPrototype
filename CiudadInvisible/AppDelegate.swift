@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Parse
     func configParse(application: UIApplication) {
         // Inicia la aplicacion
-        Parse.setApplicationId("s0cuxSztmN6KQ5IhHtfYe7fUi37Qi7IwEoBOkP4d", clientKey: "y8x1FPQqL8oLD1vjhcxWBUd2BJB1UwbbwnpfoKE2")
+        Parse.setApplicationId("JV9KTqeAA1skH0ZiUE8PSzl7PwmnKptuumpj9pqZ", clientKey: "h51gOCAiGHy4i3ZGCDXWciLyhLc1C6ZMSEZjQV1Q")
         
         // Configuracion de las push
         if application.respondsToSelector("registerUserNotificationSettings:") {
