@@ -76,12 +76,11 @@ class PostsGaleryViewController: UIViewController, UICollectionViewDataSource {
 //        if segue != nil {
             if (segue.identifier == "VerDetalle") {
                 
-                var postDetailVC = segue.destinationViewController as PostsDetailViewController
-                //var index = self.collectionView.indexPathsForSelectedItems()[0] as NSIndexPath
-                //postDetailVC.post = self.posts.objectAtIndex(index.row) as Post
+                println(self.collectionView.indexPathsForSelectedItems())
                 
-                // CAMBIARRR
-                postDetailVC.post = self.posts.objectAtIndex(0) as Post
+                var postDetailVC = segue.destinationViewController as PostsDetailViewController
+                var index = self.collectionView.indexPathsForSelectedItems()[0] as NSIndexPath
+                postDetailVC.post = self.posts.objectAtIndex(index.row) as Post
                 
             }
 //        }
