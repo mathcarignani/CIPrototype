@@ -73,17 +73,15 @@ class PostsGaleryViewController: UIViewController, UICollectionViewDataSource {
     
     // MARK: Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-//        if segue != nil {
-            if (segue.identifier == "VerDetalle") {
-                
-                println(self.collectionView.indexPathsForSelectedItems())
-                
-                var postDetailVC = segue.destinationViewController as PostsDetailViewController
-                var index = self.collectionView.indexPathsForSelectedItems()[0] as NSIndexPath
-                postDetailVC.post = self.posts.objectAtIndex(index.row) as Post
-                
-            }
-//        }
+        if (segue.identifier == "VerDetalle") {
+            
+            println(self.collectionView.indexPathsForSelectedItems())
+            
+            var postDetailVC = segue.destinationViewController as PostsDetailViewController
+            var index = self.collectionView.indexPathsForSelectedItems()[0] as NSIndexPath
+            postDetailVC.post = self.posts.objectAtIndex(index.row) as Post
+            
+        }
     }
 
 }

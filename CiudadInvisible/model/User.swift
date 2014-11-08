@@ -24,7 +24,8 @@ class User: NSObject {
     }
     
     func avatar() -> UIImage {
-        return UIImage(named: "avatar.png")
+        var image = UIImage(named: "avatar.png")
+        return image
     }
     
     /*

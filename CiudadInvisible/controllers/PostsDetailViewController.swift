@@ -57,14 +57,23 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         postName.font = UIFont(name: "Helvetica", size: 35)
         postName.textColor = UIColor.whiteColor()
         headerView.addSubview(postName)
-        
+ /*
         var postAuthor = UILabel(frame: CGRect(x: 20, y: view.frame.height-40, width: view.frame.width - 40, height: 20))
         postAuthor.text = post.author
         postAuthor.font = UIFont(name: "Helvetica", size: 14)
         postAuthor.textColor = UIColor.whiteColor()
         postAuthor.textAlignment = NSTextAlignment.Right
         headerView.addSubview(postAuthor)
-
+*/
+        
+        // Avatar
+        var avatar = UIImageView(image: UserSesionHelper.sharedInstance().getUserLogued().avatar())
+        avatar.center = CGPointMake(230, 400)
+        avatar.layer.cornerRadius = avatar.frame.width / 2
+        avatar.layer.masksToBounds = true
+        avatar.transform = CGAffineTransformMakeScale(0.4, 0.4)
+        headerView.addSubview(avatar)
+        
         
         var backButton = UIButton(frame: CGRect(x: 20, y: 20, width: 30, height: 30))
         backButton.backgroundColor = UIColor.darkGrayColor()
@@ -75,12 +84,13 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         headerView.addSubview(backButton)
         
         // Favorito
+/*
         var favButton = UIButton(frame: CGRectMake(self.view.frame.size.width - 50, self.view.frame.size.height - 50, 30, 30))
         favButton.setTitle("Fav", forState: .Normal)
         favButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         favButton.addTarget(self, action: "favorite:", forControlEvents: .TouchUpInside)
         headerView.addSubview(favButton)
-        
+*/
         // Flecha
         var flechaView = UIImageView(image: HelperForms.imageOfFlecha)
         flechaView.center = CGPointMake(headerView.center.x, headerView.frame.size.height - 20)
