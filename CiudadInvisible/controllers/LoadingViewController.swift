@@ -15,7 +15,7 @@ class LoadingViewController: UIViewController {
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-println(UIScreen.mainScreen().bounds.height)
+        
         if UIScreen.mainScreen().bounds.height == 568.0 {
             // Es iphone 5/5s
             self.backgroundImage.image = UIImage(named: "splash.png")

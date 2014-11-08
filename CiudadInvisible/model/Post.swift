@@ -22,6 +22,7 @@ class Post: NSObject {
     var url : String! = nil
     var latitude: Double! = nil
     var longitude: Double! = nil
+    var favorites_quantity: Int! = nil
     
     override init() {
         super.init()
@@ -33,24 +34,6 @@ class Post: NSObject {
         let longitude = self.longitude as CLLocationDegrees
         
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        /*
-        if self.location != nil && self.location.length > 0 {
-        
-            // Elimina los exrremos que corresponden a {}
-            let auxParsing = self.location.substringWithRange(NSRange(location: 1,length: (self.location.length - 2)))
-
-            // Separa por el , el primer campo corresponde al latitude y el segundo a longitude
-            var split : NSArray = auxParsing.componentsSeparatedByString(",")
-
-            let latitude = split.objectAtIndex(0).doubleValue as CLLocationDegrees
-            let longitude = split.objectAtIndex(1).doubleValue as CLLocationDegrees
-     
-            var coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            return coordinate
-        } else {
-            return CLLocationCoordinate2D(latitude: 0, longitude: 0)
-        }
-        */
     }
 
     // MARK: Images sizes

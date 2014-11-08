@@ -102,11 +102,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CiudadInvisible/model/RestApiHelper.swift"
-            timestampString = "435516256.080309"
+            timestampString = "437148434.233871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "446"
-            endingLineNumber = "446">
+            startingLineNumber = "438"
+            endingLineNumber = "438">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -226,11 +226,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CiudadInvisible/model/Post.swift"
-            timestampString = "432864611.887256"
+            timestampString = "437148434.233871"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "Post"
             landmarkType = "3">
          </BreakpointContent>

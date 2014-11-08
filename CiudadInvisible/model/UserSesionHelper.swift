@@ -62,7 +62,7 @@ class UserSesionHelper: NSObject {
     func saveInDeviceUserLogued(responseObject: AnyObject!) {
         
         var userJson = JSONValue(responseObject)
-        println(userJson)
+
         var user = User()
         user.id = userJson["id"].integer
         user.first_name = userJson["first_name"].string
@@ -71,6 +71,13 @@ class UserSesionHelper: NSObject {
         user.email = userJson["email"].string
         user.facebook_id = userJson["facebook_id"].string
         
+        user.city = userJson["city"].string
+        user.country = userJson["country"].string
+        user.url_avatar = userJson["url_avatar"].string
+        user.bio = userJson["bio"].string
+        user.followers_quantity = userJson["followers_quantity"].integer
+        user.followed_quantity = userJson["followed_quantity"].integer
+  
         // Cambia el valor de la variable
         self.hasUserLogued = true
         self.userLogued = user

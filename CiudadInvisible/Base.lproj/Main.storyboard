@@ -65,18 +65,21 @@
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bwJ-St-D3X">
                                                                     <rect key="frame" x="0.0" y="261" width="225" height="35"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVx-C5-tUg">
-                                                                            <rect key="frame" x="139" y="7" width="71" height="21"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
                                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Titulo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5B-hq-lr2">
                                                                             <rect key="frame" x="10" y="7" width="200" height="21"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbq-H9-r8U">
+                                                                            <rect key="frame" x="189" y="8" width="29" height="21"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="favorites_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="5T7-g9-zrC">
+                                                                            <rect key="frame" x="173" y="8" width="22" height="19"/>
+                                                                        </imageView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
                                                                 </view>
@@ -88,7 +91,7 @@
                                                 </view>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
-                                                    <outlet property="distancia" destination="JVx-C5-tUg" id="9co-pF-EvQ"/>
+                                                    <outlet property="distancia" destination="Mbq-H9-r8U" id="q2k-f8-Ing"/>
                                                     <outlet property="fondo" destination="GHd-y4-nN9" id="6AR-W9-NcB"/>
                                                     <outlet property="imagen" destination="kmD-Zf-Uuu" id="kWs-C7-dtA"/>
                                                     <outlet property="titulo" destination="u5B-hq-lr2" id="G8E-DF-R88"/>
@@ -1379,6 +1382,7 @@
         <image name="bgBlur1.png" width="320" height="568"/>
         <image name="camaraImagen.png" width="56" height="56"/>
         <image name="eliminarImagen.png" width="26" height="26"/>
+        <image name="favorites_selected.png" width="28" height="24"/>
         <image name="galery.png" width="30" height="30"/>
         <image name="map.png" width="30" height="30"/>
         <image name="marker.png" width="27" height="47"/>

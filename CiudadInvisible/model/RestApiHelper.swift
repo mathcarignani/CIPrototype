@@ -186,27 +186,7 @@ class RestApiHelper: NSObject {
                     // Recorre los posts json
                     for i in 0...(postsJsonCount! - 1) {
                 
-                        // Crea el post y lo agrega a la lista
-                        var post : Post = Post()
-                        post.id = postsJson[i]["id"].integer
-                        post.title = postsJson[i]["title"].string
-                        post.author = postsJson[i]["author"].string
-                        post.descriptionText = postsJson[i]["description"].string
-                        post.location = postsJson[i]["location"].string
-                        post.category = postsJson[i]["category"].string
-                        post.url = postsJson[i]["url"].string
-                        post.latitude = postsJson[i]["latitude"].double
-                        post.longitude = postsJson[i]["longitude"].double
-                        // Agrega las imagenes
-                        var auxImages : Array = []
-                        let imagesJsonCount = postsJson[i]["assets"].array?.count
-                        if imagesJsonCount != 0 {
-                            for j in 0...(imagesJsonCount! - 1) {
-                                auxImages.append(postsJson[i]["assets"][j]["file_url"].string!)
-                            }
-                        }
-                        post.images = auxImages
-                        
+                        var post = self.parsePost(postsJson[i])
                         
                         // Agrega el post
                         posts.append(post)
@@ -278,20 +258,6 @@ class RestApiHelper: NSObject {
         })
     }
 
-    
-    func getPost() {
-    /*
-        manager.GET("\(urlApi)/posts/1.json",
-            parameters: nil,
-            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
-                println("Json obtenido => " + responseObject.description)
-            },
-            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
-                println("Error")
-            })
-    */
-    }
-    
     func createPost(post: Post, completion: (success: Bool) -> ()) {
         
         // Primero envía el contenido del post y luego las imagenes
@@ -411,6 +377,32 @@ class RestApiHelper: NSObject {
     // MARK: - Auxiliar
     func encodeToBase64String(image: UIImage) -> String {
         return UIImagePNGRepresentation(image).base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+    }
+    
+    func parsePost(postJson: JSONValue) -> Post {
+        // Crea el post y lo agrega a la lista
+        var post : Post = Post()
+        post.id = postJson["id"].integer
+        post.title = postJson["title"].string
+        post.author = postJson["author"].string
+        post.descriptionText = postJson["description"].string
+        post.location = postJson["location"].string
+        post.category = postJson["category"].string
+        post.url = postJson["url"].string
+        post.latitude = postJson["latitude"].double
+        post.longitude = postJson["longitude"].double
+        post.favorites_quantity = postJson["favorites_quantity"].integer
+        // Agrega las imagenes
+        var auxImages : Array = []
+        let imagesJsonCount = postJson["assets"].array?.count
+        if imagesJsonCount != 0 {
+            for j in 0...(imagesJsonCount! - 1) {
+                auxImages.append(postJson["assets"][j]["file_url"].string!)
+            }
+        }
+        post.images = auxImages
+
+        return post
     }
     
 }

@@ -88,7 +88,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
             // Configuro la celda
             let post = self.posts.objectAtIndex(indexPath.row) as Post
             cell.titulo.text = post.title
-            cell.distancia.text = ""
+            cell.distancia.text = "\(post.favorites_quantity)"
             cell.imagen.image = self.imageEmpty
             if post.images.count > 0 {
                 // Si tiene imagen la carga

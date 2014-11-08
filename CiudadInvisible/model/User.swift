@@ -18,6 +18,12 @@ class User: NSObject {
     var facebook_id: String! = nil
     var twitter_id: String! = nil
     var password: String! = nil
+    var city: String! = nil
+    var country: String! = nil
+    var url_avatar: String! = nil
+    var bio: String! = nil
+    var followers_quantity: Int! = nil
+    var followed_quantity: Int! = nil
     
     func name() -> String {
         return "\(self.first_name) \(self.last_name)"
@@ -27,24 +33,5 @@ class User: NSObject {
         var image = UIImage(named: "avatar.png")
         return image
     }
-    
-    /*
-    t.string   "username"
-    t.string   "email"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "facebook_id"
-    t.string   "twitter_id"
-    t.string   "city"
-    t.string   "country"
-    t.string   "password"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-    t.string   "login_type"
-    */
     
 }
