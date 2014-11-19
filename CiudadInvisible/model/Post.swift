@@ -23,6 +23,8 @@ class Post: NSObject {
     var latitude: Double! = nil
     var longitude: Double! = nil
     var favorites_quantity: Int! = nil
+    var userId: Int! = nil
+    var comments: NSArray! = nil
     
     override init() {
         super.init()

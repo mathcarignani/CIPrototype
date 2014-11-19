@@ -33,6 +33,8 @@
 		C73A5BB51A0D9A3B008B05B9 /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C73A5BB41A0D9A3B008B05B9 /* add@2x.png */; };
 		C73A5BB81A0E5C50008B05B9 /* favorites_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C73A5BB61A0E5C50008B05B9 /* favorites_selected@2x.png */; };
 		C73A5BB91A0E5C50008B05B9 /* favorites_noselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C73A5BB71A0E5C50008B05B9 /* favorites_noselected@2x.png */; };
+		C73A5BBB1A0EA543008B05B9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73A5BBA1A0EA543008B05B9 /* Comment.swift */; };
+		C73A5BBE1A0EAFCA008B05B9 /* PostCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73A5BBD1A0EAFCA008B05B9 /* PostCommentsViewController.swift */; };
 		C73F563E19F186C900A795AC /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C73F563B19F186C900A795AC /* ProgressHUD.bundle */; };
 		C73F563F19F186C900A795AC /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F563D19F186C900A795AC /* ProgressHUD.m */; };
 		C73F564119F1911800A795AC /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73F564019F1911800A795AC /* LoadingViewController.swift */; };
@@ -107,6 +109,7 @@
 		C7EFBFCB199C0D0600EB0A91 /* SwifterTrends.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFAF199C0D0600EB0A91 /* SwifterTrends.swift */; };
 		C7EFBFCC199C0D0600EB0A91 /* SwifterTweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFB0199C0D0600EB0A91 /* SwifterTweets.swift */; };
 		C7EFBFCD199C0D0600EB0A91 /* SwifterUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFB1199C0D0600EB0A91 /* SwifterUsers.swift */; };
+		C7F2518A1A1CC66B0068D8D0 /* PostDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F251891A1CC66B0068D8D0 /* PostDetailHeaderCell.swift */; };
 		C7F46521198BCE010006D5B1 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F46520198BCE010006D5B1 /* LogInViewController.swift */; };
 		C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */; };
 		C7F851C01969F405002B38FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BF1969F405002B38FF /* MainViewController.swift */; };
@@ -155,6 +158,8 @@
 		C73A5BB41A0D9A3B008B05B9 /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
 		C73A5BB61A0E5C50008B05B9 /* favorites_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorites_selected@2x.png"; sourceTree = "<group>"; };
 		C73A5BB71A0E5C50008B05B9 /* favorites_noselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorites_noselected@2x.png"; sourceTree = "<group>"; };
+		C73A5BBA1A0EA543008B05B9 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comment.swift; path = model/Comment.swift; sourceTree = "<group>"; };
+		C73A5BBD1A0EAFCA008B05B9 /* PostCommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostCommentsViewController.swift; path = controllers/PostCommentsViewController.swift; sourceTree = "<group>"; };
 		C73F563B19F186C900A795AC /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		C73F563C19F186C900A795AC /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		C73F563D19F186C900A795AC /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
@@ -234,6 +239,7 @@
 		C7EFBFAF199C0D0600EB0A91 /* SwifterTrends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterTrends.swift; sourceTree = "<group>"; };
 		C7EFBFB0199C0D0600EB0A91 /* SwifterTweets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterTweets.swift; sourceTree = "<group>"; };
 		C7EFBFB1199C0D0600EB0A91 /* SwifterUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterUsers.swift; sourceTree = "<group>"; };
+		C7F251891A1CC66B0068D8D0 /* PostDetailHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostDetailHeaderCell.swift; path = views/PostDetailHeaderCell.swift; sourceTree = "<group>"; };
 		C7F46520198BCE010006D5B1 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = controllers/LogInViewController.swift; sourceTree = "<group>"; };
 		C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
@@ -415,8 +421,17 @@
 				C770BD07197EC64500C49D57 /* PostImagesCell.swift */,
 				C7A0B4B01989753A00C72662 /* PostDetailDescriptionCell.swift */,
 				C71DCDA019F2A9E400BE4BAE /* CategoryCell.swift */,
+				C7F251891A1CC66B0068D8D0 /* PostDetailHeaderCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		C73A5BBC1A0EAFB5008B05B9 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				C73A5BBD1A0EAFCA008B05B9 /* PostCommentsViewController.swift */,
+			);
+			name = Comments;
 			sourceTree = "<group>";
 		};
 		C73F563A19F186C900A795AC /* ProgressHUD */ = {
@@ -454,6 +469,7 @@
 			children = (
 				C79D38F0196F292800C8A4C8 /* Post.swift */,
 				C79926A819912D89006510A1 /* User.swift */,
+				C73A5BBA1A0EA543008B05B9 /* Comment.swift */,
 			);
 			name = Entitys;
 			sourceTree = "<group>";
@@ -479,6 +495,7 @@
 		C7CDECFF1985388900EEFF5A /* ExplorePost */ = {
 			isa = PBXGroup;
 			children = (
+				C73A5BBC1A0EAFB5008B05B9 /* Comments */,
 				C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */,
 				C79D38EC196F257F00C8A4C8 /* PostsSlideViewController.swift */,
 				C7D67FEC19B146C500C3061D /* PostsMapViewController.swift */,
@@ -738,6 +755,7 @@
 				C73F563F19F186C900A795AC /* ProgressHUD.m in Sources */,
 				C7EFBFC7199C0D0600EB0A91 /* SwifterSpam.swift in Sources */,
 				C7AD49C919F1536400D9F9F9 /* EmptySegue.swift in Sources */,
+				C73A5BBB1A0EA543008B05B9 /* Comment.swift in Sources */,
 				C7EFBFC1199C0D0600EB0A91 /* SwifterLists.swift in Sources */,
 				C780CF4C19B287A1009E319D /* PostsGaleryViewController.swift in Sources */,
 				C7F851C21969F58F002B38FF /* CameraPreviewView.swift in Sources */,
@@ -771,6 +789,8 @@
 				C7EFBFBC199C0D0600EB0A91 /* SwifterCredential.swift in Sources */,
 				C7B17423197174FD008F00E6 /* PublicarMapaViewController.swift in Sources */,
 				C7F46521198BCE010006D5B1 /* LogInViewController.swift in Sources */,
+				C7F2518A1A1CC66B0068D8D0 /* PostDetailHeaderCell.swift in Sources */,
+				C73A5BBE1A0EAFCA008B05B9 /* PostCommentsViewController.swift in Sources */,
 				C7EFBFC5199C0D0600EB0A91 /* SwifterSavedSearches.swift in Sources */,
 				C7EFBFCD199C0D0600EB0A91 /* SwifterUsers.swift in Sources */,
 				C7EFBFCA199C0D0600EB0A91 /* SwifterTimelines.swift in Sources */,

@@ -374,6 +374,33 @@ class RestApiHelper: NSObject {
 
     }
     
+    // MARK: - Comments
+    func createComment(comment: Comment, completion: (success: Bool) -> ()) {
+        
+        var user = UserSesionHelper.sharedInstance().getUserLogued()
+        
+        var parameters = [
+            "comment":
+                [
+                    "text":comment.text,
+                    "user_id":user.id,
+                    "post_id":comment.post.id
+            ]
+            ] as Dictionary
+        
+        println(parameters)
+        
+        manager.POST("\(urlApi)/comment", parameters: parameters, success:
+            { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                println("Exito => " + responseObject.description)
+                completion(success: true)
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error => " + error.localizedDescription)
+                completion(success: false)
+        })
+    }
+
+    
     // MARK: - Auxiliar
     func encodeToBase64String(image: UIImage) -> String {
         return UIImagePNGRepresentation(image).base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
@@ -392,6 +419,8 @@ class RestApiHelper: NSObject {
         post.latitude = postJson["latitude"].double
         post.longitude = postJson["longitude"].double
         post.favorites_quantity = postJson["favorites_quantity"].integer
+        post.userId = postJson["user_id"].integer
+        
         // Agrega las imagenes
         var auxImages : Array = []
         let imagesJsonCount = postJson["assets"].array?.count
@@ -401,6 +430,22 @@ class RestApiHelper: NSObject {
             }
         }
         post.images = auxImages
+        
+        // Agrega los comentarios
+        var auxComments : Array = []
+        let commentsJsonCount = postJson["comments"].array?.count
+        if commentsJsonCount != 0 {
+            for j in 0...(commentsJsonCount! - 1) {
+                var comment = Comment()
+                comment.first_name = postJson["comments"][j]["text"].string!
+                comment.first_name = postJson["comments"][j]["first_name"].string!
+                comment.last_name = postJson["comments"][j]["last_name"].string!
+                comment.username = postJson["comments"][j]["username"].string!
+                comment.avatar = postJson["comments"][j]["avatar"].string!
+                auxComments.append(comment)
+            }
+        }
+        post.comments = auxComments
 
         return post
     }

@@ -15,6 +15,7 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     
     var portadaPostView : PostView = PostView()
     var backgroundImage = UIImageView()
+    var backgroundView = UIView()
     var imageEmpty : UIImage = UIImage(named: "bgEmpty.jpg")
     
     @IBOutlet var tableView : UITableView!
@@ -41,30 +42,38 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         
         // Agrego la imagen en el fondo del header
         backgroundImage.frame = self.view.frame
+        backgroundView.frame = self.view.frame
         if post.images.count > 0 {
             // Si tiene imagen la carga
             let images = post.imagesLarge()
             backgroundImage.setImageWithURL(NSURL(string: images.objectAtIndex(0) as String), placeholderImage: self.imageEmpty)
         }
         self.view.insertSubview(backgroundImage, belowSubview: tableView)
+        self.view.insertSubview(backgroundView, aboveSubview: backgroundImage)
+        
+        /*
         
         // Configuro el header
         var headerView : UIView = UIView(frame: view.frame)
         headerView.backgroundColor = UIColor.clearColor()
         
+        // Name
         var postName = UILabel(frame: CGRect(x: 20, y: view.frame.height-100, width: view.frame.width - 20, height: 80))
         postName.text = post.title
         postName.font = UIFont(name: "Helvetica", size: 35)
         postName.textColor = UIColor.whiteColor()
         headerView.addSubview(postName)
- /*
-        var postAuthor = UILabel(frame: CGRect(x: 20, y: view.frame.height-40, width: view.frame.width - 40, height: 20))
+
+        // Author
+        var postAuthor = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 40, height: 20))
         postAuthor.text = post.author
         postAuthor.font = UIFont(name: "Helvetica", size: 14)
         postAuthor.textColor = UIColor.whiteColor()
         postAuthor.textAlignment = NSTextAlignment.Right
-        headerView.addSubview(postAuthor)
-*/
+        var postAuthorButton = UIButton(frame: CGRect(x: 20, y: view.frame.height-40, width: view.frame.width - 40, height: 20))
+        postAuthorButton.addSubview(postAuthor)
+        postAuthorButton.addTarget(self, action:Selector("showUserProfile:") , forControlEvents: UIControlEvents.TouchUpInside)
+        headerView.addSubview(postAuthorButton)
         
         // Avatar
         var avatar = UIImageView(image: UserSesionHelper.sharedInstance().getUserLogued().avatar())
@@ -91,36 +100,57 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         favButton.addTarget(self, action: "favorite:", forControlEvents: .TouchUpInside)
         headerView.addSubview(favButton)
 */
+        // Comments
+        var postComments = UILabel(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        postComments.text = "\(post.comments.count)"
+        postComments.font = UIFont(name: "Helvetica", size: 14)
+        postComments.textColor = UIColor.whiteColor()
+        postComments.textAlignment = NSTextAlignment.Right
+        var postCommentsButton = UIButton(frame: CGRect(x: 20, y: view.frame.height-100, width: 40, height: 40))
+        postCommentsButton.addSubview(postComments)
+        postCommentsButton.addTarget(self, action:Selector("showComments:") , forControlEvents: UIControlEvents.TouchUpInside)
+        headerView.addSubview(postCommentsButton)
+        
+        
         // Flecha
         var flechaView = UIImageView(image: HelperForms.imageOfFlecha)
         flechaView.center = CGPointMake(headerView.center.x, headerView.frame.size.height - 20)
         headerView.addSubview(flechaView)
         
         self.tableView.tableHeaderView = headerView
-        
+
+        */
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell : UITableViewCell! = nil
         
-        
         if (indexPath.row == 0) {
+            // Header
+            cell = tableView.dequeueReusableCellWithIdentifier("PostHeaderCell", forIndexPath: indexPath) as PostDetailHeaderCell
+            cell.backgroundColor = UIColor.clearColor()
+            cell.contentView.backgroundColor = UIColor.clearColor()
+            
+            (cell as PostDetailHeaderCell).nameText.text = post.title
+            (cell as PostDetailHeaderCell).authorText.text = "Post creado por \(post.author)"
+            
+        } else if (indexPath.row == 1) {
             // Imagenes
             cell = tableView.dequeueReusableCellWithIdentifier("PostImagesCell", forIndexPath: indexPath) as UITableViewCell
             
-        } else if (indexPath.row == 1) {
+        } else if (indexPath.row == 2) {
             // Descripcion
             cell = tableView.dequeueReusableCellWithIdentifier("PostDescriptionCell", forIndexPath: indexPath) as PostDetailDescriptionCell
             // Configuro los valores
             (cell as PostDetailDescriptionCell).descriptionText.text = post.descriptionText
             (cell as PostDetailDescriptionCell).categoryText.text = post.category
             
-        } else if (indexPath.row == 2) {
+        } else if (indexPath.row == 3) {
             // Mapa
             cell = tableView.dequeueReusableCellWithIdentifier("PostMapCell", forIndexPath: indexPath) as PostDetailMapCell
             // Configuracion del mapa
@@ -129,20 +159,23 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
             MapHelper.centerMap(mapa, coordinate: coordinate, distance: 1000)
             MapHelper.addAnotationToMap(mapa, coordinate: coordinate, title: post.title)
         }
-        
+    
         return cell
     }
-    
+
     // MARK: UITableViewDelegate
     func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
         
         if (indexPath.row == 0) {
+            // Header
+            return self.view.frame.size.height
+        } else if (indexPath.row == 1) {
             // Imagenes
             return 141
-        } else if (indexPath.row == 1) {
+        } else if (indexPath.row == 2) {
             // Descripcion
             return 200
-        } else if (indexPath.row == 2) {
+        } else if (indexPath.row == 3) {
             // Mapa
             return 141
         } else {
@@ -161,7 +194,7 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
             backgroundImage.transform = CGAffineTransformMakeScale(escala, escala)
             
             //tableView.tableHeaderView.backgroundColor = UIColor.clearColor()
-            tableView.tableHeaderView?.backgroundColor = UIColor.clearColor()
+            tableView.backgroundView?.backgroundColor = UIColor.clearColor()
             //backgroundImage.image.applyBlurWithRadius(0, tintColor: nil, saturationDeltaFactor: 1, maskImage: nil)
             
         } else {
@@ -170,7 +203,7 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
             
             let blur = scrollOffset / 700
             
-            tableView.tableHeaderView?.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: blur)
+            tableView.backgroundView?.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: blur)
             
             //backgroundImage.setImageToBlur(UIImage(named: "bg1.jpg"), blurRadius: blur, completionBlock: nil)
             
@@ -195,6 +228,13 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         return cell
     }
     
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showComments" {
+            (segue.destinationViewController as PostCommentsViewController).post = self.post
+        }
+    }
+    
     // MARK: Actions
     func volver(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -205,6 +245,14 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
             { (success) -> () in
             
         }
+    }
+    
+    func showUserProfile(sender: AnyObject) {
+        println("showUserProfile");
+    }
+    
+    func showComments(sender: AnyObject) {
+        self.performSegueWithIdentifier("showComments", sender: self)
     }
 
 }
