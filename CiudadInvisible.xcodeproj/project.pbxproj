@@ -17,6 +17,7 @@
 		C707AC93195E127F00E43F53 /* CiudadInvisibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C707AC92195E127F00E43F53 /* CiudadInvisibleTests.swift */; };
 		C712D8A419883F6400993782 /* bgEmpty@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C712D8A319883F6400993782 /* bgEmpty@2x.jpg */; };
 		C71315E719F14E6C0067B759 /* LoginContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71315E619F14E6C0067B759 /* LoginContainerViewController.swift */; };
+		C71815EE1A20F92700875CB7 /* logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = C71815ED1A20F92700875CB7 /* logo_white.png */; };
 		C718C1F5195EF79100389FFD /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C718C1F4195EF79100389FFD /* PostsViewController.swift */; };
 		C718C1FB195EF91F00389FFD /* bg1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C718C1FA195EF91F00389FFD /* bg1@2x.jpg */; };
 		C718C1FD195EFE7000389FFD /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C718C1FC195EFE7000389FFD /* camera@2x.png */; };
@@ -48,6 +49,9 @@
 		C770BD08197EC64500C49D57 /* PostImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BD07197EC64500C49D57 /* PostImagesCell.swift */; };
 		C77322A7199BF30E001F2249 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77322A6199BF30D001F2249 /* Accounts.framework */; };
 		C77322A9199BF313001F2249 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77322A8199BF313001F2249 /* Twitter.framework */; };
+		C77A8F751A213F6E00054918 /* facebook_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C77A8F721A213F6E00054918 /* facebook_logo@2x.png */; };
+		C77A8F761A213F6E00054918 /* twitter_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C77A8F731A213F6E00054918 /* twitter_logo@2x.png */; };
+		C77A8F771A213F6E00054918 /* email_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C77A8F741A213F6E00054918 /* email_logo@2x.png */; };
 		C77EBB7719EC961400BE4790 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77EBB7519EC961400BE4790 /* Parse.framework */; };
 		C780CF4C19B287A1009E319D /* PostsGaleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */; };
 		C795490A197C041D002C6F1D /* lapiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7954908197C041D002C6F1D /* lapiz@2x.png */; };
@@ -142,6 +146,7 @@
 		C707AC92195E127F00E43F53 /* CiudadInvisibleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CiudadInvisibleTests.swift; sourceTree = "<group>"; };
 		C712D8A319883F6400993782 /* bgEmpty@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bgEmpty@2x.jpg"; sourceTree = "<group>"; };
 		C71315E619F14E6C0067B759 /* LoginContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginContainerViewController.swift; path = controllers/LoginContainerViewController.swift; sourceTree = "<group>"; };
+		C71815ED1A20F92700875CB7 /* logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_white.png; sourceTree = "<group>"; };
 		C718C1F4195EF79100389FFD /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsViewController.swift; path = controllers/PostsViewController.swift; sourceTree = "<group>"; };
 		C718C1FA195EF91F00389FFD /* bg1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg1@2x.jpg"; sourceTree = "<group>"; };
 		C718C1FC195EFE7000389FFD /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
@@ -174,6 +179,9 @@
 		C770BD07197EC64500C49D57 /* PostImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostImagesCell.swift; path = views/PostImagesCell.swift; sourceTree = "<group>"; };
 		C77322A6199BF30D001F2249 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C77322A8199BF313001F2249 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		C77A8F721A213F6E00054918 /* facebook_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook_logo@2x.png"; sourceTree = "<group>"; };
+		C77A8F731A213F6E00054918 /* twitter_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter_logo@2x.png"; sourceTree = "<group>"; };
+		C77A8F741A213F6E00054918 /* email_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email_logo@2x.png"; sourceTree = "<group>"; };
 		C77EBB7519EC961400BE4790 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsGaleryViewController.swift; path = controllers/PostsGaleryViewController.swift; sourceTree = "<group>"; };
 		C7954908197C041D002C6F1D /* lapiz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lapiz@2x.png"; sourceTree = "<group>"; };
@@ -362,6 +370,10 @@
 		C718C1F9195EF8EC00389FFD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C77A8F721A213F6E00054918 /* facebook_logo@2x.png */,
+				C77A8F731A213F6E00054918 /* twitter_logo@2x.png */,
+				C77A8F741A213F6E00054918 /* email_logo@2x.png */,
+				C71815ED1A20F92700875CB7 /* logo_white.png */,
 				C73A5BB61A0E5C50008B05B9 /* favorites_selected@2x.png */,
 				C73A5BB71A0E5C50008B05B9 /* favorites_noselected@2x.png */,
 				C73A5BB41A0D9A3B008B05B9 /* add@2x.png */,
@@ -660,6 +672,7 @@
 			files = (
 				C718C1FD195EFE7000389FFD /* camera@2x.png in Resources */,
 				C707AC85195E127F00E43F53 /* Main.storyboard in Resources */,
+				C77A8F771A213F6E00054918 /* email_logo@2x.png in Resources */,
 				C73F564519F193A900A795AC /* splashChica@2x.png in Resources */,
 				C7EFBFB3199C0D0600EB0A91 /* Info.plist in Resources */,
 				C7072B2F1963638500F8A244 /* bg2@2x.jpg in Resources */,
@@ -668,6 +681,7 @@
 				C73A5BB91A0E5C50008B05B9 /* favorites_noselected@2x.png in Resources */,
 				C7353A28197AADF4002F4E54 /* bg4@2x.jpg in Resources */,
 				C718C1FB195EF91F00389FFD /* bg1@2x.jpg in Resources */,
+				C71815EE1A20F92700875CB7 /* logo_white.png in Resources */,
 				C73A5BB81A0E5C50008B05B9 /* favorites_selected@2x.png in Resources */,
 				C7A0B4AF19892C9F00C72662 /* marker@2x.png in Resources */,
 				C73F563E19F186C900A795AC /* ProgressHUD.bundle in Resources */,
@@ -676,8 +690,10 @@
 				C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */,
 				C7B21DDD19959CBF00AE4978 /* bgBlur1@2x.png in Resources */,
 				C7B21DE31996E3DD00AE4978 /* avatar@2x.png in Resources */,
+				C77A8F761A213F6E00054918 /* twitter_logo@2x.png in Resources */,
 				C79D38BF196ED0AE00C8A4C8 /* eliminarImagen@2x.png in Resources */,
 				C7954910197C15FA002C6F1D /* logoMask@2x.png in Resources */,
+				C77A8F751A213F6E00054918 /* facebook_logo@2x.png in Resources */,
 				C73A5BAF1A0D9690008B05B9 /* slide@2x.png in Resources */,
 				C73A5BB31A0D984B008B05B9 /* map@2x.png in Resources */,
 				C73A5BB51A0D9A3B008B05B9 /* add@2x.png in Resources */,
@@ -873,7 +889,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -909,7 +925,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -930,7 +946,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CiudadInvisible/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -938,7 +954,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "CiudadInvisible-Bridging-Header.h";
 			};
 			name = Debug;
@@ -957,7 +973,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = CiudadInvisible/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -965,7 +981,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos7.0;
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "CiudadInvisible-Bridging-Header.h";
 			};
 			name = Release;

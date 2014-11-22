@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="apG-bw-qVB">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -813,24 +814,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgBlur1.png" translatesAutoresizingMaskIntoConstraints="NO" id="dNh-nn-awz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <view alpha="0.29999999999999966" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RLN-jZ-NGC">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWF-0m-Sem">
-                                <rect key="frame" x="20" y="371" width="280" height="46"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Registrate">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goToRegister:" destination="Kf5-nN-O4e" eventType="touchUpInside" id="tge-Ds-12e"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31r-BL-Joc">
-                                <rect key="frame" x="20" y="248" width="280" height="46"/>
-                                <color key="backgroundColor" red="0.25098039215686274" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Login via Twitter">
+                                <rect key="frame" x="87" y="250" width="37" height="36"/>
+                                <state key="normal" image="twitter_logo.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -838,28 +824,42 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhz-dM-siL">
-                                <rect key="frame" x="20" y="299" width="280" height="46"/>
-                                <color key="backgroundColor" red="0.1333333333" green="0.74901960779999999" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Login via Email">
+                                <rect key="frame" x="197" y="250" width="37" height="36"/>
+                                <state key="normal" image="email_logo.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="goToLoginManual:" destination="Kf5-nN-O4e" eventType="touchUpInside" id="5Th-mm-D1m"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ciudad Invisible" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXK-1o-Zh7">
-                                <rect key="frame" x="24" y="92" width="273" height="57"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="37"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jyz-Q7-IpT" customClass="FBLoginView">
-                                <rect key="frame" x="20" y="196" width="280" height="46"/>
+                                <rect key="frame" x="142" y="250" width="37" height="36"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="Kf5-nN-O4e" id="bLf-Hh-53K"/>
                                 </connections>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wed-gT-x5s">
+                                <rect key="frame" x="115" y="105" width="90" height="41"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingresar con" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaU-pw-npY">
+                                <rect key="frame" x="106" y="192" width="109" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.65098039215686276" green="0.98431372549019602" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWF-0m-Sem">
+                                <rect key="frame" x="20" y="333" width="280" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Crear una cuenta">
+                                    <color key="titleColor" red="0.65098039220000004" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToRegister:" destination="Kf5-nN-O4e" eventType="touchUpInside" id="tge-Ds-12e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -888,50 +888,35 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgBlur1.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Vg-so-A7q">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <view alpha="0.30000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Sy-uY-B8g">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="CCo-a9-6Yc">
+                                <rect key="frame" x="115" y="105" width="90" height="41"/>
+                            </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GmK-dC-VNW" customClass="TPKeyboardAvoidingScrollView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ciudad Invisible" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHZ-um-p8i">
-                                        <rect key="frame" x="24" y="92" width="273" height="57"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="37"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGu-cE-qFA">
-                                        <rect key="frame" x="208" y="286" width="89" height="34"/>
-                                        <color key="backgroundColor" red="0.1333333333" green="0.74901960779999999" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Ingresar">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="login:" destination="8cs-3l-hcW" eventType="touchUpInside" id="dyZ-rO-wOy"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tlo-7w-L7O">
-                                        <rect key="frame" x="20" y="168" width="280" height="105"/>
+                                        <rect key="frame" x="0.0" y="187" width="320" height="63"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVH-IA-6AX">
-                                                <rect key="frame" x="10" y="65" width="260" height="30"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                            </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kYX-Kr-CF8">
-                                                <rect key="frame" x="10" y="16" width="260" height="30"/>
+                                                <rect key="frame" x="22" y="0.0" width="298" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aOE-P4-6Rm">
-                                                <rect key="frame" x="10" y="52" width="260" height="1"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <rect key="frame" x="0.0" y="31" width="320" height="1"/>
+                                                <color key="backgroundColor" red="0.65098039220000004" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVH-IA-6AX">
+                                                <rect key="frame" x="22" y="33" width="298" height="30"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.65098039220000004" green="0.98431372549999996" blue="1" alpha="0.26000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZ7-NM-AoB">
                                         <rect key="frame" x="270" y="18" width="30" height="30"/>
@@ -941,6 +926,17 @@
                                         <connections>
                                             <action selector="backToLoginMain:" destination="8cs-3l-hcW" eventType="touchUpInside" id="wqx-8S-DNU"/>
                                             <action selector="close:" destination="0nv-HU-ycs" eventType="touchUpInside" id="tFu-Z9-6Cs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGu-cE-qFA">
+                                        <rect key="frame" x="90" y="290" width="140" height="34"/>
+                                        <color key="backgroundColor" red="0.65098039220000004" green="0.98431372549999996" blue="1" alpha="0.26000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Ingresar">
+                                            <color key="titleColor" red="0.65098039220000004" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="login:" destination="8cs-3l-hcW" eventType="touchUpInside" id="dyZ-rO-wOy"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -956,7 +952,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkj-Kh-H2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-977" y="3059"/>
+            <point key="canvasLocation" x="-977" y="3060"/>
         </scene>
         <!--Signin View Controller-->
         <scene sceneID="50T-ht-yjd">
@@ -973,10 +969,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgBlur1.png" translatesAutoresizingMaskIntoConstraints="NO" id="yxy-K1-loS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <view alpha="0.30000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smA-Zo-bh1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Psd-L5-v4R">
                                 <rect key="frame" x="20" y="120" width="280" height="180"/>
                                 <subviews>
@@ -1446,14 +1438,17 @@
         <image name="bgBlur1.png" width="320" height="568"/>
         <image name="camaraImagen.png" width="56" height="56"/>
         <image name="eliminarImagen.png" width="26" height="26"/>
+        <image name="email_logo.png" width="37" height="36"/>
         <image name="favorites_selected.png" width="28" height="24"/>
         <image name="galery.png" width="30" height="30"/>
+        <image name="logo_white.png" width="179" height="81"/>
         <image name="map.png" width="30" height="30"/>
         <image name="marker.png" width="27" height="47"/>
         <image name="menu.png" width="30" height="30"/>
         <image name="menuBackground.jpg" width="960" height="600"/>
         <image name="slide.png" width="30" height="30"/>
-        <image name="splashChica.png" width="320" height="480"/>
+        <image name="splashChica.png" width="320" height="568"/>
+        <image name="twitter_logo.png" width="37" height="36"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

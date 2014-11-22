@@ -104,6 +104,27 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
         self.siginButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.siginButton.layer.borderWidth = 1.0
         
+        /*
+        self.facebookLoginView.frame = CGRectMake(self.facebookLoginView.frame.origin.x, self.facebookLoginView.frame.origin.y, 70, 70);
+        for (id obj in self.facebookLoginView.subviews)
+        {
+        if ([obj isKindOfClass:[UIButton class]])
+        {
+        UIButton *loginButton =  obj;
+        loginButton.frame = CGRectMake(loginButton.frame.origin.x, loginButton.frame.origin.y, 70, 70);
+        loginButton.backgroundColor = [UIColor clearColor];
+        [loginButton setBackgroundImage:[UIImage imageNamed:@"logo_fb.png"] forState:UIControlStateNormal];
+        [loginButton setBackgroundImage:[UIImage imageNamed:@"logo_fb.png"] forState:UIControlStateHighlighted];
+        }
+        if ([obj isKindOfClass:[UILabel class]])
+        {
+        UILabel *loginLabel =  obj;
+        loginLabel.text = @"";
+        loginLabel.frame = CGRectMake(0, 0, 0, 0);
+        }
+        }
+            */
+        
     }
     
     // MARK: Twitter
