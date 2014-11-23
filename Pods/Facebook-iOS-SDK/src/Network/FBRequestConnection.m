@@ -51,7 +51,6 @@ NSString *const kAccessTokenKey = @"access_token";
 NSString *const kSDK = @"ios";
 NSString *const kUserAgentBase = @"FBiOSSDK";
 
-NSString *const kExtendTokenRestMethod = @"auth.extendSSOAccessToken";
 NSString *const kBatchRestMethodBaseURL = @"method/";
 
 // response object property/key
@@ -68,13 +67,13 @@ typedef void (^KeyValueActionHandler)(NSString *key, id value);
 // ----------------------------------------------------------------------------
 // FBRequestConnectionState
 
-typedef enum FBRequestConnectionState {
+typedef NS_ENUM(NSUInteger, FBRequestConnectionState) {
     kStateCreated,
     kStateSerialized,
     kStateStarted,
     kStateCompleted,
     kStateCancelled,
-} FBRequestConnectionState;
+};
 
 // ----------------------------------------------------------------------------
 // Graph API error codes
@@ -117,6 +116,9 @@ typedef NS_ENUM(NSInteger, FBGraphApiErrorAccessTokenSubcode) {
 // FBRequestConnection
 
 @implementation FBRequestConnection
+{
+    NSString *_overrideVersionPart;
+}
 
 // ----------------------------------------------------------------------------
 // Property implementations
@@ -261,6 +263,14 @@ typedef NS_ENUM(NSInteger, FBGraphApiErrorAccessTokenSubcode) {
     self.connection = nil;
 }
 
+- (void)overrideVersionPartWith:(NSString *)version
+{
+    if (![_overrideVersionPart isEqualToString:version]) {
+        [_overrideVersionPart release];
+        _overrideVersionPart = [version copy];
+    }
+}
+
 // ----------------------------------------------------------------------------
 // Public class methods
 
@@ -333,7 +343,7 @@ typedef NS_ENUM(NSInteger, FBGraphApiErrorAccessTokenSubcode) {
 }
 
 + (FBRequestConnection *)startForPostWithGraphPath:(NSString *)graphPath
-                                       graphObject:(id<FBGraphObjectProtocol>)graphObject
+                                       graphObject:(id<FBGraphObject>)graphObject
                                  completionHandler:(FBRequestHandler)handler
 {
     FBRequest *request = [FBRequest requestForPostWithGraphPath:graphPath
@@ -443,7 +453,7 @@ typedef NS_ENUM(NSInteger, FBGraphApiErrorAccessTokenSubcode) {
         }
     }
 
-    if (self.internalUrlRequest == nil && !cacheIdentity) {
+    if (!self.deprecatedRequest && self.internalUrlRequest == nil && !cacheIdentity) {
         // If we have all Graph API calls, see if we want to piggyback any internal calls onto
         // the request to reduce round-trips. (The piggybacked calls may themselves be non-Graph
         // API calls, but must be limited to API calls which are batchable. Not all are, which is
@@ -451,7 +461,7 @@ typedef NS_ENUM(NSInteger, FBGraphApiErrorAccessTokenSubcode) {
         // an already-formed request object, since we don't know its structure.
         BOOL safeForPiggyback = YES;
         for (FBRequestMetadata *requestMetadata in self.requests) {
-            if (requestMetadata.request.restMethod) {
+            if (requestMetadata.request.restMethod || requestMetadata.request.versionPart != nil) {
                 safeForPiggyback = NO;
                 break;
             }
@@ -615,7 +625,8 @@ typedef NS_ENUM(NSInteger, FBGraphApiErrorAccessTokenSubcode) {
 
         [attachments release];
 
-        request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[FBUtility buildFacebookUrlWithPre:kGraphURLPrefix]]
+        NSString *URLString = [FBUtility buildFacebookUrlWithPre:kGraphURLPrefix post:nil version:_overrideVersionPart];
+        request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString]
                                           cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                       timeoutInterval:timeout];
         [request setHTTPMethod:@"POST"];
@@ -882,8 +893,8 @@ typedef NS_ENUM(NSInteger, FBGraphApiErrorAccessTokenSubcode) {
                                 value:(id)value
                                action:(KeyValueActionHandler)action
                           passByValue:(BOOL)passByValue {
-    if ([value conformsToProtocol:@protocol(FBGraphObjectProtocol)]) {
-        NSDictionary<FBGraphObjectProtocol> *refObject = (NSDictionary<FBGraphObjectProtocol> *)value;
+    if ([value conformsToProtocol:@protocol(FBGraphObject)]) {
+        NSDictionary<FBGraphObject> *refObject = (NSDictionary<FBGraphObject> *)value;
 
         if (refObject.provisionedForPost) {
             NSString *actionValue = [FBUtility simpleJSONEncode:refObject];
@@ -935,7 +946,7 @@ typedef NS_ENUM(NSInteger, FBGraphApiErrorAccessTokenSubcode) {
     }
 }
 
-+ (void)processGraphObject:(id<FBGraphObjectProtocol>)object forPath:(NSString *)path withAction:(KeyValueActionHandler)action {
++ (void)processGraphObject:(id<FBGraphObject>)object forPath:(NSString *)path withAction:(KeyValueActionHandler)action {
     BOOL isOGAction = NO;
     if ([path hasPrefix:@"me/"] ||
         [path hasPrefix:@"/me/"]) {
@@ -968,8 +979,8 @@ typedef NS_ENUM(NSInteger, FBGraphApiErrorAccessTokenSubcode) {
 
     if (self.state != kStateCancelled) {
         NSAssert(self.state == kStateStarted,
-                 @"Unexpected state %d in completeWithResponse",
-                 self.state);
+                 @"Unexpected state %lu in completeWithResponse",
+                 (unsigned long)self.state);
         self.state = kStateCompleted;
     }
 
@@ -1262,6 +1273,7 @@ typedef NS_ENUM(NSInteger, FBGraphApiErrorAccessTokenSubcode) {
                 // Access token has expired
                 case FBGraphApiErrorAccessTokenExpired:
                     errorString = @"The access token associated with the active session has expired.";
+                    break;
                 // Access token was invalidated
                 case FBGraphApiErrorAccessTokenInvalidated:
                     errorString = @"The access token associated with the active session has been invalidated.";
@@ -1623,9 +1635,10 @@ typedef NS_ENUM(NSInteger, FBGraphApiErrorAccessTokenSubcode) {
 + (void)addRequestToExtendTokenForSession:(FBSession *)session connection:(FBRequestConnection *)connection
 {
     FBRequest *request = [[FBRequest alloc] initWithSession:session
-                                                 restMethod:kExtendTokenRestMethod
-                                                 parameters:nil
+                                                  graphPath:@"oauth/access_token"
+                                                 parameters:@{@"grant_type" : @"fb_extend_sso_token"}
                                                  HTTPMethod:nil];
+    [request overrideVersionPartWith:@"v2.0"];
     [connection addRequest:request
          completionHandler:^(FBRequestConnection *innerConnection, id result, NSError *error) {
              if (session.isOpen) {

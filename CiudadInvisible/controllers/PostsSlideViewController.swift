@@ -91,6 +91,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
             cell.distancia.text = "\(post.favorites_quantity)"
             cell.imagen.image = self.imageEmpty
             cell.autor.text = "by \(post.author)"
+            cell.avatar.setImageWithURL(NSURL(string: post.author_avatar))
             if post.images.count > 0 {
                 // Si tiene imagen la carga
                 let images = post.imagesMedium()

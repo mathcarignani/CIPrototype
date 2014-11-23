@@ -30,9 +30,9 @@
  @discussion
  The `FBGraphPlace` protocol represents the most commonly used properties of a
  Facebook place object. It may be used to access an `NSDictionary` object that has
- been wrapped with an <FBGraphObjectProtocol> facade.
+ been wrapped with an <FBGraphObject> facade.
  */
-@protocol FBGraphPlace<FBGraphObjectProtocol>
+@protocol FBGraphPlace<FBGraphObject>
 
 /*!
  @abstract use objectID instead

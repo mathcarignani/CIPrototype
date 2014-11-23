@@ -25,6 +25,7 @@ class Post: NSObject {
     var favorites_quantity: Int! = nil
     var userId: Int! = nil
     var comments: NSArray! = nil
+    var author_avatar: NSString! = nil
     
     override init() {
         super.init()

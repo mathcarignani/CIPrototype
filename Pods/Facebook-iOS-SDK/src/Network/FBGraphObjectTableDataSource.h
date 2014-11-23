@@ -68,21 +68,21 @@
 @required
 
 - (NSString *)graphObjectTableDataSource:(FBGraphObjectTableDataSource *)dataSource
-                             titleOfItem:(id<FBGraphObjectProtocol>)graphObject;
+                             titleOfItem:(id<FBGraphObject>)graphObject;
 
 @optional
 
 - (NSString *)graphObjectTableDataSource:(FBGraphObjectTableDataSource *)dataSource
-                       titleSuffixOfItem:(id<FBGraphObjectProtocol>)graphObject;
+                       titleSuffixOfItem:(id<FBGraphObject>)graphObject;
 
 - (NSString *)graphObjectTableDataSource:(FBGraphObjectTableDataSource *)dataSource
-                          subtitleOfItem:(id<FBGraphObjectProtocol>)graphObject;
+                          subtitleOfItem:(id<FBGraphObject>)graphObject;
 
 - (NSString *)graphObjectTableDataSource:(FBGraphObjectTableDataSource *)dataSource
-                        pictureUrlOfItem:(id<FBGraphObjectProtocol>)graphObject;
+                        pictureUrlOfItem:(id<FBGraphObject>)graphObject;
 
 - (BOOL)graphObjectTableDataSource:(FBGraphObjectTableDataSource *)dataSource
-                filterIncludesItem:(id<FBGraphObjectProtocol>)item;
+                filterIncludesItem:(id<FBGraphObject>)item;
 
 - (void)graphObjectTableDataSource:(FBGraphObjectTableDataSource *)dataSource
                 customizeTableCell:(FBGraphObjectTableCell *)cell;
@@ -92,7 +92,7 @@
 @protocol FBGraphObjectSelectionQueryDelegate <NSObject>
 
 - (BOOL)graphObjectTableDataSource:(FBGraphObjectTableDataSource *)dataSource
-             selectionIncludesItem:(id<FBGraphObjectProtocol>)item;
+             selectionIncludesItem:(id<FBGraphObject>)item;
 
 @end
 
