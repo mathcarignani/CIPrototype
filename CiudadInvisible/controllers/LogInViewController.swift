@@ -82,7 +82,7 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
             }
         }
         else {
-            swifter.authorizeWithCallbackURL(NSURL(string: "swifter://success"), success: {
+            swifter.authorizeWithCallbackURL(NSURL(string: "swifter://success")!, success: {
                 accessToken, response in
                 
                 ProgressHUD.dismiss()

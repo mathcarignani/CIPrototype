@@ -17,7 +17,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
     
     var posts: NSArray! = NSArray()
     var filters: [String] = []
-    var imageEmpty: UIImage = UIImage(named: "bgEmpty.jpg")
+    var imageEmpty: UIImage = UIImage(named: "bgEmpty.jpg")!
     var filterSelected: String = "Todos"
     
     // MARK: - LifeCycle Methods
@@ -96,7 +96,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
                 // Si tiene imagen la carga
                 let images = post.imagesMedium()
                 cell.imagen.setImageWithURL(NSURL(string: images.objectAtIndex(0) as String), placeholderImage: self.imageEmpty)
-                cell.imagen.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: images.objectAtIndex(0) as String)), placeholderImage: self.imageEmpty, success: { (request, response, image) -> Void in
+                cell.imagen.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: images.objectAtIndex(0) as String)!), placeholderImage: self.imageEmpty, success: { (request, response, image) -> Void in
                     // Setea las imagenes
                     cell.imagen.image = image
                     /*

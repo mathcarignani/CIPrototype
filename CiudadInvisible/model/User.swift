@@ -31,7 +31,7 @@ class User: NSObject {
     
     func avatar() -> UIImage {
         var image = UIImage(named: "avatar.png")
-        return image
+        return image!
     }
     
 }

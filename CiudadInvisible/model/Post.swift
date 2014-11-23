@@ -42,11 +42,11 @@ class Post: NSObject {
     // MARK: Images sizes
     func imagesSmall() -> NSArray {
         
-        var smallImages: Array = []
+        var smallImages: NSMutableArray! = NSMutableArray()
         // Recorre las imagenes y sustituye el texto
         for auxImage : AnyObject in self.images {
             let smallImage: String = (auxImage as String).stringByReplacingOccurrencesOfString("original", withString: "small", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            smallImages.append(smallImage)
+            smallImages.addObject(smallImage)
         }
         
         return smallImages
@@ -54,11 +54,11 @@ class Post: NSObject {
     
     func imagesMedium() -> NSArray {
         
-        var mediumImages: Array = []
+        var mediumImages: NSMutableArray! = NSMutableArray()
         // Recorre las imagenes y sustituye el texto
         for auxImage : AnyObject in self.images {
             let mediumImage: String = (auxImage as String).stringByReplacingOccurrencesOfString("original", withString: "medium", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            mediumImages.append(mediumImage)
+            mediumImages.addObject(mediumImage)
         }
         
         return mediumImages
@@ -66,11 +66,11 @@ class Post: NSObject {
     
     func imagesLarge() -> NSArray {
         
-        var largeImages: Array = []
+        var largeImages: NSMutableArray! = NSMutableArray()
         // Recorre las imagenes y sustituye el texto
         for auxImage : AnyObject in self.images {
             let largeImage: String = (auxImage as String).stringByReplacingOccurrencesOfString("original", withString: "large", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            largeImages.append(largeImage)
+            largeImages.addObject(largeImage)
         }
         
         return largeImages

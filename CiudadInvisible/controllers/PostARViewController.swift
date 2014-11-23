@@ -33,7 +33,7 @@ class PostARViewController: UIViewController, PRARManagerDelegate {
     // MARK: - AR Data
     func loadPoints() {
         var locationCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2DMake(-34.9060165250200, -56.1930646562800)
-        var points: NSMutableArray = NSMutableArray.arrayWithCapacity(self.posts.count)
+        var points: NSMutableArray = NSMutableArray(capacity: self.posts.count)
         var idAux: Int = 0
         
         // Carga los puntos en el mapa

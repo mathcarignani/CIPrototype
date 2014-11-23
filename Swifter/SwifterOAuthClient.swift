@@ -57,7 +57,7 @@ internal class SwifterOAuthClient: SwifterClientProtocol  {
     }
 
     func get(path: String, baseURL: NSURL, parameters: Dictionary<String, AnyObject>, uploadProgress: SwifterHTTPRequest.UploadProgressHandler?, downloadProgress: SwifterHTTPRequest.DownloadProgressHandler?, success: SwifterHTTPRequest.SuccessHandler?, failure: SwifterHTTPRequest.FailureHandler?) {
-        let url = NSURL(string: path, relativeToURL: baseURL)
+        let url = NSURL(string: path, relativeToURL: baseURL)!
         let method = "GET"
 
         let request = SwifterHTTPRequest(URL: url, method: method, parameters: parameters)
@@ -71,7 +71,7 @@ internal class SwifterOAuthClient: SwifterClientProtocol  {
     }
 
     func post(path: String, baseURL: NSURL, var parameters: Dictionary<String, AnyObject>, uploadProgress: SwifterHTTPRequest.UploadProgressHandler?, downloadProgress: SwifterHTTPRequest.DownloadProgressHandler?, success: SwifterHTTPRequest.SuccessHandler?, failure: SwifterHTTPRequest.FailureHandler?) {
-        let url = NSURL(string: path, relativeToURL: baseURL)
+        let url = NSURL(string: path, relativeToURL: baseURL)!
         let method = "POST"
 
         var postData: NSData?
@@ -79,6 +79,7 @@ internal class SwifterOAuthClient: SwifterClientProtocol  {
 
         if let key: AnyObject = parameters[Swifter.DataParameters.dataKey] {
             if let keyString = key as? String {
+                postDataKey = keyString
                 postData = parameters[postDataKey!] as? NSData
 
                 parameters.removeValueForKey(Swifter.DataParameters.dataKey)

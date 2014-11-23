@@ -16,7 +16,7 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     var portadaPostView : PostView = PostView()
     var backgroundImage = UIImageView()
     var backgroundView = UIView()
-    var imageEmpty : UIImage = UIImage(named: "bgEmpty.jpg")
+    var imageEmpty : UIImage = UIImage(named: "bgEmpty.jpg")!
     
     @IBOutlet var tableView : UITableView!
     

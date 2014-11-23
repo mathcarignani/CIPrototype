@@ -176,20 +176,20 @@ class RestApiHelper: NSObject {
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 
-                var posts : Array = []
+                var posts : NSMutableArray = NSMutableArray()
                 
                 // Obtiene los posts
                 var postsJson = JSONValue(responseObject)
-                let postsJsonCount = postsJson.array?.count
+                let postsJsonCount = postsJson.array!.count
                 
                 if postsJsonCount > 0 {
                     // Recorre los posts json
-                    for i in 0...(postsJsonCount! - 1) {
+                    for i in 0...(postsJsonCount - 1) {
                 
                         var post = self.parsePost(postsJson[i])
                         
                         // Agrega el post
-                        posts.append(post)
+                        posts.addObject(post)
                     }
                 }
                 
@@ -203,7 +203,7 @@ class RestApiHelper: NSObject {
     }
     
     func getPreferencePosts(completion: (posts : NSArray) -> ()) {
-        
+
         var parameters = [
             "user_id":UserSesionHelper.sharedInstance().getUserLogued().id
             ] as Dictionary
@@ -212,7 +212,7 @@ class RestApiHelper: NSObject {
             parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
 
-                var posts : Array = []
+                var posts: NSMutableArray = NSMutableArray()
                 
                 // Obtiene los posts
                 var postsJson = JSONValue(responseObject)
@@ -234,18 +234,18 @@ class RestApiHelper: NSObject {
                             post.longitude = postsJson[i]["longitude"].double
                             post.author_avatar = postsJson[i]["author_avatar"].string
                             // Agrega las imagenes
-                            var auxImages : Array = []
+                            var auxImages : NSMutableArray = NSMutableArray()
                             let imagesJsonCount = postsJson[i]["assets"].array?.count
                             if imagesJsonCount != 0 {
                                 for j in 0...(imagesJsonCount! - 1) {
-                                    auxImages.append(postsJson[i]["assets"][j]["file_url"].string!)
+                                    auxImages.addObject(postsJson[i]["assets"][j]["file_url"].string!)
                                 }
                             }
                             post.images = auxImages
                             
                             
                             // Agrega el post
-                            posts.append(post)
+                            posts.addObject(post)
 
                     }
                 }
@@ -257,6 +257,7 @@ class RestApiHelper: NSObject {
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 println("Error \(error)")
         })
+
     }
 
     func createPost(post: Post, completion: (success: Bool) -> ()) {
@@ -295,8 +296,8 @@ class RestApiHelper: NSObject {
     }
     
     func addAssetsToPost(postId: Int, post: Post) {
-        
-        var imagesData = [] as Array
+
+        var imagesData: NSMutableArray = NSMutableArray()
         // Recorre las imagenes y agrega
         for image in post.images as Array {
             var imageDictionary = [
@@ -304,7 +305,7 @@ class RestApiHelper: NSObject {
                 "filename": "\(post.title).png",
                 "content_type": "image/png"
             ]
-            imagesData.append(imageDictionary)
+            imagesData.addObject(imageDictionary)
         }
         
         var parameters = [
@@ -320,7 +321,6 @@ class RestApiHelper: NSObject {
                 println("Error => " + error.localizedDescription)
                 
         })
-
     }
     
     func favoritePost(postId: Int, userId: Int, completion: (success: Bool) -> ()) {
@@ -344,7 +344,7 @@ class RestApiHelper: NSObject {
     
     // MARK: - Categories
     func getCategories(completion: (categories: NSArray) -> ()) {
-        var categories : Array = []
+        var categories: NSMutableArray = NSMutableArray()
         manager.GET("\(urlApi)/categories.json",
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
@@ -360,7 +360,7 @@ class RestApiHelper: NSObject {
                         var categoryName = categoriesJson[i]["name"].string
                         
                         // Agrega el post
-                        categories.append(categoryName!)
+                        categories.addObject(categoryName!)
                     }
                 }
                 
@@ -372,7 +372,6 @@ class RestApiHelper: NSObject {
                 println("Error \(error)")
                 completion(categories: categories)
         })
-
     }
     
     // MARK: - Comments
@@ -408,6 +407,7 @@ class RestApiHelper: NSObject {
     }
     
     func parsePost(postJson: JSONValue) -> Post {
+        
         // Crea el post y lo agrega a la lista
         var post : Post = Post()
         post.id = postJson["id"].integer
@@ -424,17 +424,17 @@ class RestApiHelper: NSObject {
         post.author_avatar = postJson["author_avatar"].string
         
         // Agrega las imagenes
-        var auxImages : Array = []
+        var auxImages: NSMutableArray = NSMutableArray()
         let imagesJsonCount = postJson["assets"].array?.count
         if imagesJsonCount != 0 {
             for j in 0...(imagesJsonCount! - 1) {
-                auxImages.append(postJson["assets"][j]["file_url"].string!)
+                auxImages.addObject(postJson["assets"][j]["file_url"].string!)
             }
         }
         post.images = auxImages
         
         // Agrega los comentarios
-        var auxComments : Array = []
+        var auxComments: NSMutableArray = NSMutableArray()
         let commentsJsonCount = postJson["comments"].array?.count
         if commentsJsonCount != 0 {
             for j in 0...(commentsJsonCount! - 1) {
@@ -444,11 +444,10 @@ class RestApiHelper: NSObject {
                 comment.last_name = postJson["comments"][j]["last_name"].string!
                 comment.username = postJson["comments"][j]["username"].string!
                 comment.avatar = postJson["comments"][j]["avatar"].string!
-                auxComments.append(comment)
+                auxComments.addObject(comment)
             }
         }
         post.comments = auxComments
-
         return post
     }
     

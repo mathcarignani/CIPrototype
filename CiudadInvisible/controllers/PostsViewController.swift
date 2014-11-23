@@ -42,27 +42,11 @@ class PostsViewController: UIViewController {
         rightCenterX = view.center.x + 320.0
         rightCenterY = view.center.y
         
-        loadPosts()
-        setupGestures()
+                setupGestures()
         
     }
 
-    func loadPosts() {
-        // Izquierda
-        leftPostView = PostView(frame: view.frame, image: UIImage(named: "bg2.jpg"), name: "El cierre", distance: "400 m")
-        leftPostView.center = CGPoint(x: leftCenterX, y: leftCenterY)
-        self.view.insertSubview(leftPostView, belowSubview: cameraButton)
-        // Centro
-        centerPostView = PostView(frame: view.frame, image: UIImage(named: "bg1.jpg"), name: "La Marilyn", distance: "500 m")
-        centerPostView.center = CGPoint(x: centerCenterX, y: centerCenterY)
-        self.view.insertSubview(centerPostView, belowSubview: cameraButton)
-        // Derecha
-        rightPostView = PostView(frame: view.frame, image: UIImage(named: "bg3.jpg"), name: "La Plaza", distance: "600 m")
-        rightPostView.center = CGPoint(x: rightCenterX, y: rightCenterY)
-        self.view.insertSubview(rightPostView, belowSubview: cameraButton)
-       
-    }
-    
+        
     func setupGestures() {
         
         let panGesture = UIPanGestureRecognizer(target: self, action: Selector("panHandled:"))

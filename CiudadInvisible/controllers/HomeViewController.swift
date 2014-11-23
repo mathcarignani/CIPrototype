@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
         // MASK
         
         self.mask = CALayer()
-        self.mask!.contents = UIImage(named: "logoMask.png").CGImage
+        self.mask!.contents = UIImage(named: "logoMask.png")!.CGImage
         self.mask!.bounds = CGRect(x: 0, y: 0, width: 110, height: 192)
         self.mask!.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.mask!.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2)
