@@ -14,6 +14,8 @@ class PostSlideCell: UICollectionViewCell {
     @IBOutlet var titulo: UILabel!
     @IBOutlet var distancia: UILabel!
     @IBOutlet var imagen: UIImageView!
+    @IBOutlet var avatar: UIImageView!
+    @IBOutlet var autor: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

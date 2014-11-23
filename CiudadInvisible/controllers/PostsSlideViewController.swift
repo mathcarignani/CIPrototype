@@ -90,6 +90,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
             cell.titulo.text = post.title
             cell.distancia.text = "\(post.favorites_quantity)"
             cell.imagen.image = self.imageEmpty
+            cell.autor.text = "by \(post.author)"
             if post.images.count > 0 {
                 // Si tiene imagen la carga
                 let images = post.imagesMedium()
@@ -97,9 +98,11 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
                 cell.imagen.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: images.objectAtIndex(0) as String)), placeholderImage: self.imageEmpty, success: { (request, response, image) -> Void in
                     // Setea las imagenes
                     cell.imagen.image = image
+                    /*
                     if (indexPath.row == 0 || (self.collectionView.visibleCells() as NSArray).containsObject(indexPath.row)) {
                         self.setImageToBackground(image)
                     }
+                    */
                     }, failure:nil)
             }
             
@@ -135,11 +138,13 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     // MARK: - UIScrollViewDelegate
+    /*
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         // Obtiene la celda visible
         let visibleCell = (self.collectionView.visibleCells() as NSArray).firstObject as PostSlideCell
         self.setImageToBackground(visibleCell.imagen.image!)
     }
+    */
     
     // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
