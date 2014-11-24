@@ -18,10 +18,27 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb494836457286098</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>494836457286098</string>
+	<key>FacebookDisplayName</key>
+	<string>Ciudad Invisible</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -36,18 +53,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>FacebookAppID</key>
-	<string>494836457286098</string>
-	<key>FacebookDisplayName</key>
-	<string>Ciudad Invisible</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb494836457286098</string>
-			</array>
-		</dict>
-	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Ciudad invisible requiere acceder a su ubicación para una mejor experiencia de usuario.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Ciudad invisible requiere acceder a su ubicación para una mejor experiencia de usuario.</string>
 </dict>
 </plist>

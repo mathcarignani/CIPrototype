@@ -12,6 +12,10 @@ class MenuViewController: UIViewController, XDKAirMenuDelegate {
 
     weak var tableView: UITableView!
     
+    @IBOutlet weak var userView: UIView!
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    
     var airMenuController: XDKAirMenuController! = nil
     
     // MARK: - LifeCycle
@@ -25,11 +29,29 @@ class MenuViewController: UIViewController, XDKAirMenuDelegate {
         self.view.addSubview(self.airMenuController.view)
         self.addChildViewController(self.airMenuController)
         
+        self.configUI()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - UI
+    func configUI() {
+        let user: User = UserSesionHelper.sharedInstance().getUserLogued()
+        self.name.text = user.name()
+        self.avatar.setImageWithURL(NSURL(string: user.url_avatar))
+        self.avatar.layer.cornerRadius = self.avatar.frame.width / 2
+        self.avatar.layer.masksToBounds = true
+//        self.avatar.layer.borderColor =  UIColor(
+//        self.avatar.layer.borderWidth = 1.0
+        
+        var tapInView = UITapGestureRecognizer(target: self, action: Selector("showUserProfile:"))
+    }
+    
+    func showUserProfile(gesture : UITapGestureRecognizer) {
+        
     }
     
     // MARK: - Navigation
@@ -53,4 +75,6 @@ class MenuViewController: UIViewController, XDKAirMenuDelegate {
     func tableViewForAirMenu(airMenu: XDKAirMenuController!) -> UITableView! {
         return self.tableView
     }
+    
+    
 }

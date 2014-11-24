@@ -8,13 +8,15 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class PostsMapViewController: UIViewController, MKMapViewDelegate {
+class PostsMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet var mapView: MKMapView!
     
     var posts : NSArray! = nil
     var centerMap : Int! = 1
+    var locationManager: CLLocationManager! = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,10 @@ class PostsMapViewController: UIViewController, MKMapViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidDisappear(animated: Bool) {
+        self.locationManager.stopUpdatingLocation()
+    }
 
     // MARK: UI
     func configOutlets() {
@@ -58,13 +64,19 @@ class PostsMapViewController: UIViewController, MKMapViewDelegate {
                 self.mapView.addAnnotation(annotation)
             }
         }
+        
+        // User location
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
     }
     
-    // MARK: MapViewDelegate
-    func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
+    // MARK: - CLLocationManagerDelegate
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        var location: CLLocation = locations.last as CLLocation
         // Cuando se actualiza la posicion del usuario centra el mapa en ese punto
         if (self.centerMap == 1) {
-            MapHelper.centerMap(self.mapView, coordinate: self.mapView.userLocation.coordinate, distance: 800)
+            MapHelper.centerMap(self.mapView, coordinate: location.coordinate, distance: 800)
             
             self.centerMap = 0
         }

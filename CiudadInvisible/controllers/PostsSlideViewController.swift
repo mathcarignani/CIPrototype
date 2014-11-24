@@ -92,6 +92,8 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
             cell.imagen.image = self.imageEmpty
             cell.autor.text = "by \(post.author)"
             cell.avatar.setImageWithURL(NSURL(string: post.author_avatar))
+            cell.avatar.layer.cornerRadius = cell.avatar.frame.width / 2
+            cell.avatar.layer.masksToBounds = true
             if post.images.count > 0 {
                 // Si tiene imagen la carga
                 let images = post.imagesMedium()

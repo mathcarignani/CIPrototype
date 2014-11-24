@@ -58,6 +58,11 @@
 		C795490B197C041D002C6F1D /* ojo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7954909197C041D002C6F1D /* ojo@2x.png */; };
 		C795490E197C083B002C6F1D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795490D197C083B002C6F1D /* HomeViewController.swift */; };
 		C7954910197C15FA002C6F1D /* logoMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C795490F197C15FA002C6F1D /* logoMask@2x.png */; };
+		C7955D5E1A22BDF20081A6FB /* Gill Sans MT Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7955D5A1A22BDF20081A6FB /* Gill Sans MT Bold Italic.ttf */; };
+		C7955D5F1A22BDF20081A6FB /* Gill Sans MT Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7955D5B1A22BDF20081A6FB /* Gill Sans MT Bold.ttf */; };
+		C7955D601A22BDF20081A6FB /* Gill Sans MT Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7955D5C1A22BDF20081A6FB /* Gill Sans MT Italic.ttf */; };
+		C7955D611A22BDF20081A6FB /* Gill Sans MT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7955D5D1A22BDF20081A6FB /* Gill Sans MT.ttf */; };
+		C7955D631A22C38A0081A6FB /* uploadImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7955D621A22C38A0081A6FB /* uploadImage@2x.png */; };
 		C799269F19912262006510A1 /* LoginManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799269E19912262006510A1 /* LoginManualViewController.swift */; };
 		C79926A119912B77006510A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79926A019912B77006510A1 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C79926A319912B89006510A1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79926A219912B89006510A1 /* AVFoundation.framework */; };
@@ -189,6 +194,11 @@
 		C7954909197C041D002C6F1D /* ojo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ojo@2x.png"; sourceTree = "<group>"; };
 		C795490D197C083B002C6F1D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = controllers/HomeViewController.swift; sourceTree = "<group>"; };
 		C795490F197C15FA002C6F1D /* logoMask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoMask@2x.png"; sourceTree = "<group>"; };
+		C7955D5A1A22BDF20081A6FB /* Gill Sans MT Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gill Sans MT Bold Italic.ttf"; sourceTree = "<group>"; };
+		C7955D5B1A22BDF20081A6FB /* Gill Sans MT Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gill Sans MT Bold.ttf"; sourceTree = "<group>"; };
+		C7955D5C1A22BDF20081A6FB /* Gill Sans MT Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gill Sans MT Italic.ttf"; sourceTree = "<group>"; };
+		C7955D5D1A22BDF20081A6FB /* Gill Sans MT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gill Sans MT.ttf"; sourceTree = "<group>"; };
+		C7955D621A22C38A0081A6FB /* uploadImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uploadImage@2x.png"; sourceTree = "<group>"; };
 		C799269E19912262006510A1 /* LoginManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginManualViewController.swift; path = controllers/LoginManualViewController.swift; sourceTree = "<group>"; };
 		C79926A019912B77006510A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C79926A219912B89006510A1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -372,6 +382,7 @@
 		C718C1F8195EF8DF00389FFD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C7955D591A22BDE60081A6FB /* Fonts */,
 				C718C1F9195EF8EC00389FFD /* Images */,
 			);
 			name = Resources;
@@ -380,6 +391,7 @@
 		C718C1F9195EF8EC00389FFD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C7955D621A22C38A0081A6FB /* uploadImage@2x.png */,
 				C77A8F721A213F6E00054918 /* facebook_logo@2x.png */,
 				C77A8F731A213F6E00054918 /* twitter_logo@2x.png */,
 				C77A8F741A213F6E00054918 /* email_logo@2x.png */,
@@ -474,6 +486,17 @@
 				C7F851BF1969F405002B38FF /* MainViewController.swift */,
 			);
 			name = Respaldos;
+			sourceTree = "<group>";
+		};
+		C7955D591A22BDE60081A6FB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C7955D5A1A22BDF20081A6FB /* Gill Sans MT Bold Italic.ttf */,
+				C7955D5B1A22BDF20081A6FB /* Gill Sans MT Bold.ttf */,
+				C7955D5C1A22BDF20081A6FB /* Gill Sans MT Italic.ttf */,
+				C7955D5D1A22BDF20081A6FB /* Gill Sans MT.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		C7A0B4AA19891E3400C72662 /* Helpers */ = {
@@ -649,6 +672,11 @@
 					C707AC79195E127E00E43F53 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = TJUKW2P32F;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					C707AC8B195E127F00E43F53 = {
 						CreatedOnToolsVersion = 6.0;
@@ -683,6 +711,9 @@
 				C718C1FD195EFE7000389FFD /* camera@2x.png in Resources */,
 				C707AC85195E127F00E43F53 /* Main.storyboard in Resources */,
 				C77A8F771A213F6E00054918 /* email_logo@2x.png in Resources */,
+				C7955D5E1A22BDF20081A6FB /* Gill Sans MT Bold Italic.ttf in Resources */,
+				C7955D611A22BDF20081A6FB /* Gill Sans MT.ttf in Resources */,
+				C7955D631A22C38A0081A6FB /* uploadImage@2x.png in Resources */,
 				C73F564519F193A900A795AC /* splashChica@2x.png in Resources */,
 				C7EFBFB3199C0D0600EB0A91 /* Info.plist in Resources */,
 				C7072B2F1963638500F8A244 /* bg2@2x.jpg in Resources */,
@@ -699,12 +730,14 @@
 				C748171719E3148B006D595B /* menuBackground@2x.jpg in Resources */,
 				C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */,
 				C7B21DDD19959CBF00AE4978 /* bgBlur1@2x.png in Resources */,
+				C7955D5F1A22BDF20081A6FB /* Gill Sans MT Bold.ttf in Resources */,
 				C7B21DE31996E3DD00AE4978 /* avatar@2x.png in Resources */,
 				C77A8F761A213F6E00054918 /* twitter_logo@2x.png in Resources */,
 				C79D38BF196ED0AE00C8A4C8 /* eliminarImagen@2x.png in Resources */,
 				C7954910197C15FA002C6F1D /* logoMask@2x.png in Resources */,
 				C77A8F751A213F6E00054918 /* facebook_logo@2x.png in Resources */,
 				C73A5BAF1A0D9690008B05B9 /* slide@2x.png in Resources */,
+				C7955D601A22BDF20081A6FB /* Gill Sans MT Italic.ttf in Resources */,
 				C73A5BB31A0D984B008B05B9 /* map@2x.png in Resources */,
 				C73A5BB51A0D9A3B008B05B9 /* add@2x.png in Resources */,
 				C7072B311963639B00F8A244 /* bg3@2x.jpg in Resources */,

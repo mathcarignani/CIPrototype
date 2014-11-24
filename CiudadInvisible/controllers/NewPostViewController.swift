@@ -8,8 +8,9 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class NewPostViewController: UITableViewController, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, MultiImagesViewControllerDelegate, UITextViewDelegate {
+class NewPostViewController: UITableViewController, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, MultiImagesViewControllerDelegate, UITextViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet var titleText: UITextField!
     @IBOutlet var descriptionText: UITextView!
@@ -17,7 +18,11 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     @IBOutlet var imagesCollectionView: UICollectionView!
     @IBOutlet var mapView: MKMapView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var author: UILabel!
     
+    var locationManager: CLLocationManager! = CLLocationManager()
+    var centerMap : Int! = 1
     var mainImageView: UIImageView! = nil
     var imageMain : UIImage! = nil
     var images : NSMutableArray = []
@@ -38,8 +43,16 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        self.locationManager.stopUpdatingLocation()
+    }
+    
     // MARK: - UI
     func configUI() {
+        
+        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "bgBlur1.png")!)
+        self.tableView.separatorColor = UIColor.clearColor()
+        
         // Configuracion fondo de la tabla para imagen principal del post
         self.mainImageView = UIImageView()
         self.mainImageView.frame = self.view.frame
@@ -49,13 +62,6 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
         // Description
         self.descriptionText.delegate = self
         
-        // Configuracion del mapa
-        let coordinate = CLLocationCoordinate2D(latitude: -34.9087458, longitude: -56.1614022137041)
-        MapHelper.centerMap(self.mapView, coordinate: coordinate, distance: 1000)
-        // Agrega el marcador en el centro del mapa
-        // var markerImageView = UIImageView(image: UIImage(named: "marker.png"))
-        // markerImageView.center = map
-        
         self.loadingIndicator.hidden = true
         
         // Obtiene las categorias
@@ -63,7 +69,19 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
             self.categories = categories
             self.categoriesCollectionView.reloadData()
         }
+        
+        // User location
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
 
+        // User
+        let user: User = UserSesionHelper.sharedInstance().getUserLogued()
+        self.author.text = "by \(user.name())"
+        self.avatar.setImageWithURL(NSURL(string: user.url_avatar))
+        self.avatar.layer.cornerRadius = self.avatar.frame.width / 2
+        self.avatar.layer.masksToBounds = true
+        
     }
     
     // MARK: - Actions
@@ -162,6 +180,17 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
             
         }
         
+    }
+    
+    // MARK: - CLLocationManagerDelegate
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        var location: CLLocation = locations.last as CLLocation
+        // Cuando se actualiza la posicion del usuario centra el mapa en ese punto
+        if (self.centerMap == 1) {
+            MapHelper.centerMap(self.mapView, coordinate: location.coordinate, distance: 800)
+            
+            self.centerMap = 0
+        }
     }
     
     // MARK: - MultiImagesViewControllerDelegate
