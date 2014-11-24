@@ -259,6 +259,70 @@ class RestApiHelper: NSObject {
         })
 
     }
+    
+    func getPostsByUser(userId: Int, completion: (posts : NSArray) -> ()) {
+        //
+        manager.GET("\(urlApi)/posts_by_user/\(userId)",
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                
+                var posts : NSMutableArray = NSMutableArray()
+                
+                // Obtiene los posts
+                var postsJson = JSONValue(responseObject)
+                let postsJsonCount = postsJson.array!.count
+                
+                if postsJsonCount > 0 {
+                    // Recorre los posts json
+                    for i in 0...(postsJsonCount - 1) {
+                        
+                        var post = self.parsePost(postsJson[i])
+                        
+                        // Agrega el post
+                        posts.addObject(post)
+                    }
+                }
+                
+                // Ejecuta el bloque con el retorno de los posts
+                completion(posts: posts)
+                
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error \(error)")
+        })
+    }
+    
+    func getFavoritePostsByUser(userId: Int, completion: (posts : NSArray) -> ()) {
+        //
+        manager.GET("\(urlApi)/favorites/\(userId)",
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                
+                var posts : NSMutableArray = NSMutableArray()
+                
+                // Obtiene los posts
+                var postsJson = JSONValue(responseObject)
+                let postsJsonCount = postsJson.array!.count
+                
+                if postsJsonCount > 0 {
+                    // Recorre los posts json
+                    for i in 0...(postsJsonCount - 1) {
+                        
+                        var post = self.parsePost(postsJson[i])
+                        
+                        // Agrega el post
+                        posts.addObject(post)
+                    }
+                }
+                
+                // Ejecuta el bloque con el retorno de los posts
+                completion(posts: posts)
+                
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error \(error)")
+        })
+    }
 
     func createPost(post: Post, completion: (success: Bool) -> ()) {
         

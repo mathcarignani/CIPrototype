@@ -11,6 +11,7 @@ import UIKit
 class PostsHomeViewController: UIViewController {
 
     var postsContainer: PostsContainerViewController! = nil
+    var typePosts: Int = 0
     
     // MARK: LifeCycle
     override func viewDidLoad() {
@@ -59,6 +60,7 @@ class PostsHomeViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "embedContainer" {
             self.postsContainer = segue.destinationViewController as PostsContainerViewController
+            self.postsContainer.typePosts = self.typePosts
         }
     }
 }

@@ -51,6 +51,14 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         self.view.insertSubview(backgroundImage, belowSubview: tableView)
         self.view.insertSubview(backgroundView, aboveSubview: backgroundImage)
         
+        var backButton = UIButton(frame: CGRect(x: 20, y: 20, width: 30, height: 30))
+        backButton.backgroundColor = UIColor.clearColor()
+        //backButton.titleLabel.font = UIFont(name: "Helvetica", size: 35)
+        backButton.setTitle("<", forState: .Normal)
+        backButton.setTitleColor(UIColor(red: 0, green: 146/255.0, blue: 105/255.0, alpha: 1), forState: .Normal)
+        backButton.addTarget(self, action: Selector("volver:"), forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(backButton)
+        
         /*
         
         // Configuro el header
@@ -82,15 +90,6 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         avatar.layer.masksToBounds = true
         avatar.transform = CGAffineTransformMakeScale(0.4, 0.4)
         headerView.addSubview(avatar)
-        
-        
-        var backButton = UIButton(frame: CGRect(x: 20, y: 20, width: 30, height: 30))
-        backButton.backgroundColor = UIColor.darkGrayColor()
-        //backButton.titleLabel.font = UIFont(name: "Helvetica", size: 35)
-        backButton.setTitle("<", forState: .Normal)
-        backButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        backButton.addTarget(self, action: Selector("volver:"), forControlEvents: UIControlEvents.TouchUpInside)
-        headerView.addSubview(backButton)
         
         // Favorito
 /*
@@ -137,7 +136,10 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
             cell.contentView.backgroundColor = UIColor.clearColor()
             
             (cell as PostDetailHeaderCell).nameText.text = post.title
-            (cell as PostDetailHeaderCell).authorText.text = "Post creado por \(post.author)"
+            (cell as PostDetailHeaderCell).authorText.text = "by \(post.author)"
+            (cell as PostDetailHeaderCell).avatarImage.setImageWithURL(NSURL(string: post.author_avatar))
+            (cell as PostDetailHeaderCell).avatarImage.layer.cornerRadius = (cell as PostDetailHeaderCell).avatarImage.frame.width / 2
+            (cell as PostDetailHeaderCell).avatarImage.layer.masksToBounds = true
             
         } else if (indexPath.row == 1) {
             // Imagenes

@@ -19,6 +19,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
     var filters: [String] = []
     var imageEmpty: UIImage = UIImage(named: "bgEmpty.jpg")!
     var filterSelected: String = "Todos"
+    var typePosts: Int = 0
     
     // MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -31,6 +32,11 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
         self.getData()
     }
     
+    //
+    func setTypePosts(type: Int) {
+        self.typePosts = type
+    }
+    
     // MARK: - Data
     func getData() {
         
@@ -38,8 +44,8 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
         self.loadingIndicator.startAnimating()
         self.loadingIndicator.hidden = false
         
-        if self.filterSelected == "Todos" {
-        
+        if self.typePosts == 0 {
+            // Todos
             RestApiHelper.sharedInstance().getPosts(
                 { (postsReturn: NSArray) in
                     self.posts = postsReturn
@@ -50,10 +56,22 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
                     self.loadingIndicator.stopAnimating()
                     self.loadingIndicator.hidden = true
             })
-        }
-        else if self.filterSelected == "Recomendados" {
-            RestApiHelper.sharedInstance().getPreferencePosts(
-                { (postsReturn: NSArray) in
+        } else if self.typePosts == 1 {
+            // Post de usuario
+            RestApiHelper.sharedInstance().getPostsByUser(UserSesionHelper.sharedInstance().userLogued.id,
+                completion: { (postsReturn: NSArray) -> () in
+                    self.posts = postsReturn
+                    
+                    // Recarga el slides
+                    self.collectionView.reloadData()
+                    // Oculta el indicador
+                    self.loadingIndicator.stopAnimating()
+                    self.loadingIndicator.hidden = true
+            })
+        } else if self.typePosts == 2 {
+            // Favoritos de usuario
+            RestApiHelper.sharedInstance().getFavoritePostsByUser(UserSesionHelper.sharedInstance().userLogued.id,
+                completion: { (postsReturn: NSArray) -> () in
                     self.posts = postsReturn
                     
                     // Recarga el slides
@@ -63,6 +81,18 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
                     self.loadingIndicator.hidden = true
             })
         }
+//        else if self.filterSelected == "Recomendados" {
+//            RestApiHelper.sharedInstance().getPreferencePosts(
+//                { (postsReturn: NSArray) in
+//                    self.posts = postsReturn
+//                    
+//                    // Recarga el slides
+//                    self.collectionView.reloadData()
+//                    // Oculta el indicador
+//                    self.loadingIndicator.stopAnimating()
+//                    self.loadingIndicator.hidden = true
+//            })
+//        }
 
         
     }

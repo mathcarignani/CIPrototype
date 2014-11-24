@@ -39,15 +39,15 @@ class MenuViewController: UIViewController, XDKAirMenuDelegate {
     
     // MARK: - UI
     func configUI() {
-        let user: User = UserSesionHelper.sharedInstance().getUserLogued()
-        self.name.text = user.name()
-        self.avatar.setImageWithURL(NSURL(string: user.url_avatar))
-        self.avatar.layer.cornerRadius = self.avatar.frame.width / 2
-        self.avatar.layer.masksToBounds = true
-//        self.avatar.layer.borderColor =  UIColor(
-//        self.avatar.layer.borderWidth = 1.0
-        
-        var tapInView = UITapGestureRecognizer(target: self, action: Selector("showUserProfile:"))
+        if UserSesionHelper.sharedInstance().hasUserLogued {
+            let user: User = UserSesionHelper.sharedInstance().getUserLogued()
+            self.name.text = user.name()
+            self.avatar.setImageWithURL(NSURL(string: user.url_avatar))
+            self.avatar.layer.cornerRadius = self.avatar.frame.width / 2
+            self.avatar.layer.masksToBounds = true
+            
+            var tapInView = UITapGestureRecognizer(target: self, action: Selector("showUserProfile:"))
+        }
     }
     
     func showUserProfile(gesture : UITapGestureRecognizer) {
@@ -70,6 +70,14 @@ class MenuViewController: UIViewController, XDKAirMenuDelegate {
         if indexPath.row == 2 {
             // Tour
             vc = self.storyboard?.instantiateViewControllerWithIdentifier("PostTour") as UIViewController
+        } else if indexPath.row == 3 {
+            // Posts de usuario
+            vc = self.storyboard?.instantiateViewControllerWithIdentifier("PostsHome") as PostsHomeViewController
+            (vc as PostsHomeViewController).typePosts = 1 // Posts de usuario
+        } else if indexPath.row == 4 {
+            // Favoritos de usuario
+            vc = self.storyboard?.instantiateViewControllerWithIdentifier("PostsHome") as PostsHomeViewController
+            (vc as PostsHomeViewController).typePosts = 2 // Favoritos de usuario
         } else {
             vc = self.storyboard?.instantiateViewControllerWithIdentifier("PostsHome") as UIViewController
         }

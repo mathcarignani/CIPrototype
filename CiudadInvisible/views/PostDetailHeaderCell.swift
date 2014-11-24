@@ -12,6 +12,7 @@ class PostDetailHeaderCell: UITableViewCell {
 
     @IBOutlet var nameText: UILabel!
     @IBOutlet var authorText: UILabel!
+    @IBOutlet var avatarImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

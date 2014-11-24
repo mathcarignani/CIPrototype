@@ -14,6 +14,7 @@ class PostsContainerViewController: UIViewController {
     private let SegueIdentifierSecond: String! = "embedMap"
     private let SegueIdentifierThird: String! = "embedGallery"
     private var currentSegueIdentifier: String! = ""
+    var typePosts: Int = 0
     
     // MARK: LifeCycle
     override func viewDidLoad() {
@@ -32,6 +33,7 @@ class PostsContainerViewController: UIViewController {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == SegueIdentifierFirst {
+            (segue.destinationViewController as PostsSlideViewController).typePosts = self.typePosts
             if self.childViewControllers.count > 0 {
                 self.swapFromViewController(((self.childViewControllers as NSArray).objectAtIndex(0) as UIViewController), toViewController: (segue.destinationViewController as UIViewController))
             } else {
