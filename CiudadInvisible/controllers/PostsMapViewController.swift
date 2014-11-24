@@ -95,4 +95,12 @@ class PostsMapViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         self.presentViewController(detailVC, animated: true) { () -> Void in
         }
     }
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "GoToAR" {
+            var vc: PostARViewController = segue.destinationViewController as PostARViewController
+            vc.posts = self.posts
+        }
+    }
 }

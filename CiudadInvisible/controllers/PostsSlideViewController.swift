@@ -25,7 +25,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
         super.viewDidLoad()
         
         // Carga los filtros
-        self.filters = ["Todos", "Recomendados", "Cercanos", "Favoritos", "Seguidores"]
+        self.filters = []//["Todos", "Recomendados", "Cercanos", "Favoritos", "Seguidores"]
     
         // Obtiene los posts
         self.getData()
@@ -86,6 +86,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
             var cell = collectionView.dequeueReusableCellWithReuseIdentifier("PostSlideCell", forIndexPath: indexPath) as PostSlideCell
             
             // Configuro la celda
+            cell.backgroundColor = UIColor.clearColor()
             let post = self.posts.objectAtIndex(indexPath.row) as Post
             cell.titulo.text = post.title
             cell.distancia.text = "\(post.favorites_quantity)"

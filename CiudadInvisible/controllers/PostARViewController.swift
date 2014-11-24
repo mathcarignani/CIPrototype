@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import CoreLocation
 
-class PostARViewController: UIViewController, PRARManagerDelegate {
+class PostARViewController: UIViewController, PRARManagerDelegate, CLLocationManagerDelegate {
 
+    @IBOutlet weak var goBack: UIButton!
+    
+    var locationManager: CLLocationManager! = CLLocationManager()
     var prARManager: PRARManager! = nil
     var posts : NSArray! = NSArray()
+    var locationCoordinate: CLLocationCoordinate2D! = CLLocationCoordinate2DMake(-34.9060165250200, -56.1930646562800)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // User location
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
+        
         // Initialice the manager
         self.prARManager = PRARManager.sharedManagerWithRadarAndSize(self.view.frame.size, andDelegate: self) as PRARManager
 
@@ -30,9 +40,21 @@ class PostARViewController: UIViewController, PRARManagerDelegate {
         self.loadPoints()
     }
     
+    @IBAction func backToMap(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+    }
+    
+    // MARK: - CLLocationManagerDelegate
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        var location: CLLocation = locations.last as CLLocation
+        self.locationCoordinate = location.coordinate
+        self.locationManager.stopUpdatingLocation()
+    }
+    
     // MARK: - AR Data
     func loadPoints() {
-        var locationCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2DMake(-34.9060165250200, -56.1930646562800)
         var points: NSMutableArray = NSMutableArray(capacity: self.posts.count)
         var idAux: Int = 0
         
@@ -49,7 +71,7 @@ class PostARViewController: UIViewController, PRARManagerDelegate {
             }
         }
         
-        self.prARManager.startARWithData(points, forLocation: locationCoordinates)
+        self.prARManager.startARWithData(points, forLocation: self.locationCoordinate)
     }
 
     // MARK: - PRARManagerDelegate
@@ -60,6 +82,7 @@ class PostARViewController: UIViewController, PRARManagerDelegate {
         self.view.bringSubviewToFront(self.view.viewWithTag(Int(AR_VIEW_TAG))!)
         self.view.addSubview(radar)
         
+        self.view.bringSubviewToFront(self.goBack)
     }
     
     func prarUpdateFrame(arViewFrame: CGRect) {

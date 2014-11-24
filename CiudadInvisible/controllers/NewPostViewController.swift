@@ -264,8 +264,6 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     func textViewDidBeginEditing(textView: UITextView) {
         if textView.text == "Ingrese una breve descripción de su lugar invisible, por ejemplo la historia que usted considera que tiene o el significado que tiene para usted..." {
             textView.text = ""
-            textView.textColor = UIColor.blackColor()
-            textView.font = UIFont.systemFontOfSize(14)
         }
         textView.becomeFirstResponder()
     }
@@ -273,9 +271,6 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     func textViewDidEndEditing(textView: UITextView) {
         if textView.text == "" {
             textView.text = "Ingrese una breve descripción de su lugar invisible, por ejemplo la historia que usted considera que tiene o el significado que tiene para usted..."
-            textView.textColor = UIColor.lightGrayColor()
-            textView.font = UIFont.italicSystemFontOfSize(14)
-            
         }
         textView.resignFirstResponder()
     }
