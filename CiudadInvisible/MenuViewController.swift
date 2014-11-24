@@ -67,7 +67,14 @@ class MenuViewController: UIViewController, XDKAirMenuDelegate {
         
         var vc: UIViewController! = nil
         
-        vc = self.storyboard?.instantiateViewControllerWithIdentifier("PostsHome") as UIViewController
+        if indexPath.row == 2 {
+            // Tour
+            vc = self.storyboard?.instantiateViewControllerWithIdentifier("PostTour") as UIViewController
+        } else {
+            vc = self.storyboard?.instantiateViewControllerWithIdentifier("PostsHome") as UIViewController
+        }
+        
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
         return vc
     }

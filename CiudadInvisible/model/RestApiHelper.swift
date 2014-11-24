@@ -342,6 +342,53 @@ class RestApiHelper: NSObject {
         
     }
     
+    // MARK: - Tour
+    func getRandomTour(coordinate: CLLocationCoordinate2D, completion: (posts : NSArray) -> ()) {
+        
+        var parameters = [
+            "latitude": "\(coordinate.latitude)",
+            "longitude": "\(coordinate.longitude)",
+            "user_id": "\(UserSesionHelper.sharedInstance().getUserLogued().id)"
+            ] as Dictionary
+        
+        manager.POST("\(urlApi)/random_tour",
+            parameters: parameters,
+            success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                
+                var posts: NSMutableArray = NSMutableArray()
+                
+                // Obtiene los posts
+                var allJson = JSONValue(responseObject)
+                var postsJson = allJson["posts"]
+                let postsJsonCount = postsJson.array?.count
+                
+                if postsJsonCount > 0 {
+                    // Recorre los posts json
+                    for i in 0...(postsJsonCount! - 1) {
+                        // Crea el post y lo agrega a la lista
+                        var post : Post = Post()
+                        post.id = postsJson[i]["id"].integer
+                        post.title = postsJson[i]["title"].string
+                        post.location = postsJson[i]["location"].string
+                        post.latitude = postsJson[i]["latitude"].double
+                        post.longitude = postsJson[i]["longitude"].double
+                        
+                        // Agrega el post
+                        posts.addObject(post)
+                        
+                    }
+                }
+                
+                // Ejecuta el bloque con el retorno de los posts
+                completion(posts: posts)
+                
+            },
+            failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                println("Error \(error)")
+        })
+        
+    }
+    
     // MARK: - Categories
     func getCategories(completion: (categories: NSArray) -> ()) {
         var categories: NSMutableArray = NSMutableArray()

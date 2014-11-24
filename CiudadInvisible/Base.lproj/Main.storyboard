@@ -1450,6 +1450,49 @@
             </objects>
             <point key="canvasLocation" x="229" y="2235"/>
         </scene>
+        <!--Post Tour View Controller-->
+        <scene sceneID="tIi-gU-n4f">
+            <objects>
+                <viewController storyboardIdentifier="PostTour" id="gjs-IG-Tfe" customClass="PostTourViewController" customModule="CiudadInvisible" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wgT-SF-wBy"/>
+                        <viewControllerLayoutGuide type="bottom" id="z5e-hx-mpB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cAz-wI-8lr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ihn-Wf-4ba">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ez-CC-G6r">
+                                        <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                        <state key="normal" image="menu.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="menuClicked:" destination="S8X-NV-Hud" eventType="touchUpInside" id="9d6-1e-Jei"/>
+                                            <action selector="showMenu:" destination="gjs-IG-Tfe" eventType="touchUpInside" id="xR7-OJ-fzl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.57254901960000004" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CAG-SK-buL">
+                                <rect key="frame" x="0.0" y="50" width="325" height="518"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="mapView" destination="CAG-SK-buL" id="9fr-aM-D8N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rF7-zW-euc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="2587"/>
+        </scene>
         <!--Multi Images View Controller-->
         <scene sceneID="g4y-6U-SOM">
             <objects>

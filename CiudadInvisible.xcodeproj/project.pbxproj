@@ -120,6 +120,7 @@
 		C7EFBFCD199C0D0600EB0A91 /* SwifterUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBFB1199C0D0600EB0A91 /* SwifterUsers.swift */; };
 		C7F2518A1A1CC66B0068D8D0 /* PostDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F251891A1CC66B0068D8D0 /* PostDetailHeaderCell.swift */; };
 		C7F46521198BCE010006D5B1 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F46520198BCE010006D5B1 /* LogInViewController.swift */; };
+		C7F50CA11A23578B00956E08 /* PostTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F50CA01A23578B00956E08 /* PostTourViewController.swift */; };
 		C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */; };
 		C7F851C01969F405002B38FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F851BF1969F405002B38FF /* MainViewController.swift */; };
 		C7F851C21969F58F002B38FF /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F851C11969F58F002B38FF /* CameraPreviewView.swift */; };
@@ -260,6 +261,7 @@
 		C7EFBFB1199C0D0600EB0A91 /* SwifterUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwifterUsers.swift; sourceTree = "<group>"; };
 		C7F251891A1CC66B0068D8D0 /* PostDetailHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostDetailHeaderCell.swift; path = views/PostDetailHeaderCell.swift; sourceTree = "<group>"; };
 		C7F46520198BCE010006D5B1 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = controllers/LogInViewController.swift; sourceTree = "<group>"; };
+		C7F50CA01A23578B00956E08 /* PostTourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostTourViewController.swift; path = controllers/PostTourViewController.swift; sourceTree = "<group>"; };
 		C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		C7F851BF1969F405002B38FF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = controllers/MainViewController.swift; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 				C79CF8D619E07DFD008F221D /* PostARViewController.swift */,
 				C73F564619F19C3D00A795AC /* PostsContainerViewController.swift */,
 				C73F564819F1A23800A795AC /* PostsHomeViewController.swift */,
+				C7F50CA01A23578B00956E08 /* PostTourViewController.swift */,
 			);
 			name = ExplorePost;
 			sourceTree = "<group>";
@@ -846,6 +849,7 @@
 				C770BD08197EC64500C49D57 /* PostImagesCell.swift in Sources */,
 				C79D38ED196F257F00C8A4C8 /* PostsSlideViewController.swift in Sources */,
 				C7EFBFBC199C0D0600EB0A91 /* SwifterCredential.swift in Sources */,
+				C7F50CA11A23578B00956E08 /* PostTourViewController.swift in Sources */,
 				C7B17423197174FD008F00E6 /* PublicarMapaViewController.swift in Sources */,
 				C7F46521198BCE010006D5B1 /* LogInViewController.swift in Sources */,
 				C7F2518A1A1CC66B0068D8D0 /* PostDetailHeaderCell.swift in Sources */,
