@@ -58,67 +58,7 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
         backButton.setTitleColor(UIColor(red: 0, green: 146/255.0, blue: 105/255.0, alpha: 1), forState: .Normal)
         backButton.addTarget(self, action: Selector("volver:"), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(backButton)
-        
-        /*
-        
-        // Configuro el header
-        var headerView : UIView = UIView(frame: view.frame)
-        headerView.backgroundColor = UIColor.clearColor()
-        
-        // Name
-        var postName = UILabel(frame: CGRect(x: 20, y: view.frame.height-100, width: view.frame.width - 20, height: 80))
-        postName.text = post.title
-        postName.font = UIFont(name: "Helvetica", size: 35)
-        postName.textColor = UIColor.whiteColor()
-        headerView.addSubview(postName)
 
-        // Author
-        var postAuthor = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 40, height: 20))
-        postAuthor.text = post.author
-        postAuthor.font = UIFont(name: "Helvetica", size: 14)
-        postAuthor.textColor = UIColor.whiteColor()
-        postAuthor.textAlignment = NSTextAlignment.Right
-        var postAuthorButton = UIButton(frame: CGRect(x: 20, y: view.frame.height-40, width: view.frame.width - 40, height: 20))
-        postAuthorButton.addSubview(postAuthor)
-        postAuthorButton.addTarget(self, action:Selector("showUserProfile:") , forControlEvents: UIControlEvents.TouchUpInside)
-        headerView.addSubview(postAuthorButton)
-        
-        // Avatar
-        var avatar = UIImageView(image: UserSesionHelper.sharedInstance().getUserLogued().avatar())
-        avatar.center = CGPointMake(230, 400)
-        avatar.layer.cornerRadius = avatar.frame.width / 2
-        avatar.layer.masksToBounds = true
-        avatar.transform = CGAffineTransformMakeScale(0.4, 0.4)
-        headerView.addSubview(avatar)
-        
-        // Favorito
-/*
-        var favButton = UIButton(frame: CGRectMake(self.view.frame.size.width - 50, self.view.frame.size.height - 50, 30, 30))
-        favButton.setTitle("Fav", forState: .Normal)
-        favButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        favButton.addTarget(self, action: "favorite:", forControlEvents: .TouchUpInside)
-        headerView.addSubview(favButton)
-*/
-        // Comments
-        var postComments = UILabel(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        postComments.text = "\(post.comments.count)"
-        postComments.font = UIFont(name: "Helvetica", size: 14)
-        postComments.textColor = UIColor.whiteColor()
-        postComments.textAlignment = NSTextAlignment.Right
-        var postCommentsButton = UIButton(frame: CGRect(x: 20, y: view.frame.height-100, width: 40, height: 40))
-        postCommentsButton.addSubview(postComments)
-        postCommentsButton.addTarget(self, action:Selector("showComments:") , forControlEvents: UIControlEvents.TouchUpInside)
-        headerView.addSubview(postCommentsButton)
-        
-        
-        // Flecha
-        var flechaView = UIImageView(image: HelperForms.imageOfFlecha)
-        flechaView.center = CGPointMake(headerView.center.x, headerView.frame.size.height - 20)
-        headerView.addSubview(flechaView)
-        
-        self.tableView.tableHeaderView = headerView
-
-        */
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -140,6 +80,31 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
             (cell as PostDetailHeaderCell).avatarImage.setImageWithURL(NSURL(string: post.author_avatar))
             (cell as PostDetailHeaderCell).avatarImage.layer.cornerRadius = (cell as PostDetailHeaderCell).avatarImage.frame.width / 2
             (cell as PostDetailHeaderCell).avatarImage.layer.masksToBounds = true
+            
+            // Favorito
+            var favButton = UIButton(frame: CGRectMake(self.view.frame.size.width - 50, self.view.frame.size.height - 50, 30, 30))
+            favButton.setTitle("Fav", forState: .Normal)
+            favButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            favButton.addTarget(self, action: "favorite:", forControlEvents: .TouchUpInside)
+            cell.addSubview(favButton)
+            
+            // Comentarios
+//            var postComments = UILabel(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+//            postComments.text = "\(post.comments.count)"
+//            postComments.font = UIFont(name: "Helvetica", size: 14)
+//            postComments.textColor = UIColor.whiteColor()
+//            postComments.textAlignment = NSTextAlignment.Right
+//            var postCommentsButton = UIButton(frame: CGRect(x: 20, y: view.frame.height-100, width: 40, height: 40))
+//            postCommentsButton.addSubview(postComments)
+//            postCommentsButton.addTarget(self, action:Selector("showComments:") , forControlEvents: UIControlEvents.TouchUpInside)
+//            cell.addSubview(postCommentsButton)
+
+            // Compartir
+            var shareButton = UIButton(frame: CGRectMake(self.view.frame.size.width - 50, 50, 50, 60))
+            shareButton.addSubview(UIImageView(image: UIImage(named: "share.png")))
+            shareButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            shareButton.addTarget(self, action: "shareButtonTapped:", forControlEvents: .TouchUpInside)
+            cell.addSubview(shareButton)
             
         } else if (indexPath.row == 1) {
             // Imagenes
@@ -256,5 +221,11 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     func showComments(sender: AnyObject) {
         self.performSegueWithIdentifier("showComments", sender: self)
     }
-
+    
+    func shareButtonTapped(sender: AnyObject) {
+        let activityItems = [self.post.title]
+        let actviewcon = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        
+        self.presentViewController(actviewcon, animated: true, completion: nil)
+    }
 }

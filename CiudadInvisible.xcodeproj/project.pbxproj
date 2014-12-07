@@ -46,6 +46,13 @@
 		C748171519E3106B006D595B /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C748171419E3106B006D595B /* MenuTableViewController.swift */; };
 		C748171719E3148B006D595B /* menuBackground@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C748171619E3148B006D595B /* menuBackground@2x.jpg */; };
 		C74B3187197C884800EE70EF /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74B3186197C884800EE70EF /* NewPostViewController.swift */; };
+		C7693C5F1A34807D00CC720F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7693C5E1A34807D00CC720F /* NotificationCenter.framework */; };
+		C7693C641A34807D00CC720F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7693C631A34807D00CC720F /* TodayViewController.swift */; };
+		C7693C661A34807D00CC720F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7693C651A34807D00CC720F /* MainInterface.storyboard */; };
+		C7693C691A34807D00CC720F /* CiudadInvisibleWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C7693C5D1A34807D00CC720F /* CiudadInvisibleWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C7693C711A34860200CC720F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7693C701A34860200CC720F /* CoreLocation.framework */; };
+		C7693C731A348BB400CC720F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D38F0196F292800C8A4C8 /* Post.swift */; };
+		C7693C771A348BE000CC720F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7693C761A348BE000CC720F /* libPods.a */; };
 		C770BD08197EC64500C49D57 /* PostImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BD07197EC64500C49D57 /* PostImagesCell.swift */; };
 		C77322A7199BF30E001F2249 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77322A6199BF30D001F2249 /* Accounts.framework */; };
 		C77322A9199BF313001F2249 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77322A8199BF313001F2249 /* Twitter.framework */; };
@@ -54,6 +61,7 @@
 		C77A8F771A213F6E00054918 /* email_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C77A8F741A213F6E00054918 /* email_logo@2x.png */; };
 		C77EBB7719EC961400BE4790 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77EBB7519EC961400BE4790 /* Parse.framework */; };
 		C780CF4C19B287A1009E319D /* PostsGaleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */; };
+		C789CC521A2673D8003212F6 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C789CC511A2673D8003212F6 /* share@2x.png */; };
 		C795490A197C041D002C6F1D /* lapiz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7954908197C041D002C6F1D /* lapiz@2x.png */; };
 		C795490B197C041D002C6F1D /* ojo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7954909197C041D002C6F1D /* ojo@2x.png */; };
 		C795490E197C083B002C6F1D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C795490D197C083B002C6F1D /* HomeViewController.swift */; };
@@ -134,7 +142,28 @@
 			remoteGlobalIDString = C707AC79195E127E00E43F53;
 			remoteInfo = CiudadInvisible;
 		};
+		C7693C671A34807D00CC720F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C707AC72195E127E00E43F53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7693C5C1A34807D00CC720F;
+			remoteInfo = CiudadInvisibleWidget;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C7693C6D1A34807D00CC720F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C7693C691A34807D00CC720F /* CiudadInvisibleWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		273A70F21AB759AC4B752FBA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +212,16 @@
 		C748171419E3106B006D595B /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = controllers/MenuTableViewController.swift; sourceTree = "<group>"; };
 		C748171619E3148B006D595B /* menuBackground@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "menuBackground@2x.jpg"; sourceTree = "<group>"; };
 		C74B3186197C884800EE70EF /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewPostViewController.swift; path = controllers/NewPostViewController.swift; sourceTree = "<group>"; };
+		C7693C5D1A34807D00CC720F /* CiudadInvisibleWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CiudadInvisibleWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7693C5E1A34807D00CC720F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C7693C621A34807D00CC720F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7693C631A34807D00CC720F /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		C7693C651A34807D00CC720F /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		C7693C6E1A3482F300CC720F /* CiudadInvisibleWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CiudadInvisibleWidget.entitlements; sourceTree = "<group>"; };
+		C7693C6F1A34832700CC720F /* CiudadInvisible.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CiudadInvisible.entitlements; sourceTree = "<group>"; };
+		C7693C701A34860200CC720F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C7693C761A348BE000CC720F /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		C7693C791A348CB300CC720F /* CiudadInvisible-Widget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CiudadInvisible-Widget-Bridging-Header.h"; sourceTree = "<group>"; };
 		C770BD07197EC64500C49D57 /* PostImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostImagesCell.swift; path = views/PostImagesCell.swift; sourceTree = "<group>"; };
 		C77322A6199BF30D001F2249 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C77322A8199BF313001F2249 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -191,6 +230,7 @@
 		C77A8F741A213F6E00054918 /* email_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email_logo@2x.png"; sourceTree = "<group>"; };
 		C77EBB7519EC961400BE4790 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsGaleryViewController.swift; path = controllers/PostsGaleryViewController.swift; sourceTree = "<group>"; };
+		C789CC511A2673D8003212F6 /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
 		C7954908197C041D002C6F1D /* lapiz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lapiz@2x.png"; sourceTree = "<group>"; };
 		C7954909197C041D002C6F1D /* ojo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ojo@2x.png"; sourceTree = "<group>"; };
 		C795490D197C083B002C6F1D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = controllers/HomeViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +332,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C7693C5A1A34807D00CC720F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7693C771A348BE000CC720F /* libPods.a in Frameworks */,
+				C7693C711A34860200CC720F /* CoreLocation.framework in Frameworks */,
+				C7693C5F1A34807D00CC720F /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -309,10 +359,12 @@
 			children = (
 				C707AC7C195E127F00E43F53 /* CiudadInvisible */,
 				C707AC8F195E127F00E43F53 /* CiudadInvisibleTests */,
+				C7693C601A34807D00CC720F /* CiudadInvisibleWidget */,
 				C707AC7B195E127F00E43F53 /* Products */,
 				C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */,
 				C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */,
 				C7ACF320196856A600EB74D5 /* CiudadInvisible-Bridging-Header.h */,
+				C7693C791A348CB300CC720F /* CiudadInvisible-Widget-Bridging-Header.h */,
 				CE1364FB7F454404B0F45ADE /* Frameworks */,
 				77A14DAF123F58E722F02E50 /* Pods */,
 			);
@@ -323,6 +375,7 @@
 			children = (
 				C707AC7A195E127F00E43F53 /* CiudadInvisible.app */,
 				C707AC8C195E127F00E43F53 /* CiudadInvisibleTests.xctest */,
+				C7693C5D1A34807D00CC720F /* CiudadInvisibleWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,6 +383,7 @@
 		C707AC7C195E127F00E43F53 /* CiudadInvisible */ = {
 			isa = PBXGroup;
 			children = (
+				C7693C6F1A34832700CC720F /* CiudadInvisible.entitlements */,
 				C7ACF321196858C100EB74D5 /* Model */,
 				C718C1FE195F0B6900389FFD /* Views */,
 				C718C1ED195E18DE00389FFD /* Controllers */,
@@ -393,6 +447,7 @@
 		C718C1F9195EF8EC00389FFD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C789CC511A2673D8003212F6 /* share@2x.png */,
 				C7955D621A22C38A0081A6FB /* uploadImage@2x.png */,
 				C77A8F721A213F6E00054918 /* facebook_logo@2x.png */,
 				C77A8F731A213F6E00054918 /* twitter_logo@2x.png */,
@@ -478,6 +533,25 @@
 				C73F563D19F186C900A795AC /* ProgressHUD.m */,
 			);
 			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		C7693C601A34807D00CC720F /* CiudadInvisibleWidget */ = {
+			isa = PBXGroup;
+			children = (
+				C7693C6E1A3482F300CC720F /* CiudadInvisibleWidget.entitlements */,
+				C7693C631A34807D00CC720F /* TodayViewController.swift */,
+				C7693C651A34807D00CC720F /* MainInterface.storyboard */,
+				C7693C611A34807D00CC720F /* Supporting Files */,
+			);
+			path = CiudadInvisibleWidget;
+			sourceTree = "<group>";
+		};
+		C7693C611A34807D00CC720F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C7693C621A34807D00CC720F /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C795490C197C0812002C6F1D /* Respaldos */ = {
@@ -607,6 +681,8 @@
 		CE1364FB7F454404B0F45ADE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7693C761A348BE000CC720F /* libPods.a */,
+				C7693C701A34860200CC720F /* CoreLocation.framework */,
 				C73F563A19F186C900A795AC /* ProgressHUD */,
 				C77EBB7519EC961400BE4790 /* Parse.framework */,
 				C7EFBF93199C0D0600EB0A91 /* Swifter */,
@@ -619,6 +695,7 @@
 				C7B17424197175EC008F00E6 /* MapKit.framework */,
 				C7F851C31969F639002B38FF /* AVFoundation.framework */,
 				6CCE688C1A5348818DD0B369 /* libPods.a */,
+				C7693C5E1A34807D00CC720F /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -635,10 +712,12 @@
 				C707AC77195E127E00E43F53 /* Frameworks */,
 				C707AC78195E127E00E43F53 /* Resources */,
 				AAD9E64CA7E34A8096EF501E /* Copy Pods Resources */,
+				C7693C6D1A34807D00CC720F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C7693C681A34807D00CC720F /* PBXTargetDependency */,
 			);
 			name = CiudadInvisible;
 			productName = CiudadInvisible;
@@ -663,6 +742,23 @@
 			productReference = C707AC8C195E127F00E43F53 /* CiudadInvisibleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C7693C5C1A34807D00CC720F /* CiudadInvisibleWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7693C6C1A34807D00CC720F /* Build configuration list for PBXNativeTarget "CiudadInvisibleWidget" */;
+			buildPhases = (
+				C7693C591A34807D00CC720F /* Sources */,
+				C7693C5A1A34807D00CC720F /* Frameworks */,
+				C7693C5B1A34807D00CC720F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CiudadInvisibleWidget;
+			productName = CiudadInvisibleWidget;
+			productReference = C7693C5D1A34807D00CC720F /* CiudadInvisibleWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -676,6 +772,9 @@
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = TJUKW2P32F;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -684,6 +783,15 @@
 					C707AC8B195E127F00E43F53 = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = C707AC79195E127E00E43F53;
+					};
+					C7693C5C1A34807D00CC720F = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = TJUKW2P32F;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -702,6 +810,7 @@
 			targets = (
 				C707AC79195E127E00E43F53 /* CiudadInvisible */,
 				C707AC8B195E127F00E43F53 /* CiudadInvisibleTests */,
+				C7693C5C1A34807D00CC720F /* CiudadInvisibleWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -734,6 +843,7 @@
 				C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */,
 				C7B21DDD19959CBF00AE4978 /* bgBlur1@2x.png in Resources */,
 				C7955D5F1A22BDF20081A6FB /* Gill Sans MT Bold.ttf in Resources */,
+				C789CC521A2673D8003212F6 /* share@2x.png in Resources */,
 				C7B21DE31996E3DD00AE4978 /* avatar@2x.png in Resources */,
 				C77A8F761A213F6E00054918 /* twitter_logo@2x.png in Resources */,
 				C79D38BF196ED0AE00C8A4C8 /* eliminarImagen@2x.png in Resources */,
@@ -756,6 +866,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7693C5B1A34807D00CC720F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7693C661A34807D00CC720F /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +998,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C7693C591A34807D00CC720F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7693C731A348BB400CC720F /* Post.swift in Sources */,
+				C7693C641A34807D00CC720F /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -887,6 +1014,11 @@
 			isa = PBXTargetDependency;
 			target = C707AC79195E127E00E43F53 /* CiudadInvisible */;
 			targetProxy = C707AC8D195E127F00E43F53 /* PBXContainerItemProxy */;
+		};
+		C7693C681A34807D00CC720F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7693C5C1A34807D00CC720F /* CiudadInvisibleWidget */;
+			targetProxy = C7693C671A34807D00CC720F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -985,9 +1117,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = CiudadInvisible/CiudadInvisible.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1012,9 +1146,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = CiudadInvisible/CiudadInvisible.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1069,6 +1205,50 @@
 			};
 			name = Release;
 		};
+		C7693C6A1A34807D00CC720F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CiudadInvisibleWidget/CiudadInvisibleWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CiudadInvisibleWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CiudadInvisible-Widget-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		C7693C6B1A34807D00CC720F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CiudadInvisibleWidget/CiudadInvisibleWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = CiudadInvisibleWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "CiudadInvisible-Widget-Bridging-Header.h";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1095,6 +1275,15 @@
 			buildConfigurations = (
 				C707AC9A195E127F00E43F53 /* Debug */,
 				C707AC9B195E127F00E43F53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7693C6C1A34807D00CC720F /* Build configuration list for PBXNativeTarget "CiudadInvisibleWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7693C6A1A34807D00CC720F /* Debug */,
+				C7693C6B1A34807D00CC720F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

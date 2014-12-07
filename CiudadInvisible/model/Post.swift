@@ -33,10 +33,14 @@ class Post: NSObject {
     
     func coordinate() -> CLLocationCoordinate2D {
         
-        let latitude = self.latitude as CLLocationDegrees
-        let longitude = self.longitude as CLLocationDegrees
-        
-        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        if (latitude != nil && longitude != nil) {
+            let latitude = self.latitude as CLLocationDegrees
+            let longitude = self.longitude as CLLocationDegrees
+            
+            return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        } else {
+            return CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        }
     }
 
     // MARK: Images sizes
