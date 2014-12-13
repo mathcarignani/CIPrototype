@@ -19,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.configParse(application)
         
+        // Notification
+        var notificationPayload = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? NSDictionary;
+        if notificationPayload != nil {
+            self.processNotificationPayload(notificationPayload!)
+        }
+        
         // Configuracion del color para la animacion inicial
         self.window!.backgroundColor = UIColor(red: 197/255.0, green: 73/255.0, blue: 73/255.0, alpha: 1.0)
 
@@ -39,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var currentInstallation: PFInstallation = PFInstallation.currentInstallation()
         currentInstallation.setDeviceTokenFromData(deviceToken)
         currentInstallation.saveInBackground()
+        RestApiHelper.sharedInstance().associateDeviceToken(currentInstallation.deviceToken)
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -66,6 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerForRemoteNotificationTypes(UIRemoteNotificationType.Badge | UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound)
         }
         
+    }
+    
+    // MARK: - Notifications
+    func processNotificationPayload(payload: NSDictionary) {
+        println("------------- PAYLOAD -------------")
+        println(payload)
+        println("------------- PAYLOAD -------------")
     }
 
 }

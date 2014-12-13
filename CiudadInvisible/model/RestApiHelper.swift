@@ -169,6 +169,23 @@ class RestApiHelper: NSObject {
         })
     }
     
+    func associateDeviceToken(deviceToken: String) {
+        if UserSesionHelper.sharedInstance().hasUserLogued {
+            var parameters = [
+                "user_id":"\(UserSesionHelper.sharedInstance().getUserLogued().id)",
+                "device_token":deviceToken
+                ] as Dictionary
+            
+            manager.POST("\(urlApi)/device_token", parameters: parameters, success:
+                { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+                    println("Exito - associateDeviceToken => " + responseObject.description)
+                    
+                }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+                    println("Error - associateDeviceToken => " + error.localizedDescription)
+            })
+        }
+    }
+    
     // MARK: - Posts
     func getPosts(completion: (posts : NSArray) -> ()) {
         //

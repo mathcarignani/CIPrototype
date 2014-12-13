@@ -48,14 +48,14 @@ class PostTourViewController: UIViewController, CLLocationManagerDelegate, MKMap
             RestApiHelper.sharedInstance().getRandomTour(location.coordinate, completion: { (posts) -> () in
                 
                 var startPoint = location.coordinate
-                
+                var i = 0
                 // Si hay posts
                 if (posts.count != 0) {
                     for post : AnyObject in posts {
-                        
+                        i = i + 1
                         var annotation: PostAnnotation = PostAnnotation()
                         annotation.coordinate = (post as Post).coordinate()
-                        annotation.title = (post as Post).title
+                        annotation.title = "\((post as Post).title) - \(i)"
                         annotation.post = (post as Post)
                         self.mapView.addAnnotation(annotation)
                         

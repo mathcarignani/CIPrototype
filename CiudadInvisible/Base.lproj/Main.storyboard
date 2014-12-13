@@ -1097,7 +1097,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGu-cE-qFA">
-                                        <rect key="frame" x="90" y="290" width="140" height="34"/>
+                                        <rect key="frame" x="90" y="299" width="140" height="34"/>
                                         <color key="backgroundColor" red="0.65098039220000004" green="0.98431372549999996" blue="1" alpha="0.26000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Ingresar">
                                             <color key="titleColor" red="0.65098039220000004" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1105,6 +1105,18 @@
                                         </state>
                                         <connections>
                                             <action selector="login:" destination="8cs-3l-hcW" eventType="touchUpInside" id="dyZ-rO-wOy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUl-Pv-rrw">
+                                        <rect key="frame" x="186" y="258" width="114" height="27"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="13"/>
+                                        <state key="normal" title="Olvidé mi contraseña">
+                                            <color key="titleColor" red="0.65098039220000004" green="0.98431372549999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="forgotPassword:" destination="8cs-3l-hcW" eventType="touchUpInside" id="G2w-pj-tGW"/>
+                                            <segue destination="5K3-q4-63c" kind="modal" id="taa-eE-a91"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1211,6 +1223,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5BQ-23-dKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-560" y="3015"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IkP-hr-Fc2">
+            <objects>
+                <viewController id="5K3-q4-63c" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NZY-iA-MwK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jtb-hI-Kjd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YCz-d6-H83">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="250" height="250"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Jz-bH-AyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-977" y="3605"/>
         </scene>
         <!--New Post View Controller-->
         <scene sceneID="sWk-0o-yce">

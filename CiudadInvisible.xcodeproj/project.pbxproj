@@ -681,21 +681,21 @@
 		CE1364FB7F454404B0F45ADE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C7693C761A348BE000CC720F /* libPods.a */,
+				C77322A6199BF30D001F2249 /* Accounts.framework */,
+				C79926A219912B89006510A1 /* AVFoundation.framework */,
+				C7F851C31969F639002B38FF /* AVFoundation.framework */,
 				C7693C701A34860200CC720F /* CoreLocation.framework */,
-				C73F563A19F186C900A795AC /* ProgressHUD */,
+				C79926A619912B99006510A1 /* Foundation.framework */,
+				C7693C761A348BE000CC720F /* libPods.a */,
+				6CCE688C1A5348818DD0B369 /* libPods.a */,
+				C79926A419912B93006510A1 /* MapKit.framework */,
+				C7B17424197175EC008F00E6 /* MapKit.framework */,
+				C7693C5E1A34807D00CC720F /* NotificationCenter.framework */,
 				C77EBB7519EC961400BE4790 /* Parse.framework */,
+				C73F563A19F186C900A795AC /* ProgressHUD */,
 				C7EFBF93199C0D0600EB0A91 /* Swifter */,
 				C77322A8199BF313001F2249 /* Twitter.framework */,
-				C77322A6199BF30D001F2249 /* Accounts.framework */,
-				C79926A619912B99006510A1 /* Foundation.framework */,
-				C79926A419912B93006510A1 /* MapKit.framework */,
-				C79926A219912B89006510A1 /* AVFoundation.framework */,
 				C79926A019912B77006510A1 /* UIKit.framework */,
-				C7B17424197175EC008F00E6 /* MapKit.framework */,
-				C7F851C31969F639002B38FF /* AVFoundation.framework */,
-				6CCE688C1A5348818DD0B369 /* libPods.a */,
-				C7693C5E1A34807D00CC720F /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

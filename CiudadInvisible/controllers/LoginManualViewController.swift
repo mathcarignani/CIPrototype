@@ -48,6 +48,9 @@ class LoginManualViewController: UIViewController {
             })
     }
     
+    @IBAction func forgotPassword(sender: AnyObject) {
+    }
+    
     // MARK: Auxiliares
     func showErrorMessage() {
         println("Usuario y/o contrasena incorrecto.")
