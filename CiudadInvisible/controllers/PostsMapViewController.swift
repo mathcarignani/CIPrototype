@@ -29,7 +29,7 @@ class PostsMapViewController: UIViewController, MKMapViewDelegate, CLLocationMan
             RestApiHelper.sharedInstance().getPosts(
                 { (postsReturn: NSArray) in
                     self.posts = postsReturn
-                    self.configOutlets()
+                    //self.configOutlets()
             })
         }
         
@@ -56,7 +56,6 @@ class PostsMapViewController: UIViewController, MKMapViewDelegate, CLLocationMan
         // Si hay posts
         if (self.posts != nil) {
             for post : AnyObject in self.posts {
-                
                 var annotation: PostAnnotation = PostAnnotation()
                 annotation.coordinate = (post as Post).coordinate()
                 annotation.title = (post as Post).title

@@ -52,7 +52,6 @@
 		C7693C691A34807D00CC720F /* CiudadInvisibleWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C7693C5D1A34807D00CC720F /* CiudadInvisibleWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C7693C711A34860200CC720F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7693C701A34860200CC720F /* CoreLocation.framework */; };
 		C7693C731A348BB400CC720F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79D38F0196F292800C8A4C8 /* Post.swift */; };
-		C7693C771A348BE000CC720F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7693C761A348BE000CC720F /* libPods.a */; };
 		C770BD08197EC64500C49D57 /* PostImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C770BD07197EC64500C49D57 /* PostImagesCell.swift */; };
 		C77322A7199BF30E001F2249 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77322A6199BF30D001F2249 /* Accounts.framework */; };
 		C77322A9199BF313001F2249 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77322A8199BF313001F2249 /* Twitter.framework */; };
@@ -220,7 +219,6 @@
 		C7693C6E1A3482F300CC720F /* CiudadInvisibleWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CiudadInvisibleWidget.entitlements; sourceTree = "<group>"; };
 		C7693C6F1A34832700CC720F /* CiudadInvisible.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CiudadInvisible.entitlements; sourceTree = "<group>"; };
 		C7693C701A34860200CC720F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		C7693C761A348BE000CC720F /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		C7693C791A348CB300CC720F /* CiudadInvisible-Widget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CiudadInvisible-Widget-Bridging-Header.h"; sourceTree = "<group>"; };
 		C770BD07197EC64500C49D57 /* PostImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostImagesCell.swift; path = views/PostImagesCell.swift; sourceTree = "<group>"; };
 		C77322A6199BF30D001F2249 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -262,7 +260,6 @@
 		C7ACF3241968673900EB74D5 /* PostsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsDetailViewController.swift; path = controllers/PostsDetailViewController.swift; sourceTree = "<group>"; };
 		C7AD49C819F1536400D9F9F9 /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptySegue.swift; path = views/EmptySegue.swift; sourceTree = "<group>"; };
 		C7B17422197174FD008F00E6 /* PublicarMapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicarMapaViewController.swift; path = controllers/PublicarMapaViewController.swift; sourceTree = "<group>"; };
-		C7B17424197175EC008F00E6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		C7B21DDC19959CBF00AE4978 /* bgBlur1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgBlur1@2x.png"; sourceTree = "<group>"; };
 		C7B21DDE19959E6A00AE4978 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninViewController.swift; path = controllers/SigninViewController.swift; sourceTree = "<group>"; };
 		C7B21DE01996DE4500AE4978 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = controllers/UserProfileViewController.swift; sourceTree = "<group>"; };
@@ -306,7 +303,6 @@
 		C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Pods/LBBlurredImage/LBBlurredImage/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		C7F851BF1969F405002B38FF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = controllers/MainViewController.swift; sourceTree = "<group>"; };
 		C7F851C11969F58F002B38FF /* CameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraPreviewView.swift; path = views/CameraPreviewView.swift; sourceTree = "<group>"; };
-		C7F851C31969F639002B38FF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,7 +332,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7693C771A348BE000CC720F /* libPods.a in Frameworks */,
 				C7693C711A34860200CC720F /* CoreLocation.framework in Frameworks */,
 				C7693C5F1A34807D00CC720F /* NotificationCenter.framework in Frameworks */,
 			);
@@ -683,13 +678,10 @@
 			children = (
 				C77322A6199BF30D001F2249 /* Accounts.framework */,
 				C79926A219912B89006510A1 /* AVFoundation.framework */,
-				C7F851C31969F639002B38FF /* AVFoundation.framework */,
 				C7693C701A34860200CC720F /* CoreLocation.framework */,
 				C79926A619912B99006510A1 /* Foundation.framework */,
-				C7693C761A348BE000CC720F /* libPods.a */,
 				6CCE688C1A5348818DD0B369 /* libPods.a */,
 				C79926A419912B93006510A1 /* MapKit.framework */,
-				C7B17424197175EC008F00E6 /* MapKit.framework */,
 				C7693C5E1A34807D00CC720F /* NotificationCenter.framework */,
 				C77EBB7519EC961400BE4790 /* Parse.framework */,
 				C73F563A19F186C900A795AC /* ProgressHUD */,
@@ -1118,7 +1110,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = CiudadInvisible/CiudadInvisible.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mathias Carignani (WUWJRYK9XM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -1147,7 +1139,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = CiudadInvisible/CiudadInvisible.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mathias Carignani (WUWJRYK9XM)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;

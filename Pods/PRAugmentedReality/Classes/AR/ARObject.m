@@ -53,6 +53,11 @@ andCurrentLocation:(CLLocationCoordinate2D)currLoc
         distance = @([self calculateDistanceFrom:currLoc]);
         
         [self.view setTag:newId];
+      
+      // Add uigesture
+      UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandled:)];
+      [self.view addGestureRecognizer:tap];
+      
     }
     return self;
 }
@@ -70,9 +75,10 @@ andCurrentLocation:(CLLocationCoordinate2D)currLoc
 }
 -(NSString*)getDistanceLabelText
 {
-    if (distance.doubleValue > POINT_ONE_MILE_METERS)
-         return [NSString stringWithFormat:@"%.2f mi", distance.doubleValue*METERS_TO_MILES];
-    else return [NSString stringWithFormat:@"%.0f ft", distance.doubleValue*METERS_TO_FEET];
+//    if (distance.doubleValue > POINT_ONE_MILE_METERS)
+//         return [NSString stringWithFormat:@"%.2f mi", distance.doubleValue*METERS_TO_MILES];
+//    else return [NSString stringWithFormat:@"%.0f ft", distance.doubleValue*METERS_TO_FEET];
+  return [NSString stringWithFormat:@"%.2f m", distance.doubleValue];
 }
 
 - (NSDictionary*)getARObjectData
@@ -102,6 +108,11 @@ andCurrentLocation:(CLLocationCoordinate2D)currLoc
 - (NSString *)description {
     return [NSString stringWithFormat:@"ARObject %d - %@ - lat: %f - lon: %f - distance: %@",
             arId, arTitle, lat, lon, distance];
+}
+
+#pragma mark -- Tap Gesture
+- (void)tapHandled:(UITapGestureRecognizer *)gesture {
+  NSLog(@"Object tapped: %i", arId);
 }
 
 @end
