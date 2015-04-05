@@ -68,6 +68,10 @@ class PostTourViewController: UIViewController, CLLocationManagerDelegate, MKMap
             })
         }
     }
+  
+  func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+    NSLog("Error in PostTour: %@", error)
+  }
     
     // MARK: - Aux
     func markLinePoints(source: CLLocationCoordinate2D, destination: CLLocationCoordinate2D) {

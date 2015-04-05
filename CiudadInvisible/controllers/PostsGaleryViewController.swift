@@ -13,7 +13,7 @@ class PostsGaleryViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet var collectionView : UICollectionView!
     
     var posts : NSArray! = NSArray()
-    var imageEmpty : UIImage = UIImage(named: "bgEmpty.jpg")!
+    var imageEmpty : UIImage = UIImage(named: "bgEmpty.png")!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -27,6 +27,9 @@
 		C7353A28197AADF4002F4E54 /* bg4@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7353A27197AADF4002F4E54 /* bg4@2x.jpg */; };
 		C7353A2B197AB310002F4E54 /* PostDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7353A2A197AB310002F4E54 /* PostDetailMapCell.swift */; };
 		C7353A2D197ABC32002F4E54 /* HelperForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7353A2C197ABC32002F4E54 /* HelperForms.swift */; };
+		C735578D1AD199C70068058A /* bgEmpty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C735578C1AD199C70068058A /* bgEmpty@2x.png */; };
+		C735578F1AD1ABF10068058A /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C735578E1AD1ABF10068058A /* CircularLoaderView.swift */; };
+		C73557911AD1AC400068058A /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73557901AD1AC400068058A /* CustomImageView.swift */; };
 		C73A5BAD1A0D9399008B05B9 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C73A5BAC1A0D9399008B05B9 /* menu@2x.png */; };
 		C73A5BAF1A0D9690008B05B9 /* slide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C73A5BAE1A0D9690008B05B9 /* slide@2x.png */; };
 		C73A5BB11A0D975C008B05B9 /* galery@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C73A5BB01A0D975C008B05B9 /* galery@2x.png */; };
@@ -191,6 +194,9 @@
 		C7353A27197AADF4002F4E54 /* bg4@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg4@2x.jpg"; sourceTree = "<group>"; };
 		C7353A2A197AB310002F4E54 /* PostDetailMapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostDetailMapCell.swift; path = views/PostDetailMapCell.swift; sourceTree = "<group>"; };
 		C7353A2C197ABC32002F4E54 /* HelperForms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelperForms.swift; path = views/HelperForms.swift; sourceTree = "<group>"; };
+		C735578C1AD199C70068058A /* bgEmpty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgEmpty@2x.png"; sourceTree = "<group>"; };
+		C735578E1AD1ABF10068058A /* CircularLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircularLoaderView.swift; path = views/CircularLoaderView.swift; sourceTree = "<group>"; };
+		C73557901AD1AC400068058A /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomImageView.swift; path = views/CustomImageView.swift; sourceTree = "<group>"; };
 		C73A5BAC1A0D9399008B05B9 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
 		C73A5BAE1A0D9690008B05B9 /* slide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slide@2x.png"; sourceTree = "<group>"; };
 		C73A5BB01A0D975C008B05B9 /* galery@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "galery@2x.png"; sourceTree = "<group>"; };
@@ -442,6 +448,7 @@
 		C718C1F9195EF8EC00389FFD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C735578C1AD199C70068058A /* bgEmpty@2x.png */,
 				C789CC511A2673D8003212F6 /* share@2x.png */,
 				C7955D621A22C38A0081A6FB /* uploadImage@2x.png */,
 				C77A8F721A213F6E00054918 /* facebook_logo@2x.png */,
@@ -486,6 +493,8 @@
 				C7F851C11969F58F002B38FF /* CameraPreviewView.swift */,
 				C7D67FF219B15F9400C3061D /* PostAnnotation.swift */,
 				C7AD49C819F1536400D9F9F9 /* EmptySegue.swift */,
+				C735578E1AD1ABF10068058A /* CircularLoaderView.swift */,
+				C73557901AD1AC400068058A /* CustomImageView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -831,6 +840,7 @@
 				C7A0B4AF19892C9F00C72662 /* marker@2x.png in Resources */,
 				C73F563E19F186C900A795AC /* ProgressHUD.bundle in Resources */,
 				C795490A197C041D002C6F1D /* lapiz@2x.png in Resources */,
+				C735578D1AD199C70068058A /* bgEmpty@2x.png in Resources */,
 				C748171719E3148B006D595B /* menuBackground@2x.jpg in Resources */,
 				C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */,
 				C7B21DDD19959CBF00AE4978 /* bgBlur1@2x.png in Resources */,
@@ -910,6 +920,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */,
+				C73557911AD1AC400068058A /* CustomImageView.swift in Sources */,
 				C79D38EF196F270200C8A4C8 /* PostSlideCell.swift in Sources */,
 				C7EFBFB9199C0D0600EB0A91 /* SwifterAppOnlyClient.swift in Sources */,
 				C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */,
@@ -973,6 +984,7 @@
 				C7EFBFCC199C0D0600EB0A91 /* SwifterTweets.swift in Sources */,
 				C7A0B4A919891E2B00C72662 /* UserSesionHelper.swift in Sources */,
 				C7F851C01969F405002B38FF /* MainViewController.swift in Sources */,
+				C735578F1AD1ABF10068058A /* CircularLoaderView.swift in Sources */,
 				C725E4C919E043BF00E6FD85 /* MenuViewController.swift in Sources */,
 				C7EFBFB6199C0D0600EB0A91 /* String+Swifter.swift in Sources */,
 				C7D67FED19B146C500C3061D /* PostsMapViewController.swift in Sources */,

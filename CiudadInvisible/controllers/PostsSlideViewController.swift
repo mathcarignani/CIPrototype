@@ -17,7 +17,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
     
     var posts: NSArray! = NSArray()
     var filters: [String] = []
-    var imageEmpty: UIImage = UIImage(named: "bgEmpty.jpg")!
+    var imageEmpty: UIImage = UIImage(named: "bgEmpty.png")!
     var filterSelected: String = "Todos"
     var typePosts: Int = 0
     
@@ -128,16 +128,17 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
             if post.images.count > 0 {
                 // Si tiene imagen la carga
                 let images = post.imagesMedium()
-                cell.imagen.setImageWithURL(NSURL(string: images.objectAtIndex(0) as String), placeholderImage: self.imageEmpty)
-                cell.imagen.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: images.objectAtIndex(0) as String)!), placeholderImage: self.imageEmpty, success: { (request, response, image) -> Void in
-                    // Setea las imagenes
-                    cell.imagen.image = image
-                    /*
-                    if (indexPath.row == 0 || (self.collectionView.visibleCells() as NSArray).containsObject(indexPath.row)) {
-                        self.setImageToBackground(image)
-                    }
-                    */
-                    }, failure:nil)
+                (cell.imagen as CustomImageView).loadImage(images.objectAtIndex(0) as String)
+//                cell.imagen.setImageWithURL(NSURL(string: images.objectAtIndex(0) as String), placeholderImage: self.imageEmpty)
+//                cell.imagen.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: images.objectAtIndex(0) as String)!), placeholderImage: self.imageEmpty, success: { (request, response, image) -> Void in
+//                    // Setea las imagenes
+//                    cell.imagen.image = image
+//                    /*
+//                    if (indexPath.row == 0 || (self.collectionView.visibleCells() as NSArray).containsObject(indexPath.row)) {
+//                        self.setImageToBackground(image)
+//                    }
+//                    */
+//                    }, failure:nil)
             }
             
             // Sombreado
