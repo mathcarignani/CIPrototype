@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ARObject">
             <connections>
                 <outlet property="distanceL" destination="10" id="291"/>
+                <outlet property="imageV" destination="Ej4-aA-MPO" id="U2j-IO-Ebt"/>
                 <outlet property="titleL" destination="6" id="30"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -18,11 +19,9 @@
             <subviews>
                 <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="ar_overlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="218">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="6">
                     <rect key="frame" x="56" y="3" width="155" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="40"/>
                         <constraint firstAttribute="width" constant="155" id="456"/>
@@ -33,7 +32,6 @@
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00.0 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="10">
                     <rect key="frame" x="58" y="25" width="81" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="466"/>
                         <constraint firstAttribute="width" constant="81" id="513"/>
@@ -42,32 +40,37 @@
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ar_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="87">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ej4-aA-MPO">
                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="512"/>
+                        <constraint firstAttribute="height" constant="50" id="QUh-Aa-FkL"/>
+                        <constraint firstAttribute="width" constant="50" id="v0q-vI-EEJ"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="218" firstAttribute="top" secondItem="1" secondAttribute="top" id="222"/>
-                <constraint firstItem="87" firstAttribute="top" secondItem="1" secondAttribute="top" id="254"/>
                 <constraint firstItem="218" firstAttribute="trailing" secondItem="1" secondAttribute="trailing" id="428"/>
                 <constraint firstItem="218" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="429"/>
                 <constraint firstItem="6" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="56" id="434"/>
-                <constraint firstItem="87" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="462"/>
-                <constraint firstItem="87" firstAttribute="bottom" secondItem="1" secondAttribute="bottom" id="463"/>
-                <constraint firstItem="10" firstAttribute="leading" secondItem="87" secondAttribute="trailing" constant="8" symbolic="YES" id="477"/>
                 <constraint firstItem="6" firstAttribute="top" secondItem="1" secondAttribute="top" constant="3" id="508"/>
                 <constraint firstAttribute="bottom" secondItem="10" secondAttribute="bottom" constant="4" id="511"/>
+                <constraint firstItem="Ej4-aA-MPO" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="VPz-VC-id9"/>
+                <constraint firstItem="Ej4-aA-MPO" firstAttribute="top" secondItem="1" secondAttribute="top" id="aEY-A4-E6Y"/>
+                <constraint firstItem="10" firstAttribute="leading" secondItem="Ej4-aA-MPO" secondAttribute="trailing" constant="8" id="rqZ-fX-OiS"/>
+                <constraint firstAttribute="bottom" secondItem="Ej4-aA-MPO" secondAttribute="bottom" id="t1C-t5-X78"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>
-        <image name="ar_icon.png" width="200" height="200"/>
         <image name="ar_overlay.png" width="220" height="50"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

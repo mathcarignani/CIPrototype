@@ -73,7 +73,8 @@ CATransform3DMake(CGFloat m11, CGFloat m12, CGFloat m13, CGFloat m14,
                                            title:arObjectData[@"title"]
                                      coordinates:CLLocationCoordinate2DMake([arObjectData[@"lat"] doubleValue],
                                                                             [arObjectData[@"lon"] doubleValue])
-                              andCurrentLocation:newLocation];
+                              andCurrentLocation:newLocation
+                                       andImage:arObjectData[@"image"]];
         
         x_pos = [locationMath getARObjectXPosition:arObject]-arObject.view.frame.size.width;
         

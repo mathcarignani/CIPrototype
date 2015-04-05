@@ -25,6 +25,7 @@
 //
 
 #import "ARObject.h"
+#import "UIImageView+AFNetworking.h"
 
 
 @interface ARObject ()
@@ -51,7 +52,9 @@ andCurrentLocation:(CLLocationCoordinate2D)currLoc
         lon = newCoordinates.longitude;
         
         distance = @([self calculateDistanceFrom:currLoc]);
-        
+      
+      
+      
         [self.view setTag:newId];
       
       // Add uigesture
@@ -60,6 +63,54 @@ andCurrentLocation:(CLLocationCoordinate2D)currLoc
       
     }
     return self;
+}
+
+- (id)initWithId:(int)newId
+           title:(NSString*)newTitle
+     coordinates:(CLLocationCoordinate2D)newCoordinates
+andCurrentLocation:(CLLocationCoordinate2D)currLoc
+        andImage:(NSString *)imageUrl {
+  
+  self = [super init];
+  if (self) {
+    arId = newId;
+    
+    arTitle = [[NSString alloc] initWithString:newTitle];
+    
+    lat = newCoordinates.latitude;
+    lon = newCoordinates.longitude;
+    
+    distance = @([self calculateDistanceFrom:currLoc]);
+    
+    [imageV setImageWithURL:[[NSURL alloc] initWithString:imageUrl] placeholderImage:[UIImage imageNamed:@"ar_icon.png"]];
+    
+    [imageV setImageWithURLRequest:[[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:imageUrl]] placeholderImage:[UIImage imageNamed:@"ar_icon.png"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+      imageV.image = image;
+      NSLog(@"Success");
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+      
+    }];
+//    cell.imagen.setImageWithURLRequest(NSURLRequest(URL: NSURL(string: images.objectAtIndex(0) as String)!), placeholderImage: self.imageEmpty, success: { (request, response, image) -> Void in
+//      // Setea las imagenes
+//      cell.imagen.image = image
+//      /*
+//       if (indexPath.row == 0 || (self.collectionView.visibleCells() as NSArray).containsObject(indexPath.row)) {
+//       self.setImageToBackground(image)
+//       }
+//       */
+//    }, failure:nil)
+    
+    
+    
+    [self.view setTag:newId];
+    
+    // Add uigesture
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapHandled:)];
+    [self.view addGestureRecognizer:tap];
+    
+  }
+  return self;
+  
 }
 
 -(double)calculateDistanceFrom:(CLLocationCoordinate2D)user_loc_coord
@@ -112,7 +163,7 @@ andCurrentLocation:(CLLocationCoordinate2D)currLoc
 
 #pragma mark -- Tap Gesture
 - (void)tapHandled:(UITapGestureRecognizer *)gesture {
-  NSLog(@"Object tapped: %i", arId);
+  NSLog(@"Object tapped: %@", arTitle);
 }
 
 @end

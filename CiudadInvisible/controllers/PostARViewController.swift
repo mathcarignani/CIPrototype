@@ -60,13 +60,14 @@ class PostARViewController: UIViewController, PRARManagerDelegate, CLLocationMan
         
         // Carga los puntos en el mapa
         for post : AnyObject in self.posts {
-            
             if (post as Post).title != nil {
+                var image = (post as Post).imagesMedium().count > 0 ? (post as Post).imagesMedium().objectAtIndex(0) as String : ""
                 var coordinate = (post as Post).coordinate()
-                var point: NSDictionary = ["id": idAux,
+                var point: NSDictionary = ["id": (post as Post).id,
                                             "title": (post as Post).title,
                                             "lon": coordinate.longitude,
-                                            "lat": coordinate.latitude]
+                                            "lat": coordinate.latitude,
+                                            "image": image]
                 points.addObject(point)
             }
         }

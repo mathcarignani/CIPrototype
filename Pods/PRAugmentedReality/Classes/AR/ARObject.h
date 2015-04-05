@@ -44,6 +44,7 @@
     // Overlay View Objects
     IBOutlet UILabel *titleL;
     IBOutlet UILabel *distanceL;
+    IBOutlet UIImageView *imageV;
 }
 
 @property (nonatomic, strong) NSString *arTitle;
@@ -53,6 +54,12 @@
            title:(NSString*)newTitle
      coordinates:(CLLocationCoordinate2D)newCoordinates
 andCurrentLocation:(CLLocationCoordinate2D)currLoc;
+
+- (id)initWithId:(int)newId
+           title:(NSString*)newTitle
+     coordinates:(CLLocationCoordinate2D)newCoordinates
+andCurrentLocation:(CLLocationCoordinate2D)currLoc
+        andImage:(NSString *)imageUrl;
 
 - (NSDictionary*)getARObjectData;
 
