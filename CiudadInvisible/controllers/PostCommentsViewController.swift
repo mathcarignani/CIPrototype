@@ -9,35 +9,46 @@
 import UIKit
 
 class PostCommentsViewController: UIViewController {
-
-    var post: Post! = nil
-    @IBOutlet weak var text: UITextField!
+  
+  var post: Post! = nil
+  @IBOutlet weak var dialogView: SpringView!
+  @IBOutlet weak var text: UITextField!
+  
+  // MARK: - LifeCycle
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    // MARK: - LifeCycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
+  }
+  
+  var firstTime = true
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(true)
+    if firstTime {
+      dialogView.animate()
+      
+      firstTime = false
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  }
+  
+  // MARK: - Actions
+  @IBAction func sendComment(sender: AnyObject) {
+    var comment: Comment = Comment()
+    comment.text = self.text.text
+    comment.post = self.post
+    RestApiHelper.sharedInstance().createComment(comment, completion: { (success) -> () in
+      if success {
+        println("success")
+      } else {
+        println("error")
+      }
+    })
+  }
+ 
+  @IBAction func closeMenu() {
+    dialogView.animation = "fall"
+    dialogView.animateNext {
+      self.dismissViewControllerAnimated(false, completion: nil)
     }
-    
-    // MARK: - Actions
-    @IBAction func sendComment(sender: AnyObject) {
-        
-        var comment: Comment = Comment()
-        comment.text = self.text.text
-        comment.post = self.post
-        RestApiHelper.sharedInstance().createComment(comment, completion: { (success) -> () in
-            if success {
-               println("success")
-            } else {
-               println("error")
-            }
-        })
-    }
-
+  }
 }

@@ -36,6 +36,11 @@ class UserSesionHelper: NSObject {
         var defaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
         let userId = defaults.integerForKey("user_logued")
         if userId != 0 {
+          
+          self.userLogued = User()
+          self.userLogued.id = userId
+          self.hasUserLogued = true
+          
             RestApiHelper.sharedInstance().loadUserInformation(userId, completion: { (success) -> () in
                 completion(success: success)
             })

@@ -18,13 +18,7 @@ class CustomImageView: UIImageView {
     addSubview(self.progressIndicatorView)
     progressIndicatorView.frame = bounds
     progressIndicatorView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-    
-//    let url = NSURL(string: "http://www.raywenderlich.com/wp-content/uploads/2015/02/mac-glasses.jpeg")
-//    self.sd_setImageWithURL(url, placeholderImage: nil, options: .CacheMemoryOnly , progress: { [weak self](receivedSize, expectedSize) -> Void in
-//      self!.progressIndicatorView.progress = CGFloat(receivedSize)/CGFloat(expectedSize)
-//      }) { [weak self](image, error, _, _) -> Void in
-//        self!.progressIndicatorView.reveal()
-//    }
+
   }
 
   func loadImage(url: String!) {
