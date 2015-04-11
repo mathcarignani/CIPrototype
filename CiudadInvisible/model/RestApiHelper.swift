@@ -377,6 +377,9 @@ class RestApiHelper: NSObject {
   }
   
   func addAssetsToPost(postId: Int, post: Post) {
+    // Show status bar message
+    JDStatusBarNotification.showWithStatus("Subiendo las imagenes...", styleName: JDStatusBarStyleDark)
+    JDStatusBarNotification.showProgress(0)
     
     var imagesData: NSMutableArray = NSMutableArray()
     // Recorre las imagenes y agrega
@@ -394,15 +397,38 @@ class RestApiHelper: NSObject {
       "assets_images": imagesData
       ] as Dictionary
     
-    manager.POST("\(urlApi)/assets_mobile/\(postId)", parameters: parameters, success:
+    var requestOperation = manager.POST("\(urlApi)/assets_mobile/\(postId)", parameters: parameters, success:
       { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
         println("Exito => " + responseObject.description)
         
-        
+        JDStatusBarNotification.dismissAnimated(true)
       }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
         println("Error => " + error.localizedDescription)
-        
+
+        JDStatusBarNotification.dismissAnimated(true)
     })
+    
+    // Upload progress
+    requestOperation.setUploadProgressBlock { (writen, total, expected) -> Void in
+      var progress = Double(total) / Double(expected) //(total as Double) / (expected as Double)
+      
+      println(progress)
+      if (progress != 1) {
+        JDStatusBarNotification.showProgress(CGFloat(progress))
+      }
+    }
+    /*
+
+    //Here is the upload progress
+    [requestOperation setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+    double percentDone = (double)totalBytesWritten / (double)totalBytesExpectedToWrite;
+    //Upload Progress bar here
+    NSLog(@"progress updated(percentDone) : %f", percentDone);
+    }];
+*/
+    
+    
+    
   }
   
   func fixOrientation(img:UIImage) -> UIImage {

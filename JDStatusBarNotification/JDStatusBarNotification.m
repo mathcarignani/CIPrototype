@@ -192,8 +192,8 @@
                     style:(JDStatusBarStyle*)style;
 {
     // first, check if status bar is visible at all
-    if ([UIApplication sharedApplication].statusBarHidden) return nil;
-    
+//    if ([UIApplication sharedApplication].statusBarHidden) return nil;
+  
     // prepare for new style
     if (style != self.activeStyle) {
         self.activeStyle = style;
@@ -477,7 +477,8 @@
         yPos = -height/2.0;
     }
     
-    _topBar.frame = CGRectMake(0, yPos, width, height);
+//    _topBar.frame = CGRectMake(0, yPos, width, height);
+    _topBar.frame = CGRectMake(0, yPos, 320, 20);
 }
 
 - (void)willChangeStatusBarFrame:(NSNotification*)notification;

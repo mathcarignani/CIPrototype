@@ -73,6 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       application.registerForRemoteNotificationTypes(UIRemoteNotificationType.Badge | UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound)
     }
     
+    
   }
   
   // MARK: - Notifications
