@@ -457,23 +457,14 @@ class RestApiHelper: NSObject {
         
         // Obtiene los posts
         var allJson = JSONValue(responseObject)
-        var postsJson = allJson["posts"]
+        var postsJson = allJson["part_of_tours"]
         let postsJsonCount = postsJson.array?.count
-        
+
         if postsJsonCount > 0 {
           // Recorre los posts json
           for i in 0...(postsJsonCount! - 1) {
             // Crea el post y lo agrega a la lista
-            var post : Post = Post()
-            post.id = postsJson[i]["id"].integer
-            post.title = postsJson[i]["title"].string
-            post.location = postsJson[i]["location"].string
-            post.latitude = postsJson[i]["latitude"].double
-            post.longitude = postsJson[i]["longitude"].double
-            
-            // Agrega el post
-            posts.addObject(post)
-            
+            posts.addObject(self.parsePost(postsJson[i]["post"]))            
           }
         }
         

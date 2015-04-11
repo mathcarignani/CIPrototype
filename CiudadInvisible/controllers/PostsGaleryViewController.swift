@@ -59,14 +59,11 @@ class PostsGaleryViewController: UIViewController, UICollectionViewDataSource {
         }
         
         // Sombreado
-        /*
-        cell.fondo.layer.shadowColor = UIColor.blackColor().CGColor;
-        cell.fondo.layer.shadowOffset = CGSizeMake(2.5, 2.5);
-        cell.fondo.layer.shadowOpacity = 0.6;
-        cell.fondo.layer.shadowRadius = 1.0;
-        cell.fondo.clipsToBounds = false;
-        */
-        //
+        cell.layer.shadowColor = UIColor.blackColor().CGColor;
+        cell.layer.shadowOffset = CGSizeMake(1.5, 1.5);
+        cell.layer.shadowOpacity = 0.6;
+        cell.layer.shadowRadius = 0.5 ;
+        cell.clipsToBounds = false;
         
         return cell
     }

@@ -609,11 +609,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgBlur1.png" translatesAutoresizingMaskIntoConstraints="NO" id="vB2-0y-n2T">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J0f-ci-mWn">
-                                <rect key="frame" x="32" y="58" width="256" height="510"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J0f-ci-mWn">
+                                <rect key="frame" x="10" y="58" width="300" height="510"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jQK-Cc-ofZ">
-                                    <size key="itemSize" width="105" height="142"/>
+                                    <size key="itemSize" width="140" height="170"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -623,14 +623,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="142"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LTR-vj-2m3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="142"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="170"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERH-Pw-9ld">
-                                                            <rect key="frame" x="0.0" y="0.0" width="105" height="142"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERH-Pw-9ld">
+                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="170"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="170" id="HJK-AQ-n62"/>
+                                                                <constraint firstAttribute="width" constant="140" id="PmT-9r-7nA"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -639,6 +643,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
+                                            <outlet property="fondo" destination="LTR-vj-2m3" id="jvk-Ne-0Ih"/>
                                             <outlet property="imagen" destination="ERH-Pw-9ld" id="rMo-A5-INt"/>
                                             <segue destination="1MV-6M-O2V" kind="presentation" identifier="VerDetalle" id="F1v-Pq-ehg"/>
                                         </connections>
@@ -653,8 +658,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oC0-Qo-yvI" firstAttribute="top" secondItem="J0f-ci-mWn" secondAttribute="bottom" id="b9K-nr-zBm"/>
-                            <constraint firstAttribute="trailing" secondItem="J0f-ci-mWn" secondAttribute="trailing" constant="32" id="etc-DU-0o8"/>
-                            <constraint firstItem="J0f-ci-mWn" firstAttribute="leading" secondItem="ePS-6d-Jss" secondAttribute="leading" constant="32" id="p3F-Ku-CWt"/>
+                            <constraint firstAttribute="trailing" secondItem="J0f-ci-mWn" secondAttribute="trailing" constant="10" id="etc-DU-0o8"/>
+                            <constraint firstItem="J0f-ci-mWn" firstAttribute="leading" secondItem="ePS-6d-Jss" secondAttribute="leading" constant="10" id="p3F-Ku-CWt"/>
                             <constraint firstItem="J0f-ci-mWn" firstAttribute="top" secondItem="kNS-oj-hbJ" secondAttribute="bottom" constant="58" id="rmV-bO-Lam"/>
                         </constraints>
                     </view>
@@ -666,7 +671,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NuX-Av-5zE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1914.375" y="2182.5"/>
+            <point key="canvasLocation" x="1914" y="2182"/>
         </scene>
         <!--PostAR View Controller-->
         <scene sceneID="RQH-2m-E2U">
@@ -1824,6 +1829,6 @@
         <image name="uploadImage.png" width="64" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="quB-BU-IhV"/>
+        <segue reference="F1v-Pq-ehg"/>
     </inferredMetricsTieBreakers>
 </document>
