@@ -20,6 +20,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
     var imageEmpty: UIImage = UIImage(named: "bgEmpty.png")!
     var filterSelected: String = "Todos"
     var typePosts: Int = 0
+    private let transitionManager = TransitionManager()
     
     // MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -188,6 +189,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
 
                 var postDetailVC = segue.destinationViewController as PostsDetailViewController
                 var index = self.collectionView.indexPathsForSelectedItems()[0] as NSIndexPath
+                postDetailVC.transitioningDelegate = self.transitionManager
                 postDetailVC.post = self.posts.objectAtIndex(index.row) as Post
                 
             }

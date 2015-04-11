@@ -90,6 +90,12 @@
 		C77A8F751A213F6E00054918 /* facebook_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C77A8F721A213F6E00054918 /* facebook_logo@2x.png */; };
 		C77A8F761A213F6E00054918 /* twitter_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C77A8F731A213F6E00054918 /* twitter_logo@2x.png */; };
 		C77A8F771A213F6E00054918 /* email_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C77A8F741A213F6E00054918 /* email_logo@2x.png */; };
+		C77BBC641AD95AD1007ABD61 /* JPSThumbnailAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C77BBC601AD95AD1007ABD61 /* JPSThumbnailAnnotation.m */; };
+		C77BBC651AD95AD1007ABD61 /* JPSThumbnailAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C77BBC621AD95AD1007ABD61 /* JPSThumbnailAnnotationView.m */; };
+		C77BBC661AD95AD1007ABD61 /* JPSThumnail.m in Sources */ = {isa = PBXBuildFile; fileRef = C77BBC631AD95AD1007ABD61 /* JPSThumnail.m */; };
+		C77BBC6E1AD97005007ABD61 /* JDStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = C77BBC691AD97005007ABD61 /* JDStatusBarNotification.m */; };
+		C77BBC6F1AD97005007ABD61 /* JDStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = C77BBC6B1AD97005007ABD61 /* JDStatusBarStyle.m */; };
+		C77BBC701AD97005007ABD61 /* JDStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C77BBC6D1AD97005007ABD61 /* JDStatusBarView.m */; };
 		C77EBB7719EC961400BE4790 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77EBB7519EC961400BE4790 /* Parse.framework */; };
 		C780CF4C19B287A1009E319D /* PostsGaleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */; };
 		C789CC521A2673D8003212F6 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C789CC511A2673D8003212F6 /* share@2x.png */; };
@@ -103,7 +109,7 @@
 		C7955D611A22BDF20081A6FB /* Gill Sans MT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7955D5D1A22BDF20081A6FB /* Gill Sans MT.ttf */; };
 		C7955D631A22C38A0081A6FB /* uploadImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7955D621A22C38A0081A6FB /* uploadImage@2x.png */; };
 		C799269F19912262006510A1 /* LoginManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C799269E19912262006510A1 /* LoginManualViewController.swift */; };
-		C79926A119912B77006510A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79926A019912B77006510A1 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C79926A119912B77006510A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79926A019912B77006510A1 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		C79926A319912B89006510A1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79926A219912B89006510A1 /* AVFoundation.framework */; };
 		C79926A519912B93006510A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79926A419912B93006510A1 /* MapKit.framework */; };
 		C79926A719912B99006510A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79926A619912B99006510A1 /* Foundation.framework */; };
@@ -291,6 +297,20 @@
 		C77A8F721A213F6E00054918 /* facebook_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook_logo@2x.png"; sourceTree = "<group>"; };
 		C77A8F731A213F6E00054918 /* twitter_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter_logo@2x.png"; sourceTree = "<group>"; };
 		C77A8F741A213F6E00054918 /* email_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "email_logo@2x.png"; sourceTree = "<group>"; };
+		C77BBC5E1AD95AD1007ABD61 /* JPSThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSThumbnail.h; sourceTree = "<group>"; };
+		C77BBC5F1AD95AD1007ABD61 /* JPSThumbnailAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSThumbnailAnnotation.h; sourceTree = "<group>"; };
+		C77BBC601AD95AD1007ABD61 /* JPSThumbnailAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSThumbnailAnnotation.m; sourceTree = "<group>"; };
+		C77BBC611AD95AD1007ABD61 /* JPSThumbnailAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSThumbnailAnnotationView.h; sourceTree = "<group>"; };
+		C77BBC621AD95AD1007ABD61 /* JPSThumbnailAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSThumbnailAnnotationView.m; sourceTree = "<group>"; };
+		C77BBC631AD95AD1007ABD61 /* JPSThumnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSThumnail.m; sourceTree = "<group>"; };
+		C77BBC681AD97005007ABD61 /* JDStatusBarNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDStatusBarNotification.h; sourceTree = "<group>"; };
+		C77BBC691AD97005007ABD61 /* JDStatusBarNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarNotification.m; sourceTree = "<group>"; };
+		C77BBC6A1AD97005007ABD61 /* JDStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDStatusBarStyle.h; sourceTree = "<group>"; };
+		C77BBC6B1AD97005007ABD61 /* JDStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarStyle.m; sourceTree = "<group>"; };
+		C77BBC6C1AD97005007ABD61 /* JDStatusBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDStatusBarView.h; sourceTree = "<group>"; };
+		C77BBC6D1AD97005007ABD61 /* JDStatusBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarView.m; sourceTree = "<group>"; };
+		C77BBC711AD97126007ABD61 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C77BBC731AD9713A007ABD61 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C77EBB7519EC961400BE4790 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsGaleryViewController.swift; path = controllers/PostsGaleryViewController.swift; sourceTree = "<group>"; };
 		C789CC511A2673D8003212F6 /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
@@ -654,6 +674,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C77BBC5D1AD95AD1007ABD61 /* JPSThumbnailAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				C77BBC5E1AD95AD1007ABD61 /* JPSThumbnail.h */,
+				C77BBC5F1AD95AD1007ABD61 /* JPSThumbnailAnnotation.h */,
+				C77BBC601AD95AD1007ABD61 /* JPSThumbnailAnnotation.m */,
+				C77BBC611AD95AD1007ABD61 /* JPSThumbnailAnnotationView.h */,
+				C77BBC621AD95AD1007ABD61 /* JPSThumbnailAnnotationView.m */,
+				C77BBC631AD95AD1007ABD61 /* JPSThumnail.m */,
+			);
+			path = JPSThumbnailAnnotation;
+			sourceTree = "<group>";
+		};
+		C77BBC671AD97004007ABD61 /* JDStatusBarNotification */ = {
+			isa = PBXGroup;
+			children = (
+				C77BBC681AD97005007ABD61 /* JDStatusBarNotification.h */,
+				C77BBC691AD97005007ABD61 /* JDStatusBarNotification.m */,
+				C77BBC6A1AD97005007ABD61 /* JDStatusBarStyle.h */,
+				C77BBC6B1AD97005007ABD61 /* JDStatusBarStyle.m */,
+				C77BBC6C1AD97005007ABD61 /* JDStatusBarView.h */,
+				C77BBC6D1AD97005007ABD61 /* JDStatusBarView.m */,
+			);
+			path = JDStatusBarNotification;
+			sourceTree = "<group>";
+		};
 		C795490C197C0812002C6F1D /* Respaldos */ = {
 			isa = PBXGroup;
 			children = (
@@ -781,6 +827,10 @@
 		CE1364FB7F454404B0F45ADE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C77BBC731AD9713A007ABD61 /* QuartzCore.framework */,
+				C77BBC711AD97126007ABD61 /* CoreGraphics.framework */,
+				C77BBC671AD97004007ABD61 /* JDStatusBarNotification */,
+				C77BBC5D1AD95AD1007ABD61 /* JPSThumbnailAnnotation */,
 				C727D50B1AD1FC9F0080FF61 /* Spring */,
 				C77322A6199BF30D001F2249 /* Accounts.framework */,
 				C79926A219912B89006510A1 /* AVFoundation.framework */,
@@ -1019,11 +1069,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7F851BE1968A599002B38FF /* UIImage+ImageEffects.m in Sources */,
+				C77BBC701AD97005007ABD61 /* JDStatusBarView.m in Sources */,
 				C727D53F1AD1FC9F0080FF61 /* SpringImageView.swift in Sources */,
 				C73557911AD1AC400068058A /* CustomImageView.swift in Sources */,
 				C727D53B1AD1FC9F0080FF61 /* SoundPlayer.swift in Sources */,
 				C79D38EF196F270200C8A4C8 /* PostSlideCell.swift in Sources */,
+				C77BBC6F1AD97005007ABD61 /* JDStatusBarStyle.m in Sources */,
 				C727D5441AD1FC9F0080FF61 /* TransitionManager.swift in Sources */,
+				C77BBC651AD95AD1007ABD61 /* JPSThumbnailAnnotationView.m in Sources */,
 				C7EFBFB9199C0D0600EB0A91 /* SwifterAppOnlyClient.swift in Sources */,
 				C7ACF3231968590600EB74D5 /* RestApiHelper.swift in Sources */,
 				C727D52A1AD1FC9F0080FF61 /* AsyncButton.swift in Sources */,
@@ -1041,6 +1094,7 @@
 				C7EFBFBE199C0D0600EB0A91 /* SwifterFollowers.swift in Sources */,
 				C748171519E3106B006D595B /* MenuTableViewController.swift in Sources */,
 				C74B3187197C884800EE70EF /* NewPostViewController.swift in Sources */,
+				C77BBC641AD95AD1007ABD61 /* JPSThumbnailAnnotation.m in Sources */,
 				C73F564119F1911800A795AC /* LoadingViewController.swift in Sources */,
 				C727D5381AD1FC9F0080FF61 /* LoadingView.swift in Sources */,
 				C73F563F19F186C900A795AC /* ProgressHUD.m in Sources */,
@@ -1079,6 +1133,7 @@
 				C727D5411AD1FC9F0080FF61 /* SpringTextField.swift in Sources */,
 				C7EFBFB7199C0D0600EB0A91 /* Swifter.swift in Sources */,
 				C7EFBFC9199C0D0600EB0A91 /* SwifterSuggested.swift in Sources */,
+				C77BBC661AD95AD1007ABD61 /* JPSThumnail.m in Sources */,
 				C7EFBFC8199C0D0600EB0A91 /* SwifterStreaming.swift in Sources */,
 				C727D5371AD1FC9F0080FF61 /* KeyboardLayoutConstraint.swift in Sources */,
 				C707AC80195E127F00E43F53 /* AppDelegate.swift in Sources */,
@@ -1107,6 +1162,7 @@
 				C735578F1AD1ABF10068058A /* CircularLoaderView.swift in Sources */,
 				C727D52B1AD1FC9F0080FF61 /* AsyncImageView.swift in Sources */,
 				C725E4C919E043BF00E6FD85 /* MenuViewController.swift in Sources */,
+				C77BBC6E1AD97005007ABD61 /* JDStatusBarNotification.m in Sources */,
 				C727D52C1AD1FC9F0080FF61 /* AutoTextView.swift in Sources */,
 				C7EFBFB6199C0D0600EB0A91 /* String+Swifter.swift in Sources */,
 				C7D67FED19B146C500C3061D /* PostsMapViewController.swift in Sources */,

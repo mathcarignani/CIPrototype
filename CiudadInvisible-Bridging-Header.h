@@ -19,3 +19,5 @@
 #import "PRARManager.h"
 #import <Parse/Parse.h>
 #import "ProgressHUD.h"
+#import "JPSThumbnailAnnotation.h"
+#import "JDStatusBarNotification.h"

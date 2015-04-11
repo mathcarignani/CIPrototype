@@ -82,6 +82,7 @@ class PostTourViewController: UIViewController, CLLocationManagerDelegate, MKMap
         var request: MKDirectionsRequest = MKDirectionsRequest()
         request.setSource(fromItem)
         request.setDestination(toItem)
+        request.transportType = MKDirectionsTransportType.Walking
         
         var directions: MKDirections = MKDirections(request: request)
         directions.calculateDirectionsWithCompletionHandler { (response, error) -> Void in
