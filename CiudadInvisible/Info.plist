@@ -21,8 +21,11 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleURLName</key>
+			<string>CiudadInvisible</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>com.ciudadinvisible.CiudadInvisible</string>
 				<string>fb494836457286098</string>
 			</array>
 		</dict>

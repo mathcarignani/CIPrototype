@@ -96,6 +96,7 @@
 		C77BBC6E1AD97005007ABD61 /* JDStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = C77BBC691AD97005007ABD61 /* JDStatusBarNotification.m */; };
 		C77BBC6F1AD97005007ABD61 /* JDStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = C77BBC6B1AD97005007ABD61 /* JDStatusBarStyle.m */; };
 		C77BBC701AD97005007ABD61 /* JDStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C77BBC6D1AD97005007ABD61 /* JDStatusBarView.m */; };
+		C77BBC761ADA9EB4007ABD61 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77BBC751ADA9EB4007ABD61 /* NavigationHelper.swift */; };
 		C77EBB7719EC961400BE4790 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77EBB7519EC961400BE4790 /* Parse.framework */; };
 		C780CF4C19B287A1009E319D /* PostsGaleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */; };
 		C789CC521A2673D8003212F6 /* share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C789CC511A2673D8003212F6 /* share@2x.png */; };
@@ -311,6 +312,7 @@
 		C77BBC6D1AD97005007ABD61 /* JDStatusBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDStatusBarView.m; sourceTree = "<group>"; };
 		C77BBC711AD97126007ABD61 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C77BBC731AD9713A007ABD61 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C77BBC751ADA9EB4007ABD61 /* NavigationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		C77EBB7519EC961400BE4790 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		C780CF4B19B287A1009E319D /* PostsGaleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsGaleryViewController.swift; path = controllers/PostsGaleryViewController.swift; sourceTree = "<group>"; };
 		C789CC511A2673D8003212F6 /* share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share@2x.png"; sourceTree = "<group>"; };
@@ -727,6 +729,7 @@
 				C7ACF3221968590600EB74D5 /* RestApiHelper.swift */,
 				C7A0B4A819891E2B00C72662 /* UserSesionHelper.swift */,
 				C7A0B4AC198925A300C72662 /* MapHelper.swift */,
+				C77BBC751ADA9EB4007ABD61 /* NavigationHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1151,6 +1154,7 @@
 				C7EFBFC5199C0D0600EB0A91 /* SwifterSavedSearches.swift in Sources */,
 				C7EFBFCD199C0D0600EB0A91 /* SwifterUsers.swift in Sources */,
 				C7EFBFCA199C0D0600EB0A91 /* SwifterTimelines.swift in Sources */,
+				C77BBC761ADA9EB4007ABD61 /* NavigationHelper.swift in Sources */,
 				C7EFBFB8199C0D0600EB0A91 /* SwifterAccountsClient.swift in Sources */,
 				C7B21DDF19959E6A00AE4978 /* SigninViewController.swift in Sources */,
 				C7EFBFBA199C0D0600EB0A91 /* SwifterAuth.swift in Sources */,

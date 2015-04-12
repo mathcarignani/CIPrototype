@@ -629,7 +629,7 @@
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LTR-vj-2m3">
                                                     <rect key="frame" x="0.0" y="0.0" width="140" height="170"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ERH-Pw-9ld">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ERH-Pw-9ld">
                                                             <rect key="frame" x="0.0" y="0.0" width="140" height="170"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="170" id="HJK-AQ-n62"/>

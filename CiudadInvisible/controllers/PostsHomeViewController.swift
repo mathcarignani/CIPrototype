@@ -9,58 +9,64 @@
 import UIKit
 
 class PostsHomeViewController: UIViewController {
-
-    var postsContainer: PostsContainerViewController! = nil
-    var typePosts: Int = 0
+  
+  var postsContainer: PostsContainerViewController! = nil
+  var typePosts: Int = 0
+  
+  // MARK: LifeCycle
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    // MARK: LifeCycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
-    }
-
-    override func viewDidAppear(animated: Bool) {
-        // Si no hay usuario logueado va al login
-        if !UserSesionHelper.sharedInstance().hasUserLogued {
-            self.performSegueWithIdentifier("BackToLoginSegue", sender: self)
-        }
-    }
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
     
-    // MARK: - Actions
-    @IBAction func menuClicked(sender: AnyObject) {
-        let menu: XDKAirMenuController = XDKAirMenuController.sharedMenu()
-        if menu.isMenuOpened {
-            menu.closeMenuAnimated()
-        } else {
-            menu.openMenuAnimated()
-        }
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    // Si no hay usuario logueado va al login
+    if !UserSesionHelper.sharedInstance().hasUserLogued {
+      self.performSegueWithIdentifier("BackToLoginSegue", sender: self)
+    } else {
+      if NavigationHelper.sharedInstance().goToNew {
+        NavigationHelper.sharedInstance().goToNew = false
+        
+        self.performSegueWithIdentifier("createPost", sender: self)
+      }
     }
-    
-    @IBAction func goToSlide(sender: AnyObject) {
-        // Cambia el controlador
-        self.postsContainer.changeToViewControllerIndex(0)
+  }
+  
+  // MARK: - Actions
+  @IBAction func menuClicked(sender: AnyObject) {
+    let menu: XDKAirMenuController = XDKAirMenuController.sharedMenu()
+    if menu.isMenuOpened {
+      menu.closeMenuAnimated()
+    } else {
+      menu.openMenuAnimated()
     }
-    
-    @IBAction func goToMap(sender: AnyObject) {
-        // Cambia el controlador
-        self.postsContainer.changeToViewControllerIndex(1)
+  }
+  
+  @IBAction func goToSlide(sender: AnyObject) {
+    // Cambia el controlador
+    self.postsContainer.changeToViewControllerIndex(0)
+  }
+  
+  @IBAction func goToMap(sender: AnyObject) {
+    // Cambia el controlador
+    self.postsContainer.changeToViewControllerIndex(1)
+  }
+  
+  @IBAction func goToGalery(sender: AnyObject) {
+    // Cambia el controlador
+    self.postsContainer.changeToViewControllerIndex(2)
+  }
+  
+  // MARK: - Navigation
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "embedContainer" {
+      self.postsContainer = segue.destinationViewController as PostsContainerViewController
+      self.postsContainer.typePosts = self.typePosts
     }
-    
-    @IBAction func goToGalery(sender: AnyObject) {
-        // Cambia el controlador
-        self.postsContainer.changeToViewControllerIndex(2)
-    }
-    
-    // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "embedContainer" {
-            self.postsContainer = segue.destinationViewController as PostsContainerViewController
-            self.postsContainer.typePosts = self.typePosts
-        }
-    }
+  }
 }

@@ -411,24 +411,12 @@ class RestApiHelper: NSObject {
     // Upload progress
     requestOperation.setUploadProgressBlock { (writen, total, expected) -> Void in
       var progress = Double(total) / Double(expected) //(total as Double) / (expected as Double)
-      
-      println(progress)
       if (progress != 1) {
         JDStatusBarNotification.showProgress(CGFloat(progress))
+      } else {
+        JDStatusBarNotification.dismissAnimated(true)
       }
     }
-    /*
-
-    //Here is the upload progress
-    [requestOperation setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
-    double percentDone = (double)totalBytesWritten / (double)totalBytesExpectedToWrite;
-    //Upload Progress bar here
-    NSLog(@"progress updated(percentDone) : %f", percentDone);
-    }];
-*/
-    
-    
-    
   }
   
   func fixOrientation(img:UIImage) -> UIImage {

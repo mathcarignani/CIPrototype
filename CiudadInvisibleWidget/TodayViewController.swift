@@ -10,49 +10,62 @@ import UIKit
 import NotificationCenter
 import CoreLocation
 
-class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManagerDelegate {
+class TodayViewController: UIViewController {
+  
+  @IBOutlet weak var takeTheMomentButton: UIButton!
+  
+  var locationManager: CLLocationManager! = CLLocationManager()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    @IBOutlet weak var takeTheMomentButton: UIButton!
+    // User location
+    self.locationManager.requestWhenInUseAuthorization()
+    self.locationManager.delegate = self
+    self.locationManager.startUpdatingLocation()
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  // Mark: - Actions
+  @IBAction func takeTheMoment(sender: AnyObject) {
+    println("Take the moment pressed")
     
-    var locationManager: CLLocationManager! = CLLocationManager()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // User location
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.delegate = self
-        self.locationManager.startUpdatingLocation()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-        // Perform any setup necessary in order to update the view.
+    self.extensionContext?.openURL(NSURL(string: "CiudadInvisible://")!, completionHandler: nil)
+  }
+  
+}
 
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-
-        completionHandler(NCUpdateResult.NewData)
-    }
-
-    func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
-        return UIEdgeInsetsZero
-    }
+// MARK: - NCWidgetProviding
+extension TodayViewController: NCWidgetProviding {
+  func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+    // Perform any setup necessary in order to update the view.
     
-    // MARK: - CLLocationManagerDelegate
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        var location: CLLocation = locations.last as CLLocation
-        println(location.coordinate)
-        
-        self.locationManager.stopUpdatingLocation()
-    }
+    // If an error is encountered, use NCUpdateResult.Failed
+    // If there's no update required, use NCUpdateResult.NoData
+    // If there's an update, use NCUpdateResult.NewData
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println(error)
-    }
+    completionHandler(NCUpdateResult.NewData)
+  }
+  
+  func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+    return UIEdgeInsetsMake(10.0, 4.0, 10.0, 4.0)
+  }
+}
+
+// MARK: - CLLocationManagerDelegate
+extension TodayViewController: CLLocationManagerDelegate {
+  func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+    var location: CLLocation = locations.last as CLLocation
+    println(location.coordinate)
+    
+    self.locationManager.stopUpdatingLocation()
+  }
+  
+  func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+    println(error)
+  }
 }
