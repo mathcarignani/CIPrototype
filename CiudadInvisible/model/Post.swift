@@ -24,9 +24,10 @@ class Post: NSObject {
     var longitude: Double! = nil
     var favorites_quantity: Int! = nil
     var userId: Int! = nil
-    var comments: NSArray! = nil
+    var comments: NSMutableArray! = nil
     var author_avatar: NSString! = nil
-    
+  var draft: Bool! = true
+  
     override init() {
         super.init()
     }

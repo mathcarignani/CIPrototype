@@ -134,6 +134,11 @@
 		C7B21DDF19959E6A00AE4978 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B21DDE19959E6A00AE4978 /* SigninViewController.swift */; };
 		C7B21DE11996DE4500AE4978 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B21DE01996DE4500AE4978 /* UserProfileViewController.swift */; };
 		C7B21DE31996E3DD00AE4978 /* avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B21DE21996E3DD00AE4978 /* avatar@2x.png */; };
+		C7B7BA5E1ADAE1BA005ADB85 /* PostCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B7BA5D1ADAE1BA005ADB85 /* PostCommentCell.swift */; };
+		C7C509601ADAFB6700FFFD0E /* comments@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C5095F1ADAFB6600FFFD0E /* comments@2x.png */; };
+		C7C509621ADAFC8600FFFD0E /* favorited@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C509611ADAFC8600FFFD0E /* favorited@2x.png */; };
+		C7C509641ADAFF8C00FFFD0E /* favorite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C509631ADAFF8C00FFFD0E /* favorite@2x.png */; };
+		C7C509661ADB00E800FFFD0E /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C509651ADB00E800FFFD0E /* close@2x.png */; };
 		C7D67FED19B146C500C3061D /* PostsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D67FEC19B146C500C3061D /* PostsMapViewController.swift */; };
 		C7D67FF319B15F9400C3061D /* PostAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D67FF219B15F9400C3061D /* PostAnnotation.swift */; };
 		C7EFBFB2199C0D0600EB0A91 /* Dictionary+Swifter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EFBF94199C0D0600EB0A91 /* Dictionary+Swifter.swift */; };
@@ -351,6 +356,11 @@
 		C7B21DDE19959E6A00AE4978 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninViewController.swift; path = controllers/SigninViewController.swift; sourceTree = "<group>"; };
 		C7B21DE01996DE4500AE4978 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfileViewController.swift; path = controllers/UserProfileViewController.swift; sourceTree = "<group>"; };
 		C7B21DE21996E3DD00AE4978 /* avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar@2x.png"; sourceTree = "<group>"; };
+		C7B7BA5D1ADAE1BA005ADB85 /* PostCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostCommentCell.swift; path = views/PostCommentCell.swift; sourceTree = "<group>"; };
+		C7C5095F1ADAFB6600FFFD0E /* comments@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comments@2x.png"; sourceTree = "<group>"; };
+		C7C509611ADAFC8600FFFD0E /* favorited@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorited@2x.png"; sourceTree = "<group>"; };
+		C7C509631ADAFF8C00FFFD0E /* favorite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favorite@2x.png"; sourceTree = "<group>"; };
+		C7C509651ADB00E800FFFD0E /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		C7D67FEC19B146C500C3061D /* PostsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostsMapViewController.swift; path = controllers/PostsMapViewController.swift; sourceTree = "<group>"; };
 		C7D67FF219B15F9400C3061D /* PostAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostAnnotation.swift; path = views/PostAnnotation.swift; sourceTree = "<group>"; };
 		C7EFBF94199C0D0600EB0A91 /* Dictionary+Swifter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Swifter.swift"; sourceTree = "<group>"; };
@@ -529,6 +539,10 @@
 		C718C1F9195EF8EC00389FFD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C7C509651ADB00E800FFFD0E /* close@2x.png */,
+				C7C509631ADAFF8C00FFFD0E /* favorite@2x.png */,
+				C7C509611ADAFC8600FFFD0E /* favorited@2x.png */,
+				C7C5095F1ADAFB6600FFFD0E /* comments@2x.png */,
 				C735578C1AD199C70068058A /* bgEmpty@2x.png */,
 				C789CC511A2673D8003212F6 /* share@2x.png */,
 				C7955D621A22C38A0081A6FB /* uploadImage@2x.png */,
@@ -635,6 +649,7 @@
 				C7A0B4B01989753A00C72662 /* PostDetailDescriptionCell.swift */,
 				C71DCDA019F2A9E400BE4BAE /* CategoryCell.swift */,
 				C7F251891A1CC66B0068D8D0 /* PostDetailHeaderCell.swift */,
+				C7B7BA5D1ADAE1BA005ADB85 /* PostCommentCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -980,6 +995,7 @@
 				C73F564519F193A900A795AC /* splashChica@2x.png in Resources */,
 				C7EFBFB3199C0D0600EB0A91 /* Info.plist in Resources */,
 				C7072B2F1963638500F8A244 /* bg2@2x.jpg in Resources */,
+				C7C509661ADB00E800FFFD0E /* close@2x.png in Resources */,
 				C73F564419F193A900A795AC /* splash@2x.png in Resources */,
 				C795490B197C041D002C6F1D /* ojo@2x.png in Resources */,
 				C73A5BB91A0E5C50008B05B9 /* favorites_noselected@2x.png in Resources */,
@@ -988,7 +1004,9 @@
 				C718C1FB195EF91F00389FFD /* bg1@2x.jpg in Resources */,
 				C71815EE1A20F92700875CB7 /* logo_white.png in Resources */,
 				C73A5BB81A0E5C50008B05B9 /* favorites_selected@2x.png in Resources */,
+				C7C509621ADAFC8600FFFD0E /* favorited@2x.png in Resources */,
 				C7A0B4AF19892C9F00C72662 /* marker@2x.png in Resources */,
+				C7C509601ADAFB6700FFFD0E /* comments@2x.png in Resources */,
 				C73F563E19F186C900A795AC /* ProgressHUD.bundle in Resources */,
 				C795490A197C041D002C6F1D /* lapiz@2x.png in Resources */,
 				C735578D1AD199C70068058A /* bgEmpty@2x.png in Resources */,
@@ -1010,6 +1028,7 @@
 				C73A5BB11A0D975C008B05B9 /* galery@2x.png in Resources */,
 				C707AC87195E127F00E43F53 /* Images.xcassets in Resources */,
 				C79D38C0196ED0AE00C8A4C8 /* camaraImagen@2x.png in Resources */,
+				C7C509641ADAFF8C00FFFD0E /* favorite@2x.png in Resources */,
 				C727D5391AD1FC9F0080FF61 /* LoadingView.xib in Resources */,
 				C712D8A419883F6400993782 /* bgEmpty@2x.jpg in Resources */,
 				C73A5BAD1A0D9399008B05B9 /* menu@2x.png in Resources */,
@@ -1116,6 +1135,7 @@
 				C727D5331AD1FC9F0080FF61 /* DesignableTextView.swift in Sources */,
 				C727D5341AD1FC9F0080FF61 /* DesignableView.swift in Sources */,
 				C73F564919F1A23800A795AC /* PostsHomeViewController.swift in Sources */,
+				C7B7BA5E1ADAE1BA005ADB85 /* PostCommentCell.swift in Sources */,
 				C7EFBFC6199C0D0600EB0A91 /* SwifterSearch.swift in Sources */,
 				C7EFBFB5199C0D0600EB0A91 /* NSURL+Swifter.swift in Sources */,
 				C7A71A07196EC7C1008C82F4 /* MultiImagesViewController.swift in Sources */,

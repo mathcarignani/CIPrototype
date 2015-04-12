@@ -33,6 +33,12 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
     self.getData()
   }
   
+  override func viewDidAppear(animated: Bool) {
+    if NavigationHelper.sharedInstance().postId != 0 {
+      self.performSegueWithIdentifier("VerDetalle", sender: self)
+    }
+  }
+  
   //
   func setTypePosts(type: Int) {
     self.typePosts = type
@@ -188,9 +194,12 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
     if (segue.identifier == "VerDetalle") {
       
       var postDetailVC = segue.destinationViewController as PostsDetailViewController
-      var index = self.collectionView.indexPathsForSelectedItems()[0] as NSIndexPath
       postDetailVC.transitioningDelegate = self.transitionManager
-      postDetailVC.post = self.posts.objectAtIndex(index.row) as Post
+      
+      if NavigationHelper.sharedInstance().postId == 0 {
+        var index = self.collectionView.indexPathsForSelectedItems()[0] as NSIndexPath
+        postDetailVC.post = self.posts.objectAtIndex(index.row) as Post
+      }
       
     }
     //}

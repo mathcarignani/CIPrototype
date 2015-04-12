@@ -17,7 +17,6 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
   @IBOutlet weak var categoriesCollectionView: UICollectionView!
   @IBOutlet var imagesCollectionView: UICollectionView!
   @IBOutlet var mapView: MKMapView!
-  @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
   @IBOutlet weak var avatar: UIImageView!
   @IBOutlet weak var author: UILabel!
   
@@ -63,8 +62,6 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     // Description
     self.descriptionText.delegate = self
     
-    self.loadingIndicator.hidden = true
-    
     // Obtiene las categorias
     RestApiHelper.sharedInstance().getCategories { (categories) -> () in
       self.categories = categories
@@ -98,8 +95,38 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
   }
   
   @IBAction func createPost(sender: AnyObject) {
-    self.loadingIndicator.hidden = false
-    self.loadingIndicator.startAnimating()
+    ProgressHUD.show("Guardando post...")
+    
+    var post: Post = Post()
+    post.title = self.titleText.text
+    post.author = UserSesionHelper.sharedInstance().getUserLogued().name()
+    post.descriptionText = self.descriptionText.text
+    post.date = NSDate()
+    //post.category = self.categorySelector.titleForSegmentAtIndex(self.categorySelector.selectedSegmentIndex)
+    // Auxiliar para concatenar las imagenes
+    var arrayAuxiliar = NSMutableArray(object: self.imageMain)
+    arrayAuxiliar.addObjectsFromArray(self.images)
+    post.images = arrayAuxiliar
+    // Guarda la coordenada del centro del mapa
+    post.location = "{\(self.mapView.centerCoordinate.latitude),\(self.mapView.centerCoordinate.longitude)}"
+    post.latitude = self.mapView.centerCoordinate.latitude
+    post.longitude = self.mapView.centerCoordinate.longitude
+    post.draft = false
+    
+    RestApiHelper.sharedInstance().createPost(post, completion: { (success) -> () in
+      
+      ProgressHUD.dismiss()
+      if success {
+        self.dismissViewControllerAnimated(true, completion: nil)
+      } else {
+        ProgressHUD.showError("Error al crear el post")
+      }
+    })
+    
+  }
+  
+  @IBAction func createDraft(sender: AnyObject) {
+    ProgressHUD.show("Enviando...")
     
     var post: Post = Post()
     post.title = self.titleText.text
@@ -118,8 +145,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     
     RestApiHelper.sharedInstance().createPost(post, completion: { (success) -> () in
       
-      self.loadingIndicator.stopAnimating()
-      self.loadingIndicator.hidden = true
+      ProgressHUD.dismiss()
       if success {
         self.dismissViewControllerAnimated(true, completion: nil)
       } else {
@@ -155,7 +181,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     if indexPath.row == 0 {
       return self.view.frame.height
     } else if indexPath.row == 3 {
-      return 110
+      return 68
     } else if indexPath.row == 5 {
       return 71
     } else {
@@ -229,13 +255,13 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
       cell.name.text = self.categories.objectAtIndex(indexPath.row) as? NSString
       // Si está seleccionada la categoria la pinta
       if (self.categoriesSelected.containsObject(cell.name.text!)) {
-        cell.backgroundView?.backgroundColor = UIColor.darkGrayColor()
+        cell.backgroundView?.backgroundColor = UIColor(red: 166/255.0, green: 251/255.0, blue: 255/255.0, alpha: 0.7)
         cell.name.textColor = UIColor.whiteColor()
       } else {
-        cell.backgroundView?.backgroundColor = UIColor.whiteColor()
-        cell.backgroundView?.layer.borderColor = UIColor.darkGrayColor().CGColor
+        cell.backgroundView?.backgroundColor = UIColor.clearColor()
+        cell.backgroundView?.layer.borderColor = UIColor(red: 166/255.0, green: 251/255.0, blue: 255/255.0, alpha: 0.7).CGColor
         cell.backgroundView?.layer.borderWidth = 1.0
-        cell.name.textColor = UIColor.darkGrayColor()
+        cell.name.textColor = UIColor.whiteColor()
       }
       
       return cell

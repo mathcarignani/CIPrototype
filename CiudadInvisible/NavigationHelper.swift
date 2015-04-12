@@ -11,6 +11,7 @@ import UIKit
 class NavigationHelper: NSObject {
   
   var goToNew: Bool = false
+  var postId: Int = 0
   
   // MARK: - Singleton
   class func sharedInstance() -> NavigationHelper! {

@@ -91,6 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    } else if (payload["type"]!.isEqualToString("Draft")) {
 //      println("Draft")
 //    }
+    NavigationHelper.sharedInstance().postId = 2
     println("------------- PAYLOAD -------------")
   }
   

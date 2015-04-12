@@ -26,7 +26,20 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.loadTableViewHeader()
+    //
+    if NavigationHelper.sharedInstance().postId != 0 {
+      // Get from api
+      RestApiHelper.sharedInstance().getPost(NavigationHelper.sharedInstance().postId, completion: { (post) -> () in
+        NavigationHelper.sharedInstance().postId = 0
+        self.post = post
+        
+        self.loadTableViewHeader()
+        self.tableView.reloadData()
+      })
+      
+    } else {
+      self.loadTableViewHeader()
+    }
   }
   
   override func didReceiveMemoryWarning() {
@@ -64,18 +77,23 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
     self.view.insertSubview(backgroundImageBlur, aboveSubview: backgroundImage)
     //        self.view.insertSubview(backgroundView, aboveSubview: backgroundImage)
     
-    var backButton = UIButton(frame: CGRect(x: 20, y: 20, width: 30, height: 30))
+    var back = UIImageView(image: UIImage(named: "close.png"))
+    var backButton = UIButton(frame: CGRect(x: view.frame.width - 45, y: 15, width: 35, height: 35))
     backButton.backgroundColor = UIColor.clearColor()
-    //backButton.titleLabel.font = UIFont(name: "Helvetica", size: 35)
-    backButton.setTitle("<", forState: .Normal)
-    backButton.setTitleColor(UIColor(red: 0, green: 146/255.0, blue: 105/255.0, alpha: 1), forState: .Normal)
+    backButton.addSubview(back)
     backButton.addTarget(self, action: Selector("volver:"), forControlEvents: UIControlEvents.TouchUpInside)
     self.view.addSubview(backButton)
     
+//    var backButton = UIButton(frame: CGRect(x: view.frame.width - 45, y: 15, width: 35, height: 35))
+//    backButton.backgroundColor = UIColor.clearColor()
+//    backButton.setTitle("X", forState: .Normal)
+//    backButton.setTitleColor(UIColor(red: 0, green: 146/255.0, blue: 105/255.0, alpha: 1), forState: .Normal)
+//    backButton.addTarget(self, action: Selector("volver:"), forControlEvents: UIControlEvents.TouchUpInside)
+//    self.view.addSubview(backButton)
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 4
+    return self.post != nil ? 4 : 0
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -95,29 +113,40 @@ class PostsDetailViewController: UIViewController , UITableViewDataSource, UITab
       (cell as PostDetailHeaderCell).avatarImage.layer.masksToBounds = true
       
       // Favorito
-      var favButton = UIButton(frame: CGRectMake(self.view.frame.size.width - 50, self.view.frame.size.height - 50, 30, 30))
-      favButton.setTitle("Fav", forState: .Normal)
-      favButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-      favButton.addTarget(self, action: "favorite:", forControlEvents: .TouchUpInside)
-      cell.addSubview(favButton)
+      var postFavorite = UIImageView(image: UIImage(named: "favorited.png"))
+      var postFavoriteButton = UIButton(frame: CGRect(x: 45, y: view.frame.height-100, width: 35, height: 35))
+      postFavoriteButton.backgroundColor = UIColor(red: 166/255.0, green: 251/255.0, blue: 255/255.0, alpha: 0.7)
+      postFavoriteButton.layer.borderColor = UIColor(red: 0, green: 146/255.0, blue: 105/255.0, alpha: 1.0).CGColor
+      postFavoriteButton.layer.borderWidth = 1.0
+      postFavoriteButton.layer.cornerRadius = 17.5
+      postFavoriteButton.layer.masksToBounds = true
+      postFavoriteButton.addSubview(postFavorite)
+      postFavoriteButton.addTarget(self, action:Selector("favorite:") , forControlEvents: UIControlEvents.TouchUpInside)
+      cell.addSubview(postFavoriteButton)
       
       // Comentarios
-      var postComments = UILabel(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-      postComments.text = "\(post.comments.count)"
-      postComments.font = UIFont(name: "Helvetica", size: 14)
-      postComments.textColor = UIColor.whiteColor()
-      postComments.textAlignment = NSTextAlignment.Right
-      var postCommentsButton = UIButton(frame: CGRect(x: 20, y: view.frame.height-100, width: 40, height: 40))
+      var postComments = UIImageView(image: UIImage(named: "comments.png"))
+      var postCommentsButton = UIButton(frame: CGRect(x: 0, y: view.frame.height-100, width: 35, height: 35))
+      postCommentsButton.backgroundColor = UIColor(red: 166/255.0, green: 251/255.0, blue: 255/255.0, alpha: 0.7)
+      postCommentsButton.layer.borderColor = UIColor(red: 0, green: 146/255.0, blue: 105/255.0, alpha: 1.0).CGColor
+      postCommentsButton.layer.borderWidth = 1.0
+      postCommentsButton.layer.cornerRadius = 17.5
+      postCommentsButton.layer.masksToBounds = true
       postCommentsButton.addSubview(postComments)
       postCommentsButton.addTarget(self, action:Selector("showComments:") , forControlEvents: UIControlEvents.TouchUpInside)
       cell.addSubview(postCommentsButton)
       
       // Compartir
-      var shareButton = UIButton(frame: CGRectMake(self.view.frame.size.width - 50, 50, 50, 60))
-      shareButton.addSubview(UIImageView(image: UIImage(named: "share.png")))
-      shareButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-      shareButton.addTarget(self, action: "shareButtonTapped:", forControlEvents: .TouchUpInside)
-      cell.addSubview(shareButton)
+      var postShare = UIImageView(image: UIImage(named: "share.png"))
+      var postShareButton = UIButton(frame: CGRect(x: 90, y: view.frame.height-100, width: 35, height: 35))
+      postShareButton.backgroundColor = UIColor(red: 166/255.0, green: 251/255.0, blue: 255/255.0, alpha: 0.7)
+      postShareButton.layer.borderColor = UIColor(red: 0, green: 146/255.0, blue: 105/255.0, alpha: 1.0).CGColor
+      postShareButton.layer.borderWidth = 1.0
+      postShareButton.layer.cornerRadius = 17.5
+      postShareButton.layer.masksToBounds = true
+      postShareButton.addSubview(postShare)
+      postShareButton.addTarget(self, action:Selector("shareButtonTapped:") , forControlEvents: UIControlEvents.TouchUpInside)
+      cell.addSubview(postShareButton)
       
     } else if (indexPath.row == 1) {
       // Imagenes

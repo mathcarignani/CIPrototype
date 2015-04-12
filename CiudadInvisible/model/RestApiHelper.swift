@@ -219,6 +219,26 @@ class RestApiHelper: NSObject {
     })
   }
   
+  func getPost(id: Int, completion: (post : Post) -> ()) {
+    //
+    manager.GET("\(urlApi)/posts/\(id).json",
+      parameters: nil,
+      success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+        
+        // Obtiene los posts
+        var postsJson = JSONValue(responseObject)
+        
+        var post = self.parsePost(postsJson)
+        
+        // Ejecuta el bloque con el retorno de los posts
+        completion(post: post)
+        
+      },
+      failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+        println("Error \(error)")
+    })
+  }
+  
   func getPreferencePosts(completion: (posts : NSArray) -> ()) {
     
     var parameters = [
@@ -535,12 +555,10 @@ class RestApiHelper: NSObject {
           "text":comment.text,
           "user_id":user.id,
           "post_id":comment.post.id
-      ]
+        ]
       ] as Dictionary
     
-    println(parameters)
-    
-    manager.POST("\(urlApi)/comment", parameters: parameters, success:
+    manager.POST("\(urlApi)/comments.json", parameters: parameters, success:
       { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
         println("Exito => " + responseObject.description)
         completion(success: true)
@@ -589,7 +607,7 @@ class RestApiHelper: NSObject {
     if commentsJsonCount != 0 {
       for j in 0...(commentsJsonCount! - 1) {
         var comment = Comment()
-        comment.first_name = postJson["comments"][j]["text"].string!
+        comment.text = postJson["comments"][j]["text"].string!
         comment.first_name = postJson["comments"][j]["first_name"].string!
         comment.last_name = postJson["comments"][j]["last_name"].string!
         comment.username = postJson["comments"][j]["username"].string!

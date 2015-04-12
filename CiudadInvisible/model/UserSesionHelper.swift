@@ -47,8 +47,6 @@ class UserSesionHelper: NSObject {
         } else {
             completion(success: false)
         }
-        
-        
     }
     
     func getUserLogued() -> User {
