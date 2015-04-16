@@ -36,6 +36,12 @@ class PostTourViewController: UIViewController, CLLocationManagerDelegate, MKMap
     // Dispose of any resources that can be recreated.
   }
   
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    self.locationManager.stopUpdatingLocation()
+  }
+  
   // MARK: - CLLocationManagerDelegate
   func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
     var location: CLLocation = locations.last as CLLocation

@@ -361,6 +361,44 @@ class RestApiHelper: NSObject {
     })
   }
   
+  func getNearbyPosts(coordinate: CLLocationCoordinate2D, completion: (posts : NSArray) -> ()) {
+    //
+    var parameters = [
+      "latitude": coordinate.latitude,
+      "longitude": coordinate.longitude,
+      "distance": 3
+      ] as Dictionary
+    
+    manager.POST("\(urlApi)/posts_nearby",
+      parameters: parameters,
+      success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
+        
+        var posts : NSMutableArray = NSMutableArray()
+        
+        // Obtiene los posts
+        var postsJson = JSONValue(responseObject)
+        let postsJsonCount = postsJson.array!.count
+        
+        if postsJsonCount > 0 {
+          // Recorre los posts json
+          for i in 0...(postsJsonCount - 1) {
+            
+            var post = self.parsePost(postsJson[i])
+            
+            // Agrega el post
+            posts.addObject(post)
+          }
+        }
+        
+        // Ejecuta el bloque con el retorno de los posts
+        completion(posts: posts)
+        
+      },
+      failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
+        println("Error \(error)")
+    })
+  }
+  
   func createPost(post: Post, completion: (success: Bool) -> ()) {
     
     // Primero envía el contenido del post y luego las imagenes
@@ -375,7 +413,8 @@ class RestApiHelper: NSObject {
           "location":post.location,
           "latitude":post.latitude,
           "longitude":post.longitude,
-          "user_id":user.id
+          "user_id":user.id,
+          "draft": post.draft
       ]
       ] as Dictionary
     

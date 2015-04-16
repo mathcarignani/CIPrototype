@@ -79,19 +79,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   // MARK: - Notifications
   func processNotificationPayload(notification: NSDictionary) {
     println("------------- PAYLOAD -------------")
+    
+    var payload = notification.objectForKey("payload") as NSDictionary
+    
+    
 //    var payload = notification.objectForKey("payload") as NSDictionary
 //    println(payload)
 //    println(payload.objectForKey("type"))
-//    if (payload["type"]!.isEqualToString("Comment")) {
-//      println("Comment")
-//    } else if (payload["type"]!.isEqualToString("Favorite")) {
-//      println("Favorite")
-//    } else if (payload["type"]!.isEqualToString("Following")) {
-//      println("Following")
-//    } else if (payload["type"]!.isEqualToString("Draft")) {
-//      println("Draft")
-//    }
-    NavigationHelper.sharedInstance().postId = 2
+    if (payload["type"]!.isEqualToString("Comment")) {
+      println("Comment")
+      
+      let entityIdStr = payload.objectForKey("entity_id") as String
+      NavigationHelper.sharedInstance().postId = entityIdStr.toInt()!
+    } else if (payload["type"]!.isEqualToString("Favorite")) {
+      println("Favorite")
+      
+      let entityIdStr = payload.objectForKey("entity_id") as String
+      NavigationHelper.sharedInstance().postId = entityIdStr.toInt()!
+    } else if (payload["type"]!.isEqualToString("Following")) {
+      println("Following")
+    } else if (payload["type"]!.isEqualToString("Draft")) {
+      println("Draft")
+    }
+    
     println("------------- PAYLOAD -------------")
   }
   

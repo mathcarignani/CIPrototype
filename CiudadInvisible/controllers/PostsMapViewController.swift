@@ -13,6 +13,7 @@ import CoreLocation
 class PostsMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
   
   @IBOutlet var mapView: MKMapView!
+  @IBOutlet weak var arButton: UIButton!
   
   var posts : NSArray! = nil
   var centerMap : Int! = 1
@@ -52,6 +53,15 @@ class PostsMapViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     self.mapView.showsUserLocation = true
     self.mapView.mapType = MKMapType.Standard
     self.mapView.delegate = self
+    
+    // AR
+    var postAR = UIImageView(image: UIImage(named: "eye.png"))
+    self.arButton.backgroundColor = UIColor(red: 166/255.0, green: 251/255.0, blue: 255/255.0, alpha: 0.7)
+    self.arButton.layer.borderColor = UIColor(red: 0, green: 146/255.0, blue: 105/255.0, alpha: 1.0).CGColor
+    self.arButton.layer.borderWidth = 1.0
+    self.arButton.layer.cornerRadius = 17.5
+    self.arButton.layer.masksToBounds = true
+    self.arButton.addSubview(postAR)
     
     // Carga los puntos en el mapa
     // Si hay posts

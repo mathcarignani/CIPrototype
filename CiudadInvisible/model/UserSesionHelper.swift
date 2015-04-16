@@ -36,11 +36,9 @@ class UserSesionHelper: NSObject {
         var defaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
         let userId = defaults.integerForKey("user_logued")
         if userId != 0 {
-          
           self.userLogued = User()
           self.userLogued.id = userId
           self.hasUserLogued = true
-          
             RestApiHelper.sharedInstance().loadUserInformation(userId, completion: { (success) -> () in
                 completion(success: success)
             })
@@ -87,7 +85,11 @@ class UserSesionHelper: NSObject {
         
         // Guarda en el dispositivo
         var defaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(user.id, forKey: "user_logued")
+      defaults.setInteger(user.id, forKey: "user_logued")
+      defaults.setValue(user.last_name, forKey: "user_logued_first_name")
+      defaults.setValue(user.last_name, forKey: "user_logued_last_name")
+      defaults.setValue(user.url_avatar, forKey: "user_logued_url_avatar")
+        defaults.setValue(userJson.string, forKey: "user_logued_info")
         defaults.synchronize()
         
     }

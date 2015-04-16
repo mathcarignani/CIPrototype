@@ -28,7 +28,6 @@ class PostARViewController: UIViewController, PRARManagerDelegate, CLLocationMan
         
         // Initialice the manager
         self.prARManager = PRARManager.sharedManagerWithRadarAndSize(self.view.frame.size, andDelegate: self) as PRARManager
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,8 +36,15 @@ class PostARViewController: UIViewController, PRARManagerDelegate, CLLocationMan
     }
  
     override func viewDidAppear(animated: Bool) {
-        self.loadPoints()
+//        self.loadPoints()
     }
+  
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    self.locationManager.stopUpdatingLocation()
+    self.prARManager.stopAR()
+  }
     
     @IBAction func backToMap(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
@@ -51,28 +57,36 @@ class PostARViewController: UIViewController, PRARManagerDelegate, CLLocationMan
         var location: CLLocation = locations.last as CLLocation
         self.locationCoordinate = location.coordinate
         self.locationManager.stopUpdatingLocation()
+      self.loadPoints()
     }
     
     // MARK: - AR Data
     func loadPoints() {
+      
+      // Get posts
+      RestApiHelper.sharedInstance().getNearbyPosts(self.locationCoordinate, completion: { (posts) -> () in
+        
+        self.posts = posts
         var points: NSMutableArray = NSMutableArray(capacity: self.posts.count)
         var idAux: Int = 0
         
         // Carga los puntos en el mapa
         for post : AnyObject in self.posts {
-            if (post as Post).title != nil {
-                var image = (post as Post).imagesMedium().count > 0 ? (post as Post).imagesMedium().objectAtIndex(0) as String : ""
-                var coordinate = (post as Post).coordinate()
-                var point: NSDictionary = ["id": (post as Post).id,
-                                            "title": (post as Post).title,
-                                            "lon": coordinate.longitude,
-                                            "lat": coordinate.latitude,
-                                            "image": image]
-                points.addObject(point)
-            }
+          if (post as Post).title != nil {
+            var image = (post as Post).imagesMedium().count > 0 ? (post as Post).imagesMedium().objectAtIndex(0) as String : ""
+            var coordinate = (post as Post).coordinate()
+            var point: NSDictionary = ["id": (post as Post).id,
+              "title": (post as Post).title,
+              "lon": coordinate.longitude,
+              "lat": coordinate.latitude,
+              "image": image]
+            points.addObject(point)
+          }
         }
         
         self.prARManager.startARWithData(points, forLocation: self.locationCoordinate)
+        
+      })
     }
 
     // MARK: - PRARManagerDelegate

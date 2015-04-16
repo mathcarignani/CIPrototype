@@ -209,10 +209,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDZ-BD-ibq">
-                                <rect key="frame" x="258" y="57" width="46" height="30"/>
+                                <rect key="frame" x="258" y="57" width="35" height="35"/>
                                 <color key="backgroundColor" red="0.65098039220000004" green="0.98431372549999996" blue="1" alpha="0.26000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
-                                <state key="normal" title="R.A.">
+                                <state key="normal">
                                     <color key="titleColor" red="0.0" green="0.57254901960000004" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -232,6 +232,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="arButton" destination="eDZ-BD-ibq" id="l1K-eG-B9r"/>
                         <outlet property="mapView" destination="OET-e5-U1j" id="o7L-th-y14"/>
                         <segue destination="1MV-6M-O2V" kind="presentation" identifier="VerDetalle" id="quB-BU-IhV"/>
                     </connections>
@@ -1653,8 +1654,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLB-bU-8sT">
-                                                    <rect key="frame" x="8" y="20" width="61" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLB-bU-8sT">
+                                                    <rect key="frame" x="8" y="21" width="61" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="61" id="PN9-iR-dFU"/>
                                                         <constraint firstAttribute="height" constant="30" id="faY-rC-Xzs"/>
@@ -1669,13 +1670,13 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pk-ou-X2W">
-                                                    <rect key="frame" x="178" y="21" width="58" height="30"/>
+                                                    <rect key="frame" x="159" y="20" width="77" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="GBe-q6-9A8"/>
-                                                        <constraint firstAttribute="width" constant="58" id="njB-cw-9iH"/>
+                                                        <constraint firstAttribute="width" constant="77" id="njB-cw-9iH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="17"/>
-                                                    <state key="normal" title="Draft">
+                                                    <state key="normal" title="Borrador">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -1701,7 +1702,7 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.57254901960000004" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="8pk-ou-X2W" firstAttribute="top" secondItem="tEL-3D-3vi" secondAttribute="top" constant="21" id="0Xd-XU-741"/>
+                                                <constraint firstItem="8pk-ou-X2W" firstAttribute="top" secondItem="tEL-3D-3vi" secondAttribute="top" constant="20" id="0Xd-XU-741"/>
                                                 <constraint firstItem="Zel-Ah-mDj" firstAttribute="leading" secondItem="8pk-ou-X2W" secondAttribute="trailing" constant="20" id="6jT-Lh-QVl"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zel-Ah-mDj" secondAttribute="trailing" constant="8" id="DeG-r5-N1C"/>
                                                 <constraint firstItem="Zel-Ah-mDj" firstAttribute="top" secondItem="tEL-3D-3vi" secondAttribute="top" constant="20" id="RD4-3Q-voL"/>
@@ -1737,7 +1738,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="429" y="2792"/>
+            <point key="canvasLocation" x="429" y="2791"/>
         </scene>
         <!--Post Tour View Controller-->
         <scene sceneID="tIi-gU-n4f">
@@ -1764,6 +1765,12 @@
                                             <action selector="showMenu:" destination="gjs-IG-Tfe" eventType="touchUpInside" id="xR7-OJ-fzl"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olh-Kf-Kfy">
+                                        <rect key="frame" x="126" y="11" width="69" height="28"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.57254901960000004" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -1780,7 +1787,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rF7-zW-euc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1381.875" y="3233.75"/>
+            <point key="canvasLocation" x="1381" y="3233"/>
         </scene>
         <!--Multi Images View Controller-->
         <scene sceneID="g4y-6U-SOM">
@@ -1915,6 +1922,6 @@
         <image name="uploadImage.png" width="64" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="F1v-Pq-ehg"/>
+        <segue reference="quB-BU-IhV"/>
     </inferredMetricsTieBreakers>
 </document>

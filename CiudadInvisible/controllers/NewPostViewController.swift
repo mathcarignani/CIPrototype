@@ -28,6 +28,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
   var categories: NSArray! = nil
   var category : NSString! = nil
   var categoriesSelected: NSMutableArray! = nil
+  let placeholderText = "Ingrese una breve descripción de su lugar invisible, por ejemplo la historia que usted considera que tiene o el significado que tiene para usted..."
   
   // MARK: - LifeCycle Methods
   override func viewDidLoad() {
@@ -100,7 +101,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     var post: Post = Post()
     post.title = self.titleText.text
     post.author = UserSesionHelper.sharedInstance().getUserLogued().name()
-    post.descriptionText = self.descriptionText.text
+    post.descriptionText = self.descriptionText.text == placeholderText ? "" : self.descriptionText.text
     post.date = NSDate()
     //post.category = self.categorySelector.titleForSegmentAtIndex(self.categorySelector.selectedSegmentIndex)
     // Auxiliar para concatenar las imagenes
@@ -131,7 +132,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     var post: Post = Post()
     post.title = self.titleText.text
     post.author = UserSesionHelper.sharedInstance().getUserLogued().name()
-    post.descriptionText = self.descriptionText.text
+    post.descriptionText = self.descriptionText.text == placeholderText ? "" : self.descriptionText.text
     post.date = NSDate()
     //post.category = self.categorySelector.titleForSegmentAtIndex(self.categorySelector.selectedSegmentIndex)
     // Auxiliar para concatenar las imagenes
@@ -287,7 +288,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
   
   // MARK: - UITextViewDelegate
   func textViewDidBeginEditing(textView: UITextView) {
-    if textView.text == "Ingrese una breve descripción de su lugar invisible, por ejemplo la historia que usted considera que tiene o el significado que tiene para usted..." {
+    if textView.text == placeholderText {
       textView.text = ""
     }
     textView.becomeFirstResponder()
@@ -295,7 +296,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
   
   func textViewDidEndEditing(textView: UITextView) {
     if textView.text == "" {
-      textView.text = "Ingrese una breve descripción de su lugar invisible, por ejemplo la historia que usted considera que tiene o el significado que tiene para usted..."
+      textView.text = placeholderText
     }
     textView.resignFirstResponder()
   }
