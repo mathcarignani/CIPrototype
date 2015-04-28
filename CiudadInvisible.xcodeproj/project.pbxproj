@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5A189F2046C6419EB0E03A8A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCE688C1A5348818DD0B369 /* libPods.a */; };
+		C70382101AF0467B001DE976 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703820F1AF0467B001DE976 /* InterfaceController.swift */; };
+		C70382121AF0467B001DE976 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70382111AF0467B001DE976 /* Images.xcassets */; };
+		C70382161AF0467C001DE976 /* CiudadInvisible WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = C70382151AF0467B001DE976 /* CiudadInvisible WatchKit App.app */; };
+		C703821E1AF0467C001DE976 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C703821C1AF0467C001DE976 /* Interface.storyboard */; };
+		C70382201AF0467C001DE976 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C703821F1AF0467C001DE976 /* Images.xcassets */; };
+		C70382231AF0467C001DE976 /* CiudadInvisible WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C703820B1AF0467B001DE976 /* CiudadInvisible WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C7072B2B1963052300F8A244 /* bg-general@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7072B2A1963052300F8A244 /* bg-general@2x.png */; };
 		C7072B2F1963638500F8A244 /* bg2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7072B2E1963638500F8A244 /* bg2@2x.jpg */; };
 		C7072B311963639B00F8A244 /* bg3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7072B301963639B00F8A244 /* bg3@2x.jpg */; };
@@ -179,6 +185,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C70382171AF0467C001DE976 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C707AC72195E127E00E43F53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C70382141AF0467B001DE976;
+			remoteInfo = "CiudadInvisible WatchKit App";
+		};
+		C70382211AF0467C001DE976 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C707AC72195E127E00E43F53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C703820A1AF0467B001DE976;
+			remoteInfo = "CiudadInvisible WatchKit Extension";
+		};
 		C707AC8D195E127F00E43F53 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C707AC72195E127E00E43F53 /* Project object */;
@@ -203,6 +223,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				C7693C691A34807D00CC720F /* CiudadInvisibleWidget.appex in Embed App Extensions */,
+				C70382231AF0467C001DE976 /* CiudadInvisible WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +234,14 @@
 		273A70F21AB759AC4B752FBA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		410EA003FD9C70317DB8F4BA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6CCE688C1A5348818DD0B369 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C703820B1AF0467B001DE976 /* CiudadInvisible WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CiudadInvisible WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C703820E1AF0467B001DE976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C703820F1AF0467B001DE976 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		C70382111AF0467B001DE976 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C70382151AF0467B001DE976 /* CiudadInvisible WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CiudadInvisible WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C703821B1AF0467C001DE976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C703821D1AF0467C001DE976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		C703821F1AF0467C001DE976 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C7072B2A1963052300F8A244 /* bg-general@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-general@2x.png"; sourceTree = "<group>"; };
 		C7072B2E1963638500F8A244 /* bg2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg2@2x.jpg"; sourceTree = "<group>"; };
 		C7072B301963639B00F8A244 /* bg3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg3@2x.jpg"; sourceTree = "<group>"; };
@@ -405,6 +434,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C70382081AF0467B001DE976 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C707AC77195E127E00E43F53 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -448,12 +484,50 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C703820C1AF0467B001DE976 /* CiudadInvisible WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C703820F1AF0467B001DE976 /* InterfaceController.swift */,
+				C70382111AF0467B001DE976 /* Images.xcassets */,
+				C703820D1AF0467B001DE976 /* Supporting Files */,
+			);
+			path = "CiudadInvisible WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		C703820D1AF0467B001DE976 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C703820E1AF0467B001DE976 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C70382191AF0467C001DE976 /* CiudadInvisible WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				C703821C1AF0467C001DE976 /* Interface.storyboard */,
+				C703821F1AF0467C001DE976 /* Images.xcassets */,
+				C703821A1AF0467C001DE976 /* Supporting Files */,
+			);
+			path = "CiudadInvisible WatchKit App";
+			sourceTree = "<group>";
+		};
+		C703821A1AF0467C001DE976 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C703821B1AF0467C001DE976 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		C707AC71195E127E00E43F53 = {
 			isa = PBXGroup;
 			children = (
 				C707AC7C195E127F00E43F53 /* CiudadInvisible */,
 				C707AC8F195E127F00E43F53 /* CiudadInvisibleTests */,
 				C7693C601A34807D00CC720F /* CiudadInvisibleWidget */,
+				C703820C1AF0467B001DE976 /* CiudadInvisible WatchKit Extension */,
+				C70382191AF0467C001DE976 /* CiudadInvisible WatchKit App */,
 				C707AC7B195E127F00E43F53 /* Products */,
 				C7F851BC1968A599002B38FF /* UIImage+ImageEffects.h */,
 				C7F851BD1968A599002B38FF /* UIImage+ImageEffects.m */,
@@ -470,6 +544,8 @@
 				C707AC7A195E127F00E43F53 /* CiudadInvisible.app */,
 				C707AC8C195E127F00E43F53 /* CiudadInvisibleTests.xctest */,
 				C7693C5D1A34807D00CC720F /* CiudadInvisibleWidget.appex */,
+				C703820B1AF0467B001DE976 /* CiudadInvisible WatchKit Extension.appex */,
+				C70382151AF0467B001DE976 /* CiudadInvisible WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -872,6 +948,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C703820A1AF0467B001DE976 /* CiudadInvisible WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C70382291AF0467C001DE976 /* Build configuration list for PBXNativeTarget "CiudadInvisible WatchKit Extension" */;
+			buildPhases = (
+				C70382071AF0467B001DE976 /* Sources */,
+				C70382081AF0467B001DE976 /* Frameworks */,
+				C70382091AF0467B001DE976 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C70382181AF0467C001DE976 /* PBXTargetDependency */,
+			);
+			name = "CiudadInvisible WatchKit Extension";
+			productName = "CiudadInvisible WatchKit Extension";
+			productReference = C703820B1AF0467B001DE976 /* CiudadInvisible WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		C70382141AF0467B001DE976 /* CiudadInvisible WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C70382281AF0467C001DE976 /* Build configuration list for PBXNativeTarget "CiudadInvisible WatchKit App" */;
+			buildPhases = (
+				C70382131AF0467B001DE976 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CiudadInvisible WatchKit App";
+			productName = "CiudadInvisible WatchKit App";
+			productReference = C70382151AF0467B001DE976 /* CiudadInvisible WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		C707AC79195E127E00E43F53 /* CiudadInvisible */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C707AC96195E127F00E43F53 /* Build configuration list for PBXNativeTarget "CiudadInvisible" */;
@@ -887,6 +996,7 @@
 			);
 			dependencies = (
 				C7693C681A34807D00CC720F /* PBXTargetDependency */,
+				C70382221AF0467C001DE976 /* PBXTargetDependency */,
 			);
 			name = CiudadInvisible;
 			productName = CiudadInvisible;
@@ -937,6 +1047,13 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = CiudadInvisible;
 				TargetAttributes = {
+					C703820A1AF0467B001DE976 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = TJUKW2P32F;
+					};
+					C70382141AF0467B001DE976 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 					C707AC79195E127E00E43F53 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = TJUKW2P32F;
@@ -980,11 +1097,31 @@
 				C707AC79195E127E00E43F53 /* CiudadInvisible */,
 				C707AC8B195E127F00E43F53 /* CiudadInvisibleTests */,
 				C7693C5C1A34807D00CC720F /* CiudadInvisibleWidget */,
+				C703820A1AF0467B001DE976 /* CiudadInvisible WatchKit Extension */,
+				C70382141AF0467B001DE976 /* CiudadInvisible WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C70382091AF0467B001DE976 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C70382161AF0467C001DE976 /* CiudadInvisible WatchKit App.app in Resources */,
+				C70382121AF0467B001DE976 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C70382131AF0467B001DE976 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C703821E1AF0467C001DE976 /* Interface.storyboard in Resources */,
+				C70382201AF0467C001DE976 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C707AC78195E127E00E43F53 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1090,6 +1227,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C70382071AF0467B001DE976 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C70382101AF0467B001DE976 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C707AC76195E127E00E43F53 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1224,6 +1369,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C70382181AF0467C001DE976 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C70382141AF0467B001DE976 /* CiudadInvisible WatchKit App */;
+			targetProxy = C70382171AF0467C001DE976 /* PBXContainerItemProxy */;
+		};
+		C70382221AF0467C001DE976 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C703820A1AF0467B001DE976 /* CiudadInvisible WatchKit Extension */;
+			targetProxy = C70382211AF0467C001DE976 /* PBXContainerItemProxy */;
+		};
 		C707AC8E195E127F00E43F53 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C707AC79195E127E00E43F53 /* CiudadInvisible */;
@@ -1237,6 +1392,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C703821C1AF0467C001DE976 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C703821D1AF0467C001DE976 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		C707AC83195E127F00E43F53 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1248,6 +1411,82 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C70382241AF0467C001DE976 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mathias Carignani (WUWJRYK9XM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CiudadInvisible WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C70382251AF0467C001DE976 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mathias Carignani (WUWJRYK9XM)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "CiudadInvisible WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C70382261AF0467C001DE976 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = CiudadInvisible_WatchKit_Extension;
+				INFOPLIST_FILE = "CiudadInvisible WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		C70382271AF0467C001DE976 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = CiudadInvisible_WatchKit_Extension;
+				INFOPLIST_FILE = "CiudadInvisible WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 		C707AC94195E127F00E43F53 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1466,6 +1705,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C70382281AF0467C001DE976 /* Build configuration list for PBXNativeTarget "CiudadInvisible WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70382261AF0467C001DE976 /* Debug */,
+				C70382271AF0467C001DE976 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C70382291AF0467C001DE976 /* Build configuration list for PBXNativeTarget "CiudadInvisible WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C70382241AF0467C001DE976 /* Debug */,
+				C70382251AF0467C001DE976 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C707AC75195E127E00E43F53 /* Build configuration list for PBXProject "CiudadInvisible" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
