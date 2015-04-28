@@ -50,7 +50,7 @@ class Post: NSObject {
         var smallImages: NSMutableArray! = NSMutableArray()
         // Recorre las imagenes y sustituye el texto
         for auxImage : AnyObject in self.images {
-            let smallImage: String = (auxImage as String).stringByReplacingOccurrencesOfString("original", withString: "small", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            let smallImage: String = (auxImage as! String).stringByReplacingOccurrencesOfString("original", withString: "small", options: NSStringCompareOptions.LiteralSearch, range: nil)
             smallImages.addObject(smallImage)
         }
         
@@ -62,7 +62,7 @@ class Post: NSObject {
         var mediumImages: NSMutableArray! = NSMutableArray()
         // Recorre las imagenes y sustituye el texto
         for auxImage : AnyObject in self.images {
-            let mediumImage: String = (auxImage as String).stringByReplacingOccurrencesOfString("original", withString: "medium", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            let mediumImage: String = (auxImage as! String).stringByReplacingOccurrencesOfString("original", withString: "medium", options: NSStringCompareOptions.LiteralSearch, range: nil)
             mediumImages.addObject(mediumImage)
         }
         
@@ -74,7 +74,7 @@ class Post: NSObject {
         var largeImages: NSMutableArray! = NSMutableArray()
         // Recorre las imagenes y sustituye el texto
         for auxImage : AnyObject in self.images {
-            let largeImage: String = (auxImage as String).stringByReplacingOccurrencesOfString("original", withString: "large", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            let largeImage: String = (auxImage as! String).stringByReplacingOccurrencesOfString("original", withString: "large", options: NSStringCompareOptions.LiteralSearch, range: nil)
             largeImages.addObject(largeImage)
         }
         

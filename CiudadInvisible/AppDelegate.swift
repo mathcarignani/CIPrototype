@@ -13,9 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   
-  
-  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
-    // Override point for customization after application launch.
+  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
     
     self.configParse(application)
     
@@ -80,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func processNotificationPayload(notification: NSDictionary) {
     println("------------- PAYLOAD -------------")
     
-    var payload = notification.objectForKey("payload") as NSDictionary
+    var payload = notification.objectForKey("payload") as! NSDictionary
     
     
 //    var payload = notification.objectForKey("payload") as NSDictionary
@@ -89,12 +87,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if (payload["type"]!.isEqualToString("Comment")) {
       println("Comment")
       
-      let entityIdStr = payload.objectForKey("entity_id") as String
+      let entityIdStr = payload.objectForKey("entity_id") as! String
       NavigationHelper.sharedInstance().postId = entityIdStr.toInt()!
     } else if (payload["type"]!.isEqualToString("Favorite")) {
       println("Favorite")
       
-      let entityIdStr = payload.objectForKey("entity_id") as String
+      let entityIdStr = payload.objectForKey("entity_id") as! String
       NavigationHelper.sharedInstance().postId = entityIdStr.toInt()!
     } else if (payload["type"]!.isEqualToString("Following")) {
       println("Following")

@@ -64,10 +64,10 @@ class PostTourViewController: UIViewController, CLLocationManagerDelegate, MKMap
             var annotation = JPSThumbnail()
             annotation.title = ((post as Post).title != nil) ? (post as Post).title : "Incógnito"
             annotation.imageUrl = (post as Post).images.count > 0 ? ((post as Post).imagesSmall().objectAtIndex(0) as String) : ""
-            annotation.coordinate = (post as Post).coordinate()
+            annotation.coordinate = (post as! Post).coordinate()
             annotation.disclosureBlock = {
               // Obtiene el mapa, setea los posts para que no los obtenga denuevo y lo invoca
-              var detailVC : PostsDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostsDetailViewController") as PostsDetailViewController
+              var detailVC : PostsDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostsDetailViewController") as! PostsDetailViewController
               detailVC.post = post as Post
               detailVC.transitioningDelegate = self.transitionManager
               self.presentViewController(detailVC, animated: true, completion: { () -> Void in

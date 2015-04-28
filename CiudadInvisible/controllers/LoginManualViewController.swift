@@ -28,7 +28,7 @@ class LoginManualViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func backToLoginMain(sender: AnyObject) {
-        (self.parentViewController as LoginContainerViewController).changeToViewControllerIndex(0)
+        (self.parentViewController as! LoginContainerViewController).changeToViewControllerIndex(0)
     }
     
     @IBAction func login(sender: AnyObject) {

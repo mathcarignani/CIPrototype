@@ -66,14 +66,14 @@ class PostCommentsViewController: UIViewController, UITableViewDataSource, UITab
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
-    var cell : UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("PostComment", forIndexPath: indexPath) as PostCommentCell
+    var cell : UITableViewCell! = tableView.dequeueReusableCellWithIdentifier("PostComment", forIndexPath: indexPath) as! PostCommentCell
     // Configuro los valores
-    let comment = self.post.comments.objectAtIndex(indexPath.row) as Comment
-    (cell as PostCommentCell).avatarImage.setImageWithURL(NSURL(string: comment.avatar))
-    (cell as PostCommentCell).avatarImage.layer.cornerRadius = 30
-    (cell as PostCommentCell).avatarImage.layer.masksToBounds = true
-    (cell as PostCommentCell).authorText.text = "\(comment.first_name) \(comment.last_name)"
-    (cell as PostCommentCell).commentText.text = comment.text
+    let comment = self.post.comments.objectAtIndex(indexPath.row) as! Comment
+    (cell as! PostCommentCell).avatarImage.setImageWithURL(NSURL(string: comment.avatar))
+    (cell as! PostCommentCell).avatarImage.layer.cornerRadius = 30
+    (cell as! PostCommentCell).avatarImage.layer.masksToBounds = true
+    (cell as! PostCommentCell).authorText.text = "\(comment.first_name) \(comment.last_name)"
+    (cell as! PostCommentCell).commentText.text = comment.text
     
     return cell
   }

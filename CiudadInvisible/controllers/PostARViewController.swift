@@ -27,7 +27,7 @@ class PostARViewController: UIViewController, PRARManagerDelegate, CLLocationMan
         self.locationManager.startUpdatingLocation()
         
         // Initialice the manager
-        self.prARManager = PRARManager.sharedManagerWithRadarAndSize(self.view.frame.size, andDelegate: self) as PRARManager
+        self.prARManager = PRARManager.sharedManagerWithRadarAndSize(self.view.frame.size, andDelegate: self) as! PRARManager
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,7 +54,7 @@ class PostARViewController: UIViewController, PRARManagerDelegate, CLLocationMan
     
     // MARK: - CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        var location: CLLocation = locations.last as CLLocation
+        var location: CLLocation = locations.last as! CLLocation
         self.locationCoordinate = location.coordinate
         self.locationManager.stopUpdatingLocation()
       self.loadPoints()
@@ -72,11 +72,11 @@ class PostARViewController: UIViewController, PRARManagerDelegate, CLLocationMan
         
         // Carga los puntos en el mapa
         for post : AnyObject in self.posts {
-          if (post as Post).title != nil {
-            var image = (post as Post).imagesMedium().count > 0 ? (post as Post).imagesMedium().objectAtIndex(0) as String : ""
-            var coordinate = (post as Post).coordinate()
-            var point: NSDictionary = ["id": (post as Post).id,
-              "title": (post as Post).title,
+          if (post as! Post).title != nil {
+            var image = (post as! Post).imagesMedium().count > 0 ? (post as! Post).imagesMedium().objectAtIndex(0) as! String : ""
+            var coordinate = (post as! Post).coordinate()
+            var point: NSDictionary = ["id": (post as! Post).id,
+              "title": (post as! Post).title,
               "lon": coordinate.longitude,
               "lat": coordinate.latitude,
               "image": image]
@@ -84,7 +84,7 @@ class PostARViewController: UIViewController, PRARManagerDelegate, CLLocationMan
           }
         }
         
-        self.prARManager.startARWithData(points, forLocation: self.locationCoordinate)
+        self.prARManager.startARWithData(points as [AnyObject], forLocation: self.locationCoordinate)
         
       })
     }

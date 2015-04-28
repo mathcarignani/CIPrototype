@@ -65,7 +65,7 @@ class PostsHomeViewController: UIViewController {
   // MARK: - Navigation
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "embedContainer" {
-      self.postsContainer = segue.destinationViewController as PostsContainerViewController
+      self.postsContainer = segue.destinationViewController as! PostsContainerViewController
       self.postsContainer.typePosts = self.typePosts
     }
   }

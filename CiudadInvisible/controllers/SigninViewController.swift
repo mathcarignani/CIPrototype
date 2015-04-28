@@ -29,7 +29,7 @@ class SigninViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func close(sender: AnyObject) {
-        (self.parentViewController as LoginContainerViewController).changeToViewControllerIndex(0)
+        (self.parentViewController as! LoginContainerViewController).changeToViewControllerIndex(0)
     }
     
     @IBAction func sigin(sender: AnyObject) {

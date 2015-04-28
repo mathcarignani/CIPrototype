@@ -16,11 +16,11 @@ class CameraPreviewView: UIView {
     //}
     
     func session() -> AVCaptureSession {
-        return (self.layer as AVCaptureVideoPreviewLayer).session
+        return (self.layer as! AVCaptureVideoPreviewLayer).session
     }
     
     func setSession(session : AVCaptureSession) {
-        (self.layer as AVCaptureVideoPreviewLayer).session = session
+        (self.layer as! AVCaptureVideoPreviewLayer).session = session
     }
     
 }

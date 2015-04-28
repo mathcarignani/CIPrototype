@@ -445,7 +445,7 @@ class RestApiHelper: NSObject {
     for image in post.images as Array {
       
       var imageDictionary = [
-        "data": encodeToBase64String(fixOrientation(image as UIImage)),
+        "data": encodeToBase64String(fixOrientation(image as! UIImage)),
         "filename": "\(post.title).png",
         "content_type": "image/png"
       ]

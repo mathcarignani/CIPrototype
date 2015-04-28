@@ -63,8 +63,8 @@ class MultiImagesViewController: UIViewController, UINavigationControllerDelegat
     }
     
     // MARK: UIImagePickerControllerDelegate
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
-        
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    
         // Setea la imagen y cierra el seleccionador
         //previewActual.image = image
         //previewChica1.image = image // CAMBIAR POR LA PREVIEW QUE CORRESPONDA

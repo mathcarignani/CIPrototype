@@ -43,11 +43,11 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
 
     // MARK: Actions
     @IBAction func goToLoginManual(sender: AnyObject) {
-        (self.parentViewController as LoginContainerViewController).changeToViewControllerIndex(1)
+        (self.parentViewController as! LoginContainerViewController).changeToViewControllerIndex(1)
     }
     
     @IBAction func goToRegister(sender: AnyObject) {
-        (self.parentViewController as LoginContainerViewController).changeToViewControllerIndex(2)
+        (self.parentViewController as! LoginContainerViewController).changeToViewControllerIndex(2)
     }
     
     @IBAction func loginWithTwitter(sender: AnyObject) {
@@ -71,7 +71,7 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
                         println("There are no Twitter accounts configured. You can add or create a Twitter account in Settings.")
                     }
                     else {
-                        let twitterAccount = twitterAccounts[0] as ACAccount
+                        let twitterAccount = twitterAccounts[0] as! ACAccount
                         self.swifter = Swifter(account: twitterAccount)
                         self.fetchTwitterHomeStream()
                     }
@@ -192,7 +192,7 @@ class LogInViewController: UIViewController, FBLoginViewDelegate {
         // Crea el usuario para enviar a la API
         var userLocal: User = User()
         userLocal.facebook_id = user.objectID
-        userLocal.email = user.objectForKey("email") as String
+        userLocal.email = user.objectForKey("email") as! String
         userLocal.first_name = user.first_name
         userLocal.last_name = user.last_name
         RestApiHelper.sharedInstance().loginFacebook(userLocal,

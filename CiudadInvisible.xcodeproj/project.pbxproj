@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A189F2046C6419EB0E03A8A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CCE688C1A5348818DD0B369 /* libPods.a */; };
-		C70382101AF0467B001DE976 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703820F1AF0467B001DE976 /* InterfaceController.swift */; };
+		C70382101AF0467B001DE976 /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703820F1AF0467B001DE976 /* MainInterfaceController.swift */; };
 		C70382121AF0467B001DE976 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C70382111AF0467B001DE976 /* Images.xcassets */; };
 		C70382161AF0467C001DE976 /* CiudadInvisible WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = C70382151AF0467B001DE976 /* CiudadInvisible WatchKit App.app */; };
 		C703821E1AF0467C001DE976 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C703821C1AF0467C001DE976 /* Interface.storyboard */; };
@@ -236,7 +236,7 @@
 		6CCE688C1A5348818DD0B369 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C703820B1AF0467B001DE976 /* CiudadInvisible WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CiudadInvisible WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C703820E1AF0467B001DE976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C703820F1AF0467B001DE976 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		C703820F1AF0467B001DE976 /* MainInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInterfaceController.swift; sourceTree = "<group>"; };
 		C70382111AF0467B001DE976 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C70382151AF0467B001DE976 /* CiudadInvisible WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CiudadInvisible WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C703821B1AF0467C001DE976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -487,7 +487,7 @@
 		C703820C1AF0467B001DE976 /* CiudadInvisible WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				C703820F1AF0467B001DE976 /* InterfaceController.swift */,
+				C703820F1AF0467B001DE976 /* MainInterfaceController.swift */,
 				C70382111AF0467B001DE976 /* Images.xcassets */,
 				C703820D1AF0467B001DE976 /* Supporting Files */,
 			);
@@ -1231,7 +1231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C70382101AF0467B001DE976 /* InterfaceController.swift in Sources */,
+				C70382101AF0467B001DE976 /* MainInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1712,6 +1712,7 @@
 				C70382271AF0467C001DE976 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C70382291AF0467C001DE976 /* Build configuration list for PBXNativeTarget "CiudadInvisible WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -1720,6 +1721,7 @@
 				C70382251AF0467C001DE976 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C707AC75195E127E00E43F53 /* Build configuration list for PBXProject "CiudadInvisible" */ = {
 			isa = XCConfigurationList;

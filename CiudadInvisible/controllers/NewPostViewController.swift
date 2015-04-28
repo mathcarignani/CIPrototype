@@ -106,7 +106,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     //post.category = self.categorySelector.titleForSegmentAtIndex(self.categorySelector.selectedSegmentIndex)
     // Auxiliar para concatenar las imagenes
     var arrayAuxiliar = NSMutableArray(object: self.imageMain)
-    arrayAuxiliar.addObjectsFromArray(self.images)
+    arrayAuxiliar.addObjectsFromArray(self.images as [AnyObject])
     post.images = arrayAuxiliar
     // Guarda la coordenada del centro del mapa
     post.location = "{\(self.mapView.centerCoordinate.latitude),\(self.mapView.centerCoordinate.longitude)}"
@@ -137,7 +137,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     //post.category = self.categorySelector.titleForSegmentAtIndex(self.categorySelector.selectedSegmentIndex)
     // Auxiliar para concatenar las imagenes
     var arrayAuxiliar = NSMutableArray(object: self.imageMain)
-    arrayAuxiliar.addObjectsFromArray(self.images)
+    arrayAuxiliar.addObjectsFromArray(self.images as [AnyObject])
     post.images = arrayAuxiliar
     // Guarda la coordenada del centro del mapa
     post.location = "{\(self.mapView.centerCoordinate.latitude),\(self.mapView.centerCoordinate.longitude)}"
@@ -161,8 +161,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
   }
   
   // MARK: - UIImagePickerControllerDelegate
-  func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
-    
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
     // Carga la imagen en el visualizador y la guarda en la variable
     self.mainImageView.image = image
     self.imageMain = image
@@ -200,7 +199,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
     
     if segue.identifier == "ChangeImages" {
       
-      var destVC = segue.destinationViewController as MultiImagesViewController
+      var destVC = segue.destinationViewController as! MultiImagesViewController
       destVC.delegate = self
       destVC.imagenes = self.images
       
@@ -210,7 +209,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
   
   // MARK: - CLLocationManagerDelegate
   func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-    var location: CLLocation = locations.last as CLLocation
+    var location: CLLocation = locations.last as! CLLocation
     // Cuando se actualiza la posicion del usuario centra el mapa en ese punto
     if (self.centerMap == 1) {
       MapHelper.centerMap(self.mapView, coordinate: location.coordinate, distance: 800)
@@ -242,7 +241,7 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
   {
     if collectionView == self.imagesCollectionView {
       // Images
-      var cell : PostImagesCell = collectionView.dequeueReusableCellWithReuseIdentifier("PostImageCell", forIndexPath: indexPath) as PostImagesCell
+      var cell : PostImagesCell = collectionView.dequeueReusableCellWithReuseIdentifier("PostImageCell", forIndexPath: indexPath) as! PostImagesCell
       
       // Configuro la celda
       cell.image.image = self.images.objectAtIndex(indexPath.row) as? UIImage
@@ -250,10 +249,10 @@ class NewPostViewController: UITableViewController, UITableViewDelegate, UINavig
       return cell
     } else {
       // Categories
-      var cell : CategoryCell = collectionView.dequeueReusableCellWithReuseIdentifier("CategoryCell", forIndexPath: indexPath) as CategoryCell
+      var cell : CategoryCell = collectionView.dequeueReusableCellWithReuseIdentifier("CategoryCell", forIndexPath: indexPath) as! CategoryCell
       
       // Configuro la celda
-      cell.name.text = self.categories.objectAtIndex(indexPath.row) as? NSString
+      cell.name.text = self.categories.objectAtIndex(indexPath.row) as! String
       // Si está seleccionada la categoria la pinta
       if (self.categoriesSelected.containsObject(cell.name.text!)) {
         cell.backgroundView?.backgroundColor = UIColor(red: 166/255.0, green: 251/255.0, blue: 255/255.0, alpha: 0.7)

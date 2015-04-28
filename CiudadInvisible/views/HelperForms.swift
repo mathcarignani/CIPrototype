@@ -21,11 +21,6 @@ class HelperForms : NSObject {
         static var flechaTargets: [AnyObject]!
     }
 
-    //// Initialization
-
-    override class func load() {
-    }
-
     //// Drawing Methods
 
     class func drawFlecha() {
@@ -69,7 +64,7 @@ class HelperForms : NSObject {
         set {
             Cache.flechaTargets = newValue
             for target: AnyObject in newValue {
-                (target as StyleKitSettableImage).image = HelperForms.imageOfFlecha
+                (target as! StyleKitSettableImage).image = HelperForms.imageOfFlecha
             }
         }
     }

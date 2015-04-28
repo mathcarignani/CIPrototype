@@ -14,10 +14,10 @@ class PostView: UIView {
     var postName : UILabel = UILabel()
     var postDistance : UILabel = UILabel()
     var postInformationBackground : UIView = UIView()
-    
+  
     let defaultFrame = CGRectMake(0, 0, 140, 40)
-    
-    override init() {
+  
+    required override init() {
         super.init(frame: defaultFrame)
     }
     
@@ -31,11 +31,11 @@ class PostView: UIView {
         postImage.image = image
         
         postName = UILabel(frame: CGRect(x: 10, y: frame.height-40, width: (frame.width/2)-30, height: 40))
-        postName.text = name
+        postName.text = name as String
         
         postDistance = UILabel(frame: CGRect(x: (frame.width/2)+30, y: frame.height-40, width: (frame.width/2)-40, height: 40))
         postDistance.textAlignment = NSTextAlignment.Right
-        postDistance.text = distance
+        postDistance.text = distance as String
         
         postInformationBackground = UIView(frame: CGRectMake(0, frame.height-40, frame.width, 40))
         postInformationBackground.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.7)

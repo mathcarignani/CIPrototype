@@ -45,17 +45,17 @@ class PostsGaleryViewController: UIViewController, UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("PostGaleryCell", forIndexPath: indexPath) as PostSlideCell
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("PostGaleryCell", forIndexPath: indexPath) as! PostSlideCell
         
         // Configuro la celda
-        let post = self.posts.objectAtIndex(indexPath.row) as Post
+        let post = self.posts.objectAtIndex(indexPath.row) as! Post
         //cell.titulo.text = post.title
         //cell.distancia.text = ""
         cell.imagen.image = self.imageEmpty
         if post.images.count > 0 {
             // Si tiene imagen la carga
             let images = post.imagesSmall()
-            cell.imagen.setImageWithURL(NSURL(string: images.objectAtIndex(0) as String), placeholderImage: self.imageEmpty)
+            cell.imagen.setImageWithURL(NSURL(string: images.objectAtIndex(0) as! String), placeholderImage: self.imageEmpty)
         }
         
         // Sombreado
@@ -74,9 +74,9 @@ class PostsGaleryViewController: UIViewController, UICollectionViewDataSource {
             
             println(self.collectionView.indexPathsForSelectedItems())
             
-            var postDetailVC = segue.destinationViewController as PostsDetailViewController
-            var index = self.collectionView.indexPathsForSelectedItems()[0] as NSIndexPath
-            postDetailVC.post = self.posts.objectAtIndex(index.row) as Post
+            var postDetailVC = segue.destinationViewController as! PostsDetailViewController
+            var index = self.collectionView.indexPathsForSelectedItems()[0] as! NSIndexPath
+            postDetailVC.post = self.posts.objectAtIndex(index.row) as! Post
             
         }
     }

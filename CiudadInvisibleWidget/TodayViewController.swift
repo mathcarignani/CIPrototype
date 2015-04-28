@@ -59,7 +59,7 @@ extension TodayViewController: NCWidgetProviding {
 // MARK: - CLLocationManagerDelegate
 extension TodayViewController: CLLocationManagerDelegate {
   func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-    var location: CLLocation = locations.last as CLLocation
+    var location: CLLocation = locations.last as! CLLocation
     println(location.coordinate)
     
     self.locationManager.stopUpdatingLocation()

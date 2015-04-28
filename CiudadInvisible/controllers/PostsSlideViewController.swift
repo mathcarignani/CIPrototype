@@ -120,11 +120,11 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
   {
     if (collectionView == self.collectionView) {
       // POSTS
-      var cell = collectionView.dequeueReusableCellWithReuseIdentifier("PostSlideCell", forIndexPath: indexPath) as PostSlideCell
+      var cell = collectionView.dequeueReusableCellWithReuseIdentifier("PostSlideCell", forIndexPath: indexPath) as! PostSlideCell
       
       // Configuro la celda
       cell.backgroundColor = UIColor.clearColor()
-      let post = self.posts.objectAtIndex(indexPath.row) as Post
+      let post = self.posts.objectAtIndex(indexPath.row) as! Post
       cell.titulo.text = post.title
       cell.distancia.text = "\(post.favorites_quantity)"
       cell.imagen.image = self.imageEmpty
@@ -160,7 +160,7 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
     } else {
       // Filtros
       // Categories
-      var cell : CategoryCell = collectionView.dequeueReusableCellWithReuseIdentifier("FilterCell", forIndexPath: indexPath) as CategoryCell
+      var cell : CategoryCell = collectionView.dequeueReusableCellWithReuseIdentifier("FilterCell", forIndexPath: indexPath) as! CategoryCell
       
       // Configuro la celda
       cell.name.text = self.filters[indexPath.row] as String
@@ -193,11 +193,11 @@ class PostsSlideViewController: UIViewController, UICollectionViewDataSource, UI
     //if segue != nil {
     if (segue.identifier == "VerDetalle") {
       
-      var postDetailVC = segue.destinationViewController as PostsDetailViewController
+      var postDetailVC = segue.destinationViewController as! PostsDetailViewController
       postDetailVC.transitioningDelegate = self.transitionManager
       
       if NavigationHelper.sharedInstance().postId == 0 {
-        var index = self.collectionView.indexPathsForSelectedItems()[0] as NSIndexPath
+        var index = self.collectionView.indexPathsForSelectedItems()[0] as! NSIndexPath
         postDetailVC.post = self.posts.objectAtIndex(index.row) as Post
       }
       
